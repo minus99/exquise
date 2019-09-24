@@ -1,0 +1,27 @@
+// --- ÜYE SAYFASI SİPARİŞLERİM -- //
+
+.member-order {
+    // Siparişlerim Liste
+    .grid-row {
+        align-items: center;
+        flex-wrap: nowrap;
+    } 
+    // Siparişlerim Liste Düzeni
+    .grid-order-no { 
+        flex: auto;
+    }
+    .grid-total {
+        flex: auto;
+        text-align: center;
+    }
+    .grid-status {
+        flex: auto;
+        text-align: center;
+        margin-top: 0px; 
+    }
+    .grid-detail {
+        flex: auto;
+        text-align: right;
+        margin-top: 0px;        
+    }
+}

@@ -1,0 +1,56 @@
+// --- ÜYE SAYFASI MESAJ -- //
+
+//Mesajlarım tab menü
+.swiper-tab-menu {
+    margin-top: 0;
+    ul{
+        li{
+            width: auto; 
+            a{
+                font-size: $memberFontSize16;
+                padding: $memberMessageTabBtnPadding;
+                span {
+                    font-size: $memberFontSize16;
+                }
+            }
+        }
+    }
+}
+
+// Mesajlarım listeleme sayfası
+.grid-table-message {
+    // Mesajlarım listeleme düzeni
+    .grid-row {
+        flex-wrap: nowrap;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        .label {
+            font-size: $memberFontSize14;
+            padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
+            display: none; 
+            &.none {
+                span {
+                    display: none !important;
+                }
+            }  
+        }
+        &:first-child {  
+            .label { 
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;   
+                height: 50px;
+            } 
+            .form {border-top: 1px solid $memberLightGreyColor;}
+        }
+    }
+    .grid-icon {order: 1;} 
+    .grid-date {
+        order: 2; 
+        flex: 1;
+        .label, .form {padding-left: 0px;}
+    }
+    .grid-title {order: 3; flex: 2;}
+    .grid-order-id {order: 4; flex: 1;}
+    .grid-status {order: 5; flex: .5; align-items: normal;}   
+}

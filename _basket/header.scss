@@ -1,0 +1,32 @@
+//Sepet sayfası genel site header gizleme
+.order-steps{
+    .header-site{
+        @extend .none;
+    }
+}
+
+//Sepet sayfası header ızgara
+.header-basket{
+    //header sticky top degerleri ve z-index
+    top: 0;
+    z-index: 10;
+    //logo
+    .logo{
+        @extend .order-1;
+    }
+    //Üye login yönlendirme
+    .member{
+        @extend .order-2;
+    }
+    //Üye login mobile geri butonu
+    .back-arrow{
+        margin-right: $basketArrowBackSpacing;
+    }
+}
+
+//Sepet header üye text
+.member-login-txt{
+    font-family: $medium;
+    color: $colorWhite;
+    margin-right: 5px;
+}

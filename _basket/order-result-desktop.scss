@@ -1,0 +1,15 @@
+.pageSiparisSonuc{
+    padding: 3%;
+    width: calc(100% - 6%);
+}
+.pageSiparisSonuc_btnSiparisSonuc{
+    > div{
+        width: 50%;
+        max-width: 330px;
+        padding-left: 5px;
+        padding-right: 5px;
+        &:nth-child(2){
+            margin-top: 0;
+        }
+    }
+}

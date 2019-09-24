@@ -1,0 +1,127 @@
+//Site sass kurulumum icin gerekli
+$baseHref: 'http://example.proj-e.com';
+
+//Font variables
+$regular: 'regular';
+$medium: 'medium';
+$bold: 'bold';
+
+//Arka plan rengi farklı olan sayfalar icin
+$globalPageBg: #f3f3f7;
+
+//Site Default Font Size
+$siteFontSize: 14px;
+
+//Site Desktop Breakpoint
+$breakpoint-default: 1024px;
+
+//Button Background variables
+$btnBackground: #3d5deb;
+$btnAlternateBackground: #ffffff;
+
+//Button Color variables
+$btnColor: #ffffff;
+$btnAlternateColor: #3d5deb;
+
+//Button Border radius variables
+$buttonRadius: 3px;
+
+//Button Border variables
+$btnBorder: #3d5deb;
+
+// Input Border
+$inputBorder: #cecfd4;
+
+//Site Warning Grid
+$warningBorder: #e72f2f;
+$warningBackground: #ffcaca;
+
+//Site Button Link Underline
+$linkUnderline: underline;
+
+//Site Button Link line-through
+$linkLineThrough: line-through;
+
+//Site Button Link Color
+$linkButtonColor:#696b71;
+
+// Site Header Background
+$siteHeaderBackground: #6b3535;
+
+//Site Footer Background
+$siteFooterBackground: #202020;
+
+//Site Content Background
+$siteContentBackground: #f3f3f7;
+
+//Swiper Slide Arrow General Background
+$sliderArrowBackground: #696b71;
+
+//Swiper Slide Arrow General Background After Color
+$sliderArrowBackgroundAfter: #ffffff;
+
+/*Width full*/
+$fullWidth: 100%;
+
+/*Width auto*/
+$autoWidth: auto;
+
+/*Margin left auto*/
+$mLeftAuto: auto;
+
+/*Margin right auto*/
+$mRightAuto: auto;
+
+/*Site varsayılan renkler*/
+$colorWhite: #ffffff;
+$colorRed:#e72f2f;
+$colorDefault: #202020;
+$colorAlternate: #696b71;
+$colorBulltet:#cecfd4;
+$colorYellow: #ffea86;
+$errorBgColor:#ffcaca;
+$sucessBgColor: #C8FFD5;
+$sucessBorder: #18C641; 
+$gridRowBorder: #f3f3f7;
+
+
+
+/*Site varsayılan yazı boyutlari*/
+//--10px
+$fontSize10:10px;
+
+//--12px
+$fontSize12:12px;
+
+//--14px
+$fontSize14:14px;
+
+//--16px
+$fontSize16:16px;
+
+//--20px
+$fontSize20:20px;
+
+//--22px
+$fontSize22:22px;
+
+//--24px
+$fontSize24:24px;
+
+/*Border Radius*/
+$borderRadius: 100%;
+
+/*Mobile Standart Spacing*/
+$mb-left-spacing:15px;
+$mb-right-spacing:15px;
+
+
+/*Hidden Mobile Element*/
+.visible\@d { display: none !important; }
+
+ /*Visible Desktop Element*/
+ @media (min-width: $breakpoint-default) {
+    .visible\@d { display: inherit !important; }
+
+    .visible\@m { display: none !important; }
+ }

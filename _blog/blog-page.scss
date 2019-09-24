@@ -1,0 +1,116 @@
+// --- BLOG SAYFASI -- //
+.pages-blog-list, .pages-blog-detail {
+    .member-grid { 
+        grid-template-columns: minmax(0,5%) minmax(0,100%) minmax(0,5%);
+        grid-template-areas: ". AAA ."
+                             ". BBB ."; 
+        column-gap: 30px;
+        padding: $memberPadding30 $memberMarginReset;
+        margin: 0 auto;
+    }
+}
+
+//-- Blog Liste --//
+.pages-blog-list {
+    // liste grid ayarı
+    .icerikListe_Tablo {
+        tbody {
+            display: -ms-grid;   
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(0,50%) minmax(0,25%) minmax(0,25%));     
+            grid-gap: 30px; 
+            .icerikListe {height: 100%;}
+            tr:nth-child(1) {
+                grid-row: 15 span;
+                td {
+                    position: sticky;
+                    top: 0;
+                    width: 100%;
+                    display: inline-block;
+                    .image-wrap {
+                        height: 100vh;
+                        a {
+                            height: 100vh;
+                        }
+                    }
+                    .text-wrap {position: absolute; bottom: 0; padding: $contentPadding20;}
+                    picture {opacity: 0;}
+                }
+            }
+        }
+    }
+    // Görsel
+    .image-wrap {
+        a { 
+            display: inline-block;
+            width: 100%;
+            picture {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+    // tarih
+    .catDate {
+        span {
+            margin-right: 3px; 
+            color: $contentGreyColor; 
+        }
+    }
+    // okuma süresi
+    .catRead {
+        border-left: 1px solid $contentGreyColor;
+        padding-left: $memberPadding10;
+        margin-left: $memberMargin10;
+        color: $contentGreyColor;
+    }
+    // İçerik yazı
+    .catText {
+        color: $contentGreyColor; 
+        line-height: $contentLineText;
+    }
+    // sayfalama
+    .urunPaging {
+        display:none;
+    }
+
+}
+
+//--- BLOG MENÜ ---//
+
+.menu-blog {
+    position: relative;
+    .swiper-inner {overflow: visible;}
+    .swiper-slide {
+        width: auto;
+        position: static;
+        > a {
+            background: $contentTabColor;
+            color: $contentDarkColor;
+            font-size: $contentFontSize16;
+            padding: $contentMessageTabBtnPadding;
+            border-radius: 4px 4px 0 0;
+            font-family: $contentFontMedium;
+            display: block;
+            width: 100%;
+        }
+        &.selected {
+            a {
+                background: #fff;
+                border-radius: 4px 4px 0 0;
+                display: block;
+                padding: $contentMessageTabBtnPadding;
+            }
+            .lvl-2 {display: block;}
+        }
+    }
+    .lvl-2 {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+//Forms field icin genislikler belirleniyor
+.field{
+    width: 50%;
+    &-full{
+        width: 100%;
+    }
+    //ilk li'haric tumune border ekleniyor
+    &:not(&-full){
+        &:nth-child(1){
+            padding-right: 10px;
+        }
+        &:nth-child(2){
+            padding-left: 10px;
+        }
+    }
+}

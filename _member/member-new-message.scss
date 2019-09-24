@@ -1,0 +1,34 @@
+// --- ÜYE SAYFASI YENİ MESAJ -- //
+
+.pageHeaderMesaj {display: none;} 
+
+// Mesahlar Captcha
+#plhMesajCaptcha {
+    img {
+        width: auto; 
+        display: block;
+    }
+    input {
+        max-width: 400px;
+    }
+    span[id$="lbfUYE_KONTROLKODU"] {
+        font-family: $memberFontBold;
+        color: $labelFontColor;
+        line-height: $formInputHeight;  
+        margin-top: $memberMargin5;
+        display: block;  
+    }
+    br {display: none;} 
+}
+
+// Login ve logoff durumlarında gizlenecekler
+.ems-login {}
+.ems-logoff {
+    .loginForm {
+        display: none;
+    }
+    .loginForm + .field {
+        padding: 0 !important;
+    }
+    
+}

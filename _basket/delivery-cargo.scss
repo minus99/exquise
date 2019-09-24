@@ -1,0 +1,37 @@
+.cargo-tab{
+    background: $colorWhite;
+    border-radius: $basketModuleRadius;
+    padding: $cargoInlinePadding;
+}
+//kargo ajax ile yuklenen icerik alanı
+li.kargoRow {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    //flex class'i extend ediliyor
+    @extend .display-flex;
+    @extend .align-items-center;
+    @extend .justify-between;
+
+    //ilk li'haric tumune border ekleniyor
+    &:not(:first-child){
+        border-top:1px solid $gridRowBorder;
+    }
+    //ilk li'ye yukaridan margin ile bosluk veriliyor
+    &:first-child{
+        margin-top: 10px;
+    }
+    //img icin max genislik
+    img{
+        width: 20%;
+        max-width: 132px;
+    }
+    > span {
+        //html bos ise gizleniyor
+        @extend .is-empty;
+        //Son (radio buton) haric digerlerin verilen genislik ve yazı tipi
+        &:not(:last-child){
+            width: 20%;
+            font-family:$bold;
+        }
+    }
+}

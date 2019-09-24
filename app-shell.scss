@@ -1,0 +1,41 @@
+//-----Base-----//
+@import '_base/variables';
+@import '_basket/variables';
+@import '_app-shell/first-loading';
+@import '_base/class-list';
+
+
+
+//-----Header-----//
+@import '_header/grid';
+
+
+//-----Content-----//
+@import '_content-grid/main';
+
+
+//-----Basket-----//
+@import '_basket/header';
+@import '_basket/main';
+
+
+//-----Desktop Media Query-----//
+@supports(grid-area: auto) {
+    @media screen and (min-width: $breakpoint-default) {
+        //-----Base-----//
+        @import '_base/class-list-desktop';
+
+
+        //-----Header-----//
+        @import '_header/grid-desktop';
+        
+        
+        //-----Basket-----//
+        @import '_basket/header-desktop';
+        @import '_basket/main-desktop';
+        
+        
+        //-----Content-----//
+        @import '_content-grid/main-desktop';
+    }
+}

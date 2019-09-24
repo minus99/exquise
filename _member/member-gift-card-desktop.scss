@@ -1,0 +1,10 @@
+// --- ÜYELİK GIFT CARD -- //
+.member-gift-card { 
+    flex-wrap: nowrap;
+    .ga1 {flex: 1; padding-right: $memberPadding20; order: 1;}
+    .ga2 {flex: 1; text-align: right; order: 2;}  
+    .btnsepeteAt {
+        width: auto !important;
+        display: inline-block !important;
+    }
+}

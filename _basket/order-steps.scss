@@ -1,0 +1,76 @@
+//Siparis adımları
+.tabloTabBtnAdim{
+    > tbody > tr > td{
+        display: table;
+        table-layout: fixed;
+        width: $fullWidth;
+        margin-top: $step-top-spacing;
+        margin-bottom: $step-bottom-spacing;
+    }
+    .tabBtnAdimDefault,
+    .tabBtnSelectedDefault{
+        width: 33.333%;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        > a{
+            display: inline-block;
+            position: relative;
+        }
+        &:after{
+            content:'';
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: none;
+            border-radius: $borderRadius;
+            margin-left: $mLeftAuto;
+            margin-top: 3px;
+            margin-right: $mRightAuto;
+        }
+        .icon {
+            display: block;
+            margin-left: $mLeftAuto;
+            margin-right: $mRightAuto;
+            color: $stepIconColor;
+            fill-opacity: .4;
+        }
+        .step-txt{
+            font-family: $regular;
+            color: $stepTextColorNormal;
+            opacity: .4;
+            font-size: $siteFontSize;
+        }
+        .icon-step-check{
+            display: none;
+            font-size: $fontSize14;
+            position: absolute;
+            top: 0;
+            left:calc(100% - 24px);
+        }
+        &.previous-activeted{
+            .icon{
+                fill-opacity: 1;
+            }
+            .step-txt{
+                opacity: 1;
+            }
+            .icon-step-check{
+                display: block;
+            }
+        }
+    }
+    .tabBtnSelectedDefault{
+        .icon{
+            fill-opacity: inherit;
+            color: $stepIconColor;
+        }
+        .step-txt{
+            color: $stepTextColorNormal;
+        }
+        &:after{
+            background: $order-step-active-round;
+        }
+    }
+}

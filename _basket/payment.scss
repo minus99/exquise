@@ -1,0 +1,629 @@
+//Accordion basliklar icin verilen class 
+.cls-ttl-acr{
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDYpIj4gICAgICAgIDxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBzdHJva2U9IiM2OTZCNzEiLz4gICAgICAgIDxwYXRoIGZpbGw9IiM2OTZCNzEiIGQ9Ik03IDEwaDd2MUg3eiIvPiAgICAgICAgPHBhdGggZmlsbD0iIzY5NkI3MSIgZD0iTTExIDd2N2gtMVY3eiIvPiAgICA8L2c+PC9zdmc+");
+}
+//Accordion basliklar icin tıklandıktan sonraki verilen class 
+.opnd-ttl-acr{
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDYpIj4gICAgICAgIDxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBzdHJva2U9IiM2OTZCNzEiLz4gICAgICAgIDxwYXRoIGZpbGw9IiM2OTZCNzEiIGQ9Ik03IDEwaDd2MUg3eiIvPiAgICA8L2c+PC9zdmc+");
+}
+
+//Odeme sayfasi odeme tipi modulu
+.pay-type-list{
+    ul{
+        //flex default class extend ediliyor
+        @extend .display-flex;
+        //esit genislik
+        li{
+            flex: 1;
+            width: 25%;
+            a{
+                @extend .display-block;
+                background: $colorBulltet;
+                border-radius: 4px 4px 0 0;
+                font-size: $fontSize12;
+                font-family: $medium;
+                padding:15px 20px;
+                text-align: $alignCenter;
+                //secili arka plan
+                &.emos_selected{
+                    background: $colorWhite;
+                    color: $colorDefault;
+                }
+            }
+        }
+    }
+}
+//Odeme modulu
+.pay-type-content{
+    div[id$="pnlKrediKartiBilgi"],
+    div[id$="pnlHavaleOdeme"],
+    div[id$="pnlPesinDiger"]{
+        background: $colorWhite;
+    }
+    
+    div[id$="pnlKrediKartiBilgi"],
+    div[id$="pnlHavaleOdeme"],
+    div[id$="pnlPesinDiger"]{
+        padding: 20px;
+    } 
+}
+//Odeme K karti modulu
+div[id$="pnlKrediKartiBilgi"],
+.divtxtKKARTNO{
+    position: relative;
+}
+//Odeme K karti baslik
+.tableTitleOdemeBilgiKrediKarti{
+    //K Krati hata mesaji icin alttan bosluk
+    .message {
+        margin-bottom: 25px;
+    }
+}
+//K Karti modulu table HTML'i
+.tableOdemeBilgiKrediKarti{
+    > tbody{
+        > tr{
+            > th{
+                line-height: 26px;
+                span{ color: $colorAlternate; }
+            }
+            > th, td{
+                @extend .display-block;
+                text-align: $alignLeft;
+                //Input icerikleri bos ise gizleniyor
+                &:empty{
+                    display: none;
+                }
+            }
+            > td{
+                &.tableOdemeBilgiKrediKarti_tddrpKSA_SPR_ID{
+                    @extend .display-flex;
+                    @extend .justify-between;
+                    //K karti ay ve yil ilk seviye dropdown'lar icin genislik
+                    > span{
+                        width: calc(50% - 5px);
+                    }
+                }
+                &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO{
+                    @extend .display-flex;
+                    @extend .align-items-center;
+                }
+            }
+            //tr'nin son elemanın da gelen input haric alttan eklenen bosluk
+            &:not(:nth-child(5)){
+                > td{
+                    margin-bottom: 20px;
+                }
+            }
+            //tr'nin son elemanı gizleniyor
+            &:last-child{display: none;}
+        }
+    }
+    //K karti numarası sagdan bosluk
+    .cc-numkeypad{
+        padding-right: 60px;
+    }
+    //k karti ikonu
+    .div-cc-carttype{
+        position: absolute;
+        top: 50% !important;
+        right: 10px !important;
+        margin-top: -13px;
+    }
+    //Sistem'den gelen kart numaralari input genisligi eziliyor
+    .cc-numkeypad,
+    .cc-month,
+    .cc-year,
+    .cc-cardname{
+        width: 100% !important;
+    }
+    //CVC kodu
+    .cc-cvc{
+        width: calc(50% - 32px) !important;
+    }
+    span[id$="lbfKKT_CVC_NEDIR"]{
+        width: 32px;
+        height: 32px;
+    }
+}
+//Odeme modulu display olan nesneri block'lama
+.pageOdemeBilgi_odemeTaksit{
+    display: block !important;
+}
+//Banka bonus kullanim
+.pageOdemeBilgi_chkBankaBonus{
+    margin-top: 15px;
+    .ftpPuanKazan{
+        display: none;
+    }
+}
+//Odeme alani gizlenecek nesneler
+span.odemeTaksitDesc,
+a.btnBankaPromosyonUygula,
+.pageOdemeBilgi_odemeTaksit #imgBANKALOGO,
+.tableTitleOdemeBilgiHavale,
+.tableTitleOdemeBilgiPesinDiger,
+.tableTitleOdemeBilgiKrediKarti{
+    display: none !important;
+}
+
+//Taksit secenegi table'ı
+.tableOdemeTaksit{
+    margin-top:30px;
+    > tbody{
+        > tr{
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            > td{
+                display: table-cell;
+                vertical-align: middle;
+                width: 25%;
+            }
+            //Taksik secenek header kismi
+            &.tableTitleOdemeTaksit{
+                border-bottom: 1px solid $gridRowBorder;
+                > td{
+                    padding-bottom: 5px;
+                    > span{
+                        font-size: $fontSize12;
+                        color: $colorAlternate;   
+                    }
+                }
+            }
+            //Taksik secenekleri row
+            &.taksit_pesin {
+                > td{
+                    font-family: $bold;
+                    height: 35px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+//Havale module tablosu
+.tableOdemeBilgiHavale{
+    > tbody{
+        > tr{
+            //Kisa metin gizleniyor
+            &:first-child{
+                display: none;
+            }
+            > td{
+                &.tableOdemeBilgiHavale_tddrpBNK_KOD_HV{
+                    > table{
+                        tbody{
+                            > tr{
+                                width: 100%;
+                                display: table;
+                                table-layout: fixed;
+                                > td{
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                    padding-top: 20px;
+                                    padding-bottom: 20px;
+                                    &.bankaKampanyaMetinHavale{
+                                        display: none !important;
+                                    }
+                                    &.logo{
+                                        width: 25%;
+                                        img{
+                                            max-width: 166px;
+                                        }
+                                    }
+                                    &.banka{
+                                        width: 45%;
+                                    }
+                                    &.link{
+                                        width: 30%;
+                                        padding-right: 20px;
+                                        a.btnDefault {
+                                            > span{
+                                                justify-content: flex-end;
+                                            }
+                                        }
+                                    }
+                                    span.hesapNo{
+                                        @extend .display-block;
+                                        padding-top: 5px;
+                                    }
+                                }
+                                //Ilk row haric border ekleniyor
+                                &:not(:first-child){
+                                    border-top: 1px solid $gridRowBorder;
+                                }
+                            }
+                        }     
+                    }
+                }           
+            }
+        }
+    }
+}
+
+//Master pass odeme modulu
+.masterpassContent{
+    //Varsayilan gizli durumu eziliyor
+    display: block !important;
+}
+.imgMasterpassLogo {
+    width: auto !important;
+}
+.masterPassForms {
+    position: relative;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    > div + div {
+        margin-top: 10px;
+    }
+    .mpCardAliasName{
+        padding-right: 10px;
+    }
+}
+.masterPassForms[style*="block"]{
+    display: -ms-flexbox;
+    display: flex !important;
+    @extend .align-items-center;
+    @extend .justify-start;
+}
+.masterpassAciklama {
+    font-size: 12px;
+}
+.dvAddCreditCard {
+    @extend .display-flex;
+    a.lnkSubmit{
+        width: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+.masterpassLogo_general{
+    margin-right:15px;
+}
+.masterpassAciklama{
+    line-height: 18px;
+}
+.dvMpCardAliasName {
+    width: 50%;
+    padding-right: 10px;
+}
+.masterpass_cardAddedSuccess,
+.masterpass_linkCard,
+.masterpass_cardList {
+    margin-bottom: 20px;
+}
+.masterpassLogo_cardList{
+    display: none;
+}
+.mpCreditCardSet {
+    font-size: 14px;
+    background: #f1f1fa;
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 35px 1fr max-content;
+    grid-gap: 0 10px;
+    align-items: center;
+    + .mpCreditCardSet {
+        margin-top: 10px;
+    }
+    .masterpassCard{
+        border-radius: 100%;
+        width: 10px !important;
+        height: 10px !important;
+        padding: 0;
+        line-height: normal;
+        min-height: auto;
+    }
+}
+.lnkDeleteMasterPassCard {
+    text-decoration: underline;
+}
+.mpNewCreditCard {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    input[type="radio"] {
+        margin-right: 7px;
+    }
+    span{
+        color: $colorAlternate;
+    }
+}
+.masterpassLogo_cardList{
+    margin-bottom: 10px;
+}
+
+//Odeme accordion title -- acilir kapanir tum basliklara kullanilabilir
+.basket-title-accordion{
+    padding: 20px 40px 20px 20px;
+    background-color: $colorWhite;
+    background-position: calc(100% - 20px);
+    background-repeat: no-repeat;
+    border-radius: $basketModuleRadius;
+    cursor: pointer;
+    //Accordion baslik ortak eklenen class
+    @extend .cls-ttl-acr;
+}
+//Odeme sepet onizleme ve urun adet sayisi
+.payment-basket-title{
+    //baslik icin sagdan bosluk
+    .title-middle{
+        margin-right: 15px;
+    }
+    //sepet urun adet
+    b{
+        font-weight: normal;
+        padding-right: 5px;
+    }
+    //sepet urun adet text
+    small{
+        color: $colorAlternate;
+    }
+}
+//Sanal kart
+.basket-card-wrapper{  
+    display:none;
+}
+//Odeme Adres bilgileri ve siapris ozet alani ust bosluk
+.pay-address {
+    margin-top:30px;
+    > ul{
+        flex-wrap: wrap;
+        > li{
+            width: 100%;
+            &:nth-child(2){
+                margin-top: 30px;
+            }
+        }
+    }
+    //Odeme teslimat ve sepet icerik default gizli gelmesi 
+    &-hidden{
+        display: none;
+        padding: 10px 20px 20px 20px;
+    }
+    //Odeme sepet ve teslimat alanlari
+    &-left-content,
+    &-right-content{
+        background-color: $colorWhite;
+        border-radius: 0 0 $basketModuleRadius $basketModuleRadius;
+    }
+    //Odeme sepet onizleme
+    &-left-content{
+        @extend .scroll-webkit;
+        .grid-table-cart{
+            max-height: 230px;
+            overflow: hidden;
+        }
+    }
+    //Odeme teslimat adres bilgileri
+    &-right-content{
+        > div{
+            &:not(:first-child){
+                border-top: 1px solid $gridRowBorder;
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+            .baslik{
+                @extend .display-block;
+                font-family: $bold;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    //Tıklandıktan sonra acılan icerik alanı
+    ul{
+        li {
+            &.opened{
+                //Accordion baslik ortak eklenen class acik hali
+                .basket-title-accordion{
+                    @extend .opnd-ttl-acr;
+                }
+                .pay-address-hidden{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.payment-transfer{
+    border-radius: $basketModuleRadius;
+    background-color: $colorWhite;
+    margin-top: 30px;
+    padding: 20px;
+    .icons{
+        img{
+            max-width: max-content;
+        }
+    }
+    p{
+        margin-top: 5px;
+    }
+}
+//Diger odeme secenegi
+.OdemeBilgiPesinDigerOdemeNotu{
+    > span{
+        @extend .display-block;
+        font-family: $bold;
+        color: $colorAlternate;
+    }
+    textarea{
+        width: 100% !important;
+    }
+}
+//Havale odeme detay aciklama metni bos ise 
+span[id$="lblODM_ACIKLAMA"]{
+    @extend .is-empty;
+}
+//Odeme sayfas satis sozlesmeleri
+.pay-agreement{
+    display: none;
+}
+.onBilgilendirmeFormHolder,
+.siparisOnaySozlesmeHolder {
+    background-color: $colorWhite;
+    border-radius: $basketModuleRadius;
+    margin-top: 30px;
+
+    //Sozlesme basliklari icin accordion title class'i extend ediliyor
+    .tableTitleDefault {
+        @extend .basket-title-accordion;
+    }
+    //Sozlesme basliklari eger tıklanmıs ise baslık ikonu degisiyor
+    &.opened{
+        .tableTitleDefault {
+            @extend .opnd-ttl-acr;
+        }
+        .onBilgilendirmeFormMetin,
+        .siparisOnaySozlesmeMetin{
+            display: block;
+        }
+    }
+}
+//Sozlesme metinleri HTML'i
+.onBilgilendirmeFormMetin,
+.siparisOnaySozlesmeMetin{
+    display: none;
+    margin: 20px 25px 20px 20px;
+    //webkit scroll ekleniyor
+    @extend .scroll-webkit;
+    //Ilk span varsayilan scroll degeri degistiriliyor
+    > span{
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+        padding-right: 30px;
+    }
+}
+.onBilgilendirmeFormMetin,
+.siparisOnaySozlesmeMetin{
+    padding-bottom: 20px;
+}
+//Sozlesmeler de tiklanan linkler icin css
+.pageSiparisOnay_lbfOnBilgilendirmeForm,
+.pageSiparisOnay_lbfSatisSozlesme{
+    @extend .display-flex;
+    @extend .align-items-center;
+}
+//Sozlesme buttonlari
+a.btnOnBilgilendirmeFormOnizle,
+a.btnSatisSozlesmeOnizle {
+    img{
+        width: auto;
+        margin-right: 10px;
+    }
+    span{
+        font-family:$regular;
+    }
+    b{
+        font-weight: normal;
+        text-decoration: $linkUnderline;
+    }
+}
+
+//Odeme sayfasi sepet ozet ozellsetirme
+.order-payment{
+    //Satin al butonu append edildigi icin ilk yukleme de gizli tutuluyor
+    .bottom-step{
+        display: none;
+    }
+    .order-summary{
+        //Sozlesmeler linkleri append edildikten sonra gosteriliyor
+        .pageSiparisOnay_btnOnBilgilendirmeFormOnizle,
+        .pageSiparisOnay_btnSatisSozlesmeOnizle{
+            display: block;
+            a.btnDefault{
+                text-align: left;
+            }
+        }
+        .pageSiparisOnay_lbfOnBilgilendirmeForm{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .pageSiparisOnay_lbfSatisSozlesme{
+            padding-top: 15px;
+            border-top: 1px solid $gridRowBorder;
+        }
+        //Satin al butonu append edildigi icin ilk yukleme de append edildigi yerde acik tutuluyor
+        .bottom-step{
+            display: block;
+        }
+    }
+    .btnOnbilgi,
+    .btnSozlesme{
+        text-decoration: underline;
+    }
+}
+
+//Odeme ceki
+.pageOdemeBilgi_odemeCekiGiris{
+    display: block !important;
+}
+.odemeCekiBaslik{
+    font-family: $bold;
+    color: $colorAlternate;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    border-top: 1px solid $gridRowBorder;
+}
+.odemeCekiKullanim{
+    @extend .relative;
+    margin-bottom: 20px;
+}
+.ulOdemeCekiKullanim{
+    li{
+        @extend .display-flex;
+        @extend .align-items-center;
+        &:not(:first-child){
+            margin-top: 10px;
+        }
+    }
+}
+.odemeCekiKaldir{
+    order: 1;
+}
+.odemeCekiSeriNo{
+    flex: 2;
+    order: 2;
+}
+.odemeCekiTutar{
+    flex: 1;
+    order: 3;
+    text-align: right;
+}
+.odemeCekiKalan{
+    @extend .display-flex;
+    @extend .align-items-center;
+    @extend .justify-between;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-top: 1px solid $gridRowBorder;
+    margin-top: 15px;
+    > *{
+        font-family:$bold;
+    }
+}
+.odemeCekiEkleBtn{
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    z-index: 1;
+}
+
+//Odeme SSL sertifika uyari metni
+.basket-ssl{
+    background: $colorYellow;
+    padding: 15px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: $basketModuleRadius;
+    .icon {
+        margin-right: 15px;
+    }
+    span{
+        font-family: $bold;
+        line-height: 18px;
+    }
+}

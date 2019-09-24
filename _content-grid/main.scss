@@ -1,0 +1,11 @@
+/*Site General Page Height */
+.page {
+    height: 100%;
+}
+
+/*Site Desktop Container (max-width)*/
+.container-width{
+    width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,145 @@
+.page-dealer {
+    position: relative;
+}
+
+.mod-service-list {
+    position: relative;
+}
+
+.mod-service-list-header {
+    background: $dhbg;
+    padding: $dhp;
+}
+.dealer-title {
+    font-size: $dtfs;
+}
+.page-nav {
+    display: flex;
+    align-items: center;
+    .view {
+        margin-left: auto;
+    }
+    .icon-dealer-list {
+        display: none;
+    }
+}
+.dealer-desc {
+    display: none;
+    margin-top: 20px;
+    font-size: $ddfs;
+}
+.dealer-form {
+    margin-top: $dftm;
+}
+.dealer-desc-or {
+    display: none;
+    border-top: 1px solid $ddbt;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: $ddfs;
+}
+.allow-share-location-btn {
+    margin-top: 15px;
+}
+
+.mod-service-list-body {
+    background: $dlbg;
+    padding: $dlp;
+}
+.servis_bilgi {
+    padding: $dp;
+}
+.pServisListe  {
+    border-top: 1px solid $dbt;
+    padding: $dp;
+    > * {
+        display: none;
+    }
+    * {
+        font-size: $dgfs;
+    }
+}
+.divServisListe_FirmaAdi {
+    display: block;
+    font-family: $medium;
+    font-size: $dnfs;
+    color: $dnc;
+}
+.divServisListe_Adres {
+    display: block;
+    margin-top: $damt;
+    color: $dac;
+}
+.divServisListe_Koordinat {
+    display: block;
+    margin-top: $dnmt;
+    a {
+        color: $dnavc;
+        text-decoration: underline;
+        [class^="view-"] {
+            display: none;
+        }
+        &[rel] {
+            margin-right: 20px;
+            .view-point {
+                display: inline;
+            }
+        }
+        &.show-map-btn {
+            .view-navigation {
+                display: inline;
+            }
+        }
+    }
+}
+
+#Map.map {
+    width: 100%;
+    height: 0;
+}
+
+.selected-address-detail {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $dsbbg;
+    padding: $dsbp;
+}
+
+.left-column,
+.back-btn,
+.toggle-map {
+    display: none;
+}
+
+
+
+body.view-map {
+    .dealer-form,
+    .mod-service-list-body {
+        display: none;
+    }
+    .page-nav {
+        .icon-dealer-map {
+            display: none;
+        }
+        .icon-dealer-list {
+            display: block;
+        }
+    }
+    #Map.map {
+        height: calc(100vh - #{$dhh});
+    }
+    .selected-address-detail:not(:empty) {
+        display: block;
+    }
+    .divServisListe_Koordinat {
+        a {
+            &[rel] {
+                display: none;
+            }
+        }
+    }
+}

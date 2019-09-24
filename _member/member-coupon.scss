@@ -1,0 +1,37 @@
+// --- ÜYE SAYFASI KUPON -- //
+
+// Kuponlarım listeleme sayfası
+.grid-table-coupon {
+    // Kuponlarım listeleme düzeni
+    .grid-row {  
+        border-bottom: 1px solid $memberLightGreyColor;
+        flex-wrap: wrap;
+        padding-bottom: $memberPadding10;
+        margin-bottom: $memberMargin20;
+        > div {
+            flex-direction: column;
+        }
+        .label { 
+            padding: 5px 10px 0px 0;
+            font-family: $memberFontBold;
+            font-size: $memberFontSize12; 
+            color: $memberGreyColor;
+        }
+        .form { 
+            padding: 8px 10px 15px 0;
+            flex-grow: 1;
+            align-items: center; 
+        }
+        
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    .grid-coupon-no {flex: 50%; word-break: break-all;} 
+    .grid-coupon-name {flex: 50%; word-break: break-all;}
+    .grid-coupon-date {flex: 50%;}
+    .grid-coupon-total {flex: 50%;}
+    .grid-coupon-use {flex: 50%;}
+    .grid-coupon-status {flex: 50%;} 
+}

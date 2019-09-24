@@ -1,0 +1,172 @@
+// --- SİPARİŞ DETAY --- //
+
+// Sipariş detay içerik bilgileri
+.order-detail-info { 
+    flex-wrap: wrap; 
+    > div {
+        flex: 100%; 
+        margin-bottom: 15px;  
+        .text {
+            color: $memberGreyColor; 
+            flex: 0 50%; 
+            padding-right: 10px;
+        }
+        .value {
+            font-family: $medium;
+            color: $memberDarkColor; 
+            &#plhParaBr {
+                font-family: cursive; 
+            }
+        }
+        &.full-flex {
+            flex: 1 100%;
+        }
+    } 
+    .no {  
+        font-size: $memberFontSize20; 
+        margin-bottom: $memberMargin30;
+        margin-bottom: 30px;
+        .text {
+            color: $memberDarkColor;
+            flex: none;
+        }
+        .value {
+            margin-left: 10px; 
+            font-family: $bold; 
+        }   
+    }
+    .act-btns {
+        border-top: 1px solid $memberLightGreyColor;
+        margin-bottom: 0; 
+        padding-top: 15px; 
+        flex: 1 100%;
+        flex-wrap: wrap;
+        > div {
+            margin-right:$memberMargin20;
+        }
+        #plhSipTekrarla {
+            a {
+                color: $memberBlueColor;
+            }
+        }
+    }
+    
+}
+
+// Sipariş detay adres
+.order-detail-address {
+    flex-wrap: wrap; 
+    > div {
+        flex: 1 100%;
+        padding-right: 20px;
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+            margin-bottom: 0; 
+        }
+    }
+    .order-address {
+        border-bottom:1px solid $memberLightGreyColor;
+        padding-bottom: $memberPadding20;
+        margin-bottom: $memberMargin20; 
+    }
+    .page-top-title {
+        flex: 1 100%;
+    }
+    .text {
+        color: $memberDarkColor;
+        font-family: $memberFontBold;
+        margin-bottom: 10px;  
+    }
+    .value {
+        line-height: $labelLineText;
+    }
+}
+
+// Sipariş detay sepet
+.grid-table-cart {
+    .grid-row {
+        border-bottom:1px solid $memberLightGreyColor;
+        padding-bottom: $memberPadding20;
+        margin-bottom: $memberMargin20; 
+        &:last-child {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        } 
+        > div {
+            &:empty {
+                display: none;
+            }
+        }
+        .grid-name {
+            a {
+                font-size: $memberFontSize14; 
+                font-family: $medium;
+                line-height: $memberLineHeight; 
+                color: $memberDarkColor; 
+            }
+        }
+        .ga1 {
+            margin-right: $memberMargin20; 
+            a {
+                display: inline-block; 
+                img {
+                    width: 100%;
+                    max-width: 100px; 
+                }
+            }
+        }
+        .ga2 {
+            flex-direction: column; 
+            align-items: normal;
+            > div {
+                margin-bottom: $memberMargin10; 
+            }
+            .form-obj {
+                margin-bottom: 0; 
+            }
+        }
+        .grid-piece {
+            color: $memberGreyColor;
+            font-size: $memberFontSize12;
+        }
+        .grid-price {
+            font-size: $memberFontSize16;
+            font-family: $memberFontBold;
+        }
+        .brFiyat {
+            color: $memberGreyColor;
+        }
+    }
+}
+
+// Sipariş Sonuç
+.order-detail-info-payment {
+    .pnlDipToplamTable {
+        flex-direction: column;
+        > div {
+            .text { 
+                &:empty {display: none;}
+                float: left;
+                margin-bottom: $memberMargin10;
+            }
+            .value {
+                &:empty {display: none;} 
+                float: right;
+                margin-bottom: $memberMargin10;
+            }
+            &.total {
+                font-family: $bold;
+            }
+            &.discount {
+                color: $colorRed;
+            }
+            &:last-child {
+                > div {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.pay-type-list{
+    width: calc(100% - 20% * 1);
+    ul{
+        li{
+            a{
+                font-size: $fontSize16;
+            }
+        }
+    }
+}
+//Odeme modulleri
+.pay-type-content{ 
+    div[id$="pnlKrediKartiBilgi"],
+    div[id$="pnlHavaleOdeme"]{
+        border-radius: $basketModuleRadius;
+    } 
+    //Odeme K karti modulu
+    div[id$="pnlKrediKartiBilgi"]{
+        padding:30px 390px 20px 20px;
+        min-height: 250px;
+    }
+}
+//Sanal kart
+.basket-card-wrapper{
+    position: absolute;
+    top: 30px;
+    right: 20px;    
+    display:block;
+}
+//Odeme Adres bilgileri ve siapris ozet alani
+.pay-address{
+    > ul > li{
+        width: calc(50% - 15px);
+        &:nth-child(2){
+            margin-top: 0;
+        }
+    }
+}
+//Havale odeme detay aciklama metni
+.payment-transfer{
+    padding-right: 100px;
+}
+//Diger odeme secenegi
+.OdemeBilgiPesinDigerOdemeNotu{
+    textarea{
+        width: 100% !important;
+        max-width: 50%;
+    }
+}
+//Odeme sayfas satis sozlesmeleri
+.pay-agreement{
+    display: block;
+}

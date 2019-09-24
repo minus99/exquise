@@ -1,0 +1,79 @@
+.article-container {
+    h1, h2 {
+        font-weight: normal;
+    }
+    span, h2, h3, p, b, strong {
+        line-height: $contentLineText;
+    }
+    span, p, b, strong {
+        color: $contentGreyColor;
+    }
+    // Yazı resim hizalama
+    .sec-double-text {
+        flex-wrap: wrap;
+        .text-wrap {
+            flex: 1 100%;
+            padding-right: 0;
+        }
+    }
+    // Üçlü dörtlü resim
+    .sec-trible-image {
+        flex-wrap: wrap;
+        .image-wrap {
+            flex: 1 100%;
+            &:last-child {
+                padding-right: 0;
+
+            }
+        }
+    }
+    .sec-four-image {
+        flex-wrap: wrap;
+        .image-wrap {
+            flex: 1 50%;
+            padding-right: $contentPadding10;
+            &:nth-child(2) {
+                padding-left: $contentPadding10;
+                padding-right: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+                padding-left: $contentPadding10;
+
+            }
+        }
+    }
+    
+    // Video
+    .sec-video {
+        .mejs__controls, .videoImg, .mejs__offscreen {display:none;} 
+    }
+}
+
+// Sayfa anket oylama 
+.content-scoring {
+    text-align: center;
+    border-top: 1px solid $contentLightGreyColor;
+    padding-top: $contentPadding20;
+    margin-top: $contentMargin20;
+    &.ems-success {
+        .content-scoring-text, .content-scoring-link {display: none;}
+        .content-scoring-successful {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+    }
+    .cntScrBtn {
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
+
+// İletişim Sayfası
+.pages-contact {
+    .form {
+        padding: 0 !important;
+    }
+    .page-top-title {display: none;}
+}

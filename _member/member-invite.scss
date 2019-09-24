@@ -1,0 +1,13 @@
+ // --- ÜYELİK ARKADAŞINI DAVET ET -- //
+ .kutuUyeDavet {
+    .kutuUyeDavet_lnkCokluDavet {
+        display: none; 
+    }
+    .kutuUyeDavet_email {
+        max-width: 330px;
+    }
+    .kutuUyeDavet_btnTavsiyeGonder, .kutuUyeDavet_email, .kutuUyeDavet_lbfAciklama {
+        margin-bottom: $memberMargin20;
+        text-align: left;
+    }
+ }

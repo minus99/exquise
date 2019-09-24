@@ -1,0 +1,99 @@
+//Sepet ust slider
+.basket-swiper{
+    //Sepet ust slider slide
+    .swiper-slide{
+        width: 93%;
+        background-color: $colorWhite;
+    }
+    //Sepet ust slider icerik
+    div.types{
+        padding: 10px;
+        min-height: 135px;
+        border-radius: $basketModuleRadius;
+        .image{
+            width: 90px;
+            margin-right: 10px;
+            img{
+                max-width: 120px;
+            }
+        }
+        .detail{
+            width: calc(100% - 90px);
+            flex-wrap: wrap;
+            > *{
+                width: 100%;
+            }
+            //kampanyali urun fiyatlari
+            .first{
+                font-family: $medium;
+                color: $colorAlternate;
+                text-decoration: $linkLineThrough;
+            }
+            .last{
+                font-family: $bold;
+                margin-right: 10px;
+            }
+        }
+    }
+    //Sepet ust slider yazı rengi
+    .prd-spc{
+        color: $colorRed;
+        font-size: $fontSize12;
+    }
+    //Sepet ust slider urun adı
+    .prd-name{
+        margin-top: $swiperNameTopSpace;
+        font-size: $fontSize14;
+    }
+    //Sepet ust slider ekle buton max-genislik
+    a.btnAlternateSmall{
+        max-width: $swiperAddButtonMaxWidth;
+    }
+    //Sepet üst slider sag ve sol oklar
+    .swiper-button-prev,
+    .swiper-button-next{
+        display: none;
+        margin-top: $basketSwiperArrowTop;
+    }
+    //Sepet ust slider bullet
+    .swiper-pagination {
+        margin-top: $basketSwiperBulletTopSpaceMb;
+        
+        //Varsayilan class gorunumu
+        &-bullet{
+            background: $colorBulltet;
+            width: 6px;
+            height: 6px;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        //Aktif class gorunumu
+        &-bullet-active{
+            background: $colorAlternate;
+        }
+    }
+}
+.swiper-button-next-static{
+    margin-left: 14px;
+}
+.swiper-button-prev-static{
+    margin-right: 14px;
+}
+.swiper-button-prev-static,
+.swiper-button-next-static{
+    position: relative;
+    left: inherit;
+    right: inherit;
+    margin-top: 0;
+}
+
+//Teslimat --- sepet de gelen slider siparis adimlarında tekrar duzenleniyor
+.page-basket-other{
+    //3'lu slider 
+    .basket-swiper{
+        //pagging icin alt bosluk veriliyor
+        .swiper-pagination{
+            margin-bottom: 30px;
+        }
+    }
+}

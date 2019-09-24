@@ -1,0 +1,46 @@
+//Sepet ust slider
+.basket-swiper{
+    .swiper-slide{ 
+        width: (100% / 3);
+    }
+    //Sepet ust slider icerik
+    div.types{
+        padding: 15px;
+        .image{
+            width: 100px;
+        }
+        .detail{
+            width: calc(100% - 120px);
+        }
+    }
+    //Sepet üst slider sag ve sol oklar desktop acılıyor
+    .swiper-button-next,
+    .swiper-button-prev{
+        display: block;
+    }
+    //Sepet ust slider ileri button
+    .swiper-button-next{
+        right: -45px;
+    }
+    //Sepet ust slider geri button
+    .swiper-button-prev{
+        left: -45px;
+    }
+    //Sepet ust slider bullet
+    .swiper-pagination {
+        margin-top: $basketSwiperBulletTopSpaceDt;
+        //Varsayilan class gorunumu
+        &-bullet{
+            width: 8px;
+            height: 8px;
+        }
+    }
+}
+//Teslimat sayfası ust slider ozellestirme
+.order-delivery {
+    .basket-swiper{
+        .swiper-slide{ 
+            width:100%;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+/* --- Favori Liste --- */
+.member-favorite {
+    del {color: $memberGreyColor;}
+    /* Favori Button */
+    .field-submit {
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .grid-row {
+        grid-template-columns: 30px 100px 1.5fr 1fr 0.5fr 1fr;
+        grid-template-rows: minmax(0, auto);
+        grid-template-areas: "AAA BBB CCC DDD EEE FFF";
+        column-gap: 10px; 
+        overflow: visible;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    /* Favori liste ürün bilgi */
+    .grid-name {
+        line-height: $memberLineHeight;
+    }
+    .grid-price {
+        .first {
+            color: $memberGreyColor;
+        }
+        .price-discount {
+            color: $memberRedColor;
+        }
+    }
+    .grid-remove {
+        margin-top: -26px; 
+        a {
+            span {
+                text-decoration: $linkUnderline; 
+                font-size: $memberFontSize12;
+            }
+        }
+    }
+    .grid-piece {
+        position: relative;
+        input {
+            width: 100% !important;
+            padding: $memberInputPadding;
+            line-height: 2;
+        }
+        .top-btn {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .bottom-btn {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+    }
+    a.btnFavSepeteAt {
+        span {
+            color: $memberBlueColor; 
+        }
+    }
+}
+
+/* favori dropdown */
+
+.urunListe_secenek1 { 
+    .dropdown-trigger {
+        display: block;
+        padding: $memberInputPadding;
+        background: $memberLightGreyColor;
+        border-color:$memberLightGreyColor;
+    }
+    .dropdown-options {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+        width: 100%;
+        margin: -1px 0 0 0;
+        padding: $memberPadding10;
+        background: $memberLightGreyColor;
+        border: 1px solid $memberLightGreyColor;
+    }
+    &.opened {
+        .dropdown-options {
+            display: block !important;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+ // --- SİPARİŞ DETAY İPTAL VE İADE --- //
+
+// Sipariş detay iptal
+
+.member-refund-request {
+
+    .field-submit {
+        flex-wrap: nowrap;
+        .form-obj {
+            margin-bottom: 0;
+            margin-right: $memberPadding10;
+            width: auto;
+        }
+        a {
+            width: auto;
+            display: inline-block;
+        }
+    }
+}
+
+// İadelerim Sayfası
+
+// --- ABONELİKLERİM -- //
+
+// Aboneliklerim listeleme sayfası
+.member-refund { 
+    // Aboneliklerim listeleme düzeni
+    .grid-row {
+        flex-wrap: nowrap;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        .label {
+            font-size: $memberFontSize14;
+            padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
+            display: none;   
+        }
+        .form { 
+            padding: $memberPadding15 $memberPadding10 $memberPadding15 0;
+        }
+        &:first-child {  
+            .label {  
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;   
+                height: 50px;
+            } 
+            .form {border-top: 1px solid $memberLightGreyColor;}
+        }
+    }
+    .grid-doc-no {flex: 1;} 
+    .grid-price {flex: 1;}
+    .grid-date {flex: 1;}
+    .grid-status {flex: 1;}
+    .grid-order-no {flex: 1;}
+    .grid-detail {flex: .5;} 
+
+    // İadelerim Sayfası Detayı
+
+    .grid-refund-detail {   
+        > div {
+            margin-bottom: 0; 
+        }
+    }
+    
+    .rtnTitle {
+        .rtnDate, .rtnReason, .rtnNote {
+            display: block;
+        }
+    }
+    .rtnPrdInf {
+        flex-wrap: nowrap; 
+        li {
+            flex: 1;
+        }
+    }
+}
+
+
+/*.member-refund  {
+    // İade Liste
+    .grid-row, .grid-header {
+        flex-wrap: nowrap;
+        flex: 1 100% !important;
+        > div {
+            flex: 1 100%;  
+            line-height: 16px;  
+        }
+    } 
+    .grid-header {
+        display: none;
+        margin-top: $memberMargin20;
+        > div {
+            font-size: $memberFontSize14;
+        }
+        .grid-detail {
+            span {
+                display: none;
+            }
+        }
+        &:first-child {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+    }
+    .grid-row {
+        .grid-detail { 
+            a {
+                span { 
+                    justify-content: flex-end; 
+                }
+            }
+        }
+        &:last-child { 
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: 0;
+        }
+    }
+}*/

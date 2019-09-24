@@ -1,0 +1,64 @@
+ // --- ABONELİKLERİM -- //
+
+// Aboneliklerim listeleme sayfası
+.grid-table-subscriptions {  
+    // Aboneliklerim listeleme düzeni
+    .grid-row {  
+        border-bottom: 1px solid $memberLightGreyColor;
+        flex-wrap: wrap;
+        padding-bottom: $memberPadding10;
+        margin-bottom: $memberMargin20;
+        > div { 
+            flex-direction: column;
+        }
+        .label { 
+            padding: 5px 10px 0px 0;
+            font-family: $memberFontBold;
+            font-size: $memberFontSize12; 
+            color: $memberGreyColor;
+        }
+        .form { 
+            padding: 8px 10px 15px 0;
+            flex-grow: 1;
+            align-items: center; 
+        }
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    .grid-name {
+        flex: 0 70%; 
+        word-break: break-all;
+        .label {display: none;}
+        .form {
+            text-decoration: $linkUnderline;
+        }
+    } 
+    .grid-price {
+        flex: 0 25%;
+        .label {display: none;}
+    }
+    .grid-date {flex: 0 25%;}
+    .grid-status {flex: 0 25%;}
+    .grid-date.afterDate {flex: 0 25%;}
+    .grid-use {
+        flex: 0 100%; 
+        white-space: nowrap; 
+        a {
+            color: $memberBlueColor;
+            --color1:  $memberBlueColor;
+            font-family: $medium;
+            padding: 0; 
+        }
+        .form {
+            padding: 8px 10px 0px 0 !important;
+            span {
+                align-items: center;
+            }
+        }
+        svg {
+            float: right; 
+        }
+    } 
+}

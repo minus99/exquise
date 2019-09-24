@@ -1,0 +1,23 @@
+.member-favorite {
+    .grid-row {
+        flex-wrap: nowrap;
+        .ga1 {flex:1;} 
+        .ga2 {flex: none; margin-top:0;}
+        border: 0;
+    }
+    .field-submit {
+        justify-content: left;
+    }
+    .grid-remove {
+    }
+    .grid-price { 
+        .price-wrapper {
+            font-size: $memberFontSize16;  
+        }
+    }
+    .grid-piece { 
+        input { 
+            width: 60px !important;
+        }
+    }
+} 

@@ -1,0 +1,65 @@
+ // --- KURUMSAL SOL MENÜ -- //
+
+.kutuSolMenuTree {
+    background: $colorWhite;
+    border-radius: $memberBorderRadius4; 
+    display: none;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    .sev2 {
+        > a {
+            font-family: $memberFontMedium;
+            font-size: $memberFontSize20; 
+            padding: $memberPadding20;
+            display: block;
+        }
+    } 
+    .sev3 {
+        border-top: 1px solid $borderColor;
+        position: relative;
+        a {
+            color: $contentDarkColor;
+            padding: 20px 50px 20px 20px;
+            display: block;
+            transition: all .2s ease;
+            -webkit-transition: all .2s ease;
+            -o-transition: all .2s ease;
+            &:hover {
+                color: $btnAlternateColor;
+                padding: 20px 50px 20px 30px;
+                &:after {
+                    opacity: 1;
+                    right: 20px;
+                }
+            }
+            &:after {
+                content: '';
+                //background: url('/images/frontend/menu-arrow.svg');
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMzRDVERUIiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTYgMTVoMTR2LTNsNiA0LTYgNHYtM0g2eiIvPgo8L3N2Zz4K);
+                width:32px;
+                height: 32px;
+                position: absolute;
+                right: 40px;
+                top: 50%;
+                opacity: 0;
+                transform: translateY(-50%); 
+                display: inline-block; 
+                transition: all .2s ease;
+                -webkit-transition: all .2s ease;
+                -o-transition: all .2s ease;
+            }
+        }
+        &.act {
+            a {
+                color: $btnAlternateColor;
+                padding: 20px 50px 20px 30px;
+                border-bottom: 0;
+                &:after {
+                    opacity: 1;
+                    right: 20px;
+                }
+            }
+        }
+    }
+}

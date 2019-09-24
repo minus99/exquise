@@ -1,0 +1,77 @@
+//Teslimat Adres yok
+.address-none{
+    > span{
+        max-width: 780px;
+        margin-top: 0;
+        margin-left: $mLeftAuto;
+        margin-right: $mRightAuto;
+    }
+}
+//Teslimat adres grid row
+.grid-table-row-address{
+    @extend .display-grid;
+    grid-auto-columns: minmax(0,200px) minmax(0,1fr) minmax(0,250px);
+    grid-template-areas:"A B B D" "A C C D";
+    grid-template-rows: minmax(0,auto);
+    //Default verilen genislikler sabitleniyor
+}
+//Teslimat adres adı
+.grid-address-name{
+    grid-area: A;
+    align-self: flex-start;
+    width: 80%;
+}
+//Teslimat adres alani
+.grid-address{
+    grid-area: B;
+    align-self: flex-start;
+    width: 100%;
+    margin-top: 0;
+}
+//Teslimat adres butonları
+.grid-address-buttons{
+    //Mobile css resetleniyor
+    position: inherit;
+    top: inherit;
+    right: inherit;
+    width: 100%;
+
+    grid-area: C;
+    //Sola hizlama default class eziliyor
+    .justify-end{
+        justify-content: flex-start;
+    }
+    //Butonların yüksekliği arttırılıyor
+    a.btnDefault {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+//Adres secim alanı
+.grid-address-select{
+    grid-area: D;
+    padding-right: 8%;
+    align-self: center;
+    justify-self: end;
+    margin-top: 0;
+}
+
+//Adress form sepete ozel hizalanıyor
+.page-basket{
+    .new-address{
+        display: table;
+        width: 100%;
+        max-width: 780px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: $basketModuleRadius;
+    }    
+}
+//Magazadan teslim
+.magazadanTeslim {
+    > a{
+        font-size: $fontSize16;
+        padding: 14px 20px;
+    }
+}

@@ -1,0 +1,59 @@
+/*.grid-default-address {
+    .grid-adress-row {
+        grid-template-columns: 1fr 70%;  
+        grid-template-rows: minmax(0, auto); 
+        grid-template-areas: 
+        "AAA BBB"
+        "AAA CCC"
+        "AAA DDD" 
+        ;
+        column-gap: 20px;
+        border-bottom: 1px solid $borderColor;
+        margin-bottom: $memberMargin20; 
+        padding-bottom: $memberPadding20; 
+        &:last-child {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    }
+    .grid-address-name {
+        font-family: $memberFontBold;
+        font-size: $memberFontSize16;
+        line-height: $memberLineHeight;
+        span {
+            display: block;
+            font-family: $memberFontRegular;
+            font-size: $memberFontSize12;
+            color: $memberGreyColor;
+        }
+    }
+    .grid-address {
+        font-family: $memberFontRegular;
+        font-size: $memberFontSize14;
+        color: $memberDarkColor;
+        line-height: $memberLineHeight; 
+    }
+
+    .grid-address-select:empty {display: none;}
+
+    .address-buttons {
+        a {
+            display:inline-block;
+            width: auto; 
+            background: none;  
+            color: $memberGreyColor; 
+            font-family: $memberFontRegular;
+            font-size: $memberFontSize12;
+            line-height: $memberLineHeight;
+            text-decoration: $memberDecUnderline; 
+            padding: 0;
+            margin-right: $memberMargin20;
+            span {
+                color: $memberGreyColor; 
+                font-size: $memberFontSize12;
+                font-family: $memberFontRegular;
+            }
+        }
+    }
+}*/

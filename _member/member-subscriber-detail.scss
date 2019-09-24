@@ -1,0 +1,92 @@
+// --- ABONELİKLERİM DETAY --- //
+
+// Abonelik detay içerik bilgileri
+.subscriptions-detail-info { 
+    flex-wrap: wrap;
+    > div {
+        flex: 100%; 
+        margin-bottom: 15px;  
+        .text {
+            color: $memberGreyColor; 
+            flex: 0 50%; 
+            padding-right: 10px;
+        }
+        .value {
+            font-family: $medium;
+            color: $memberDarkColor; 
+            &#plhParaBr {
+                font-family: cursive; 
+            }
+        }
+        &.full-flex {
+            flex: 1 100%;
+        }
+    } 
+    .act-btns {
+        border-top: 1px solid $memberLightGreyColor;
+        margin-bottom: 0; 
+        padding-top: 15px; 
+        flex: 1 100%;
+        flex-wrap: wrap;
+        > div {
+            margin-right:$memberMargin20;
+        }
+        #plhBtnAbuIptalEt {
+            a {
+                span {
+                    color: $memberBlueColor;
+                }
+            }
+        }
+    }
+} 
+
+.page-default-subscriptions-detail {
+    .page-top-desc {
+        margin-bottom: 0; 
+    }
+}
+
+// --- ABONELİKLERİM DETAY LİSTE -- //
+
+// Aboneliklerim listeleme sayfası
+.grid-table-subscriptions-detail {
+    // Aboneliklerim listeleme düzeni
+    .grid-row {   
+        border-bottom: 1px solid $memberLightGreyColor;
+        flex-wrap: wrap;
+        padding-bottom: $memberPadding10;
+        margin-bottom: $memberMargin20;
+        > div { 
+            flex-direction: column;
+        }
+        .label { 
+            padding: 5px 10px 0px 0;
+            font-family: $memberFontBold;
+            font-size: $memberFontSize12; 
+            color: $memberGreyColor;
+        }
+        .form { 
+            padding: 8px 10px 15px 0;
+            flex-grow: 1;
+            align-items: center; 
+            &:empty {
+                &:before {
+                    content: '-';
+                }
+            }
+        }
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    .grid-date {flex: 0 33.333%;}
+    .grid-order-no {flex: 0 33.333%;} 
+    .grid-total {flex: 0 33.333%;}
+    .grid-status {flex: 0 33.333%;}
+    .grid-info {flex: 1 33.333%;} 
+    
+}
+
+// Aboneliklerim Güncelleme

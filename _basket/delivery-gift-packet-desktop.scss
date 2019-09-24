@@ -1,0 +1,21 @@
+.gift-tab{
+    //Hediye paketi arka plan poziyonu desktop icin
+    background-position: 95% 0;
+    border-radius: $basketModuleRadius;
+
+    //title alani
+    &-hdr{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    //Content alani
+    &-wrp{
+        //Desktop ozel padding
+        padding-left:20px;
+        padding-right:20px;
+    }
+    //Not alani
+    textarea{
+        height: 75px;
+    }
+}

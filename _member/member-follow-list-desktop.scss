@@ -1,0 +1,16 @@
+// --- ÜYELİK FAVORİ -- //
+.member-follow-list {
+    .grid-row {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+    .price-wrapper { 
+        font-size: $memberFontSize16;
+    }
+    .grid-img {
+        padding-right: $memberPadding20;
+    }
+    .grid-content {
+        padding-right: $memberPadding20;
+    }
+}

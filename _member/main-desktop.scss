@@ -1,0 +1,33 @@
+
+// --- FORM DÜZENLEMLERİ -- //
+.field {
+    flex: 1;
+}
+.form-obj {
+    input {
+        //max-width: $formInputMaxWidth;
+    }
+}
+
+.sStylerWrp_select .sStylerWrp {
+    //max-width: $formInputMaxWidth;
+}
+
+// Üyelik genel sayfa yapısı
+.member-grid { 
+    .member-general {
+        padding: $memberPadding20;
+    }
+}
+
+/* Member Alternatif Button */
+.member-back {
+    margin: 0;
+}
+
+// Üyelik genel sayfa yapısı
+.member-grid{
+    .member-general {
+        border-radius: $memberBorderRadius4;
+    } 
+}

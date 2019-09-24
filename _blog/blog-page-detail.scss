@@ -1,0 +1,11 @@
+.pages-blog-detail {
+    .article-container {
+        display: -ms-grid;   
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(0,50%) minmax(0,25%) minmax(0,25%));     
+        grid-gap: 30px;
+    }
+    .sec-main-image {
+        grid-area: aaa; 
+    } 
+}

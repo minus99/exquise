@@ -1,0 +1,43 @@
+//Siparis adımları
+.basket-steps{
+    max-width: 500px;
+    margin-left: $mLeftAuto;
+    margin-top: -80px;
+    margin-right: $mRightAuto;
+    min-height: 80px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.tabloTabBtnAdim{
+    > tbody > tr > td{
+        min-height: 80px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .tabBtnAdimDefault,
+    .tabBtnSelectedDefault{
+        &:after{
+            width: 6px;
+            height: 6px;
+        }
+    }
+    .tabBtnAdimDefault{
+        .step-txt{
+            color: $colorWhite;
+        }
+        .icon{
+            color: $stepIconColorAlternate;
+        }
+    }
+    .tabBtnSelectedDefault{
+        .icon{
+            color: $colorWhite;
+        }
+        .step-txt{
+            color: $colorWhite;
+            opacity: inherit;
+        }
+    }
+}

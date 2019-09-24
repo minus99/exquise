@@ -1,0 +1,80 @@
+.page-basket{
+    //Sepet sayfası ust bosluk
+    &-inner{
+        padding-top: $basketPageTopSpaceDt;
+    }
+}
+
+//Sepet sayfası desktop yerlesim izgrasi
+.page-basket-0{
+    //Sepet row 1 swiper alt bosluk
+    .rw1{
+        //Slider okları icin bosluk veriliyor
+        padding-left: 3%;
+        padding-right: 3%;
+
+        //Desktop icin slider'a alt bosluk eziliyor
+        margin-bottom: $swiperTopBottomSpace;
+    }
+
+    //Sepet ilk adım grid ızgarasi
+    .basket-grid {
+        grid-template-columns: minmax(0,3%) minmax(0,33%) minmax(0,33%) minmax(0,33%) minmax(0,3%);
+        grid-template-areas:". AAA AAA BBB ." ". CCC CCC CCC .";
+        margin-bottom: 40px;   
+    }
+    //Sepet urunler sağ padding boslugu
+    .ga1{
+        padding-right: $basketPageRightPadding;
+    }
+    //Sepet ozet sol padding boslugu
+    .ga2{
+        padding-left: $basketPageLeftPadding;
+    }
+}
+
+//teslimat ve odeme adimlari sayfa izgarasi
+.basket-grid-2{
+    grid-template-columns: minmax(0,3%) minmax(0,33%) minmax(0,33%) minmax(0,33%) minmax(0,3%);
+    grid-template-areas: ". AAA AAA BBB .";
+    padding-bottom: 30px;
+    
+    //Sepet sonraki adimlar icin sol kolon bosluk
+    > .ga1{
+        padding-right: $deliveryPageLeftPadding;
+    }
+}
+//Teslimat siparis ozet
+.order-delivery{
+    > .ga2{
+        .next {
+            padding-left:20px;
+            padding-right:20px;
+        }
+        .block2{
+            border-radius: 0 0 4px 4px;
+            padding-bottom:20px;
+            background: $colorWhite;
+        }
+    }
+}
+//Desktop sabit margin boslukari
+.m-left-15-to-0{
+    margin-left: 0;
+}
+.m-right-15-to-0{
+    margin-right: 0;
+}
+
+//Sepet bos duzenlemesi
+.basket-none{
+    .page-basket-0{
+        .basket-grid{
+            grid-template-columns:minmax(0,3%) 1fr minmax(0,3%);
+            grid-template-areas: ". AAA .";
+        }
+        .ga1{
+            padding: 30px;
+        }
+    }
+}

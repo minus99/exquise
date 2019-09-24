@@ -1,0 +1,86 @@
+.order-steps{
+    //Sepet sayfası arka plan rengi -- Opsiyonel
+    background:$globalPageBg;
+}
+.page-basket{
+    //Sepet sayfası ust bosluk
+    &-inner{
+        padding-top: $basketPageTopSpaceMb;
+    }
+}
+
+//Sepet sayfası desktop yerlesim izgrasi
+.page-basket-0{
+    //Sepet row 1 swiper alt bosluk
+    .rw1{
+        //Mobile icin slider'a sol ve sag bosluklari veriliyor
+        padding-left: 10px;
+        padding-right: 10px;
+
+        //Mobile icin slider'a alt taraftan bosluk veriliyor
+        margin-bottom:25px;
+    }
+}
+
+//Sepet adimlari üst basliklari
+.title-middle{
+    font-family: $medium;
+    font-size: $basketPageTopTitle;
+    //Bos ise gizleniyor
+    &:empty{
+        display: none;
+    }
+}
+//Sepet adimlari spet ozel üst baslik
+.title-middle-basket{
+    padding: $orderGridTitlePdng;
+}
+
+//Siparis adimlarindaki opsiyonel kontroller
+.page-basket-other{
+    //Siparis adimlari icin gizlenecek alanlari belirleyen class
+    .optionally-hidden{
+        display: none !important;
+    }
+    //Sepet ilk adımdaki grid siparis adımlarında eziliyor
+    .basket-grid{
+        display: block;
+    }
+}
+//Mobile sabit margin boslukari
+.m-left-15-to-0{
+    margin-left: 15px;
+}
+.m-right-15-to-0{
+    margin-right: 15px;
+}
+//webkit scroll class
+.scroll-webkit{
+    ::-webkit-scrollbar {width:4px;}
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb{-webkit-border-radius: 2px; border-radius: 2px;}
+    ::-webkit-scrollbar-track {background-color:#202020;}
+    ::-webkit-scrollbar-thumb {background-color:#d8d8d8;}
+    ::-webkit-scrollbar-thumb:window-inactive {background-color:#d8d8d8;}
+}
+//Sepet bos duzenlemesi
+.basket-none{
+    .page-basket-0{
+        .rw1,
+        .ga2,
+        .ga1 .grid-table-wrap,
+        .basket-buttons {display: none;}
+
+        .ga1{
+            background: #fff;
+            padding:50px 10px;
+            text-align: center;
+        }
+    }
+}
+.basket-null{
+    > span{
+        font-family: $medium;
+        font-size:$fontSize16;
+    }
+}

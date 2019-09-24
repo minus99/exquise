@@ -1,0 +1,45 @@
+.gift-tab{
+    //Hediye paketi arka plan
+    background:url(#{$baseHref + "/images/frontend/gift-packet-bg.png"} ) no-repeat $giftPacketBg;
+    background-position: 99% 0;
+    margin-bottom: $giftPacketMb;
+
+    //title alani
+    &-hdr{
+        width: calc(100% - 20%);
+        padding:15px 8px 15px 8px;
+    }
+    //Content alani
+    &-wrp{
+        display: none;
+        width: calc(100% - 15%);
+        padding-left:15px;
+        padding-right:15px;
+        padding-bottom:20px;
+        //kisa metin alani
+        .form-label{
+            span{
+                @extend .display-block;
+                font-family:$regular;
+                color: $colorDefault;
+                line-height: 1.20;
+                padding-bottom: 10px;
+            }
+        }
+        //Not alani
+        textarea{
+            width: 100% !important;
+            max-width: 450px;
+            resize: none;
+            height: 60px;
+            padding-right: 15px;
+            border: none !important;
+        }
+    }
+    //Hediye paketi isaretli ise
+    &-opened{
+        .gift-tab-wrp{
+            display: block;
+        }
+    }
+}

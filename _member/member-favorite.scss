@@ -1,0 +1,161 @@
+// --- ÜYELİK FAVORİ -- //
+
+/* --- Favori Liste --- */
+.member-favorite {
+    del {color: $memberGreyColor;}
+    /* Favori Button */
+    .field-submit {
+        flex-wrap: nowrap; 
+        width: 100%;
+        justify-content: center;
+        padding-bottom: $memberPadding20; 
+    }
+    // Favori Liste Özellikleri
+    .grid-row {
+        overflow: visible;
+        flex-wrap: wrap;
+        position: relative;
+        border-bottom: 1px solid $memberLightGreyColor;
+        padding-bottom: $memberPadding20;
+        margin-bottom: $memberMargin20;
+        > div {
+            padding-right: $memberPadding10;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        .ga1 {flex:100%;} 
+        .ga2 {flex:100%; margin-top:$memberMargin20;}   
+        &:last-child {
+            padding-right: 0;
+            border-bottom: 0;
+            padding-bottom: 0; 
+            margin-bottom: 0; 
+        }
+    }
+
+    /* Favori liste ürün bilgi */
+
+    /* --- Favori Sol Alan --- */
+    // Checkbox   
+    .grid-select {flex: 1 37px;}
+    // Görsel
+    .grid-img {
+        flex: 1 120px;  
+        padding-right: $memberPadding10;
+        img {
+            width: 100px;
+        }
+        a {
+            display: inline-block;
+        }
+    } 
+    // Ad fiyat indirim kapsayıcı
+    .grid-content {flex: 1 100%;}
+    .grid-name {line-height: $labelLineText;} 
+    // Fiyat
+    .grid-price {
+        .price-wrapper {
+            flex-wrap: wrap;
+        }
+        .price {
+            white-space: nowrap; 
+        }
+        .first {
+            color: $memberGreyColor;
+        }
+        .price-discount {
+            color: $memberRedColor;
+            .dvSepetKazancOran {
+                &:empty ~ {
+                    .dvSepetKazancOranLabel {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    /* --- Favori Sağ Alan --- */ 
+
+    // Beden
+    .grid-option {flex: 1 30%; margin-right: $memberMargin10; min-width: 120px;}
+    // Sepete ekle gelince haber ver
+    .grid-report {
+        flex: 1 60%;
+        a {
+            white-space: nowrap;
+        }
+    }
+    // Kaldır
+    .grid-remove {
+        margin-top: 0;
+        position: absolute;
+        top: -10px;
+        right: 0; 
+        a {
+            span {
+                text-decoration: $linkUnderline; 
+                font-size: $memberFontSize12;
+            }
+        }
+    }
+    // Adet
+    .grid-piece {
+        position: relative;
+        flex: 1 20%; 
+        margin-right: $memberMargin10;
+        input {
+            width: 100% !important;
+            padding: $memberInputPadding;
+            line-height: 2;
+        }
+        .top-btn {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .bottom-btn {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+    }
+    // Button
+    a.btnFavSepeteAt {
+        span {
+            color: $memberBlueColor; 
+        }
+    }
+}
+
+/* favori dropdown */
+
+.urunListe_secenek1 { 
+    .dropdown-trigger {
+        display: block;
+        padding: $memberInputPadding;
+        background: $memberLightGreyColor;
+        border-color:$memberLightGreyColor;
+    }
+    .dropdown-options {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+        width: 100%;
+        margin: -1px 0 0 0;
+        padding: $memberPadding10;
+        background: $memberLightGreyColor;
+        border: 1px solid $memberLightGreyColor;
+        a {
+            margin-bottom: $memberMargin5; 
+            display: block;
+        }
+    }
+    &.opened {
+        .dropdown-options {
+            display: block !important;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+input, textarea, select,
+.sStylerWrp_select .sStylerWrp{
+    width: 100%;
+}
+//Flex icin wrap ozelligi belirleniyor
+.flex-field-wrap{
+    flex-wrap: wrap;
+}
+//Forms field icin genislikler belirleniyor
+.field{
+    width: 100%;
+}
+.form-obj{
+    //Form field icin margin bottom kullanılmak istenmiyor ise .mb-0 class'ı kullanilmali
+    &.mb-0{
+        margin-bottom: 0;
+    }
+}
+textarea{
+    padding: 10px;
+    border: 1px solid #cecfd4 !important;
+    border-radius: 2px;
+    resize: none;
+    height: 90px;
+    max-width: 100%;
+}
+input[type=radio]{
+    margin: 0;
+    outline: 0;
+}

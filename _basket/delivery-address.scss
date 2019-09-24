@@ -1,0 +1,175 @@
+//Teslimat Adres yok
+.address-none{
+    > span{
+        @extend .message;
+        @extend .message-error;
+        margin-left: $addressNoneMargin;
+        margin-right: $addressNoneMargin;
+    }
+}
+//Teslimat adres grid row
+.grid-table-address{
+    background: $colorWhite;
+    border-radius: $basketModuleRadius;
+    .grid-table-row {
+        padding: 20px;
+        @extend .relative;
+    }
+}
+//Teslimat adres rows
+.grid-table-row-address {
+    flex-wrap: wrap;
+    &:not(:first-child){
+        &:before{
+            @extend .grid-brdr;
+        }
+    }
+}
+//Teslimat adres adı
+.grid-address-name{
+    width: 50%;
+    color: $colorDefault;
+    font-size: $fontSize14;
+    font-family: $bold;
+    > span{
+        @extend .display-block;
+        color: $colorAlternate;
+        font-family: $regular;
+        font-size: $fontSize12;
+        margin-top: 5px;
+    }
+}
+//Teslimat adres butonları
+.grid-address-buttons{
+    width: 33.33333%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    a.btnDefault {
+        width: auto;
+        line-height: 18px;
+        @extend a.btnLink;
+
+        //Butonlar arasi bosluk
+        &:not(:first-child){
+            margin-left:15px; 
+         }
+    }
+}
+//Teslimat adres alani
+.grid-address{
+    width: 100%;
+    margin-top: 10px;
+}
+//Adres secim alanı
+.grid-address-select{
+    margin-top: 15px;    
+}
+
+//Adress form
+.new-address{
+    background: $colorWhite;
+    padding: 20px 15px;
+    //Adres ekleme baslik alanı alt bosluk
+    .title-middle{
+        margin-bottom: 20px;
+    }
+    .form-inner{
+        flex-wrap: wrap;
+    }
+    //Adres form hata HTML'i icin alt bosluk
+    .pageErrorDefault {
+        .message {
+            margin-bottom: 20px;
+        }
+    }
+}
+//Kurumsal secim icin duzenleme
+div.kurumsal{
+    .field{
+        &.tcCheck,
+        &.tcCheck-2{
+            .form-obj{
+                @extend .mb-0;
+            }
+        }
+    }
+}
+//Bireysel secim icin duzenleme
+div.bireysel{
+    .field{
+        &.tcCheck,
+        &.tcCheck-2{
+            .form-obj{
+                @extend .mb-0;
+            }
+        }
+        &.tcCheck{
+            input{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+//Adres tip secimi
+div[id$="plhAdresTipi"]{
+    > a{
+        @extend .inline-block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        margin-bottom: 13px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iNyIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiM2OTZCNzEiLz48L3N2Zz4=);
+        background-position: center left;
+        background-repeat: no-repeat;
+        padding-left: 35px;
+        color: $colorDefault;
+        //Ilk elemean icin sagdan bosluk veriliyor
+        &:first-child{
+            margin-right: 40px;
+        }
+        //Secili durum
+        &.emos_selected{
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjciIGZpbGw9IiMzRDVERUIiLz4gICAgICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjMiIGZpbGw9IiNGRkYiLz4gICAgPC9nPjwvc3ZnPg==);
+        }
+        //Hover durum
+        &:hover{
+            color: inherit;
+        }
+    }
+}
+//Magazadan teslim
+.magazadanTeslimKapsayici{
+    flex-wrap: wrap;
+}
+.magazaAdres{
+    font-size: $fontSize12;
+    padding-top: 20px;
+    color: $colorAlternate;
+    line-height: 1.5;
+    &:empty{
+        @extend .is-empty;
+    }
+}
+.magazadanTeslim {
+    display: table;
+    table-layout: fixed;
+    width: auto;
+    > a{
+        display: table-cell;
+        vertical-align: middle;
+        padding:11px 15px;
+        background: #cecfd4;
+        border-radius: 4px 4px 0 0;
+        font-family: $medium;
+        font-size: $fontSize12;
+        &.selected{
+            background: $colorWhite;
+        }
+    }
+}
+//Magaza listesi
+.magazadanTeslimServis{
+    width: $fullWidth;
+    background: $colorWhite;
+    padding: 20px;
+}

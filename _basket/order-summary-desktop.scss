@@ -1,0 +1,86 @@
+//siparis ozet masaustu ızgara
+.order-summary{
+    //Siparis sepet ozet
+    order: 1;
+    padding-bottom: $orderSummaryPadding;
+    margin-bottom: $orderSummaryMarginBottomDesktop;
+    border-radius: $basketModuleRadius;
+    margin-top: $orderSummaryDtTopSpc;
+    //Siparis ozet avantaj ikonları
+    &-benefit{
+        order: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    //Siparis ozet yardim
+    &-help{
+        order: 3;
+    }
+    //Siparis ozet button alisveris
+    .next {
+        a.btnDefault{
+            margin-top: $orderSummaryButtonNextTopSpace;
+        }
+    }
+}
+
+//Sepet satin al butonlari desktop
+.basket-grid .next,
+.basket-grid-2 .next {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    z-index: inherit;
+    > a.btnDefault{
+        min-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.basket-grid .next{
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+.basket-grid-2 .next{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.order-payment .basket-grid-2 .next{
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+//sepet ilk adım sticky duzenlemesi
+.page-basket-0{
+    .order-summary{
+        &-sticky{
+            height: 100%;
+            position: relative;
+        }
+        &-wrapper{
+            position: sticky;
+            top: 80px;
+            z-index: 5;
+        }
+    }
+}
+
+//Teslimat ve odeme sayfalari ozel css
+.basket-grid-2{
+    .ga2{
+        .block2{
+            height: 100%;
+        }
+        .wrapper{
+            position: sticky;
+            top: 80px;
+            z-index: 5;
+        }
+    }
+    //Siparis adimlari icin alt bosluk resetleniyor
+    .order-summary{
+        margin-bottom: 0;
+    }
+}

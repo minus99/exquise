@@ -1,0 +1,107 @@
+//Site varsayilan butonlar
+a.btnDefault{
+    display: block;
+    width: 100%;
+    background: $btnBackground; 
+    border-radius: $buttonRadius;
+    text-align: center;
+    padding: 16px 3px 16px 3px;
+    > span{
+        font-family: $bold;
+        color: $colorWhite;
+        font-size: $fontSize16;
+    }
+}
+//Site alternatif butonlar
+a.btnAlternate{
+    display: block;
+    width: 100%;
+    background: none;
+    border:1px solid $btnBorder;
+    padding: 10px 3px 10px 3px;
+    text-align: center;
+    border-radius: $buttonRadius;
+    > span{
+        font-family: $bold;
+        color: $btnAlternateColor;
+        font-size: 16px;
+    }
+}
+//Site alternatif yazı boyutu kücük butonlar
+a.btnAlternateSmall{
+    padding-top: 7px;
+    padding-bottom: 6px;
+    > span{
+        font-size: 14px;
+    }
+}
+//Site altı cizili butonları
+a.btnLink, a.btnLink > span{
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 12px;
+    font-family: $regular;
+    color: $linkButtonColor;
+    text-decoration: $linkUnderline;
+}
+//Site arka plansız butonlar
+a.btnAlisverisDevam,
+a.btnSepetBosalt,
+a.btnAdresEkle{
+    background: none;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    > span{
+        font-family:$regular;
+        color: $colorAlternate;
+        font-size: $fontSize14;
+        @extend .display-flex;
+        @extend .align-items-center;
+    }
+}
+//Arka plansız buton sagdan margin ikon
+a.btnRightIcon{
+    .icon{
+        @extend .m-rght-5;
+    }
+}
+//Arka plansız buton soldan margin ikon
+a.btnLeftIcon{
+    .icon{
+        @extend .m-lft-5;
+    }
+}
+//Arka plansız yanlız ikon barındıran buton tipleri
+a.btnHediyeCekiKullan,
+a.btnHediyeCekiIptal,
+a.btnTesAdrSec,
+a.btnFatAdrSec,
+a.btnSatisSozlesmeOnizle,
+a.btnOnBilgilendirmeFormOnizle,
+a.btnHvlBnkSec,
+a.btnOdemeCekiEkle{
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    > span{
+        @extend .display-flex;
+        @extend .align-items-center;
+        color: $colorDefault;
+        font-family: $regular;
+        font-size: $fontSize14;
+    }
+}
+//Absolute Sag tarafa hizalı transparan tum Buttonlar
+.cart-coupon .form-obj table{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -16px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+}

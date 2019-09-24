@@ -1,0 +1,206 @@
+ // --- SİPARİŞ DETAY İPTAL VE İADE --- //
+
+// Sipariş detay iptal içerikleri
+
+.member-refund-request {
+    .grid-row {
+        border-top: 1px solid $memberLightGreyColor; 
+        padding-top: $memberPadding20;
+        margin-top: $memberMargin20; 
+        border-bottom: 0;  
+        padding-bottom: 0;
+        margin-bottom: 0;  
+        &:last-child {
+            border-top: 1px solid $memberLightGreyColor; 
+            padding-top: $memberPadding20;
+            margin-top: $memberMargin20; 
+            border-bottom: 1px solid $memberLightGreyColor; 
+            padding-bottom: $memberPadding20;
+            margin-bottom: $memberMargin20; 
+        }
+        .grid-piece {
+            .sStylerMainWrp {
+                margin-right: $memberPadding5;
+            }
+        }
+    }
+    .field-submit {
+        margin-top: $memberPadding20; 
+        width: 100%;
+        flex-wrap: wrap;
+        .form-obj {
+            margin-right: 0;
+            margin-bottom: $memberPadding20;
+            width: 100%;
+        }
+        a {
+            padding: $memberBtnDefaultPadding;  
+        }
+    }
+}
+
+// --- İADELERİM SAYFASI --- //
+
+// İadelerim listeleme sayfası
+.member-refund {
+    // İadelerim listeleme düzeni
+    .grid-row {  
+        border-bottom: 1px solid $memberLightGreyColor;
+        flex-wrap: wrap;
+        padding-bottom: $memberPadding10;
+        margin-bottom: $memberMargin20;
+        > div { 
+            flex-direction: column;
+        }
+        .label { 
+            padding: 5px 10px 0px 0;
+            font-family: $memberFontBold;
+            font-size: $memberFontSize12; 
+            color: $memberGreyColor;
+        }
+        .form { 
+            padding: 8px 10px 15px 0;
+            flex-grow: 1;
+            align-items: center; 
+        }
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    .grid-doc-no {flex: 0 33.333%;} 
+    .grid-price {flex: 0 33.333%;}
+    .grid-date {flex: 0 33.333%;}
+    .grid-status {flex: 0 33.333%;}
+    .grid-order-no {flex: 1 33.333%; word-break: break-all;}
+    .grid-detail { 
+        flex: 0 100%; 
+        white-space: nowrap; 
+        .label {display: none;}
+        a {
+            color: $memberBlueColor;
+            --color1:  $memberBlueColor;
+            font-family: $medium;
+            padding: 0; 
+            span {
+                color: $memberBlueColor;
+            }
+        }
+        .form {
+            padding: 8px 10px 0px 0 !important;
+            span {
+                align-items: center;
+            }
+        }
+        svg {
+            float: right; 
+        }
+    } 
+
+     // İadelerim Sayfası Detayı
+
+     .grid-refund-detail {   
+        flex: 1 100%;
+        > div {
+            padding: $memberPadding10;
+            margin-bottom: $memberMargin20;
+            background: $memberLightGreyColor;
+            &:empty {
+                display: none;
+            }
+        }
+    }
+    .rtnTitle { 
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+        font-family: $memberFontBold;
+        color: $memberGreyColor;
+        border-bottom: 1px solid $memberGreyColor; 
+        padding-top: $memberPadding10; 
+        padding-bottom: $memberPadding20;
+        margin-bottom: $memberMargin20;  
+        li {
+            flex: 1;
+        }
+        .rtnDate, .rtnReason, .rtnNote {
+            display: none;
+        }
+    }
+    .rtnPrdInf {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $formInputBorderColor;
+        padding-bottom: $memberPadding10;
+        margin-bottom: $memberMargin20; 
+        li {
+            flex: 33.333%;
+            padding-right: $memberPadding10;
+            margin-bottom: $memberMargin10;
+            &:empty:after {
+                content: '-'; 
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+            margin-bottom: 0; 
+        }
+    }
+    .rtnPrdImg {
+        img {
+            width: 80px;
+            //padding: $memberPadding10;
+        }
+    }
+}
+
+.member-refund {
+    /*.grid-table-refund {
+        flex-wrap: wrap;
+        > div {
+            flex:1 100%;
+        }
+    }
+    .grid-row, .grid-header { 
+        border-bottom: 1px solid $memberLightGreyColor; 
+        padding-bottom: $memberPadding20;
+        margin-bottom: $memberMargin20; 
+        flex-wrap: wrap;
+        flex: 1 50% !important;
+        > div:empty {display: none !important;}
+        > div {
+            width: 100%;
+            line-height: 36px; 
+        }
+        &:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border: 0;
+        }
+    }
+    .grid-header {
+        > div {color: $memberGreyColor; font-size: $memberFontSize12;}
+        .grid-detail {
+            span {
+                display: block;
+            }
+        }
+    }
+    .grid-row {
+        .grid-detail { 
+            a {
+                --color1: $memberBlueColor; 
+                span { 
+                    color: $memberBlueColor;
+                    justify-content: flex-start; 
+                }
+            }
+        }
+    }*/
+}

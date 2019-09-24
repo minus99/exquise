@@ -1,0 +1,98 @@
+// --- ÜYE SAYFASI MESAJ -- //
+
+//Mesajlarım tab menü
+.swiper-tab-menu{
+    margin-top: $memberMargin30;
+    ul{
+        li{
+            a{
+                @extend .display-block; 
+                background: $colorBulltet;
+                border-radius: 4px 4px 0 0;
+                font-size: $memberFontSize12;
+                font-family: $memberFontMedium;
+                padding:$memberMessageTabBtnPaddingMobile;
+                text-align: $alignCenter;
+                //secili arka plan
+                &.emos_selected, &.selected{
+                    background: $colorWhite;
+                }
+                span {
+                    color: #000;
+                    font-size: $memberFontSize12;
+                    font-family: $memberFontMedium;
+                }
+            }
+            &.selected {
+                a {
+                    background: #fff;
+                    color: $memberDarkColor;
+                }
+            }
+        }
+    }
+}
+
+// Mesajlarım listeleme sayfası
+.grid-table-message {
+    // Mesajlarım listeleme düzeni
+    .grid-row { 
+        border-bottom: 1px solid $memberLightGreyColor;
+        flex-wrap: wrap;
+        padding-bottom: $memberPadding10;
+        margin-bottom: $memberMargin10;
+        > div {
+            flex-direction: column;
+        }
+        &.newMessage {
+            font-family: $memberFontBold;
+        }
+        .label { 
+            padding: 5px 10px 0px 0;
+            font-family: $memberFontBold;
+            font-size: $memberFontSize12; 
+            color: $memberGreyColor;
+        }
+        .form { 
+            padding: 8px 10px 15px 0;;
+            flex-grow: 1;
+            align-items: center; 
+        }
+        
+        &:last-child {
+            border: 0;
+        }
+    }
+    .grid-icon {
+        flex: 0;
+        order: 1;
+        img {
+            width: 32px;
+            padding: 0; 
+            display: inline-block;
+        }
+        .label {display:none;}
+        .form {align-items: start;} 
+    }
+    .grid-date {
+        flex: 1 50%; 
+        order: 4;
+        .label, .form {padding-left: 40px;} 
+    }
+    .grid-title {
+        flex: 1 60%; 
+        order: 2;
+        .label {display:none;}
+    }
+    .grid-order-id {flex: 1 50%; order: 5;}
+    .grid-status {
+        flex: 1 20%;
+        order: 3; 
+        align-items: center;
+        .label {display:none;} 
+    }
+}
+
+.pageHeaderMesaj {
+    display: none; 
+}

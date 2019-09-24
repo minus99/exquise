@@ -1,0 +1,79 @@
+// --- ÜYELİK GIFT CARD -- //
+.member-gift-card { 
+    flex-wrap: wrap;
+    .ga1 {flex: 100%; padding-right: 0; order: 2;}
+    .ga2 {flex: 100%; text-align: left; margin-bottom: $memberMargin20; order: 1;}   
+    .field {
+        width: 100% !important;
+        &.p-reset {
+            padding: 0 !important;
+        }
+    }
+    // Gift kart üzerindeki fiyat
+    .gift-card-price {
+        position: absolute;
+        left: $memberMargin20;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff; 
+        b {
+            font-family: $memberFontBold;
+            font-size: $memberFontSize20;
+            margin-bottom: $memberMargin5;
+        }
+        span {
+            font-size: $memberFontSize16;
+            text-align: left;
+        }
+    }
+    // Gift kart üzerindeki logo
+    .gift-card-logo {
+        position: absolute; 
+        max-width: 70px;
+        top: 0;
+        right: 15px; 
+    }
+    // Gift Kart Button
+    #plhOdemeCekiSorgulaBtn {
+        margin-right: $memberMargin10;
+        width: 100%;
+    }
+    #plhOdemeCekiSatinAl {
+        width: 100%;
+    }
+
+    // gift kart sonuç yazısı
+    .dvSorguSonuc {
+        padding: $memberPadding10;
+        border-radius: 3px;
+        background: $memberLightGreyColor;
+        &:empty {
+            display: none;
+        }
+    }
+}
+// Gift kart fiyat liste
+.member-gift-card-list {
+    text-align: left;
+    ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; 
+        margin-bottom: $memberMargin20;
+        li {
+            padding-right: $memberPadding5;
+            a {
+                padding: $memberPadding10;
+                border: 1px solid $memberDarkColor;
+                display: inline-block;
+                border-radius: 3px;
+            }
+            &.selected {
+                a {
+                    background: $memberDarkColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

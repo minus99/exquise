@@ -1,0 +1,7 @@
+/*Site Header Grid*/
+.header{
+    min-height: 80px;
+    &-logo{
+        img{max-height: 80px;}
+    }
+}

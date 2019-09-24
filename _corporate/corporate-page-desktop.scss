@@ -1,0 +1,58 @@
+ // --- KURUMSAL SOL MENÜ -- //
+.corporate-menu {display: none;}
+
+//--- İçerik Template Düzeni ---//
+
+.article-container {
+    // Yazı resim hizalama
+    .sec-text-image {
+        .image-wrap {
+            float: right;
+            width: 51%;
+            padding-left: $contentPadding20;
+        }
+    }
+    // Resim yazı hizalama
+    .sec-image-text {
+        .image-wrap {
+            float: left;
+            width: 51%;
+            padding-right: $contentPadding20;  
+        }
+    }
+    // ikili yazı
+    .sec-double-text {
+        .text-wrap {
+            flex: 1;
+            text-align: justify;
+            padding-right: $contentPadding10;
+            &:last-child {
+                padding-left: $contentPadding10;
+                padding-right: 0;
+
+            }
+        }
+    }
+    // Üçlü dörtlü resim
+    .sec-trible-image, .sec-four-image {
+        flex-wrap: nowrap;
+        .image-wrap {
+            flex: 1;
+            padding-right: $contentPadding20;
+            &:last-child {
+                padding-right: 0;
+
+            }
+        }
+        .image-wrap {
+            &:nth-child(2) {
+                padding-right: $contentPadding20;
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+                padding-left: 0; 
+            }
+        } 
+    }
+}

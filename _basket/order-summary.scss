@@ -1,0 +1,235 @@
+//Siparis ozet ızgara
+.order-summary{
+    background: $orderSummaryBg;
+    padding: $orderSummaryPadding $orderSummaryPadding $orderSummaryBttmPadding $orderSummaryPadding;
+    margin-top: $orderSummaryMbTopSpc;
+
+    //Siparis ozet baslik
+    .mn-20 > span{
+        display: block;
+        font-family: $medium;
+        font-size: $orderSummaryTitle;
+        margin-bottom: $orderSummaryTitleBottomSpace;
+    }
+    //Siparis ozet alt elementler icin alt alta siralama
+    &-wrapper{
+        flex-wrap: wrap;
+        > *{
+            width: 100%;
+        }
+    }
+    //Sepet satin alma avantaj ikonları
+    &-benefit{
+        flex-wrap: wrap;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        li{
+            width: 50%;
+            text-align: $alignCenter;
+            margin-bottom: $basketBenefitMarginBottom;
+            .icon{
+                margin-bottom: $basketBenefitIconMarginBottom;
+            }
+        }
+    }
+    //Siparis ozet yardim
+    &-help{
+        border: 1px solid $basketHelpBorderColor;
+        border-radius: $basketHelpBorderRadius;
+        padding: $basketHelpPadding;
+
+        //Siparis ozet yardim footer metin renk deseni
+        *{
+            color: $colorAlternate;
+        }
+        //Siparis ozet yardim header
+        .help-header{
+            > span{
+                font-size: $fontSize16;
+                font-family: $medium;
+            }
+        }
+        //Siparis ozet yardim footer
+        .help-footer{
+            //Yardım linkleri renk deseni
+            *{
+                font-size: $fontSize14;
+            }
+            > p, > a{
+                //Yardım metin ve link ust bosluklari
+                margin-top: 10px;
+            }
+            > a{
+                display: inline-block;
+            }
+        }
+    }
+    //Kupon kodu
+    .cart-coupon {
+        //Label ust bosluk
+        .coupon-lbl{
+            margin-top: $couponLblTopSpc;
+            background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDYpIj4gICAgICAgIDxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBzdHJva2U9IiM2OTZCNzEiLz4gICAgICAgIDxwYXRoIGZpbGw9IiM2OTZCNzEiIGQ9Ik03IDEwaDd2MUg3eiIvPiAgICAgICAgPHBhdGggZmlsbD0iIzY5NkI3MSIgZD0iTTExIDd2N2gtMVY3eiIvPiAgICA8L2c+PC9zdmc+");
+            background-repeat: no-repeat;
+            background-position: center left;
+            padding-left: 40px;
+            width: max-content;
+            cursor: pointer;
+        }
+        //Kupon kodu il gorunum de gizleniyor
+        .coupon-enter{
+            display: none;
+        }
+        .form-label{
+            //Bos ise gizleniyor
+            &:empty{
+                @extend .none;
+            }
+            //Ikon icin sagdan bosluk
+            .icon{
+                margin-right: 3px;
+                cursor: pointer;
+            }
+        }
+        //Kupon label metni icin font
+        .form-label span{
+            font-family: $regular;
+        }
+        //Kupon kodu gönderme butonu ozellestime
+        .form-obj {
+            //Global den gelen margin resetleniyor
+            margin-bottom: 0;
+
+            //Ust bosluk ayari
+            margin-top: $couponInputTopSpc;
+            //Inputun varsayılan ayarlari
+            input{
+                width: $couponInputWidth;
+                max-width: $couponInputMaxWidth;
+            }   
+        }
+
+    }
+    //Kupon iptal metni icin ozellestirme
+    .coupon-cancel{
+        > span {
+            color: $colorAlternate;
+            line-height: $gridLineHghtDefault;
+        }
+    }
+    //Kupon kodu aktif ediliyor
+    &.opened{
+        .coupon-lbl{
+            background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDYpIj4gICAgICAgIDxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBzdHJva2U9IiM2OTZCNzEiLz4gICAgICAgIDxwYXRoIGZpbGw9IiM2OTZCNzEiIGQ9Ik03IDEwaDd2MUg3eiIvPiAgICA8L2c+PC9zdmc+");
+        }
+        .cart-coupon {
+            .coupon-enter{
+                display: block;
+            }
+        }
+    }
+    //Kupon kodu gelmis ise label gizleniyor
+    &.hidden{
+        .coupon-lbl{
+            display: none;
+        }
+    }
+    span[id$="lblHCK_HATA"]{
+        &:empty{display: none;}
+        padding: 10px;
+        display: block;
+        font-size: $fontSize12;
+        color: $colorAlternate;
+    }
+}
+
+//Sepet satin al butonlari mobile
+.basket-grid .next,
+.basket-grid-2 .next {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+    padding-bottom: 5px;
+    background: $colorWhite;
+    > a.btnDefault{
+        min-width: calc(50% - 5px);
+        margin-left: 2.5px;
+        margin-right: 2.5px;
+    }
+}
+
+//Siparis ozet tablo ızgara
+.pnlDipToplamTable{
+    > tbody{
+        > tr{
+            //Siparis ozet tablo satırlar icin alt bosluk ve ozellestirme
+            display: table;
+            width: $fullWidth;
+            margin-bottom: $orderSummaryRowBottomSpace;
+
+            //Siparis ozet tablo > metin ozellestirme
+            > th, > td{
+                font-size: $orderSummaryTableFontSize;
+                font-family: $regular;
+                font-weight: normal;
+            }
+            //Th sola hilalı
+            > th{
+                text-align: $alignLeft;
+            }
+            //Td sağa hizalı
+            > td{
+                text-align: $alignRight;
+            }
+            //toplam tutar metin ozellestirme
+            &.pnlDipToplam_sipToplam{
+                > th, > td{
+                    font-family: $bold;
+                }   
+            }
+            //Siparis ozet indirim satırı renk ozellestirme -- Opsiyonel
+            &.pnlDipToplam_indirimToplam{
+                > th, > td{
+                    color: $colorRed;
+                }
+            }
+            //Siparis ozet gizlenen satırlar
+            &.pnlDipToplam_indirimliAraToplam,
+            &.pnlDipToplam_kargoHaricToplam,
+            &.pnlDipToplam_kulBankaBonus,
+            &.pnlDipToplam_bankaKomisyon{
+                @extend .none;
+            }
+        }
+    }   
+}
+
+//Odeme sayfasi hesap ozeti
+.order-payment{
+    .order-summary{
+        padding-bottom: $orderSummaryPadding;
+    }
+}
+
+//Odeme sayfasi satin al buton
+.basket-grid-2{
+    .next-3{
+        position: relative;
+        z-index: inherit;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        > a.btnDefault{
+            min-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            &:nth-child(3){
+                margin-top: 10px;
+            }
+        }   
+    }
+}

@@ -1,0 +1,8 @@
+/*Site Header Grid*/
+.header{
+    background:#202020;
+    min-height: 50px;    
+    &-logo{ 
+        img{max-height: 50px; width: auto;}
+    }
+}   

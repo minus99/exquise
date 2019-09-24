@@ -1,0 +1,430 @@
+// --- FORM DÜZENLEMLERİ -- //
+// Global form ayarları
+input, textarea, select,
+.sStylerWrp_select .sStylerWrp, .dropdown-header {
+    width: 100% !important;
+    min-height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    //vertical-align: middle;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    line-height: $formInputHeight;
+    color: $formInputColor;
+    font-family: $formInputFamily;
+    border-color: $formInputBorderColor;
+    border-width: $formInputWidth;
+    border-style: $formInputStyle;
+    padding: $formSelectedPadding;
+    border-radius: $formInputRadius;
+}
+
+//Select stil
+select {
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMyMDIwMjAiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTExLjk1NCAxNC45NjZsNC4zNzQgNCA0LjM3Mi00eiIvPgo8L3N2Zz4K) right no-repeat;
+}
+
+
+
+//Styler icin inputlar gizleniyor
+.sStylerWrp_checkbox input, .sStylerWrp_radio input {
+    display: none !important;
+}
+// Dropdown select stil
+.sStylerWrp_select.sStylerMainWrp {
+    position: relative;
+    display: block;
+}
+.sStylerWrp_select .sStylerWrp {
+    position: relative;
+}
+.sStylerWrp_select select {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100% !important;
+}
+.sStylerWrp_select {
+    .icon-select {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%); 
+    }
+    .icon-select-active {
+        display:none;
+    }
+}
+
+
+// Dropdown genel düzen
+.dropdown {
+    position: relative;
+    user-select: none;
+    &-header {
+        padding-right: 40px;
+        line-height: $memberLineHeight;
+        cursor: default;
+        > * {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: auto;
+            cursor: default;
+            &::-webkit-scrollbar {
+                display:none;
+            }
+            > img {
+                margin-right: 7px;
+            }
+        }
+        &::after {
+            content: '';
+            //background: url('/images/frontend/menu-arrow.svg');
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMyMDIwMjAiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTExLjk1NCAxNC45NjZsNC4zNzQgNCA0LjM3Mi00eiIvPgo8L3N2Zz4K);
+            width:32px;
+            height: 32px;
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%); 
+            display: inline-block; 
+            transition: all .2s ease;
+            -webkit-transition: all .2s ease;
+            -o-transition: all .2s ease;
+        }
+    }
+    > ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+        width: 100%;
+        max-height: 140px;
+        overflow: auto;
+        margin: -1px 0 0 0;
+        background: $memberLightGreyColor;
+        > li {
+            > a {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                overflow: auto;
+                padding: 0 10px !important;
+                line-height: $memberLineHeight;
+                font-family: $memberFontRegular;
+                font-size: 15px;
+                color: $memberDarkColor;
+                font-weight: 400;
+                letter-spacing: .7px;
+                cursor: default;
+                &::-webkit-scrollbar {
+                    display:none;
+                }
+                > img {
+                    margin-right: 7px;
+                }
+                &:hover {
+                    background: $memberGreyColor;
+                    color: $memberDarkColor;
+                }
+            }
+        }
+    }
+    &.opened {
+        > ul {
+            display: block;
+        }
+    }
+}
+
+
+// Checkbox stil
+.sStylerWrp_checkbox,
+.sStylerWrp_radio {
+    display: inline-block;
+    vertical-align: -0.8em;
+    margin-right: 5px;
+    user-select: none; 
+    cursor: pointer;
+    > span {
+        display: block;
+        svg {
+            display: block;
+            font-size: $checkboxSize;
+            &[class*="active"] {
+                display: none;
+            }
+        }
+        &.checked {
+            svg {
+                display: none;
+                &[class*="active"] {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// Input metin stil
+.field {
+    flex: none;
+    &.text {
+        input {width:100%;}
+    }
+    &.field-push {
+        input {
+            width: 100% !important;
+        }
+        .cepTelAlan {
+            width: 70px !important;
+            margin-right: 10px;
+        }
+    }
+    &.field-single {
+        grid-column: span 2; 
+        margin-bottom: $memberMargin20;
+        padding-right: 0 !important; 
+        .form-obj {
+            margin-bottom: 0px;
+        }
+    }
+    &.field-submit, &.cancel  {margin-bottom: 0;}
+    
+    // Zorunlu alan stilleri
+    &.form-err {
+        .form-label {
+            color: $memberRedColor;
+        }
+        .form-obj {
+            input, textarea, select, .sStylerWrp_select .sStylerWrp, .dropdown-header {
+                border-color: $memberRedColor;
+            }
+        }
+    }
+}
+.form-label {
+    font-size: $labelFontSize;
+    color: $labelFontColor;
+    font-family: $labelFontFamily;  
+    line-height: $labelLineHeight;
+    /*span {
+        font-size: $labelFontSize;
+        color: $labelFontColor;
+        font-family: $labelFontFamily;  
+        line-height: $labelLineHeight;
+    }*/
+}
+.form-obj {
+    margin-bottom: $formBottomMargin;
+    input {
+        width: 100% !important;
+        line-height: $formInputHeight;
+        color: $formInputColor;
+        font-family: $formInputFamily;
+        border-color: $formInputBorderColor;
+        border-width: $formInputWidth;
+        border-style: $formInputStyle;
+        padding: $formInputPadding;
+        border-radius: $formInputRadius;
+    }
+    &:empty {display:none;}
+}
+
+.pages-member {
+    input[type=checkbox], input[type=radio] {
+        display: none !important;   
+    }
+    .sticky {
+        top: 20px;
+    }
+}
+
+// Gri arkaplan input ve select Stil
+.select-gray {
+    input, textarea, select, .sStylerWrp_select .sStylerWrp, .dropdown-header {
+        background: $memberLightGreyColor;
+        border-color: $memberLightGreyColor;
+    }
+}
+
+// Zorunlu alan
+.zorunluFont:before {
+    content: "*";
+    margin-right: 2px;
+}
+
+// datepicker
+#ui-datepicker-div {display: none;}
+
+// --- ÜYELİK AÇIKLAMA -- //
+// Üyelik bilgileri açıklama metni
+.page-top-desc {
+    margin-bottom: $memberMargin20;
+}
+span[id$="lbfGNL_KAYITYOK"] { 
+    margin-bottom: $memberFontSize20;
+    display: block;
+    color: $colorRed;
+}
+
+
+// --- ÜYELİK SAYFASI GENEL YAPI -- //
+.member-grid{
+    //Üyelik sayfası arka plan rengi -- Opsiyonel
+    background:$memberPageBg;
+    padding: $memberMarginReset;
+    .member-general {
+        padding: $memberPadding20 $memberPadding15;
+        background: $colorWhite; 
+        border-radius: 0;
+    } 
+    .page-top-title {
+        font-size: $fontSize20;
+        font-family: $medium;
+        margin-bottom: $memberMargin20;
+        color: $colorDefault;
+    }
+}
+
+// --- ÜYELİK SAYFASI BUTTON DÜZENLEMLERİ -- //
+// Member Alternatif Button
+.member-back {
+    margin-left: $memberMargin20;
+    margin-top: $memberMargin20;
+}
+
+//Text Button
+a.btnSipariseDon, a.btnSipIptal, a.btnSipIade, 
+a.btnFavoriListeSil, a.btnFavSepeteAt, a.btnFavoriSil, 
+a.btnIadeDetay, a.btnTakipListeFiySil, a.btnTakipListeStokSil, 
+a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle {
+    background: none; 
+    width: auto;
+    padding: 0; 
+    span {
+        color: $memberGreyColor; 
+        font-size: $memberFontSize14;
+        font-family: $memberFontRegular;
+        @extend .display-flex;
+        align-items: center;  
+    } 
+}
+
+// Border Button
+a.btnSepeteAtFavori, .follow-list-btn, a.lnkSatinAl, a.cntScrBtn { 
+    background: none;
+    border: 2px solid $memberBlueColor;
+    border-radius: $memberBorderRadius3;
+    padding: $memberBtnDefaultPaddingSmall;
+    text-align: center;
+    display: block; 
+    span {
+        color: $memberBlueColor;
+        font-family: $memberFontBold;
+    }
+    &.selected {
+        background: $memberBlueColor;
+        span {
+            color: #fff;
+        }
+    }
+}
+
+// Üyelik sayfaları alt buttonlar
+
+a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUyeBilgi, a.btnTavsiyeGonder, a.btnMesajGonder {
+    display: inline-block;
+    width: auto;
+    padding: $memberBtnDefaultPaddingSmall; 
+}
+
+// Member Genel Button
+a.lnkSorgula, .urunDetay_btnSepeteAt a.btnsepeteAt {
+    display: block;
+    width: 100%;
+    background: $btnBackground; 
+    border-radius: $buttonRadius;
+    text-align: center;
+    padding: $memberBtnDefaultPadding;
+    > span{
+        font-family: $memberFontBold;
+        color: $colorWhite;
+        font-size: $memberFontSize14;
+        font-weight: normal;
+    }
+}
+
+// --- EMS TAB DÜZENLEMLERİ -- //
+// Tab Menü
+.ems-tab {
+    .ems-tab-content {
+        .report-holder {
+            display: none;
+            &.selected {
+                display: block;
+            }
+        }
+    }
+}
+
+// Akordion tab menü
+.ems-tab-vertical {
+    .ems-tab-content { 
+        > div {
+            .ems-tab-inner-header {
+                background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMyMDIwMjAiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTExLjk1NCAxNC45NjZsNC4zNzQgNCA0LjM3Mi00eiIvPgo8L3N2Zz4K) right no-repeat;
+            }
+            .ems-tab-inner-content {
+                display: none;
+            }
+            &.selected {
+                .ems-tab-inner-header {
+                    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMyMDIwMjAiIGQ9Ik0yMC43LDE4Ljk2NmwtNC4zNzQtNGwtNC4zNzIsNEgyMC43eiIvPg0KPC9nPg0KPC9zdmc+DQo=) right no-repeat;
+                }
+                .ems-tab-inner-content {
+                    display: block;
+                    padding-bottom: $memberPadding15;
+                } 
+            }
+        }
+    }
+    .ems-tab-inner-header {
+        border-top: 1px solid $memberLightGreyColor;
+        padding: $memberPadding20 $memberPadding30 $memberPadding20 0;
+        font-family: $memberFontMedium;
+        position: relative;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMyMDIwMjAiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTExLjk1NCAxNC45NjZsNC4zNzQgNCA0LjM3Mi00eiIvPgo8L3N2Zz4K) right no-repeat;
+        cursor: pointer;
+        &.selected {
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMyMDIwMjAiIGQ9Ik0yMC43LDE4Ljk2NmwtNC4zNzQtNGwtNC4zNzIsNEgyMC43eiIvPg0KPC9nPg0KPC9zdmc+DQo=) right no-repeat;
+        }
+    }
+    .ems-tab-inner-content {
+        font-family: $memberFontRegular;
+        color: $memberGreyColor;
+        line-height: $labelLineText;
+    }
+}
+
+// Clearfix
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+
+
+

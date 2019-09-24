@@ -1,0 +1,66 @@
+.page-dealer {
+    background: $globalPageBg;
+    padding: $d-dpp;
+}
+.mod-service-list-inner-wrp {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, #{$d-dmw}) #{$d-dcg} #{$d-dlw} 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: ". r1 . r2 ." ". r1 . r3 .";
+}
+.mod-service-list-header {
+    grid-area: r2;
+}
+.address-detail {
+    grid-area: r1;
+}
+.mod-service-list-body {
+    grid-area: r3;
+}
+
+.address-detail-inner {
+    position: sticky;
+    top: $d-dmmtws;
+}
+
+.mod-service-list-header {
+    border-radius: $d-dlr $d-dlr 0 0;
+}
+.mod-service-list-body {
+    display: block !important;
+    background: $d-dlbg;
+    border-radius: 0 0 $d-dlr $d-dlr;
+}
+
+.page-nav {
+    .view {
+        display: none;
+    }
+}
+
+.dealer-desc,
+.dealer-desc-or {
+    display: block;
+}
+.dealer-form {
+    .field {
+        width: 100%;
+        padding: 0 !important;
+    }
+}
+
+#Map.map {
+    height: calc(100vh - #{$d-dhh});
+}
+
+
+
+body.view-map {
+    .divServisListe_Koordinat {
+        a {
+            &[rel] {
+                display: inline;
+            }
+        }
+    }
+}

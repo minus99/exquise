@@ -1,0 +1,43 @@
+.pageSiparisSonuc{
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+    .pageHeaderDefault{
+        display: none;
+    }
+    .pageSiparisSonuc_lbfSiparisKaydedilmedi,
+    .pageSiparisSonuc_lbfOdemeAlinamadi{
+        font-family:$medium;
+        font-size: $fontSize24;
+        color: $colorRed;
+    }
+    .pageSiparisSonuc_lbfSiparisBasarili{
+        font-family:$medium;
+        font-size: $fontSize24;
+        color: $colorDefault;
+        padding-bottom: 20px;
+    }
+}
+span[id$="lbfSIP_DEFAULTERROR"]{
+    font-size: $fontSize14;
+    color: $colorAlternate;
+    margin-bottom: 30px;
+    display: block;
+    line-height:$gridLineHghtDefault; 
+    &:empty{
+        display: none;
+    }
+}
+.pageSiparisSonuc_btnSiparisSonuc{
+    @extend .display-flex;
+    @extend .justify-center;
+    flex-wrap: wrap;
+    > div{
+        width: 100%;
+        &:nth-child(2){
+            margin-top: 15px;
+        }
+    }
+}

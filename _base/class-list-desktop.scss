@@ -1,0 +1,35 @@
+/**************** ****************
+    
+Site General Grid Class Items
+    
+***************** ****************/
+.display-grid{
+    display: -ms-grid;
+    display: grid;
+}
+.ga1{
+    grid-area:AAA;
+}
+.ga2{
+    grid-area:BBB;
+}
+.ga3{
+    grid-area:CCC;
+}
+.ga4{
+    grid-area:DDD;
+}
+.ga5{
+    grid-area:EEE;
+}
+.ga6{
+    grid-area:FFF;
+}
+.ga7{
+    grid-area:GGG;
+}
+.d-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}

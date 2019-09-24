@@ -1,0 +1,11 @@
+//Sepet widget
+.swiper-product{
+    .prd{
+        width: calc(100% / 5);
+    }
+    &.item-4{
+        .prd{
+            width: calc(100% / 4);
+        }   
+    }
+}

@@ -1,0 +1,48 @@
+// --- ABONELİKLERİM DETAY --- //
+
+// Abonelik detay içerik bilgileri
+.subscriptions-detail-info { 
+    > div {
+        flex: 0 50%;
+        .text {
+            flex: 0 35%;
+        }
+    }
+    .act-btns {
+        > div {
+            margin-right:$memberMargin30;
+        }
+    }
+}
+
+// Aboneliklerim detay listeleme sayfası
+.grid-table-subscriptions-detail { 
+    // Aboneliklerim listeleme düzeni
+    .grid-row {
+        flex-wrap: nowrap;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        .label {
+            font-size: $memberFontSize14;
+            padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
+            display: none;   
+        }
+        .form { 
+            padding: $memberPadding15 $memberPadding10 $memberPadding15 0;
+        }
+        &:first-child {  
+            .label {  
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;   
+                height: 50px;
+            } 
+            .form {border-top: 1px solid $memberLightGreyColor;}
+        }
+    }
+    .grid-date {flex: 1;}
+    .grid-order-no {flex: 1;}
+    .grid-total {flex: 1;}
+    .grid-status {flex: 1;}
+    .grid-info {flex: 1;}
+}
