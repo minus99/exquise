@@ -152,34 +152,34 @@
   .swiper-button-next {
     position: absolute;
     top: 50%;
-    width: 32px;
-    height: 32px;
+    width: 36px; 
+    height: 36px;
     margin-top: -16px;
     z-index: 10;
     cursor: pointer;
-    background-size: 32px 32px;
+    background-size: 36px 36px;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #696b71;
+    //background-color: #696b71;
   }
   .swiper-button-prev.swiper-button-disabled,
   .swiper-button-next.swiper-button-disabled {
     opacity: 0;
     cursor: auto;
-    pointer-events: none;
+    pointer-events: none;  
   }
-  .swiper-button-prev,
-  .swiper-container-rtl .swiper-button-next {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23FFFFFF' d='M17 11.402l-0.439-0.402-4.561 5 4.561 5 0.439-0.403-4.194-4.597z'/%3E%3C/svg%3E");
-    border-radius: $borderRadius;
-    left: 0;
+  .swiper-button-prev, 
+  .swiper-container-rtl .swiper-button-next { 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23FFFFFF' d='M10.165,25.023c0.375,0.33,0.934,0.276,1.308-0.052c0.374-0.331,0.312-0.828-0.061-1.157l-4.734-3.957  h28.516v-1.593H6.678l4.797-4.235c0.372-0.328,0.372-0.824,0-1.154c-0.195-0.155-0.438-0.233-0.687-0.221  c-0.246-0.013-0.49,0.065-0.685,0.221L3,19.089l7.164,5.934L10.165,25.023z'/%3E%3C/svg%3E");
+    //border-radius: $borderRadius;
+    left: 30px;
     right: auto;
-  }
+  } 
   .swiper-button-next,
   .swiper-container-rtl .swiper-button-prev {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23FFFFFF' d='M15 20.598l0.439 0.402 4.561-5-4.561-5-0.439 0.403 4.194 4.597z'/%3E%3C/svg%3E");
-    border-radius: $borderRadius;
-    right: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23FFFFFF' d='M28.028,12.876c-0.375-0.33-0.934-0.276-1.308,0.052c-0.374,0.331-0.312,0.828,0.061,1.157l4.734,3.957H3  v1.593h28.516l-4.797,4.235c-0.372,0.328-0.372,0.823,0,1.153c0.195,0.155,0.438,0.233,0.688,0.221  c0.245,0.013,0.49-0.065,0.685-0.221l7.103-6.213l-7.163-5.934L28.028,12.876z'/%3E%3C/svg%3E");
+    //border-radius: $borderRadius;
+    right: 30px;
     left: auto;
   }
   .swiper-button-prev.swiper-button-white,
@@ -220,7 +220,10 @@
   .swiper-pagination-fraction,
   .swiper-pagination-custom,
   .swiper-container-horizontal > .swiper-pagination-bullets {
-    width: 100%;
+    //width: 100%;
+    position: absolute;
+    left: 30px;
+    bottom: 60px; 
   }
   /* Bullets */
   .swiper-pagination-bullets-dynamic {
@@ -264,13 +267,14 @@
     transform: scale(0.33);
   }
   .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     margin: 0 7px;
     display: inline-block;
     border-radius: 100%;
-    background: #696b71;
-    opacity: 0.4;
+    background: transparent;
+    border: 1px solid $colorWhite;
+    //opacity: 0.4;
   }
   button.swiper-pagination-bullet {
     border: none;
@@ -286,7 +290,8 @@
       cursor: pointer;
   }
   .swiper-pagination-bullet-active {
-    opacity: 1;
+    //opacity: 1;
+    background: $colorWhite;
   }
   .swiper-container-vertical > .swiper-pagination-bullets {
     right: 10px;
@@ -610,3 +615,79 @@
     /* Windows 8 IE 10 fix */
     -ms-perspective: 1200px;
   }
+
+  //CUSTOM CFG
+//product widget
+.swiper-product {
+  $p: 20px;
+  min-height: 445px;
+  .swiper-inner {
+      padding-left: 45px;
+  }
+  .swiper-slide {
+      padding-left: #{$p};
+      width: 265px;
+  }
+
+  //horizontal product
+  &-horizontal {
+    > .swiper-inner {
+      > .swiper-wrapper {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+//pagination
+.slider-pagination {
+  .swiper-pagination {
+      display: block;
+  }
+}
+
+//hide controls
+.no-controls {
+  .swiper-pagination,
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
+//vertical content layout
+.swiper-layout-v {
+  > .swiper-inner {
+      > .swiper-wrapper {
+          flex-direction: column;
+      }
+  }
+}
+
+//flow content layout
+.swiper-layout-f {
+  > .swiper-inner {
+      > .swiper-wrapper {
+          @extend .display-flex;
+      }
+  }
+}
+
+//no swipe
+.not-trigger {
+  .swiper-inner {
+    overflow: visible;
+  }
+  .swiper-slide {
+    width: auto;
+    flex-shrink: 1;
+  }
+}
+
+// Grid swiper
+.swiper-grid {
+  .swiper-wrapper {
+    @extend .display-grid;
+    & 
+  }
+}
