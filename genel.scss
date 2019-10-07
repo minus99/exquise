@@ -1,6 +1,6 @@
 //-----Base-----//
 @import '_base/variables';
-@import '_app-shell/first-loading';
+@import '_app-shell/first-loading'; 
 @import '_base/icon';
 @import '_base/class-list';
 
@@ -8,7 +8,8 @@
 //-----Coponents-----//
 @import '_components/popup';
 @import '_components/widget';
-
+@import '_components/banner';
+ 
 
 //-----Forms Field-----//
 @import '_forms-field/forms-element';
@@ -18,9 +19,13 @@
 @import '_site-buttons/buttons';
 
 
-//-----Header-----//
+//-----Header-----// 
 @import '_header/grid';
-
+@import '_header/header-menu'; 
+@import '_header/mini-lang';
+@import '_header/mini-login';
+@import '_header/mini-search';
+@import '_header/mini-cart';
 
 //-----Plugins-----//
 @import '_plugins/swiper';
@@ -41,15 +46,19 @@
 @import '_basket/delivery-address';
 @import '_basket/delivery-cargo';
 @import '_basket/delivery-gift-packet';
-@import '_basket/payment';
+@import '_basket/payment'; 
 @import '_basket/order-result';
 
 
 //-----Layout-----//
-@import '_pages/variables';
 @import '_product-list/variables';
+@import'_product-list/main-desktop';
 @import '_product-list/product';
-@import '_product-detail/variables';
+@import '_product-detail/variables'; 
+
+//-----Home-----//
+@import '_pages/variables';
+@import '_pages/home';
 
 
 //-----Member Page-----//
@@ -83,28 +92,41 @@
 @import '_service-list/variables';
 @import '_service-list/main';
 
-//-----Blog-----//
+//-----Blog-----// 
 @import '_blog/variables'; 
 @import '_blog/blog-page'; 
+
+//-----Footer-----//
+@import '_footer/footer'; 
+@import '_footer/newsletter';
+@import '_footer/footer-menu'; 
 
 
 
 @supports(grid-area: auto) {
     @media screen and (min-width: $breakpoint-default) {
         //-----Base-----//
-        @import '_base/class-list-desktop';
+        @import '_base/class-list-desktop'; 
 
         //-----Forms Field-----//
-        @import '_forms-field/forms-element-desktop';
+        @import '_forms-field/forms-element-desktop'; 
         
 
         //-----Header-----//
         @import '_header/grid-desktop';
-        
+        @import '_header/header-menu-desktop';
+        @import '_header/mini-lang-desktop';
+        @import '_header/mini-login-desktop';
+        @import '_header/mini-search-desktop';
+        @import '_header/mini-cart-desktop'; 
+
+        //-----Plugins-----//
+        @import '_plugins/swiper-desktop';
 
         //-----Content-----//
         @import '_content-grid/main-desktop';
         @import '_components/widget-desktop';
+        @import '_components/banner-desktop';
                 
 
         //-----Basket-----//
@@ -119,7 +141,9 @@
         @import '_basket/delivery-gift-packet-desktop';
         @import '_basket/payment-desktop';
         @import '_basket/order-result-desktop';
-        
+
+        //-----Pages-----//
+        @import '_pages/home-desktop'; 
     
         //-----Member Page-----//
         @import '_member/main-desktop'; 
@@ -153,5 +177,9 @@
         //-----Blog-----//
         @import '_blog/blog-page-desktop';  
 
+        //-----Footer-----//
+        @import '_footer/footer-desktop'; 
+        @import '_footer/newsletter-desktop';  
+        @import '_footer/footer-menu-desktop';
     }
 }

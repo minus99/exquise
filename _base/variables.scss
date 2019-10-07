@@ -1,10 +1,11 @@
 //Site sass kurulumum icin gerekli
-$baseHref: 'http://example.proj-e.com';
+$baseHref: 'http://www.ipekyol.com.tr'; 
 
 //Font variables
 $regular: 'regular';
 $medium: 'medium';
-$bold: 'bold';
+$bold: 'bold'; 
+$play: 'play'; 
 
 //Arka plan rengi farklı olan sayfalar icin
 $globalPageBg: #f3f3f7;
@@ -16,7 +17,7 @@ $siteFontSize: 14px;
 $breakpoint-default: 1024px;
 
 //Button Background variables
-$btnBackground: #3d5deb;
+$btnBackground: #000;
 $btnAlternateBackground: #ffffff;
 
 //Button Color variables
@@ -72,17 +73,49 @@ $mLeftAuto: auto;
 /*Margin right auto*/
 $mRightAuto: auto;
 
+/* Line Height */
+
+$labelLineHeight: 1.86;
+$labelLineText: 1.26;
+
+ // Member Space
+ $reset: 0px;
+ $padding5: 5px;
+ $padding10: 10px; 
+ $padding15: 15px;
+ $padding20: 20px;
+ $padding30: 30px;
+ $marginReset: 0px;
+ $margin5: 5px;
+ $margin10: 10px; 
+ $margin15: 15px;
+ $margin20: 20px;
+ $margin30: 30px;
+
 /*Site varsayılan renkler*/
 $colorWhite: #ffffff;
+$colorBlack: #000000;
 $colorRed:#e72f2f;
+$colorGreen: #18C641; 
+$colorBlue:#3d5deb;
+$colorYellow: #ffea86;
+$colorGrey:#4a4a4a;
 $colorDefault: #202020;
 $colorAlternate: #696b71;
 $colorBulltet:#cecfd4;
-$colorYellow: #ffea86;
 $errorBgColor:#ffcaca;
 $sucessBgColor: #C8FFD5;
 $sucessBorder: #18C641; 
-$gridRowBorder: #f3f3f7;
+$gridRowBorder: #f3f3f7; 
+$userIcoBg: #f3f3f7;
+$colorWhite: #fff; 
+$colorRed:#a40000;
+$greyColor:#4a4a4a;
+$greyBorderColor:#dddddd;
+$lightGreyColor: #f8f8f8;
+$darkColor:#202020;
+$blueColor:#3d5deb;
+
 
 
 
@@ -90,14 +123,26 @@ $gridRowBorder: #f3f3f7;
 //--10px
 $fontSize10:10px;
 
+//--11px
+$fontSize11:11px;
+
 //--12px
 $fontSize12:12px;
+
+//--13px
+$fontSize13:13px;
 
 //--14px
 $fontSize14:14px;
 
-//--16px
+//--15px
+$fontSize15:15px;
+
+//--18px
 $fontSize16:16px;
+
+//--20px
+$fontSize18:18px;
 
 //--20px
 $fontSize20:20px;
@@ -115,6 +160,9 @@ $borderRadius: 100%;
 $mb-left-spacing:15px;
 $mb-right-spacing:15px;
 
+
+// Size 100
+$size100:100%;
 
 /*Hidden Mobile Element*/
 .visible\@d { display: none !important; }

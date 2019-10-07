@@ -687,7 +687,11 @@
 // Grid swiper
 .swiper-grid {
   .swiper-wrapper {
-    @extend .display-grid;
-    & 
+    justify-content: center;
+  }
+  .swiper-slide {
+    &.sticky {
+        top: 0;
+    }
   }
 }

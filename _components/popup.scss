@@ -91,9 +91,10 @@ $p: 20px;
 }
 .sub-header {
     position: relative;
-    padding: 18px 60px 19px 20px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: $padding20;
+    margin-bottom: $margin20;
+    border-bottom: 1px solid $gridRowBorder;
 }
 .sub-desc {
     font-size: 15px;

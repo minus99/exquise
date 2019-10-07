@@ -20,6 +20,9 @@ Site General Flex Class Items
 .justify-between{
     justify-content: space-between;
 }
+.justify-around{
+    justify-content: space-around;
+}
 .align-items-center{
     align-items: center;
 }
@@ -50,26 +53,15 @@ Site General Flex Class Items
 }
 //Site ici genel sticky class'ı 
 .sticky{
-    position: -webkit-sticky;
-    position: sticky;
+    position: -webkit-sticky !important;
+    position: sticky !important;
 }
 //Site ici genel eleman gizleme class'ı
 .none,
 .emos_invisible{
     display: none; 
 }
-//Margin right 5px
-.m-rght-5{
-    margin-right: 5px;
-}
-//Margin left 5px
-.m-lft-5{
-    margin-left: 5px;
-}
-//Margin top 5px
-.m-top-5{
-    margin-top: 5px;
-}
+
 //Inline block elment
 .inline-block{
     display: inline-block;
@@ -80,6 +72,9 @@ Site General Flex Class Items
 //Tutucu ayarlama
 .relative{
     position: relative;
+}
+.absolute{ 
+    position: absolute;
 }
 //Site genel mesaj gorunumu
 .message{
@@ -133,3 +128,105 @@ table[style*="inline"]{
 .white-thema{
     background: $colorWhite;
 }
+
+// Site Animasyon Extend
+.transition {
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+// Transparan Arka Plan
+.transparent {
+    background: rgba(255, 255, 255, .97);
+}
+
+
+// Margin class
+.m-bttm-5 {margin-bottom: 5px;}
+.m-bttm-10 {margin-bottom: 10px;}
+.m-bttm-15 {margin-bottom: 15px;}
+.m-bttm-20 {margin-bottom: 20px;}
+.m-bttm-30 {margin-bottom: 30px;}
+.m-rght-5 {margin-right: 5px;}
+.m-rght-10 {margin-right: 10px;}
+.m-rght-20 {margin-right: 20px;}
+.m-rght-30 {margin-right: 30px;}
+.m-lft-5{margin-left: 5px;}
+.m-lft-10{margin-left: 10px;}
+.m-lft-20{margin-left: 20px;}
+.m-lft-30{margin-left: 30px;}
+.m-top-5 {margin-top: 5px;}
+.m-top-10 {margin-top: 10px;}
+.m-top-15 {margin-top: 15px;}
+.m-top-20 {margin-top: 20px;}
+.m-top-25 {margin-top: 25px;}
+.m-top-30 {margin-top: 30px;}
+.m-reset {margin: 0px !important;} 
+
+// Padding class
+.p-r-20 {padding-right: 20px;}
+.p-t-20 {padding-top: 20px;}
+.p-l-20 {padding-left: 20px;}
+.p-b-10 {padding-bottom: 10px;} 
+.p-b-20 {padding-bottom: 20px;}
+.p-b-30 {padding-bottom: 30px;}
+.p-b-40 {padding-bottom: 40px;}
+.p-b-50 {padding-bottom: 50px;}
+.p-10 {padding: 10px;}
+.p-20 {padding: 20px;}
+.p-30 {padding: 30px;}
+.p-40 {padding: 40px;}
+.p-50 {padding: 50px;}
+.p-reset {padding: 0px !important;}  
+
+// Align 
+.align-center {text-align: center;}  
+.align-right {text-align: right;}  
+
+// Font Size
+
+.fs10 {font-size:$fontSize10;}
+.fs12 {font-size:$fontSize12;}
+.fs13 {font-size:$fontSize13;} 
+.fs14 {font-size:$fontSize14;}
+.fs16 {font-size:$fontSize16;}
+.fs18 {font-size:$fontSize18;}
+.fs20 {font-size:$fontSize20;}
+
+// Font Family
+.regular {font-family:$regular;}
+.medium {font-family:$medium;}
+.bold {font-family:$bold;}
+.playf {font-family: $play;} 
+
+// Banner Color
+.colorWhite {color: $colorWhite;}
+.colorBlack {color: $colorBlack;}
+.colorGreen {color: $colorGreen; }
+.colorBlue {color: $colorBlue;}
+.colorYellow {color: $colorYellow;}
+.colorGrey {color: $colorGrey;}
+.colorRed {color: $colorRed;}
+
+// TL Font
+.pb1 {font-family: cursive; float: left;}
+
+// Text Line
+.underline {text-decoration: $linkUnderline}; 
+.lineThrough {text-decoration: $linkLineThrough};
+
+// Boşluk
+.space20 {height: 20px; display: block;}
+.space30 {height: 30px; display: block;}
+
+// 
+.columnCount1 {column-count: 1;}
+.columnCount2 {column-count: 2;}
+.columnCount3 {column-count: 3;}
+.columnCount4 {column-count: 4;}
+.columnCount5 {column-count: 5;}
+
+// Width Height
+.width100 {width:$size100};
+.height100 {height:$size100};

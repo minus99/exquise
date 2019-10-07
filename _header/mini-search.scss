@@ -1,0 +1,208 @@
+/* --- ARAMA --- */
+
+.mini-search-info {
+    padding: 0 $padding10;
+    position: relative;
+    cursor: pointer;  
+    &:after {
+        content: '';
+        width: 100%;
+        height: 0px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @extend .transition;
+    }
+}
+ 
+.mini-search-sub {
+    top: 70px; 
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    @extend .transparent;
+    opacity: 0;
+    visibility: hidden;
+    .field.field-single {
+        margin: 0;
+        input {
+            background: none;
+            border: 0;
+            font-size: 17px;
+        }
+    }
+    .sub-close {
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+    }
+}
+
+/* --- Arama açık kapalı özellikleri --- */
+
+.mini-search-ready {
+    .mini-search-sub {
+        top: 60px;
+        opacity: 1;
+        visibility: visible;
+    }
+    .mini-search-info {
+        &:after {
+            height: 2px;
+        }
+    }
+}
+
+/* --- Arama popup --- */
+
+$ml: 55px;
+$mr: 20px;
+
+.searchSuggestDiv { 
+    position: relative !important;
+    width: 100% !important;
+    display: none;
+}
+.searchSuggestDivHolder {
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "ga3" "ga1" "ga2" "ga4";
+
+    .prd {
+        grid-area: ga2;
+        h3 {
+            display: none;
+        }
+        .sHolder {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1px;
+            margin-left: -$mr;
+            margin-right: -$mr;
+            > div {
+                display: none;
+                cursor: pointer !important;
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    display: block;
+                }
+            }
+        }
+        table {
+            tr {
+                display: grid;
+                th {
+                    display: none;
+                }
+                td {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    background: $greyColor;
+                    > .emos_invisible {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .suggest_urnsmallimg_con {
+            grid-row: 1;
+            padding-left: 0;
+            padding-right: 0;
+            background: none;
+            > img {
+                min-height: 218px;
+            }
+        }
+        .suggest_urnsname_con {
+            grid-row: 2;
+            font-family: $bold;
+            font-size: 16px;
+            padding-top: 15px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .suggest_urnprice_con {
+            grid-row: 3;
+            padding-top: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            padding-bottom: 15px;
+            .suggest_urnprice {
+                display: flex;
+            }
+        }
+        .suggest_urnurunkod_con,
+        .suggest_urnnormalprice_con,
+        .suggest_urnsubscriptiondiscountrate_con,
+        .suggest_urnsubscriptionprice_con,
+        .suggest_urndiscountrate_con {
+            display: none;
+        }
+    }
+    .cat {
+        grid-area: ga3;
+        margin-top: 14px;
+        h3 {
+            margin: 0 0 10px;
+        }
+        .suggest_link {
+            > a {
+                display: none;
+            }
+            > span {
+                position: relative;
+                display: block;
+                padding: 6px 15px 6px 15px;
+                font-family: $medium;
+                font-size: 13px;
+                line-height: 20px;
+                color: $greyColor;
+                span {
+                    display: none;
+                }
+                a {
+                    display: inline-block;
+                    &:not(:first-child) {
+                        color: $greyColor;
+                        margin-left: 5px;
+                        &::before {
+                            content: "/";
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .prdCount {
+        grid-area: ga1;
+        display: block;
+        padding: 20px 0;
+        font-family: $medium;
+        font-size: 15px;
+        h3 {
+            display: none;
+        }
+    }
+    .dvTumunuGoster {
+        grid-area: ga4;
+        display: block;
+        justify-self: center;
+        padding-top: 30px;
+        #ascAramaBtnTumunuGoster {
+            min-width: 280px;
+            text-align: center;
+        }
+    }
+    .brand,
+    .wordSearch {
+        display: none;
+    }
+}

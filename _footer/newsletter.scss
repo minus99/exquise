@@ -1,0 +1,23 @@
+ /* --- FOOTER EBULTEN --- */
+
+.newsletter-title {
+    padding: 50px 0 30px 0; 
+}
+.mini-bulletin {
+    .field {
+        max-width: 335px;
+        margin-bottom: 10px; 
+        input {
+            padding: 10px 40px 10px 15px;
+            border-color: $greyBorderColor; 
+        }
+    }
+    &-btn {
+        right: 0; 
+        top: 0;
+        padding: $padding10;
+        span {
+            color: #000 !important;
+        }
+    }
+}

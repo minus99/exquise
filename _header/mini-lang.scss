@@ -1,0 +1,78 @@
+/* --- HEADER DİL SEÇİMİ --- */
+.mini-lang {
+    display: inline-block; 
+    padding: 0 $padding10;
+    position: relative;
+    &:after {
+        content: '';
+        width: 100%;
+        height: 0px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @extend .transition;
+    }
+    .emos_invisible {
+        display: inline-block;
+    }
+    /* Lang Header */
+    .dropdown-header {
+        padding: 0 $padding30 0 $padding10;
+        border: 0;
+        line-height: normal;
+        cursor: pointer;
+        img {
+            display: none;
+        }
+    }
+    /* Lang Sub */
+    .sub {
+        width: 75px;
+        margin: 0;  
+        top: 70px;
+        display: block;
+        @extend .transition;
+        visibility: hidden;
+        opacity:0;
+        li {
+            border-bottom: 1px solid $colorBulltet;
+            &:last-child {
+                border: 0;
+            }
+        }
+        img {
+            width:auto;
+            float: left;
+            margin-right: $margin10;
+        }
+        a {
+            padding: $padding10 !important;
+            line-height: normal;
+            cursor: pointer; 
+            &:hover { 
+                color: $colorWhite;
+            }
+        }
+    } 
+    b {
+        font-weight: normal;
+        font-size: $fontSize13;
+    }
+    &.opened {
+        .sub { 
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &:after {
+            height: 2px;
+        } 
+    }
+}
+
+/* header favori */
+
+.menuFav {
+    padding: 0 $padding10; 
+}

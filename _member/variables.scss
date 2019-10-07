@@ -2,28 +2,28 @@
 $memberPageBg: #f3f3f7;
 
 //Site Button Link Underline
-$linkUnderline: underline;
+$linkUnderline: underline; 
 
 // Form input, dropdown ve checkbox ayarları
-$labelFontSize: 14px;
-$labelFontColor: #696b71;
+$labelFontSize: 11px;
+$labelFontColor: #000000;
 $labelFontFamily: 'Bold';
 $labelLineHeight: 1.86;
 $labelLineText: 1.26;
-$formInputBorderColor: #cecfd4; 
+$formInputBorderColor: #aaa; 
 $formInputWidth: 1px;
 $formInputStyle: solid;
-$formInputSize: 14px;
+$formInputSize: 13px;
 $formInputHeight: 1.86;
-$formInputColor: #696b71;
+$formInputColor: #000;
 $formInputFamily: 'regular'; 
-$formInputPadding: 7px 15px;
+$formInputPadding: 9px 15px; 
 //$formInputMaxWidth: 330px;
 $formSelectedPadding: 6px 40px 6px 15px; 
 $formInputRadius: 2px;
 $formBottomMargin: 20px;
 $checkboxInputWidth: 2px;
-$checkboxSize: 32px;
+$checkboxSize: 14px;
 
 // --- Member variables --- //
 
@@ -37,7 +37,7 @@ $memberDarkColor:#202020;
 $memberBlueColor:#3d5deb;
 // Member Btn & Input Padding
 $memberBtnDefaultPaddingSmall: 9px 25px 9px 25px;
-$memberBtnDefaultPadding: 11px 25px 11px 25px;
+$memberBtnDefaultPadding: 14px 25px 14px 25px;
 $memberInputPadding: 6px 30px 6px 10px;
 // Member Space
 $memberPaddingReset: 0px;

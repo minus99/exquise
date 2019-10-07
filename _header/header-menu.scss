@@ -1,0 +1,109 @@
+/* --- HEADER MENU --- */
+.main-menu {
+    padding: 0 $padding20;
+    a {font-size: $fontSize13;}
+    .sub {
+        //position: absolute;
+        left: 0;
+        top: 70px;
+        background: $lightGreyColor;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+    } 
+    li {
+        ul.lvl-2 {
+            display: none;
+            //row-gap: 30px;
+            //grid-template-columns: repeat(auto-fit, 200px);
+            > li {
+               break-inside: avoid;
+               margin-bottom: 30px;
+               text-align: left;
+               width: 100%;
+               min-width: 170px;
+               > a {
+                   font-family: $medium;
+                   margin-bottom: $margin15;
+                   display: block; 
+               }
+            }
+        }
+        &.selected {
+            ul.lvl-2 {
+                display: inline-block; 
+                margin: 0 auto;
+                position: relative;
+                padding: 40px 20px 100px 20px;
+            }
+        }
+        ul.lvl-3 {
+            line-height: 23px; 
+            li {
+                &.new {
+                     a {
+                        &:after {
+                            content: 'YENİ'; 
+                            font-size: 8px;
+                            font-family: $regular;
+                            margin-left: $margin5;
+                        }
+                    }
+               }
+               &.colorRed {
+                     a {
+                        color: $colorRed;
+                    }
+               }
+               &.strong {
+                     a {
+                        font-family: $medium; 
+                    }
+                }
+            } 
+        }
+    }
+
+    /* LVL 1 style ana menü hover */
+    .lvl-1 {
+        > li {
+            > a {
+                padding: $reset $padding10;
+                line-height: normal; 
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 0px;
+                    background: #000;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    @extend .transition;
+                }
+            }
+            
+            &.selected {
+                a { 
+                    &:after {
+                        height: 2px;
+                    } 
+                }
+            }
+        }
+    }
+}
+
+/* Menu Animate */
+
+body.menu-ready { 
+    .main-menu {
+        .sub {
+            top: 60px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
