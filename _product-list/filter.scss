@@ -1,0 +1,98 @@
+/*Filtre*/
+.pnlUrunKiyasSecim{
+    display: none;
+}
+#pnlSecimiDarat{
+    .kutuHeaderOzellikFiltre,
+    .urunKiyaslamaOzellik_temizle{
+        display: none;
+    }
+}
+.kutuBodyOzellikFiltre{
+    display: none;
+}
+.urunKiyaslamaOzellik_ozellikAd{
+    font-family:$medium;
+    font-size:14px;
+    padding-bottom: 10px;
+}
+.urunKiyaslamaOzellik_ozellik {
+    > a{
+        display: inline-block;
+        padding: 7px 10px 7px 0;
+    }
+}
+.urunKiyaslamaOzellik_ozellikIcerik{
+    ::-webkit-scrollbar {width:3px;}
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb{-webkit-border-radius: 1px; border-radius: 1px;}
+    ::-webkit-scrollbar-track {background-color:#202020;}
+    ::-webkit-scrollbar-thumb {background-color:#d8d8d8;}
+    ::-webkit-scrollbar-thumb:window-inactive {background-color:#d8d8d8;}
+    > table{
+        width: 100%;
+        display: block;
+        max-height: 240px;
+        overflow-x: hidden;    
+        > tbody{
+            display: table;
+            width: 100%;
+            > tr{
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                > td{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+a.urunKiyaslamaOzellik{
+    font-size: 14px;
+    font-family: $regular;
+    &.link_selected{
+        font-family: $medium;
+    }
+}
+.kutuFooterOzellikFiltre{
+    @extend .display-flex;
+    @extend .align-items-center;
+    @extend .justify-center;
+    padding-top: 50px;
+}
+.urunKiyaslamaOzellik_tumunuTemizle{
+    display: inline-block !important;
+    &:empty{
+        display: none !important;
+    }
+    > a{
+        padding: 11px 3px 11px 3px;
+        display: block;
+        margin-right: 20px;
+    }
+}
+
+.drp-aftr{
+    position: relative;
+    cursor: pointer;
+    padding:22px 30px 22px 5px;
+    padding-right: 30px;
+    display: inline-flex; 
+    &:after{
+        content: '';
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==);
+        width:24px;
+        height: 24px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%); 
+        display: inline-block; 
+    }
+}
+.views {
+    .urunKiyaslamaOzellik {
+        margin: 13px 5px;
+    }
+}

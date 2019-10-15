@@ -97,11 +97,12 @@ Site General Flex Class Items
 .message-error{
     border-color: $colorRed;
     background-color: $errorBgColor;
+    margin-bottom: $margin20;
 }
 //Site genel mesaj hatali gorunum
 .message-success{
     background-color: $sucessBgColor;
-    border-color: $sucessBorder;
+    align-items: center;
 }
 //Genel kontrol icin eger eleman bos ise class veriliyor
 .is-empty{
@@ -130,7 +131,7 @@ table[style*="inline"]{
 }
 
 // Site Animasyon Extend
-.transition {
+.transition { 
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -190,6 +191,7 @@ table[style*="inline"]{
 .fs12 {font-size:$fontSize12;}
 .fs13 {font-size:$fontSize13;} 
 .fs14 {font-size:$fontSize14;}
+.fs15 {font-size:$fontSize15;}
 .fs16 {font-size:$fontSize16;}
 .fs18 {font-size:$fontSize18;}
 .fs20 {font-size:$fontSize20;}
@@ -210,7 +212,7 @@ table[style*="inline"]{
 .colorRed {color: $colorRed;}
 
 // TL Font
-.pb1 {font-family: cursive; float: left;}
+.pb1 {/*font-family: cursive;*/}
 
 // Text Line
 .underline {text-decoration: $linkUnderline}; 
@@ -230,3 +232,85 @@ table[style*="inline"]{
 // Width Height
 .width100 {width:$size100};
 .height100 {height:$size100};
+
+/*Mobile element hidden*/
+@include setMediaScreen(max-width, $breakpoint-medium) {
+    .obj-desktop {
+        display: none !important; 
+    }
+}
+
+.kutuBosluk{display: none;}
+
+//price fixer
+.ems-price,
+.urunListe_brutFiyat,
+.urunListe_satisFiyat,
+.urunDetay_brutFiyat,
+.urunDetay_satisFiyat,
+#lblUrunTutari,
+.suggest_urnprice,
+.satBrFiyatVrg,
+.brFiyatVrg,
+.pnlDipToplamTable td > span,
+.odemeCekiTutar,
+.cart-prd-price .price,
+#plhIadeTutar > a {
+    display: inline-flex !important;
+    [class^="pb"] {
+        order: -1;
+    }
+}
+
+//price after discount price
+.ems-price.first,
+.urunListe_brutFiyat,
+.urunDetay_brutFiyat, 
+.gridSepetListe_gercekFiyat {
+    &:not(:empty) {
+        text-decoration: line-through;
+        color: $colorAlternate;
+        + * {
+            color: $colorRed;
+            margin-left: 10px;
+        }
+    }
+}
+
+.ems {
+    //CONTAINER
+    &-container {
+        width: calc(100% - #{$breakpoint-gap * 2}) !important;
+        margin-left: auto;
+        margin-right: auto;
+        
+        &-full {
+            width: 100% !important;
+        }
+        
+        &-large {
+            max-width: $breakpoint-large;
+        }
+        &-medium {
+            max-width: $breakpoint-medium;
+        }
+        &-small {
+            max-width: $breakpoint-small;
+        }
+    }
+    //OVERLAY
+    &-overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 6;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        visibility: hidden;
+        opacity: 0;
+        background: rgba($color: $colorBlack, $alpha: .1);
+    }
+}

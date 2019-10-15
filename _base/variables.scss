@@ -1,5 +1,5 @@
 //Site sass kurulumum icin gerekli
-$baseHref: 'http://www.ipekyol.com.tr'; 
+$baseHref: 'http://www.ipekyol.com.tr';  
 
 //Font variables
 $regular: 'regular';
@@ -22,13 +22,13 @@ $btnAlternateBackground: #ffffff;
 
 //Button Color variables
 $btnColor: #ffffff;
-$btnAlternateColor: #3d5deb;
+$btnAlternateColor: #cccccc;
 
 //Button Border radius variables
 $buttonRadius: 3px;
 
 //Button Border variables
-$btnBorder: #3d5deb;
+$btnBorder: #cccccc;
 
 // Input Border
 $inputBorder: #cecfd4;
@@ -90,6 +90,7 @@ $labelLineText: 1.26;
  $margin10: 10px; 
  $margin15: 15px;
  $margin20: 20px;
+ $margin25: 25px;
  $margin30: 30px;
 
 /*Site varsayılan renkler*/
@@ -153,6 +154,9 @@ $fontSize22:22px;
 //--24px
 $fontSize24:24px;
 
+//--30px
+$fontSize30:30px;
+
 /*Border Radius*/
 $borderRadius: 100%;
 
@@ -173,3 +177,10 @@ $size100:100%;
 
     .visible\@m { display: none !important; }
  }
+
+/*BREAKPOINTS*/
+$breakpoint-gap: 20px;
+$breakpoint-small: 640px !default;
+$breakpoint-medium: 1025px !default;
+$breakpoint-large: 1240px !default;
+$breakpoint-xlarge: 1600px !default;  

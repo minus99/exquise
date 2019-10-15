@@ -1,23 +1,10 @@
 /*Site Header Grid*/
 .site-header {
     top: 0;
-    z-index: 9;
+    z-index: 2;
 }
-
 .site-header-grid {
-    grid-template-columns: auto 1fr auto auto auto auto;
-    grid-template-rows: minmax(0, auto);
-    grid-template-areas: "AAA BBB CCC DDD EEE FFF GGG";
-    grid-gap: 10px; 
-    height: 60px;
-    background: $colorWhite;
-}
-
-.header-logo {
-    a {
-        justify-content: center;
-    }
-}
+    height: 47px;
+} 
 
 .header-height {height: 60px;} 
- 

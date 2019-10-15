@@ -1,10 +1,11 @@
 .urnList .emosInfinite {
     @extend .display-grid;
-    grid-template-columns: repeat(4,1fr);
-    margin-left: 3%;
-    margin-right: 3%;
-    grid-column-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 30px;
+    margin-right: 30px;
+    grid-column-gap: 35px;
 }
+
 //Urun karti
 .prd{
     width: 100%;
@@ -14,36 +15,38 @@
 .prd-image{
     background: #f3f3f7;
     position: relative;
-    padding-top: calc( ( 358 / 448 ) * 100% );
     width: 100%;
     > a{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         width: 100%;
         height: 100%;
         z-index: 1;
+        @include aspect-ratio(276, 368);
+        display: block;
         img{
-            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     }
 }
-//Urun marka adi
-.prd-brand{
-    font-size:$brandNameFontSize;
-    line-height: $productCardLineHeight;
-    color: $brandNameColor;
+
+.prd-body {
+    padding: $padding10;
 }
+
 //Urun adi
 .prd-name{
     line-height: $productCardLineHeight;
     > a{
         display: inline-block;
         margin-bottom: 5px;
+        color: $brandNameColor;
+        font-size:$brandNameFontSize;
     }
 }
+
 .prd-price {
     min-height: 40px;
     .first-inner{
@@ -51,20 +54,21 @@
         min-height: 40px;
     }
     .urunListe_brutFiyat{
-        font-family: $medium;
-        font-size: $fontSize16;
-        color: $colorAlternate;
+        font-family: $regular;
+        font-size: $fontSize13;
+        color: $colorRed;
         text-decoration: $linkLineThrough;
     }
     .urunListe_satisFiyat{
-        font-family: $bold;
-        font-size: $fontSize16;
+        font-family: $regular;
+        font-size: $fontSize13;
         color: $colorDefault;
         padding-right: 10px;
     }
     .urunListe_pnlIndirimOran{
         width: $fullWidth;
         display: block !important;
+        margin: 0;
         > *{
             display: block;
             color: $colorRed;
@@ -80,6 +84,123 @@
         a.btnDefault{
             @extend .btnAlternate;
             margin-top: 10px;
+        }
+    }
+}
+
+/*Kategori*/
+.kutuHeaderKategori,
+.kutuFooterKategori{display: none;}
+
+.kutuKategori{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 70px;
+}
+.menuKategori{
+    li{
+        > b{
+            display: none;
+        }
+        a{
+            display: block;
+            position: relative;
+        }
+    }
+    li.s1{
+        > a{
+            font-size: 16px;
+            padding: 5px 50px 5px 10px;
+        }
+        > b{
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==);
+            width:24px;
+            height: 24px;
+            position: absolute;
+            right: 25px;
+            top: 2px;
+            z-index: 1;
+            display: inline-block;
+            cursor: pointer;
+        }
+        > ul{
+            margin-top: 25px;
+        }
+    }
+    li.s2{
+        > a{
+            font-family: $medium;
+            font-size: 13px;
+        }
+    }
+    li.s2,
+    li.s3{
+        a{
+            padding: 5px 5px 5px 10px;
+            &:before{
+                content:'';
+                width:5px;
+                height:5px;
+                background: #000;
+                border-radius: 100%;
+                transition: all 222ms ease-in;
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -3px;
+                display: block;
+            }
+            &:hover, &.active{
+                &:before{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+/*Paging*/
+.urunPaging {
+    table{
+        tbody{
+            tr{
+                td{
+                    width: auto !important;
+                }
+                td:first-child,
+                td:last-child{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.urunPaging_pageNavigation{
+    @extend .display-flex;
+    @extend .justify-end;
+    @extend .align-items-center;
+    > span{
+        @extend .display-flex;
+        @extend .align-items-center;
+    }
+    span.paging,
+    a.paging{
+        padding:6px 10px;
+        font-size: 15px;
+    }
+    a.paging{
+        color: #4a4a4a;
+    }
+    span.paging{
+        font-family: $medium;
+    }
+    a.tumunuGoster{
+        display: inline-block !important;
+        span{
+            font-size: 15px;
+            color: #4a4a4a;
         }
     }
 }

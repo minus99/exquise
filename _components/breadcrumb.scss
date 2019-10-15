@@ -1,0 +1,103 @@
+.navigasyon {
+    position: fixed;
+    top: 0;
+    width: 50px;
+    height: 47px;
+    padding: 0;
+    overflow: hidden;
+    font-weight: normal;
+    z-index: 9;
+    background: $colorWhite;
+    //display: none;
+    ol {
+        svg {display: none;}
+        li {
+            display: none;
+            span {
+                display: none;
+            }
+            &:last-child {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    &:before {
+                        content: '';
+                        @extend .base64-arrow-l;
+                        width: 100%;
+                        height: 24px;
+                        color: #000;
+                        display: inline-block;
+                        padding: 24px;
+                        text-align: center;
+                        background-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+    /*ol {
+        margin: 0;
+        padding: 0;
+        color: $colorBulltet;
+        opacity: 0;
+        position: absolute;
+        top: -200px;
+        pointer-events: none;
+        transition: all .5s ease;
+        li {
+            list-style: none;
+            line-height: 34px;
+            a {
+                font-size: $fontSize13;
+                color: #9b9b9b; 
+            }
+        }
+        .icon-newsletter {
+            float: left;
+            color: $colorBlack;
+        }
+    }*/
+}
+
+.navigation-full-path {
+    font-size: 22px;
+    color: $colorWhite;
+    font-weight: 700;
+    letter-spacing: .73px;
+    transition: all .5s ease;
+    display: none;
+    &::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        @extend .base64;
+        @extend .base64-plus;
+        width: 32px;
+        height: 32px;
+        transform: rotate(0) scale(1);
+        transition: transform .32s ease;
+        pointer-events: auto;
+    }
+}
+
+.breadcrumb-ready {
+    .navigasyon {
+        ol {
+            color: $colorWhite;
+            opacity: 1;
+            position: relative;
+            top: 0;
+            pointer-events: auto;
+        }
+    }
+    .navigation-full-path {
+        color: $colorBulltet;
+        margin-top: 10px;
+        pointer-events: none;
+        &::after {
+            transform: rotate(-45deg) scale(2);
+        }
+    }
+}

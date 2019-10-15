@@ -5,6 +5,7 @@
     margin-right: $margin20;
     position: relative; 
     cursor: pointer; 
+    min-width: 60px;
     &:after {
         content: '';
         width: 100%;
@@ -64,6 +65,7 @@
     .cart-prd-price {
         right: 0; 
         top: 0;
+        flex-direction: column;
         .first {
             &:empty {
                 display: none;
@@ -103,8 +105,13 @@
     .cart-prd-page-url {
         text-align: right;
         a {
-            max-width: 300px;
-            float: right; 
+            width: 100%;
+            max-width: 270px;
+            float: right;
+            background: $colorBlack;
+            color: $colorWhite;
+            text-align: center;
+            padding: 15px 3px 15px 3px;  
         }
     }
  }
@@ -126,7 +133,7 @@
 // Sepet içerik scroll
 .kutuSepet_icerik {
     overflow-x: hidden;
-    max-height: 350px;
+    max-height: 360px;
     display: block;
     padding-right: $padding10;
 }

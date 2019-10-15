@@ -1,14 +1,15 @@
 //-----Base-----//
 @import '_base/variables';
 @import '_app-shell/first-loading'; 
+@import '_base/mixins'; 
 @import '_base/icon';
 @import '_base/class-list';
-
-
+ 
 //-----Coponents-----//
-@import '_components/popup';
+@import '_components/popup'; 
 @import '_components/widget';
 @import '_components/banner';
+@import '_components/breadcrumb';
  
 
 //-----Forms Field-----//
@@ -52,13 +53,20 @@
 
 //-----Layout-----//
 @import '_product-list/variables';
-@import'_product-list/main-desktop';
-@import '_product-list/product';
+@import '_product-list/product'; 
+@import '_product-list/filter';
+@import '_product-list/main';
 @import '_product-detail/variables'; 
+@import '_product-detail/product-detail'; 
+
+
 
 //-----Home-----//
 @import '_pages/variables';
 @import '_pages/home';
+
+//-----Login-----//
+@import '_pages/login';
 
 
 //-----Member Page-----//
@@ -103,8 +111,8 @@
 
 
 
-@supports(grid-area: auto) {
-    @media screen and (min-width: $breakpoint-default) {
+@supports(grid-area: grid) {
+    @include setMediaScreen(min-width, $breakpoint-medium) {
         //-----Base-----//
         @import '_base/class-list-desktop'; 
 
@@ -115,9 +123,9 @@
         //-----Header-----//
         @import '_header/grid-desktop';
         @import '_header/header-menu-desktop';
-        @import '_header/mini-lang-desktop';
+        @import '_header/mini-lang-desktop'; 
         @import '_header/mini-login-desktop';
-        @import '_header/mini-search-desktop';
+        @import '_header/mini-search-desktop'; 
         @import '_header/mini-cart-desktop'; 
 
         //-----Plugins-----//
@@ -127,6 +135,7 @@
         @import '_content-grid/main-desktop';
         @import '_components/widget-desktop';
         @import '_components/banner-desktop';
+        @import '_components/breadcrumb-desktop';
                 
 
         //-----Basket-----//
@@ -142,8 +151,15 @@
         @import '_basket/payment-desktop';
         @import '_basket/order-result-desktop';
 
-        //-----Pages-----//
-        @import '_pages/home-desktop'; 
+        //-----Layout-----//
+        @import '_pages/home-desktop';   
+        @import '_product-list/main-desktop'; 
+        @import '_product-list/product-desktop';  
+        @import '_product-list/filter-desktop'; 
+        @import '_product-detail/product-detail-desktop'; 
+
+        //-----Login-----//
+        @import '_pages/login-desktop';
     
         //-----Member Page-----//
         @import '_member/main-desktop'; 

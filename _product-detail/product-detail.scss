@@ -1,0 +1,597 @@
+//LANDING PAGE
+@mixin padding-h {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+@mixin padding-h-remove {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.ems-page-product-detail {
+    padding-bottom: 40px;
+}
+
+.ems-prdd {
+    &-grid {
+        > .ga1 {
+            //@include padding-h();
+        }
+        > .ga2 {
+            @include padding-h();
+            //position: relative;
+            .ems-prdd-right {
+                position: static !important;
+            }
+        }
+    }
+    
+    &-brand {
+        font-family: $medium;
+        font-size: 16px;
+    }
+    &-name {
+        font-size: $fontSize13;
+        font-family: $medium;
+        letter-spacing: .5px;
+        position: fixed;
+        top: 0;
+        width: calc(100% - 160px);
+        height: 47px;
+        background: #fff;
+        z-index: 10;
+        left: 50px;
+        @extend .display-flex;
+        align-items: center;
+        h1 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            max-height: 47px;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden; 
+        }
+    }
+    &-block1 {
+        margin-top: 7px;
+        margin-bottom: $margin20;
+    }
+    &-price {
+        font-size: $fontSize20;
+        white-space: nowrap;
+        [id*="KDVDAHILSATIS"] {
+            display: none;
+        }
+    }
+    &-badge {
+        position: relative;
+        overflow: hidden;
+        font-family: $regular;
+        font-size: $fontSize13;
+        > div {
+            display: none;
+            /*position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $colorWhite;*/
+            width: 100%;
+            > span {
+                display: block;
+            }
+        }
+    }
+    &-gallery {
+        margin-bottom: $margin10;
+        .swiper-slide {
+            text-align: center;
+        }
+        .swiper-pagination {
+            padding-bottom: 0;
+            right: 10px;
+            bottom: -25px;
+            left: auto;
+            &-bullet {
+                width: 8px;
+                height: 8px;
+                border: 2px solid $colorWhite;
+                background-color: $colorAlternate;
+                margin: 0 $margin5;
+                &-active {
+                    width: 8px;
+                    height: 8px;
+                    background: $greyColor;
+                    border-color: $greyColor;
+                }
+
+            }
+        }
+    }
+    &-size {
+        margin-top: 15px;
+        font-family: $medium;
+        font-size: 13px;
+    }
+    &-type {
+        &:empty {
+            display: none;
+        }
+    }
+    &-add-to-cart {
+        margin-top: 20px;
+    }
+    &-block2 {
+        margin-top: 10px;
+        > span {
+            flex: 1;
+            display: block;
+        }
+        a.btnDefault {
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+    &-block3 {
+        position: relative;
+    }
+}
+
+// Ürün Detay Tab
+
+.tableTitleUrunOzellik {
+    display: none; 
+}
+
+.urunOzellik, .teslimat-iade {
+    display: none;
+}
+
+// Kategori bazlı ürün bilgiis
+
+.prd-cat-info {
+    display: none;
+    margin: $margin30 0 $margin10 0;
+    font-size: $fontSize15;
+    &:empty {
+        display: none;
+    }
+}
+.ems-prdd-info {
+    .prd-cat-info {
+        display: block;
+        line-height: 25px;
+        color: $colorAlternate;
+    }
+}
+
+.ems-prdd-tab {
+    margin-top: $margin10; 
+    display: inline-block;
+    width: 100%;
+    &.ems-tab-vertical .ems-tab-content  {
+        .ems-tab-inner-content {
+            line-height: 25px;
+        }
+        > div {
+            .ems-tab-inner-header {
+                @extend .base64-plus;
+                font-size: $fontSize13;
+            }
+            .ems-tab-inner-content {
+                font-size: $fontSize13;
+            }
+            &.selected {
+                .ems-tab-inner-header {
+                    @extend .base64-minus;
+                }
+            }
+        }
+    }
+    .urunOzellik, .teslimat-iade {
+        display: block;
+    }
+}
+
+// Favori
+
+.ems-prdd-favorite { 
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    z-index: 1;
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    .icon-favori-fill {display: none;}
+    .btnFavoriEkle {
+        &.selected {
+            .icon-favori-fill {display: inline-block;}
+            .icon-favori {display: none;}
+        }
+    }
+}
+
+
+//badges
+.indirimli {
+    #plhKazancOran {
+        display: block !important;
+        color: $colorRed;
+    }
+}
+.yeniUrun {
+    #plhYeniUrunBtn {
+        display: block !important;
+        color: $colorRed;
+    }
+}
+.tukendi {
+    #plhStokUyari {
+        display: block !important;
+        color: $colorRed;
+    }
+}
+
+//other colors
+.UrunListeGrup_listeUrunDetayGrup {
+    margin-top: 20px;
+    .listeUrunDetayGrup_listeBaslik,
+    .URN_AD {
+        display: none;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > li {
+            width: 70px;
+            height: 70px;
+            overflow: hidden;
+            cursor: pointer;
+            + li {
+                margin-left: 10px;
+            }
+        }
+    }
+    .URN_RESIM {
+        margin-top: -7px;
+    }
+}
+
+//sizes
+$m: 5px;
+.dropdown-options {
+    display: block !important;
+    margin-left: -$m;
+    margin-right: -$m;
+    font-size: 0;
+    > a {
+        display: inline-block;
+        min-width: 35px;
+        padding-left: 5px;
+        padding-right: 5px;
+        line-height: 35px;
+        border: 1px solid transparent;
+        border-radius: 500px;
+        font-size: 15px;
+        font-family: $regular;
+        text-align: center;
+        margin: $m;
+        height:35px;
+        &.selectedOption {
+            border: 1px solid $colorBulltet;
+        }
+        &.stokYok {
+            opacity: .5;
+            pointer-events: none;
+            text-decoration: line-through; 
+        }
+    }
+}
+.dropdown-trigger {
+    display: none;
+}
+
+.open-size-guide {
+    display: none;
+    margin-top: 10px;
+}
+
+//add to cart
+.urunDetay_urunAdet {
+    display: none;
+    .sStylerWrp_select {
+        background:$greyBorderColor;
+    }
+    [id$="txtURN_ADET"],
+    [id$="lblURN_ADET"] {
+        display: none !important;
+    }
+}
+.urunDetay_btnSepeteAt {
+    margin-top: $margin10;
+}
+a.btnsepeteAt {
+    width: 100%;
+}
+a.btnStokHaberci {
+    width: 100%;
+    pointer-events: none;
+}
+
+//added to cart
+.mini-product-info {
+    display: none;
+    $p: 20px;
+    &-sub {
+        @extend %footer-mods-sub;
+        padding: $p;
+    }
+    .sub-header {
+        margin: #{-$p} #{-$p} #{$p};
+    }
+    &-ready {
+        .mini-product-info,
+        .mini-product-info-sub {
+            @extend %footer-mods-sub-ready;
+        }
+    }
+    &-animate {
+        .mini-product-info-overlay {
+            @extend %footer-mods-sub-overlay;
+        }
+        .mini-product-info-sub {
+            @extend %footer-mods-sub-animate;
+        }
+    }
+}
+.added-prd {
+    grid-template-columns: 100px 15px 1fr; 
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "ga1 . ga2" "ga3 ga3 ga3";
+    @include setGridArea(1,3);
+    .prm-media-holder {
+        position: relative;
+        svg {
+            position: absolute;
+            right: -5px;
+            top: -5px;
+            font-size: 18px;
+            animation: animation-03 .5s ease;
+        }
+    }
+    .prm-title {
+        font-size: 21px;
+        font-weight: 700;
+        word-break: break-word;
+    }
+    .prm-desc {
+        font-family: $medium;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    .prm-btns {
+        $m: 5px;
+        margin-top: 20px;
+        > a {
+            margin: 5px;
+        }
+    }
+}
+.suggest-prd {
+    display: none;
+    border-top: 1px solid $userIcoBg;
+    margin-top: 20px;
+    .prm-title {
+        font-family: $medium;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 20px 0;
+    }
+}
+
+//size guide
+.mini-size-guide {
+    display: none;
+    $p: 20px;
+    &-sub {
+        @extend %footer-mods-sub;
+        padding: $p;
+    }
+    .sub-header {
+        margin: #{-$p} #{-$p} #{$p};
+    }
+    &-tab {
+        margin-top: 20px;
+    }
+    .ems-tab-header {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $userIcoBg;
+        justify-content: flex-start;
+    }
+    .ems-tab-content {
+        max-height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    &-ready {
+        .mini-size-guide,
+        .mini-size-guide-sub {
+            @extend %footer-mods-sub-ready;
+        }
+    }
+    &-animate {
+        .mini-size-guide-overlay {
+            @extend %footer-mods-sub-overlay;
+        }
+        .mini-size-guide-sub {
+            @extend %footer-mods-sub-animate;
+        }
+    }
+}
+
+.size-guide-table {
+    + .size-guide-table {
+        margin-top: 40px;
+    }
+}
+
+//find in store
+.ems-find-store {
+    display: none;
+    $p: 20px;
+    &-sub {
+        @extend %footer-mods-sub;
+        padding: $p;
+    }
+    .sub-header {
+        margin: #{-$p} #{-$p} #{$p};
+    }
+
+    .dealer-form {
+        .ems-field-css {
+            margin-top: 0;
+        }
+    }
+    #findStoreBtn {
+        width: 100%;
+    }
+    .ems-message {
+        margin-top: 10px;
+    }
+    .dealer-no-stock {
+        display: none;
+    }
+
+    .quantity {
+        display: block;
+        margin-top: 5px;
+        color: $colorBulltet;
+    }
+
+    &.ems-no-result {
+        .address-detail,
+        .dealer-stock-information {
+            display: none;
+        }
+        .dealer-no-stock {
+            display: flex;
+        }
+    }
+
+    &.ems-result-found {
+        .service-list {
+            display: block;
+        }
+    }
+
+    &-ready {
+        .ems-find-store,
+        .ems-find-store-sub {
+            @extend %footer-mods-sub-ready;
+        }
+    }
+    &-animate {
+        .ems-find-store-overlay {
+            @extend %footer-mods-sub-overlay;
+        }
+        .ems-find-store-sub {
+            @extend %footer-mods-sub-animate;
+        }
+    }
+}
+
+//ZOOM
+.zoom-gallery {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background:$greyBorderColor;
+    &-inner {
+        height: 100%;
+    }
+
+    .zoom-gallery-header {
+        position: relative;
+        z-index: 2;
+    }
+
+    .thumbs-wrapper {
+        display: none;
+        position: absolute;
+        left: calc((100% - 1040px) / 2);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 318px;
+        .swiper-slide {
+            cursor: pointer;
+            opacity: .25;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .zoom-gallery-footer {
+        display: none;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        padding: 10px;
+    }
+    
+    &-ready {
+        position: fixed;
+        .zoom-gallery {
+            display: block;
+        }
+    }
+}
+
+//primary properties
+.prop-container {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $userIcoBg;    
+}
+.prop {
+    font-family: $medium;
+    font-size: 15px;
+    color: $greyColor;
+    padding: 0 3px;
+    flex: none;
+    width: calc(100% / 3);
+    &-title {
+        margin-top: 3px;
+    }
+}
+
+//mini desc
+.mini-desc {
+    font-family: $medium;
+    font-size: 15px;
+    img {
+        width: 30px;
+    }
+    .ci1 {
+        img {
+            width: 83px;
+        }
+    }
+}
+
+//featured prds
+.featured-prds {
+    padding-top: 40px;
+} 

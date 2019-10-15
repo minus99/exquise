@@ -1,0 +1,19 @@
+.urunPaging_pageNavigation,
+.seo-text{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.seo-text{
+    h1{
+        font-family: $play; 
+        color: $colorGrey;
+        font-size: $fontSize20;
+        font-weight: normal;
+        margin-bottom: 7px;
+    }
+    p{
+        font-size: $fontSize15;
+        color: #9b9b9b;
+        line-height: 22px;
+    }
+}

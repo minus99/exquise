@@ -36,3 +36,32 @@ Site General Grid Class Items
     display: -ms-flexbox;
     display: flex;
 }
+
+.display-flex-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/*Desktop element hidden*/
+.obj-mobile{
+    display: none !important;
+}
+
+// Site Animasyon Extend
+.transition-desktop { 
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+// Transparent Background
+.transparent-desktop {
+    background: rgba(255, 255, 255, .97);
+}
+
+//Site ici genel sticky class'ı 
+.sticky-desktop{ 
+    position: -webkit-sticky !important;
+    position: sticky !important;
+}

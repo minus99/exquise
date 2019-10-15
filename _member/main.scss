@@ -198,6 +198,8 @@ select {
         grid-column: span 2; 
         margin-bottom: $margin15;
         padding-right: 0 !important; 
+        padding-left: 0 !important; 
+        width: auto;
         .form-obj {
             margin-bottom: 0px;
         }
@@ -216,6 +218,7 @@ select {
         }
     }
 }
+
 .form-label {
     font-size: $labelFontSize;
     color: $labelFontColor;
@@ -249,6 +252,49 @@ select {
     }
     .sticky {
         top: 20px;
+    }
+}
+
+// Tel format
+input[id$="UYE_CEPTELEFONALAN"] {
+    width: 65px!important;
+    margin-right: $memberPadding10;
+    text-align: center
+}
+
+input[id$="UYE_CEPTELEFON"] {
+    width: calc(100% - 70px)!important
+}
+
+// Captcha format
+[id$="divCaptcha"] {
+    position: relative;
+    br {
+        display: none
+    }
+    [id$="lbfUYE_KONTROLKODU"] {
+        display: block;
+        margin-bottom: 10px;
+    }
+    #imgCaptcha { 
+        position: absolute;
+        left: 1px;
+        top: 27px;
+        width: auto; 
+        height: 42px;
+    }
+    input[id$="txtUYE_KONTROLKODU"] {
+        padding-left: 190px;
+        text-align: center;
+        letter-spacing: 2.5px
+    }
+    .captchaYenile {
+        display: inline-flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 4px;
+        font-size: 11px
     }
 }
 
@@ -376,11 +422,10 @@ a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUy
 }
 
 // Member Genel Button
-a.lnkSorgula, .urunDetay_btnSepeteAt a.btnsepeteAt, .cart-prd-page-url a {
+/*a.lnkSorgula, .urunDetay_btnSepeteAt a.btnsepeteAt, .cart-prd-page-url a {
     display: block;
     width: 100%;
     background: $btnBackground; 
-    border-radius: $buttonRadius;
     text-align: center;
     padding: $memberBtnDefaultPadding;
     > span{
@@ -389,7 +434,7 @@ a.lnkSorgula, .urunDetay_btnSepeteAt a.btnsepeteAt, .cart-prd-page-url a {
         font-size: $memberFontSize14;
         font-weight: normal;
     }
-}
+}*/
 
 // --- EMS TAB DÜZENLEMLERİ -- //
 // Tab Menü

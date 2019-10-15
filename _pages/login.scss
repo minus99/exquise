@@ -1,0 +1,54 @@
+  // --- Login --- //
+
+  #validateUye {
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+  }
+ 
+  .page-login-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "AAA BBB";
+    width: 100%;
+    grid-gap: 20px;
+}  
+
+.member-login { 
+    width: 100%;
+    padding: 0 0 $padding30 0;
+    position: sticky;
+    top: 0; 
+    .ems-header-title {
+        margin: 60px 0 35px 0;
+        font-size: 22px;
+    } 
+    .ems-tab-header {
+        > div {
+            padding: $padding15;
+            margin-bottom: $margin20;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            &.selected {
+                border-bottom: 3px solid $colorBlack;
+            }
+        }
+    }
+    .ems-tab-content {
+        .ems-signin, .ems-signup {display: none;}
+        > div {
+            display: none;
+            &.selected {
+                display: block;
+            }
+        }
+
+    }
+    .ems-tab-login {
+        max-width: 350px;
+        margin: 0 auto;
+    } 
+    .form-obj input[type="checkbox"] {
+        display: none;
+    }
+}

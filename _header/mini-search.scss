@@ -11,46 +11,84 @@
         background: #000;
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 0; 
         @extend .transition;
     }
 }
  
-.mini-search-sub {
-    top: 70px; 
-    left: 0;
-    width: 100%;
-    padding: 25px;
-    @extend .transparent;
-    opacity: 0;
-    visibility: hidden;
-    .field.field-single {
-        margin: 0;
-        input {
-            background: none;
-            border: 0;
-            font-size: 17px;
+.mini-search {
+    &-sub {
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: $colorWhite;
+        color: $colorBlack;
+        padding: 0 $padding10 $padding30 $padding10;
+        opacity: 0;
+        visibility: hidden;
+        .field.field-single {
+            margin: 0;
+            width: 100%;
+            input {
+                background: none;
+                border: 0;
+                font-size: 17px;
+                margin: 0;
+            }
+        }
+        .sub-close {
+            top: 12px;
+            right: 15px;
+            //transform: translateY(-50%);
         }
     }
-    .sub-close {
-        top: 50%;
-        right: 30px;
-        transform: translateY(-50%);
+    &-animate {
+        position: fixed;
+        .mini-search {
+            &-sub {
+                opacity: 1;
+                top: 0;
+                visibility: visible; 
+            }
+        }
+    }  
+    .popular-search-words {
+        display: block;
+    } 
+    &-input {
+        position: relative;  
+        &:before {
+            content: '';
+            position: absolute;
+            top: 47px;
+            left: 0;
+            height: 1px;
+            background: #eeeeee;
+            width: 100%; 
+        } 
     }
 }
 
+.mini-search-animate {
+    .mini-search-overlay {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
 /* --- Arama açık kapalı özellikleri --- */
 
-.mini-search-ready {
-    .mini-search-sub {
-        top: 60px;
-        opacity: 1;
-        visibility: visible;
+.mini-search-result-found {
+    .site-header {
+        position: relative !important;
     }
-    .mini-search-info {
-        &:after {
-            height: 2px;
-        }
+    .popular-search-words {
+        display: none;
     }
 }
 
@@ -62,14 +100,14 @@ $mr: 20px;
 .searchSuggestDiv { 
     position: relative !important;
     width: 100% !important;
-    display: none;
+    padding: $padding20 0;
+    //display: none;
 }
 .searchSuggestDivHolder {
-    margin: 0 20px;
+    margin: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "ga3" "ga1" "ga2" "ga4";
-
+    grid-template-areas: "ga3" "ga2" "ga4";
     .prd {
         grid-area: ga2;
         h3 {
@@ -77,10 +115,10 @@ $mr: 20px;
         }
         .sHolder {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             grid-gap: 1px;
-            margin-left: -$mr;
-            margin-right: -$mr;
+            //margin-left: -$mr;
+            //margin-right: -$mr; 
             > div {
                 display: none;
                 cursor: pointer !important;
@@ -89,7 +127,11 @@ $mr: 20px;
                 &:nth-child(3),
                 &:nth-child(4),
                 &:nth-child(5),
-                &:nth-child(6) {
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(8),
+                &:nth-child(9),
+                &:nth-child(10) {
                     display: block;
                 }
             }
@@ -97,13 +139,18 @@ $mr: 20px;
         table {
             tr {
                 display: grid;
+                grid-column-gap: 10px; 
+                margin-bottom: 5px;
+                padding: 0 10px 5px 10px; 
+                border-bottom: 1px solid #eeeeee;
+                grid-template-columns: min-content auto;
                 th {
                     display: none;
                 }
                 td {
                     padding-left: 20px;
                     padding-right: 20px;
-                    background: $greyColor;
+                    //background: $greyColor;
                     > .emos_invisible {
                         display: block;
                     }
@@ -115,25 +162,26 @@ $mr: 20px;
             padding-left: 0;
             padding-right: 0;
             background: none;
+            grid-area: 3 / 1;
             > img {
-                min-height: 218px;
+                max-width: 60px;
+                width: 60px;
             }
         }
         .suggest_urnsname_con {
             grid-row: 2;
-            font-family: $bold;
-            font-size: 16px;
-            padding-top: 15px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
+            font-family: $regular;
+            font-size: 13px;
+            padding: 0;
+            color: #666666;
+            grid-area: 3 / 2;
         }
         .suggest_urnprice_con {
             grid-row: 3;
-            padding-top: 5px;
-            font-size: 18px;
-            font-weight: 700;
-            padding-bottom: 15px;
+            font-size: 13px;
+            padding: 0;
+            grid-area: 3 / 3;
+            text-align: right;
             .suggest_urnprice {
                 display: flex;
             }
@@ -149,8 +197,10 @@ $mr: 20px;
     .cat {
         grid-area: ga3;
         margin-top: 14px;
+        display: none;
         h3 {
             margin: 0 0 10px;
+            display: none;
         }
         .suggest_link {
             > a {
@@ -159,16 +209,18 @@ $mr: 20px;
             > span {
                 position: relative;
                 display: block;
-                padding: 6px 15px 6px 15px;
+                padding: 6px 0; 
                 font-family: $medium;
                 font-size: 13px;
                 line-height: 20px;
-                color: $greyColor;
+                color: $colorGrey;
                 span {
                     display: none;
                 }
                 a {
                     display: inline-block;
+                    color: $colorGrey;
+                    font-family: $regular;
                     &:not(:first-child) {
                         color: $greyColor;
                         margin-left: 5px;
@@ -182,8 +234,8 @@ $mr: 20px;
         }
     }
     .prdCount {
-        grid-area: ga1;
-        display: block;
+        //grid-area: ga1;
+        //display: block;
         padding: 20px 0;
         font-family: $medium;
         font-size: 15px;
@@ -195,7 +247,12 @@ $mr: 20px;
         grid-area: ga4;
         display: block;
         justify-self: center;
-        padding-top: 30px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        padding: 20px;
+        background: #fff;
         #ascAramaBtnTumunuGoster {
             min-width: 280px;
             text-align: center;
@@ -206,3 +263,22 @@ $mr: 20px;
         display: none;
     }
 }
+
+// Populer Arama
+
+.popular-search-words {
+    display: none;
+    text-align: center;
+    padding: 45px 0; 
+    .ems-section-title {
+        color: #9b9b9b;
+        font-size: 13px;
+        margin-bottom: $margin20;
+    }
+    .swiper-wrapper {flex-wrap: wrap;}
+    .not-trigger .swiper-slide {
+        width: 100%;
+        margin-bottom: $margin15;
+    }
+}
+

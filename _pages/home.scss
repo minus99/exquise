@@ -1,10 +1,13 @@
  // --- Anasayfa --- //
  
  .page-home-grid {
-    grid-template-columns: minmax(0, auto);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
-    "AAA"
-    "BBB"
-    "CCC";
+    "AAA AAA"
+    "BBB BBB"
+    "CCC CCC"
+    "DDD DDD"
+    "EEE EEE"
+    "FFF GGG";
     width: 100%;
 } 

@@ -1,7 +1,38 @@
 /*Site Header Grid*/
 .header{
-    min-height: 80px;
     &-logo{
         img{max-height: 80px;}
     }
 }
+
+/*Site Header Grid*/
+.site-header {
+    top: 0;
+    z-index: 9;
+    width: 100%;
+}
+
+.site-header-grid {
+    grid-template-columns: auto 1fr auto auto auto auto;
+    grid-template-rows: minmax(0, auto);
+    grid-template-areas: "AAA BBB CCC DDD EEE FFF GGG";
+    grid-gap: 10px; 
+    height: 60px;
+    background: $colorWhite;
+}
+
+.header-logo {
+    width: 100%;
+    a {
+        justify-content: center;
+    }
+}
+
+// Max yükseklikte sabit menü
+
+.max-height-detect {
+    .site-header {
+        position: absolute !important;
+    }
+}
+ 

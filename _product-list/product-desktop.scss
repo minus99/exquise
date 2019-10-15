@@ -1,0 +1,18 @@
+.view-4{
+    .urnList .emosInfinite{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+.urunPaging_pageNavigation{
+    a.tumunuGoster{
+        &:before{
+            content:'';
+            width: 1px;
+            height: 14px;
+            background: #9b9b9b;
+            display: inline-block;
+            vertical-align: top;
+            margin: 1px 20px 1px 20px;
+        }
+    }
+}

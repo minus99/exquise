@@ -1,29 +1,28 @@
 //Site varsayilan butonlar
-a.btnDefault{
+a.btnDefault, span.lnkGuestCheckout{
     display: block;
     width: 100%;
     background: $btnBackground; 
     text-align: center;
-    padding: 14px 3px 13px 3px;
+    padding: 15px 3px 15px 3px;
     > span{
         font-family: $regular;
         color: $colorWhite;
         font-size: $fontSize14;
     }
 }
-//Site alternatif butonlar
-a.btnAlternate{
+//Site alternatif butonlar 
+a.btnAlternate, a.btnFacebookLogin, a.btnArama {
     display: block;
     width: 100%;
     background: none;
     border:1px solid $btnBorder;
-    padding: 10px 3px 10px 3px;
+    padding: 14px 3px;
     text-align: center;
-    border-radius: $buttonRadius;
     > span{
-        font-family: $bold;
-        color: $btnAlternateColor;
-        font-size: 16px;
+        font-family: $medium;
+        color: $colorBlack;
+        font-size: 14px;
     }
 }
 //Site alternatif yazı boyutu kücük butonlar
@@ -80,7 +79,8 @@ a.btnFatAdrSec,
 a.btnSatisSozlesmeOnizle,
 a.btnOnBilgilendirmeFormOnizle,
 a.btnHvlBnkSec,
-a.btnOdemeCekiEkle{
+a.btnOdemeCekiEkle,
+a.btnFavoriEkle {
     background: none;
     padding: 0;
     border-radius: 0;

@@ -1,1 +1,11 @@
- 
+/* Login Logoff mini sepet gizleme */
+.ems-login {
+    .obj-logoff, .ems-obj-logoff {
+        display: none;
+    }
+}
+.ems-logoff {
+    .obj-login, .ems-obj-login {
+        display: none;
+    }
+}

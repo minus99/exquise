@@ -5,10 +5,10 @@
     min-height: 490px;
     .swiper-inner {
         padding-left: 0;
-        margin-left: #{-$p};
+        //margin-left: #{-$p};
     }
     .swiper-slide {
-        padding-left: #{$p};
+        //padding-left: #{$p};
         width: calc(100% / 3);
     }
 }

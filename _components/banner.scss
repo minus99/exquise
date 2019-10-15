@@ -39,6 +39,7 @@
         img,
         video {
             width: 100%;
+            display: block;
         }
         video {
             &[poster] {
@@ -169,6 +170,8 @@
             }
             b {
                 letter-spacing: 1.5px;
+                font-family: $play;
+                font-weight: normal;
             }
         }
         .prm-link {
@@ -197,17 +200,12 @@
 
     //banner type10 *cart promotion
     &10 {
-        border: 1px solid $greyBorderColor;
-        background: $colorWhite;
-        color: $colorBlack;
         .banner-body {
             @include banner-body-static;
             padding: 20px;
         }
         .prm-title {
             font-size: 14px;
-            color: $colorRed;
-            font-weight: 700;
         }
         .prm-desc {
             font-size: 14px;
@@ -272,14 +270,13 @@
         .prm-media {
             //@include aspect-ratio(1440, 800);
             display: inline-block;
+            width: 100%; 
         }
         .prm-title {
-            i {
-                font-style: normal;
-                font-family: $play;
-            }
             b {
                 letter-spacing: 1.5px;
+                font-family: $play;
+                font-weight: normal; 
             }
         }
         .prm-link {
@@ -307,9 +304,20 @@
     .prm-media {
         @include aspect-ratio(1440, 800);
     }
+    .banner {
+        //height: calc(100vh - 60px); 
+    }
 }
+.max-height-detect {
+    .homepage-slider {
+        .banner {
+            //height: calc(100vh - 0px);
+        }
+    }
+}
+
 // Anasayfa kampnaya görsel
-.campaign-slider {
+.cover-slider {
     .prm-media {
         @include aspect-ratio(1380, 650);
     }
@@ -322,9 +330,132 @@
     .swiper-wrapper {
         justify-content: center;
         li {
-           top: 0; 
+           top: 60px; 
         }
     }
 }
 
+// Kategori görsel ürün slider
+.product-slider {
+    @extend .display-flex;
+
+    // görsel still
+    .ems-section-wrapper {
+        position: relative;
+        flex: 1;
+    }
+    .ems-section-inner { 
+        position: sticky;
+        top: 60px;
+    }
+    .ems-section-title {
+        position: absolute;
+        bottom: 18%;
+        padding: $padding20;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+        color: $colorWhite;
+    }
+
+    // ürün still
+    .swiper-product {
+        flex: 1;
+        .swiper-wrapper {
+            flex-wrap: wrap;
+        }
+        .swiper-inner {
+            margin: 0;
+        }
+        .swiper-slide {
+            width: calc(100% / 2);
+            height: auto;
+        }
+    }
+}
+
+// instagram feed
+.instagram-feed {
+    .swiper-wrapper {
+        @extend .display-grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:10px;
+    }
+    .ems-section-title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: $fontSize15;
+    }
+    .banner10 {
+        height: 100%;
+        @extend .display-flex;
+        align-items: center;
+        .banner-body {
+            padding: 0;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .prm-title {
+            color: $colorBlack;
+            font-size: 29px;
+            b {
+                font-weight: normal;
+                font-family: $play;
+            }
+        }
+    }
+}
+
+// instagram feed
+.main-blog {
+    text-align: center;
+    .swiper-wrapper {
+    }
+    .ems-section-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .blog-post-head {
+        font-size: 26px;
+    }
+    .blog-post-text-wrap {
+        width: 60%;
+        margin: 0 auto; 
+    }
+    .blog-post-cat-text {
+        color: $colorAlternate;
+    }
+    .blog-post-link {
+        border-top: 1px solid $greyBorderColor;
+        margin-top: 40px;
+        padding-top: $padding30;
+        display: block;
+    }
+}
+
+// Login Slider
+.login-slide {
+    .prm-media {
+        
+    }
+    .banner .banner-body {
+        padding: 0 !important;
+        transform: none;
+        top: 100px;
+        left: 50px; 
+        width: auto; 
+    }
+    .banner .prm-title {
+        font-size: 22px;
+        max-width: 240px !important;
+        line-height: 29px;
+    }
+    .swiper-slide {
+        line-height: 0;
+        &.sticky {
+            top: 0;
+        }
+      }
+}
 
