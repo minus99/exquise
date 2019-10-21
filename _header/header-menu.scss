@@ -244,6 +244,7 @@
 }
 
 //footer mods extend obj
+
 %footer-mods-sub {
     display: none;
     position: fixed;
@@ -271,6 +272,8 @@
 }
 %footer-mods-sub-overlay {
     display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 

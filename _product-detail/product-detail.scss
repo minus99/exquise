@@ -113,6 +113,7 @@
         margin-top: 15px;
         font-family: $medium;
         font-size: 13px;
+        position: absolute;
     }
     &-type {
         &:empty {
@@ -137,6 +138,7 @@
         position: relative;
     }
 }
+
 
 // Ürün Detay Tab
 
@@ -171,6 +173,9 @@
     display: inline-block;
     width: 100%;
     &.ems-tab-vertical .ems-tab-content  {
+        > * {
+            display: block;
+        }
         .ems-tab-inner-content {
             line-height: 25px;
         }
@@ -268,26 +273,40 @@ $m: 5px;
     margin-left: -$m;
     margin-right: -$m;
     font-size: 0;
+    overflow-x: hidden;
+    max-height: 250px;
     > a {
-        display: inline-block;
-        min-width: 35px;
-        padding-left: 5px;
-        padding-right: 5px;
-        line-height: 35px;
-        border: 1px solid transparent;
-        border-radius: 500px;
-        font-size: 15px;
-        font-family: $regular;
-        text-align: center;
-        margin: $m;
-        height:35px;
+        position: relative;
+        width: 100%;
+        float: left;
+        clear: both;
+        .dropdownrow {
+            display: inline-block;
+            min-width: 35px;
+            padding-left: 5px;
+            padding-right: 5px;
+            line-height: 35px;
+            border: 1px solid transparent;
+            border-radius: 500px;
+            font-size: 15px;
+            font-family: $regular;
+            text-align: center;
+            margin: $m;
+            height:35px;
+        }
         &.selectedOption {
-            border: 1px solid $colorBulltet;
+            .dropdownrow {border: 1px solid $colorBulltet;}
         }
         &.stokYok {
-            opacity: .5;
             pointer-events: none;
-            text-decoration: line-through; 
+            .dropdownrow { 
+                opacity: .5;
+                &:before {
+                    content:'Tükendi'; 
+                    position: absolute;
+                    right: 30px;
+                }
+            } 
         }
     }
 }
@@ -295,9 +314,55 @@ $m: 5px;
     display: none;
 }
 
+// Beden mobil seçim
+.ems-prdd-size {
+    display: none;
+    $p: 30px;
+    img {
+        width: auto;
+    }
+    &-sub {
+        @extend %footer-mods-sub;
+        padding: $p;
+    }
+    .sub-close {
+        right: -13px;
+        top: -13px;
+        width: 46px;
+        height: 46px;
+        border-radius: 100%;
+        background: #eee;
+        @extend .display-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-ready {
+        //position: fixed;
+        overflow: hidden;
+        .ems-prdd-size,
+        .ems-prdd-size-sub {
+            @extend .display-flex;
+            flex-direction: column-reverse;
+        }
+    }
+    &-animate {
+        .ems-size-overlay {
+            @extend %footer-mods-sub-overlay;
+        }
+        .ems-prdd-size-sub {
+            @extend %footer-mods-sub-animate;
+        }
+    }
+}
+
+// Beden Kılavuzu
+
 .open-size-guide {
     display: none;
     margin-top: 10px;
+    font-family: $regular;
+    font-size: $fontSize13;
+    margin-bottom: $margin20;
 }
 
 //add to cart
@@ -325,13 +390,23 @@ a.btnStokHaberci {
 //added to cart
 .mini-product-info {
     display: none;
-    $p: 20px;
+    $p: $padding15 $padding20 0 $padding20;
+    &-holder {
+        display: block;
+    }
     &-sub {
         @extend %footer-mods-sub;
         padding: $p;
+        top: 0; 
+        bottom: auto;
+        transform: translateY(-100%);
     }
     .sub-header {
         margin: #{-$p} #{-$p} #{$p};
+    }
+    .sub-close {
+        right: 20px;
+        top: 30px;
     }
     &-ready {
         .mini-product-info,
@@ -349,10 +424,11 @@ a.btnStokHaberci {
     }
 }
 .added-prd {
-    grid-template-columns: 100px 15px 1fr; 
-    grid-template-rows: max-content 1fr;
-    grid-template-areas: "ga1 . ga2" "ga3 ga3 ga3";
-    @include setGridArea(1,3);
+    grid-template-columns: 40px 15px 1fr 25px;  
+    grid-template-rows: max-content 1fr; 
+    grid-template-areas: "ga1 . ga2 ga3" "ga4 ga4 ga4 ga4";  
+    @include setGridArea(1,4);
+    align-items: center;
     .prm-media-holder {
         position: relative;
         svg {
@@ -363,10 +439,13 @@ a.btnStokHaberci {
             animation: animation-03 .5s ease;
         }
     }
+    .prm-media {
+        width: 40px;
+    }
     .prm-title {
-        font-size: 21px;
-        font-weight: 700;
+        font-size: $fontSize13;
         word-break: break-word;
+        color: $colorGrey;
     }
     .prm-desc {
         font-family: $medium;
@@ -375,9 +454,14 @@ a.btnStokHaberci {
     }
     .prm-btns {
         $m: 5px;
-        margin-top: 20px;
-        > a {
-            margin: 5px;
+        margin-top: $margin10;
+        border-top: 1px solid $greyBorderColor;
+        > div {width: 100%; text-align: center;}
+        span {
+            font-size: 13px;
+        }
+        a {
+            width: 100%;  
         }
     }
 }
@@ -388,30 +472,92 @@ a.btnStokHaberci {
     .prm-title {
         font-family: $medium;
         font-size: 15px;
-        font-weight: 700;
         padding: 20px 0;
+    }
+}
+
+// Mobil beden ve grup ürün button
+
+.ems-prdd-toggle {
+    margin-bottom: $margin20;
+    a {
+        text-align: left;
+        padding: 14px 20px;
+        font-family: $medium;
+        position: relative;
+        svg {
+            position: absolute;
+            right: 12px;
+            top: 11px;
+        }
+    }
+    &-option {
+        .dropdown-trigger {
+            display: block;
+        }
     }
 }
 
 //size guide
 .mini-size-guide {
     display: none;
-    $p: 20px;
+    $p: 30px;
     &-sub {
         @extend %footer-mods-sub;
         padding: $p;
     }
     .sub-header {
-        margin: #{-$p} #{-$p} #{$p};
+        //margin: #{-$p} #{-$p} #{$p};
+        font-family: $medium;
+        font-size: $fontSize20;
+        border: 0;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+    .sub-desc {
+        font-size: $fontSize15;
+        line-height: 21px;
+        color: $greyColor;
+        margin: $margin20 0;
+        @extend .display-flex;
+        align-items: center;
+        img {
+            width: auto;
+            margin-right: $margin5;
+        }
+    }
+    .sub-close {
+        right: -13px;
+        top: -13px;
+        width: 46px;
+        height: 46px;
+        border-radius: 100%;
+        background: #eee;
+        @extend .display-flex;
+        align-items: center;
+        justify-content: center;
     }
     &-tab {
         margin-top: 20px;
     }
     .ems-tab-header {
         margin-bottom: 20px;
-        padding-bottom: 20px;
+        height: 30px;
         border-bottom: 1px solid $userIcoBg;
         justify-content: flex-start;
+        @extend .display-flex-desktop;
+        li {
+            border-bottom: 2px solid transparent;
+            width: auto;
+            text-align: center;
+            span {
+                padding: 0 $padding10;
+            }
+        }
+        .selected {
+            font-family: $medium;
+            border-bottom: 2px solid $colorBlack;
+        }
     }
     .ems-tab-content {
         max-height: calc(100vh - 250px);
@@ -430,8 +576,10 @@ a.btnStokHaberci {
         }
         .mini-size-guide-sub {
             @extend %footer-mods-sub-animate;
+            top:0;
         }
     }
+    img {width: auto;}
 }
 
 .size-guide-table {
@@ -443,15 +591,60 @@ a.btnStokHaberci {
 //find in store
 .ems-find-store {
     display: none;
-    $p: 20px;
+    img {
+        width: auto;
+    }
     &-sub {
         @extend %footer-mods-sub;
-        padding: $p;
+        padding: 0;
+        top: 0;
+    }
+    .mod-service-list-header {
+        margin-bottom: 30px;
+        background:$lightGreyColor;
+        padding: $padding30 $padding20;
+    }
+    .dealer-form {
+        .ems-field-css {
+            margin: 0 7px;
+        }
+        .sStylerWrp_select .sStylerWrp {
+            border-color: transparent;
+            border-bottom-color: #aaa;
+        }
+        .mod-service-btn {
+            display: none;
+        }
     }
     .sub-header {
-        margin: #{-$p} #{-$p} #{$p};
+        //margin: #{-$p} #{-$p} #{$p};
+        font-family: $medium;
+        font-size: $fontSize13;
+        border: 0;
+        padding: 16px $padding20;
+        margin-bottom: 0px;
     }
-
+    .sub-desc {
+        font-size: $fontSize15;
+        line-height: 21px;
+        color: $greyColor;
+        margin: $margin20 0;
+        @extend .display-flex;
+        align-items: center;
+        img {
+            width: auto;
+            margin-right: $margin5;
+        }
+    }
+    .sub-close {
+        right: 0;
+        top: 0px;
+        width: 46px;
+        height: 46px;
+        @extend .display-flex;
+        align-items: center;
+        justify-content: center;
+    }
     .dealer-form {
         .ems-field-css {
             margin-top: 0;
@@ -459,6 +652,9 @@ a.btnStokHaberci {
     }
     #findStoreBtn {
         width: 100%;
+        span {
+            line-height: 16px;
+        }
     }
     .ems-message {
         margin-top: 10px;
@@ -511,7 +707,7 @@ a.btnStokHaberci {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 9;
+    z-index: 11;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -547,8 +743,25 @@ a.btnStokHaberci {
     }
 
     .swiper-pagination {
-        position: absolute;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         padding: 10px;
+        &-bullet {
+            width: 8px;
+            height: 8px;
+            border: 2px solid $colorWhite;
+            background-color: $colorAlternate;
+            margin: 0 $margin5;
+            &-active {
+                width: 8px;
+                height: 8px;
+                background: $greyColor;
+                border-color: $greyColor;
+            }
+
+        }
     }
     
     &-ready {

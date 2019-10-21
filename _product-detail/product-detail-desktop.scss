@@ -64,15 +64,59 @@
 
 //sizes
 .urunDetay_urunSecenek {
-    min-height: 88px;
+    //min-height: 88px;
     //padding-right: 150px;
     &:empty {
         display: none;
+    }
+    .urunDetay_urunSecenek1 {
+        @extend .display-flex-desktop;
+        .urunSecenek_baslik1 {
+            display: block !important; 
+            padding: 16px 0;
+            font-size: $fontSize13;
+            font-family: $regular;
+            margin-right: $margin15;
+        }
     }
 }
 .dropdown-options {
     > a {
         line-height: 35px;
+        float: none;
+        &.stokYok {
+            .dropdownrow {
+                text-decoration: line-through;
+                &:before {
+                    display: none;
+                }
+            } 
+        }
+    }
+}
+
+//size guide
+.ems-prdd-size {
+    display: block;
+    position: static;
+    &-sub {
+        position: static;
+        opacity: 1;
+        display: block;
+        transform: none;
+        transition: none;
+        padding: 0;
+        background: none;
+    }
+    &-ready {
+        .ems-prdd-size-sub {
+            
+        }
+    }
+    &-animate {
+        .ems-prdd-size-sub {
+            
+        }
     }
 }
 
@@ -90,6 +134,9 @@
 //added to cart
 .mini-product-info {
     $p: 30px;
+    &-holder {
+        display: none;
+    }
     &-sub {
         @extend %header-mods-sub;
         max-width: 600px;
@@ -125,7 +172,7 @@
 .mini-size-guide {
     &-sub {
         @extend %header-mods-sub;
-        max-width: 910px;
+        max-width: 800px;
     }
     &-ready {
         .mini-size-guide-sub {
@@ -142,22 +189,55 @@
 
 //find in store
 .ems-find-store {
+    $p: 30px;
     &-sub {
         @extend %header-mods-sub;
-        max-width: 910px;
+        max-width: 800px;
+        padding: $p;
+        top: 0;
     }
-
+    .sub-header {
+        font-size: $fontSize20;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+    .sub-close {
+        right: -13px;
+        top: -13px;
+        background: #eee;
+        border-radius: 100%;
+    }
     .mod-service-list-grid {
         max-height: calc(100vh - 150px);
         overflow: auto;
-        grid-template-areas: ". ga1 ga1 ga1 ." ". ga2 . ga2 .";
+        grid-template-areas: ". ga1 ga1 ga1 ." ". ga3 . ga2 .";
+        > .mod-service-list-header {
+            grid-area: ga1;
+        }
+        > .address-detail {
+            grid-area: ga2;
+        }
+        > .mod-service-list-body {
+            grid-area: ga3;
+        }
     }
     .mod-service-list-header {
         margin-bottom: 30px;
+        background:none;
+        padding: 0;
     }
     .dealer-form {
         .ems-field-css {
             width: calc((100% / 3) - 5px);
+            margin-right: $margin10;
+        }
+        .mod-service-btn {
+            display: block;
+            margin: 0;
+            width: calc((100% / 3) - 5px);
+        }
+        .sStylerWrp_select .sStylerWrp {
+            border-color: #aaa; 
         }
     }
     .mod-service-list-body {

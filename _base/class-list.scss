@@ -51,10 +51,16 @@ Site General Flex Class Items
         order: 5;
     }
 }
+
+.display-grid-mobile {
+    display: -ms-grid;
+    display: grid;
+}
+
 //Site ici genel sticky class'ı 
 .sticky{
-    position: -webkit-sticky !important;
-    position: sticky !important;
+    position: -webkit-sticky;
+    position: sticky;
 }
 //Site ici genel eleman gizleme class'ı
 .none,
@@ -269,7 +275,7 @@ table[style*="inline"]{
 .gridSepetListe_gercekFiyat {
     &:not(:empty) {
         text-decoration: line-through;
-        color: $colorAlternate;
+        color: $colorBlack;
         + * {
             color: $colorRed;
             margin-left: 10px;
@@ -277,40 +283,5 @@ table[style*="inline"]{
     }
 }
 
-.ems {
-    //CONTAINER
-    &-container {
-        width: calc(100% - #{$breakpoint-gap * 2}) !important;
-        margin-left: auto;
-        margin-right: auto;
-        
-        &-full {
-            width: 100% !important;
-        }
-        
-        &-large {
-            max-width: $breakpoint-large;
-        }
-        &-medium {
-            max-width: $breakpoint-medium;
-        }
-        &-small {
-            max-width: $breakpoint-small;
-        }
-    }
-    //OVERLAY
-    &-overlay {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 6;
-        width: 100%;
-        height: 100%;
-        transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        visibility: hidden;
-        opacity: 0;
-        background: rgba($color: $colorBlack, $alpha: .1);
-    }
-}
+
+

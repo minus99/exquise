@@ -58,6 +58,7 @@
 @import '_product-list/main';
 @import '_product-detail/variables'; 
 @import '_product-detail/product-detail'; 
+@import '_product-detail/dealer'; 
 
 
 
@@ -157,6 +158,7 @@
         @import '_product-list/product-desktop';  
         @import '_product-list/filter-desktop'; 
         @import '_product-detail/product-detail-desktop'; 
+        @import '_product-detail/dealer-desktop';
 
         //-----Login-----//
         @import '_pages/login-desktop';

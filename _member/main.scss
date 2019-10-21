@@ -439,13 +439,19 @@ a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUy
 // --- EMS TAB DÜZENLEMLERİ -- //
 // Tab Menü
 .ems-tab {
-    .ems-tab-content {
-        .report-holder {
+    &-content {
+        > * {
             display: none;
             &.selected {
                 display: block;
             }
         }
+        /*.report-holder {
+            display: none;
+            &.selected {
+                display: block;
+            }
+        }*/
     }
 }
 
@@ -494,6 +500,72 @@ a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUy
     content: "";
     clear: both;
     display: table;
+}
+
+//table fixer
+.sayfaDisDiv table { 
+    border-collapse: collapse;
+    width: 100%;
+}
+table[style*="inline"] {
+    display: table !important;
+}
+.table-overflow {
+    overflow: auto;
+    padding-bottom: 10px;
+    width: 100%;
+    table {margin-bottom:$margin20;}
+    tr {
+        &:nth-child(odd) {
+            td {
+                //background: #f2f2f2;
+                &:nth-child(even) {
+                    //background: #e5e5e5;
+                }
+            }
+        }
+    }
+    th,td {
+        width: 1%;
+        padding: 13px 10px;
+        text-align: center;
+    }
+    th {
+        font-family: $medium;
+    }
+    td {
+        font-family: $regular;
+        font-size: 14px;
+        background: #fff;
+        &:nth-child(even) {
+            //background: #f2f2f2;
+        }
+    }
+}
+
+picture.prm-media {
+    position: relative;
+     &.lazy-picture { 
+       img {
+            opacity: 0;
+       }
+    }
+    &.image-loaded {
+        img {
+            animation: scaling .9s alternate cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+   }
+}
+
+@-webkit-keyframes scaling {
+    From {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+    }
+    To {
+        opacity: 1;
+        -webkit-transform: scale(1.0);
+}
 }
 
 

@@ -10,16 +10,22 @@
         position: absolute;
         opacity: 0;
         visibility: hidden;
-        z-index: 9; 
+        z-index: 11; 
         height: auto;
         .sub-close {
             top: 38px;
             right: 30px;
+            left: auto;
             //transform: translateY(-50%);
+        }
+        .field.field-single {
+            input {
+                padding: 9px 40px 9px 15px;
+            }
         }
     }
     &-animate {
-        position: fixed;
+        //position: fixed;
         .mini-search { 
             &-sub {
                 opacity: 1;

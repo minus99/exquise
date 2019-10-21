@@ -2,6 +2,11 @@
     .prm-title {
         font-size: 40px;
     }
+    .prm-link {
+        svg {
+            display: block;
+        }
+    }
     
     &-body {
         position: absolute;
@@ -89,6 +94,10 @@
         }
         .prm-link {
             margin-top: 30px;
+            margin-bottom: 45px;
+        }
+        .prm-media {
+            @include aspect-ratio(1440, 800);
         }
         &::before {
             display: none;
@@ -188,6 +197,39 @@
             }
         }
     }
+    // home slider transform
+    &Transform {
+        .banner-body {
+            @include banner-body-bottom-revert;
+            padding: 3% calc((100% - 560px) / 2);
+        }
+        .prm-title {
+            font-size: 60px;
+        }
+        .prm-link {
+            margin-top: 30px;
+            margin-bottom: 45px;
+        }
+        .prm-media {
+            @include aspect-ratio(1440, 800);
+        }
+        &::before {
+            display: none;
+        }
+
+        &.v2 {
+            .prm-media-custom {
+                right: calc((100% - 1000px) / 2);
+                width: auto;
+                max-height: 698px;
+            }
+            .swiper-slide-active & {
+                .banner-body {
+                    animation: animation-05 .7s ease .35s forwards;
+                }
+            }
+        }
+    }
 }
 
 //options
@@ -200,7 +242,7 @@
 .align-l {
     .banner {
         text-align: left;
-        &07 {
+        &07, &Transform {
             .banner-body {
                 padding:3% 3% 3% 200px;  
                 .prm-title {
@@ -212,5 +254,95 @@
                 text-align: left;
             }
         }
+    }
+}
+
+// --- Banner Placeholder Padding --- //
+// Anasayfa Slider
+.homepage-slider {
+    padding-bottom: $padding30;
+    .prm-media {
+        @include aspect-ratio(1440, 800);
+    }
+}
+// Anasayfa kampnaya görsel
+.cover-slider {
+    padding: $padding30;
+    .prm-media {
+        @include aspect-ratio(1380, 650);
+    }
+}
+
+// Anasayfa ikili grid görsel
+.grid-banner {
+    padding: $padding30;
+    .bannerGrid {
+        padding:0 $padding15;
+    }
+    .swiper-wrapper {
+        flex-wrap: inherit;
+        justify-content: center;
+        .swiper-slide {
+            @extend .sticky-desktop;
+           top: 60px; 
+           width: auto;
+        }
+    }
+}
+
+// instagram feed
+.instagram-feed {
+    margin: 0;
+    padding: 20px;
+    .swiper-wrapper {
+        @extend .display-grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:10px;
+    }
+    .ems-section-title {
+        margin-bottom: 30px;
+        padding: 0;
+        font-size: $fontSize15;
+    }
+    .prm-media {
+        border-radius: 0;
+    }
+    .swiper-slide {
+        width: auto;
+        &:last-child {
+            display: block;
+        }
+    }
+    .banner10 {
+        height: 100%;
+        @extend .display-flex-desktop; 
+        align-items: center;
+        .banner-body {
+            padding: 0;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .prm-title {
+            color: $colorBlack;
+            font-size: 29px;
+            b {
+                font-weight: normal;
+                font-family: $play;
+            }
+        }
+    }
+}
+
+// main blog
+.main-blog {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    .swiper-wrapper {
+    }
+    .ems-section-title {
+        margin-bottom: 30px;
+        font-size: $fontSize15;
+        padding: 0;
     }
 }

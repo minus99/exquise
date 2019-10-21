@@ -1,12 +1,15 @@
  /* --- FOOTER EBULTEN --- */
 
 .newsletter-title {
-    padding: 50px 0 30px 0; 
+    padding: 0 0 $padding30 0; 
+    display: none;
 }
 .mini-bulletin {
+    margin-top: 40px; 
+    padding: 0 $padding20;
     .field {
-        max-width: 335px;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
+        width: 100%; 
         input {
             padding: 10px 40px 10px 15px;
             border-color: $greyBorderColor; 

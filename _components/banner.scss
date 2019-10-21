@@ -20,6 +20,11 @@
     bottom: 0;
     transform: none;
 }
+@mixin banner-body-bottom-mobile {
+    top: auto;
+    bottom: 75px;
+    transform: none;
+}
 @mixin banner-body-bottom-revert {
     top: 50%;
     bottom: auto;
@@ -57,7 +62,7 @@
         }
     }
     .prm-title {
-        font-size: 24px;
+        font-size: 35px;
         b {
             font-weight: 700;
         }
@@ -82,12 +87,18 @@
     }
     .btn-full {
         z-index: 10;
+        @include ems-cover;
     }
     .prm-desc {
         font-family: $medium;
         font-size: 20px;
         a {
             color: $greyColor;
+        }
+    }
+    .prm-link {
+        svg {
+            display: none;
         }
     }
 
@@ -152,7 +163,7 @@
         text-align: center;
         .banner-body {
             position: absolute;
-            @include banner-body-bottom;
+            @include banner-body-bottom-mobile;
         }
         .banner-footer { 
             position: absolute;
@@ -160,9 +171,6 @@
             @include banner-body-bottom;
             text-align: center;
         } 
-        .prm-media {
-            @include aspect-ratio(1440, 800);
-        }
         .prm-title {
             i {
                 font-style: normal;
@@ -175,7 +183,7 @@
             }
         }
         .prm-link {
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
         .prm-content {
             margin-top: $margin20;
@@ -259,7 +267,7 @@
         text-align: center;
         .banner-body {
             position: absolute;
-            @include banner-body-bottom;
+            @include banner-body-bottom-mobile;
         }
         .banner-footer { 
             position: absolute;
@@ -269,7 +277,7 @@
         } 
         .prm-media {
             //@include aspect-ratio(1440, 800);
-            display: inline-block;
+            display: block;
             width: 100%; 
         }
         .prm-title {
@@ -296,18 +304,79 @@
             //background-image: linear-gradient(0, rgba($color: $colorBlack, $alpha: .75), transparent);
         }*/
     }
+    //home slider transfrom
+    &Transform {  
+        text-align: center;
+        .banner-body {
+            position: absolute;
+            @include banner-body-bottom-mobile;
+        }
+        .banner-footer { 
+            position: absolute;
+            width: 100%;
+            @include banner-body-bottom;
+            text-align: center;
+        } 
+        .prm-title {
+            i {
+                font-style: normal;
+                font-family: $play;
+            }
+            b {
+                letter-spacing: 1.5px;
+                font-family: $play;
+                font-weight: normal;
+            }
+        }
+        .prm-link {
+            margin-bottom: 45px; 
+        }
+        .prm-content {
+            margin-top: $margin20;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 4;
+            width: 100%;
+            height: 340px;
+            //background-image: linear-gradient(0, rgba($color: $colorBlack, $alpha: .75), transparent);
+        }
+    }
 }
 
 // --- Banner Placeholder Padding --- //
 // Anasayfa Slider
 .homepage-slider {
+    padding-bottom: $padding10;
     .prm-media {
-        @include aspect-ratio(1440, 800);
+        @include aspect-ratio(375, 480);
     }
     .banner {
         //height: calc(100vh - 60px); 
     }
 }
+
+.swiper-transform {
+    padding-bottom: $padding10;
+    .swiper-slide {
+        overflow: hidden; 
+        flex-shrink: 0 !important;
+    }
+    .prm-media {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+        @include aspect-ratio(375, 480);
+    }
+
+}
+
 .max-height-detect {
     .homepage-slider {
         .banner {
@@ -318,19 +387,32 @@
 
 // Anasayfa kampnaya görsel
 .cover-slider {
+    padding: 0 0 $padding10 0;
     .prm-media {
-        @include aspect-ratio(1380, 650);
+        @include aspect-ratio(375, 420);
+    }
+    .banner-body {
+        @include banner-body-bottom-revert;
     }
 }
 // Anasayfa ikili grid görsel
 .grid-banner {
+    padding:0 0 $padding10 0;
     .bannerGrid {
-        padding:0 $padding15;
+        padding: 0 0 $padding10 0;
     }
     .swiper-wrapper {
+        flex-wrap: wrap;
         justify-content: center;
-        li {
+        .swiper-slide {
+           position: static;
            top: 60px; 
+           width: 100%;
+           &:last-child{
+               .bannerGrid {
+                   padding: 0;
+               }
+           }
         }
     }
 }
@@ -348,6 +430,10 @@
         position: sticky;
         top: 60px;
     }
+    .ems-section-Img {
+        margin-right: $margin15;
+    }
+    
     .ems-section-title {
         position: absolute;
         bottom: 18%;
@@ -371,50 +457,115 @@
         .swiper-slide {
             width: calc(100% / 2);
             height: auto;
+            padding: 0 $padding15;
         }
+    }
+}
+
+// Login Slider
+.login-slide {
+    .prm-media {
+        
+    }
+    .banner {
+        .banner-body {
+            padding: 0 !important;
+            transform: none;
+            top: 100px;
+            right: 50px; 
+            left: auto;
+            width: auto; 
+            text-align: right;
+        }
+        .prm-title {
+            font-size: 22px;
+            max-width: 240px !important;
+            line-height: 29px;
+        }
+    }
+    .align-l {
+        .banner {
+            .banner-body {
+                padding: 0 !important;
+                transform: none;
+                top: 100px;
+                left: 50px; 
+                width: auto; 
+                text-align: left;
+            }
+        }
+    }
+    .swiper-slide {
+        line-height: 0;
+        &.sticky {
+            top: 0;
+        }
+      }
+}
+
+// Bullet Slider
+
+.bullet-slider {
+    margin: 50px 0;
+    .ems-section-title {
+        font-size:$fontSize24; 
+        padding: 0 $padding20 $padding30 $padding20;
+        text-align: center;
+    }
+    .prm-title {
+        color: $colorBlack;
+        font-size: $fontSize13;
+        text-align: center;
+    }
+    .prm-media {
+        overflow: hidden;
+        border-radius: 100%;
+    }
+    .swiper-slide {
+        width: 90px;
     }
 }
 
 // instagram feed
 .instagram-feed {
+    margin: 50px 0 20px 0;
+    padding: 0;
     .swiper-wrapper {
         @extend .display-grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap:10px;
     }
-    .ems-section-title {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: $fontSize15;
+    .prm-media {
+        overflow: hidden;
+        border-radius: 100%;
     }
-    .banner10 {
-        height: 100%;
-        @extend .display-flex;
-        align-items: center;
-        .banner-body {
-            padding: 0;
-            width: 80%;
-            margin: 0 auto;
+    .swiper-slide {
+        width: 90px;
+        &:last-child {
+            display: none;
         }
-        .prm-title {
-            color: $colorBlack;
-            font-size: 29px;
-            b {
-                font-weight: normal;
-                font-family: $play;
-            }
-        }
+    }
+    .ems-section-title {
+        font-size:$fontSize24; 
+        padding: 0 $padding20 $padding30 $padding20;
+        text-align: center;
     }
 }
 
-// instagram feed
+// main blog
 .main-blog {
     text-align: center;
-    .swiper-wrapper {
+    padding: 0;
+    margin: 0 0 20px 0;
+    .ems-section-title {
+        font-size:$fontSize24; 
+        padding: 0 $padding20 $padding30 $padding20;
+        text-align: center;
     }
     .ems-section-title {
+        font-size:$fontSize24; 
+        padding: 0 $padding20 $padding30 $padding20;
         text-align: center;
-        margin-bottom: 30px;
     }
     .blog-post-head {
         font-size: 26px;
@@ -432,30 +583,5 @@
         padding-top: $padding30;
         display: block;
     }
-}
-
-// Login Slider
-.login-slide {
-    .prm-media {
-        
-    }
-    .banner .banner-body {
-        padding: 0 !important;
-        transform: none;
-        top: 100px;
-        left: 50px; 
-        width: auto; 
-    }
-    .banner .prm-title {
-        font-size: 22px;
-        max-width: 240px !important;
-        line-height: 29px;
-    }
-    .swiper-slide {
-        line-height: 0;
-        &.sticky {
-            top: 0;
-        }
-      }
 }
 

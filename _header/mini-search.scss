@@ -38,16 +38,18 @@
                 border: 0;
                 font-size: 17px;
                 margin: 0;
+                padding: 9px 40px;
             }
         }
         .sub-close {
             top: 12px;
-            right: 15px;
+            left: 15px;
+            right: auto;
             //transform: translateY(-50%);
         }
     }
     &-animate {
-        position: fixed;
+        //position: fixed;
         .mini-search {
             &-sub {
                 opacity: 1;
@@ -71,6 +73,16 @@
             width: 100%; 
         } 
     }
+    // Mobil Ara Btn
+    &-btn {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        a {
+            border: 0; 
+            padding: 0;
+        }
+    }
 }
 
 .mini-search-animate {
@@ -84,8 +96,8 @@
 /* --- Arama açık kapalı özellikleri --- */
 
 .mini-search-result-found {
-    .site-header {
-        position: relative !important;
+    .site-header { 
+        //position: relative !important; 
     }
     .popular-search-words {
         display: none;
@@ -175,6 +187,11 @@ $mr: 20px;
             padding: 0;
             color: #666666;
             grid-area: 3 / 2;
+            b {
+                font-weight: normal;
+                color: $colorBlack;
+                font-family: $medium;
+            }
         }
         .suggest_urnprice_con {
             grid-row: 3;

@@ -3,6 +3,7 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+/*Seo metinleri*/
 .seo-text{
     h1{
         font-family: $play; 
@@ -16,4 +17,8 @@
         color: #9b9b9b;
         line-height: 22px;
     }
+}
+/*Desktop hiddenelement*/
+.d-hdn{
+    display: none;
 }
