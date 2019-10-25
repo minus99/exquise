@@ -2,10 +2,10 @@
 .order-summary{
     //Siparis sepet ozet
     order: 1;
-    padding-bottom: $orderSummaryPadding;
-    margin-bottom: $orderSummaryMarginBottomDesktop;
-    border-radius: $basketModuleRadius;
-    margin-top: $orderSummaryDtTopSpc;
+    margin-top: 0; 
+    max-width: 300px;
+    margin-left: auto;
+    
     //Siparis ozet avantaj ikonları
     &-benefit{
         order: 2;
@@ -61,7 +61,7 @@
         }
         &-wrapper{
             position: sticky;
-            top: 80px;
+            top: 60px;
             z-index: 5;
         }
     }

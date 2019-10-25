@@ -49,16 +49,42 @@
         }
 
     }
+    // Mobil beden ve grup ürün button
+    &-toggle {
+        display: none;
+    }
+    &-block2 {
+        margin-top: 10px;
+    }
 }
 
 //other colors
-.UrunListeGrup_listeUrunDetayGrup {
-    ul {
-        justify-content: flex-start;
-        > li {
-            width: 45px;
-            height: 45px;
+.ems-prdd-group {
+    display: block;
+    position: static;
+    &-sub {
+        position: static;
+        opacity: 1;
+        display: block;
+        transform: none;
+        transition: none;
+        padding: 0;
+        background: none;
+    }
+    &-ready {
+        .ems-prdd-size-sub {
+            
         }
+    }
+    &-animate {
+        .ems-prdd-size-sub {
+            
+        }
+    }
+}
+.UrunListeGrup_listeUrunDetayGrup {
+    .listeUrunDetayGrup_listeBaslik {
+        margin-bottom: $margin10;
     }
 }
 
@@ -210,9 +236,11 @@
     .mod-service-list-grid {
         max-height: calc(100vh - 150px);
         overflow: auto;
-        grid-template-areas: ". ga1 ga1 ga1 ." ". ga3 . ga2 .";
+        grid-template-columns: 1fr 70px 1fr; 
+        grid-template-areas: "ga1 ga1 ga1" "ga3 . ga2";
         > .mod-service-list-header {
             grid-area: ga1;
+            max-width: none;
         }
         > .address-detail {
             grid-area: ga2;

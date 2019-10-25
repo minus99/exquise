@@ -12,12 +12,12 @@ a.btnDefault, span.lnkGuestCheckout{
     }
 }
 //Site alternatif butonlar 
-a.btnAlternate, a.btnFacebookLogin, a.btnArama {
+a.btnAlternate, a.btnFacebookLogin, a.btnArama, a.btnAlisverisDevam, a.allow-share-location-btn, a.btnAdresEkle  {
     display: block;
     width: 100%;
     background: none;
     border:1px solid $btnBorder;
-    padding: 14px 3px;
+    padding: 14px $padding20;
     text-align: center;
     > span{
         font-family: $medium;
@@ -46,7 +46,6 @@ a.btnLink, a.btnLink > span{
 //Site arka plansız butonlar
 a.btnAlisverisDevam,
 a.btnSepetBosalt,
-a.btnAdresEkle,
 a.btnArama {
     background: none;
     width: auto;

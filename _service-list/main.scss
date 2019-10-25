@@ -9,13 +9,34 @@
 .mod-service-list-header {
     //background: $dhbg;
     //padding: $dhp; 
+    .dealer-form {
+        background: #f8f8f8;
+        padding: 35px $padding20;
+        .form-label {
+            display: none;
+        }
+        .field  {
+            flex: 1;
+        }
+    }
+    .sStylerWrp_select {
+        .sStylerWrp {
+            border-color: transparent;
+            border-bottom-color: #aaa;
+        }
+    }
+    .page-nav {
+        
+    }
 }
 .dealer-title {
-    font-size: $dtfs;
+    font-size: 22px;
+    margin-top: $margin30;
+    display: block;
 }
 .page-nav {
-    display: flex;
     align-items: center;
+    display: none;
     .view {
         margin-left: auto;
     }
@@ -25,34 +46,45 @@
 }
 .dealer-desc {
     display: none;
-    margin-top: 20px;
-    font-size: $ddfs;
+    margin-top: $margin10;
+    margin-bottom: $margin25;
+    font-size: $fontSize12;
 }
 .dealer-form {
     //margin-top: $dftm;
 }
 .dealer-desc-or {
     display: none;
-    border-top: 1px solid $ddbt;
-    padding-top: 20px;
-    margin-top: 20px;
-    font-size: $ddfs;
+    //border-top: 1px solid $ddbt;
+    //padding-top: 20px;
+    //margin-top: 20px;
+    text-align: center;
 }
 .allow-share-location-btn {
     margin-top: 15px;
 }
 
 .mod-service-list-body {
-    background: $dlbg;
+    //background: $dlbg;
     //padding: $dlp;
     margin-bottom:40px;
 }
+
+.servisIcerik {
+    padding: 0 $padding20;
+}
+
 .servis_bilgi {
     padding: $dp;
+    margin: 0;
+    //margin-bottom: $margin10;
 }
 .pServisListe  {
-    border-top: 1px solid $dbt;
+    background: #fbfbfb;
+    margin-bottom: $margin10;
     padding: $dp;
+    display: inline-block;
+    width: 100%;
     > * {
         display: none;
     }
@@ -72,7 +104,7 @@
     color: $dac;
 }
 .divServisListe_Koordinat {
-    display: block;
+    display: inline-block;
     margin-top: $dnmt;
     a {
         color: $dnavc;
@@ -94,14 +126,44 @@
     }
 }
 
+.tableServisCalismaSaatleri {
+    display: inline-block !important;
+    margin-right: 20px;
+    width: 90px;
+    white-space: nowrap;
+    > span {
+        color: $dnavc;
+        text-decoration: underline;
+        text-transform: lowercase;
+        display: inline-block;
+        &:first-letter {
+            text-transform: uppercase;
+        } 
+    } 
+    table {
+        display: none;
+        text-align: left;
+        padding: $padding10 0;
+        line-height: 20px;
+        th {
+            margin-right: 20px;
+            display: block;
+        }
+    }
+    &.selected {
+        table {
+            display: block;
+        }
+    }
+}
+
+
 .selected-address-detail {
     display: none;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: $dsbbg;
-    padding: $dsbp;
+    .pServisListe {
+        padding: 0;
+        background: none;
+    }
 }
 
 .left-column,
@@ -113,7 +175,8 @@
 
 
 body.view-map {
-    .dealer-form,
+    overflow: hidden;
+    position: fixed;
     .mod-service-list-body {
         display: none;
     }
@@ -136,6 +199,36 @@ body.view-map {
             &[rel] {
                 display: none;
             }
+        }
+    }
+    .selected-address-detail-wrp {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        padding: 25px;
+        width: 100%;
+        background: $dsbbg;
+        padding: $dsbp;
+        min-height: 120px;
+        .divServisListe_FirmaAdi {
+            padding-right: $padding30; 
+        }
+    }
+    .right-column {
+        height: calc(100vh - 47px);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+    }
+    .back-btn {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        display: inline-block;
+        svg {
+            font-size: 20px;
         }
     }
 }

@@ -1,18 +1,18 @@
 //Teslimat Adres yok
-.address-none{
+/*.address-none{
     > span{
         @extend .message;
         @extend .message-error;
         margin-left: $addressNoneMargin;
         margin-right: $addressNoneMargin;
     }
-}
+}*/
 //Teslimat adres grid row
 .grid-table-address{
     background: $colorWhite;
     border-radius: $basketModuleRadius;
     .grid-table-row {
-        padding: 20px;
+        padding: $padding20 0;
         @extend .relative;
     }
 }
@@ -84,6 +84,14 @@
         }
     }
 }
+
+.new-address-list {
+    padding: $padding20 0 !important;
+    .page-top-title {
+        display: none !important;
+    }
+}
+
 //Kurumsal secim icin duzenleme
 div.kurumsal{
     .field{
@@ -172,4 +180,18 @@ div[id$="plhAdresTipi"]{
     width: $fullWidth;
     background: $colorWhite;
     padding: 20px;
+}
+
+.member-address {
+    // Empty Class
+    &.no-result {
+        padding-top: 0;
+        .message-address {
+            text-align: center;
+            display: block;
+        }
+        .new-address-add {
+            margin: 0 auto;
+        }
+    }
 }

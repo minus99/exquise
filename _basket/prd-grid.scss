@@ -1,22 +1,18 @@
-//Sepet sayfası tablo grid kapsayıcı arka plan rengi
-.grid-table-wrap{
-    background: $colorWhite;
-}
 //Sepet tablo grid'i
 .grid-table-cart{
     //Sepet rows
-    .grid-table-rows{
-        padding-left:15px;
-        padding-right:15px;
+    .grid-table-rows:first-child{
+        .grid-table-row{
+            border-top:1px solid $greyBorderColor;
+        }
     }
     .grid-table-row {
         @extend .display-flex;
         @extend .relative;
-        padding-bottom: 20px;
-        &:not(:nth-child(2)){   
-            border-top:1px solid $gridRowBorder;
-            padding-top: 20px;    
-        }
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom:1px solid $greyBorderColor;
+
         //Sepet tablo satır image kolonu sabitleniyor
         .grid-img{
             width: 90px;
@@ -51,6 +47,13 @@
                 line-height: $gridLineHghtDefault;
                 color: $colorDefault;
             }
+            span[id$="lblSCD_AD1"]{
+                display: block;
+                margin-top: 10px;
+                &:empty{
+                    display: none;
+                }
+            }
             span[id$="lblProm"]{
                 //Eger kampanya yoksa o alan gizleniyor
                 &:empty{
@@ -58,8 +61,8 @@
                 }
                 //Kampanya alanı genel css düzenlemesi
                 *{
-                    color: $colorAlternate;
-                    font-size: $fontSize12;
+                    color: $colorRed;
+                    font-size: $fontSize13;
                 }
                 //Kampanya alanı HTML'i
                 > ul
@@ -103,9 +106,9 @@
                 display: none;
             }
             input[type="text"]{
-                background: #f3f3f7;
-                border: none;
-                padding: 10px;
+                border-color:#cccccc;
+                padding:2px 20px;
+                min-height: 35px;
             }
         }
         //Urun fiyatlari
@@ -125,19 +128,14 @@
         }
         //Varsayılan fiyat
         span[id$="lblURN_INDIRIMLIFIYAT"]{
-            order: 1; // sıralama veriliyor
-            font-family: $bold;
+            order: 2; // sıralama veriliyor
         }
         // Ilk fiyat    
         .gridSepetListe_gercekFiyat{
-            order: 2; // sıralama veriliyor 
+            order: 1; // sıralama veriliyor 
             font-family: $medium;
-            color: $colorAlternate;
+            color: $colorBlack;
             text-decoration: $linkLineThrough;
-        }
-        //satis fiyat
-        .satBrFiyatVrg{
-            margin-right: 10px;
         }
         //sepet icin urun fiyatlari gizlenen alanlar
         .brFiyat,
@@ -147,6 +145,7 @@
         .brFiyatVrg,
         .satBrFiyatVrg{
             display: inline-flex !important;
+            align-items: baseline;
         }
         //sepet urun silme
         .grid-remove{
@@ -157,6 +156,10 @@
                 @extend .inline-block;
                 @extend a.btnLink;
                 padding: 5px;
+            }
+            .icon {
+                font-size: $fontSize14;
+                color: #9b9b9b;
             }
         } 
         //Indirim oranı
@@ -236,6 +239,15 @@
         @extend .message;
         @extend .message-error;
         margin-bottom: 30px;
+    }
+}
+.basket-buttons {
+    a.btnAlisverisDevam{
+        span{
+            font-family: $medium;
+            color: $colorBlack;
+            font-size: $fontSize13;
+        }
     }
 }
 

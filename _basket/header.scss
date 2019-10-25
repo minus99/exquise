@@ -1,12 +1,18 @@
 //Sepet sayfası genel site header gizleme
 .order-steps{
-    .header-site{
+    .site-header{
         @extend .none;
+    }
+    .header-logo{
+        img{
+            width: auto;
+        }
     }
 }
 
 //Sepet sayfası header ızgara
 .header-basket{
+    background: $colorWhite;
     //header sticky top degerleri ve z-index
     top: 0;
     z-index: 10;
@@ -26,7 +32,5 @@
 
 //Sepet header üye text
 .member-login-txt{
-    font-family: $medium;
-    color: $colorWhite;
-    margin-right: 5px;
+    font-family: $regular;
 }

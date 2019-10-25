@@ -127,6 +127,17 @@
             color: $memberBlueColor; 
         }
     }
+    // Empty Class
+    &.no-result {
+        padding-top: 0;
+        .message-coupon {
+            text-align: center;
+            display: block;
+        }
+        .field-submit {
+            display: none;
+        }
+    }
 }
 
 /* favori dropdown */

@@ -24,6 +24,10 @@
             }
         }
     }
+    &-ready {
+        position: static;
+        overflow: visible;
+    }
     &-animate {
         //position: fixed;
         .mini-search { 
@@ -60,8 +64,13 @@
     margin-top: $margin25;
     padding: $padding30 $padding20;
     .prd {
+        overflow-x: hidden;
+        max-height: 400px;
+        display: block;
+        padding-right: $padding10;
+        width: 100%;
         .sHolder {
-            grid-template-columns: repeat(5, 1fr); 
+            grid-template-columns: repeat(6, 1fr); 
             grid-gap: 10px;
             margin-right: 0;
             margin-left: 0;
@@ -106,13 +115,27 @@
     }
 }
 
-// Sepet içerik scroll
-.searchSuggestDivHolder .prd {  
-    overflow-x: hidden;
-    max-height: 360px;
-    display: block;
-    padding-right: $padding10;
+@media screen and (max-width: 1400px) {
+    .searchSuggestDivHolder {
+        .prd {
+            .sHolder {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    } 
 }
+
+@media screen and (max-width: 1200px) {
+    .searchSuggestDivHolder {
+        .prd {
+            .sHolder {
+                grid-template-columns: repeat(4, 1fr);  
+            }
+        }
+    }
+}
+
+// Sepet içerik scroll
 
 .searchSuggestDivHolder .prd::-webkit-scrollbar-thumb {
     -webkit-border-radius: 3px;

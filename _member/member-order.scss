@@ -68,4 +68,12 @@
             float: right;
         }
     }
+    // Empty Class
+    &.no-result {
+        padding-top: 0;
+        .message-order {
+            text-align: center;
+            display: block;
+        }
+    }
 }

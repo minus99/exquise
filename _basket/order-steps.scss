@@ -6,6 +6,7 @@
         width: $fullWidth;
         margin-top: $step-top-spacing;
         margin-bottom: $step-bottom-spacing;
+        background: #f6f6f6;
     }
     .tabBtnAdimDefault,
     .tabBtnSelectedDefault{
@@ -17,17 +18,6 @@
         > a{
             display: inline-block;
             position: relative;
-        }
-        &:after{
-            content:'';
-            display: block;
-            width: 4px;
-            height: 4px;
-            background: none;
-            border-radius: $borderRadius;
-            margin-left: $mLeftAuto;
-            margin-top: 3px;
-            margin-right: $mRightAuto;
         }
         .icon {
             display: block;
@@ -68,9 +58,6 @@
         }
         .step-txt{
             color: $stepTextColorNormal;
-        }
-        &:after{
-            background: $order-step-active-round;
         }
     }
 }

@@ -2,7 +2,7 @@
 $basketPageTopSpaceMb:10px;
 
 //Sepet sayfası desktop ust bosluk
-$basketPageTopSpaceDt:30px;
+$basketPageTopSpaceDt:10px;
 
 //Sepet mobile header logo sağ bosluk
 $basketArrowBackSpacing: 15px;
@@ -41,13 +41,13 @@ $swiperAddButtonMaxWidth: 68px;
 $stepTextColor: #f1f1fa;
 
 //Sepet adımları link varsayılan rengi
-$stepTextColorNormal: #202020;
+$stepTextColorNormal: #000000;
 
 //Sepet adımları ikon rengi
-$stepIconColor: #202020;
+$stepIconColor: #000000;
 
 //Sepet adımları alternatif ikon rengi
-$stepIconColorAlternate: #f1f1fa;
+$stepIconColorAlternate: #000000;
 
 //Sepet adımları aktif link arka plan rengi
 $order-step-active-round:#3d5deb;
@@ -65,12 +65,13 @@ $orderGridTitlePdng:20px;
 $orderSummaryMbTopSpc: 30px;
 
 //Siparis ozet desktop ust bosluk
-$orderSummaryDtTopSpc: 0;
+$orderSummaryDtTopSpc: 40px;
 
 //Siparis ozet arka plan
 $orderSummaryBg: #ffffff;
 
 // Siparis ozet desktop alt bosluk
+$orderSummaryMarginTopDesktop:40px;
 $orderSummaryMarginBottomDesktop:50px;
 
 //Siparis ozet ic bosluk
@@ -84,15 +85,16 @@ $orderSummaryTitle:20px;
 
 //Siparis ozet baslık alt bosluk
 $orderSummaryTitleBottomSpace:20px;
+$orderSummaryTitleBottomSpacePdg:15px;
 
 //Siparis ozet tablo satır alt bosluk
 $orderSummaryRowBottomSpace:10px;
 
 //Siparis ozet yazı boyutu
-$orderSummaryTableFontSize:14px;
+$orderSummaryTableFontSize:13px;
 
 //Siparis ozet satın al buton ust bosluk
-$orderSummaryButtonNextTopSpace:10px;
+$orderSummaryButtonNextTopSpace:25px;
 
 //Sepet ozet avantaj ikonları
 $basketBenefitMarginBottom: 20px;
@@ -123,8 +125,9 @@ $couponInputWidth:100% !important;
 $couponInputMaxWidth:100%;
 $couponInputTopSpc:15px;
 
-//Kupon kodu Label ust boluk
-$couponLblTopSpc:15px;
+//Kupon kodu Label ust bosluk
+$couponLblTopSpc:30px;
+$couponLblTopSpcPdg:15px;
 
 //Teslimat sol padding boslugu
 $deliveryPageLeftPadding:30px;

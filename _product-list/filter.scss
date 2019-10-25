@@ -9,6 +9,9 @@
         height: 100%;
         z-index: 10;
         padding: 10px;
+        transform: translateX(-100%);
+        overflow-y: auto;
+        transition: transform .2s ease, opacity .2s ease;
     }
 }
 
@@ -28,7 +31,6 @@
                     > td{
                         display: block;
                         &:empty{
-
                             display: none;
                         }
                     }
@@ -58,8 +60,8 @@
     display: none;
     padding: 10px 20px 30px 20px;
 }
-.urunKiyaslamaOzellik_ozellik {
-    > a{
+.urunKiyaslamaOzellik_ozellik{
+    > a {
         display: inline-block;
         padding: 7px 10px 7px 25px;
         position: relative;
@@ -158,18 +160,9 @@ a.urunKiyaslamaOzellik{
         display: none; 
     }
 }
-.ems-sort{
-    .drp-aftr{
-        font-family: $medium;
-        font-size: 15px;
-        padding: 20px 10px;
-        border-top: 1px solid #dddddd;
-    }
-}
 .views {
     justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 5px 15px;
     .drp-aftr{
         &:after{
             display: block;
@@ -190,13 +183,46 @@ a.urunKiyaslamaOzellik{
 }
 /*Sort List*/
 .ems-sort{
+    .drp-aftr{
+        font-family: $medium;
+        font-size: 15px;
+        padding: 20px 10px;
+        border-top: 1px solid #dddddd;
+    }
     &-body{
-        display: none;
-        a.urunKiyaslamaOzellik{
-            display: block;
-            padding: 7px 10px;
-        }
+        transition: all 222ms ease;
+        max-height: 0;
+        overflow: hidden;
     }   
+    .kutuBodyOzellikFiltre{
+        padding: 10px 20px 30px 20px;
+    }
+    a.urunKiyaslamaOzellik{
+        display: block;
+        padding: 7px 10px 7px 25px;
+        position: relative;
+        &:after{
+            content:'';
+            display: block;
+            border-radius: 2px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            width: 14px;
+            height: 14px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            margin-top: -7px;
+            left: 0;
+            background-size: 12px 12px;
+            font-size: 12px;
+        }
+        &.link_selected{
+            &:after{
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTcuNjkgNy41MDVhLjczOC43MzggMCAwIDAtLjQyNy4yMDRsLTcuNjUgNy4xNjYtMi44NS0yLjY3YS43NS43NSAwIDAgMC0uNzEyLS4yMTEuNy43IDAgMCAwLS41My40OTIuNjQ5LjY0OSAwIDAgMCAuMjIxLjY2OGwzLjM2IDMuMTQ4YS43NDUuNzQ1IDAgMCAwIC41MS4xOTguNzQ1Ljc0NSAwIDAgMCAuNTEtLjE5OGw4LjE2LTcuNjQ0YS42NDQuNjQ0IDAgMCAwIC4xNDctLjc3Ni43MzIuNzMyIDAgMCAwLS43MzktLjM3N3oiLz48L3N2Zz4=);
+            }
+        }
+    }
 }
 .kutuOzellikCount{
     position: relative;
@@ -284,5 +310,25 @@ a.urunKiyaslamaOzellik{
                 }
             }
         }
+    }
+}
+
+/*Animation*/
+.sort-animate{
+    .ems-sort-body{
+        max-height: 160px;
+        overflow: visible;
+    }
+}
+
+.ems-filter-ready{
+    .d-sort > .ga1{
+        display: block;
+    }
+}
+.ems-filter-animate{
+    overflow: hidden;
+    .d-sort > .ga1{
+        transform: translateX(0);
     }
 }

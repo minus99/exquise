@@ -1,26 +1,63 @@
 // Üye sayfası menü liste
+.member-menu {
+    padding-top: 20px;
+}
+
 .swiper-member {
     .swiper-wrapper {  
         flex-wrap: wrap;
     }
     .swiper-slide {
-        border-top: 1px solid $borderColor;
-        border-bottom: 0;
+        //border-top: 1px solid $borderColor;
+        //border-bottom: 0;
         width: 100%;
         a {
             display: block;
+            padding-left: $padding15;
+            &:before {
+                content: '';
+                opacity: 0;
+                transform: scale(0.1);
+                @extend .transition-desktop; 
+            }
+            &:hover {
+                &:before {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    background: $colorBlack;
+                    position: absolute;
+                    left: 0px; 
+                    top: 9px;
+                    opacity: 1;
+                    transform: scale(1.0);
+                }
+            }
         }
         &:last-child {
-            border-bottom: 1px solid $borderColor;
+            //border-bottom: 1px solid $borderColor;
         }
         &.selected {
             a {
-                color: $btnAlternateColor;
-                padding: 20px 50px 20px 30px;
-                border-bottom: 0;
-                &:after {
+                border: 0; 
+                color: $colorBlack;
+                //color: $btnAlternateColor;
+                //padding: 20px 50px 20px 30px;
+                //border-bottom: 0;
+                /*&:after {
                     opacity: 1;
-                    right: 20px;
+                    right: 20px; 
+                }*/
+                &:before {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    background: $colorBlack;
+                    position: absolute;
+                    left: 0px;  
+                    top: 9px;
+                    transform: scale(1.0);
+                    opacity: 1;
                 }
             }
         }
@@ -31,17 +68,19 @@
 
 // Üye sayfası sol menü button
 a.btnMember {
-    padding: 20px 50px 20px 20px;
+    padding: $padding5 $padding10;
     border: 0;
+    font-size: $fontSize13;
     &:hover {
-        color: $btnAlternateColor;
-        padding: 20px 50px 20px 30px;
-        &:after {
+        color: $colorBlack;
+        //color: $btnAlternateColor;
+        //padding: 20px 50px 20px 30px;
+        /*&:after {
             opacity: 1;
             right: 20px;
-        }
+        }*/
     }
-    &:after {
+    /*&:after {
         content: '';
         //background: url('/images/frontend/menu-arrow.svg');
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMzRDVERUIiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTYgMTVoMTR2LTNsNiA0LTYgNHYtM0g2eiIvPgo8L3N2Zz4K);
@@ -56,5 +95,5 @@ a.btnMember {
         transition: all .2s ease;
         -webkit-transition: all .2s ease;
         -o-transition: all .2s ease;
-    }
+    }*/
 }

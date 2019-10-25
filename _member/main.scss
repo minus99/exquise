@@ -253,6 +253,12 @@ select {
     .sticky {
         top: 20px;
     }
+    .no-result {
+        background: #f8f8f8;
+        .message-ico {
+            background: #fff;
+        }
+    }
 }
 
 // Tel format
@@ -318,30 +324,62 @@ input[id$="UYE_CEPTELEFON"] {
 // --- ÜYELİK AÇIKLAMA -- //
 // Üyelik bilgileri açıklama metni
 .page-top-desc {
-    margin-bottom: $memberMargin20;
+    margin-bottom: 40px;
+    span {
+        span {
+            margin-bottom: $margin10;
+            font-family: $play;
+            font-size: $fontSize30;
+            display: block;
+        }
+        p {
+            font-size: 17px;
+            font-family: $regular;
+            display: block;
+            color: $colorGrey;
+        }
+    }
 }
-span[id$="lbfGNL_KAYITYOK"] { 
+/*span[id$="lbfGNL_KAYITYOK"] { 
     margin-bottom: $memberFontSize20;
     display: block;
     color: $colorRed;
+}*/
+
+//no result fixer
+[id$="lbfGNL_KAYITYOK"],
+[id$="lbfUYM_KAYITYOK_MESAJ"] {
+    display: none;
+    margin-top: 20px;
+    &:not(:empty) {
+        display: block;
+    }
+}
+[id$="lbfGNL_KAYITYOK"] {
+    > div {
+        display: none;
+    }
 }
 
 
 // --- ÜYELİK SAYFASI GENEL YAPI -- //
 .member-grid{
     //Üyelik sayfası arka plan rengi -- Opsiyonel
-    background:$memberPageBg;
+    //background:$memberPageBg;
     padding: $memberMarginReset;
     .member-general {
         padding: $memberPadding20 $memberPadding15;
-        background: $colorWhite; 
+        //background: $colorWhite; 
         border-radius: 0;
     } 
     .page-top-title {
-        font-size: $fontSize20;
+        font-size: $fontSize14;
         font-family: $medium;
-        margin-bottom: $memberMargin20;
+        margin-bottom: $memberMargin10;
+        padding-bottom: $padding10;
+        border-bottom: 1px solid #eee;
         color: $colorDefault;
+        display: none;
     }
 }
 
@@ -396,20 +434,17 @@ a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle, a.btnKutuLogout, a.btnBulte
 // Border Button
 a.btnSepeteAtFavori, .follow-list-btn, a.lnkSatinAl, a.cntScrBtn { 
     background: none;
-    border: 2px solid $memberBlueColor;
+    border: 1px solid $greyBorderColor;
     border-radius: $memberBorderRadius3;
     padding: $memberBtnDefaultPaddingSmall;
     text-align: center;
     display: block; 
     span {
-        color: $memberBlueColor;
-        font-family: $memberFontBold;
+        color: $colorBlack;
+        font-family: $medium;
     }
     &.selected {
-        background: $memberBlueColor;
-        span {
-            color: #fff;
-        }
+        background: $greyBorderColor;
     }
 }
 
@@ -543,11 +578,11 @@ table[style*="inline"] {
     }
 }
 
-picture.prm-media {
+/*picture.prm-media {
     position: relative;
      &.lazy-picture { 
        img {
-            opacity: 0;
+            opacity: 1; 
        }
     }
     &.image-loaded {
@@ -567,7 +602,7 @@ picture.prm-media {
         -webkit-transform: scale(1.0);
 }
 }
-
+*/
 
 
 

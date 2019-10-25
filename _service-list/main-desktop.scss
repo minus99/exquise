@@ -1,12 +1,31 @@
 .page-dealer {
-    background: $globalPageBg;
-    padding: $d-dpp;
+    //background: $globalPageBg;
+    //padding: $d-dpp;
 }
+
+.service-list {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.servisIcerik {
+    padding: 0;
+}
+
+
+.servis_bilgi {
+    margin-top:40px;
+    margin-bottom: $margin10;
+    font-size: $fontSize12;
+    border-bottom: 1px solid #ddd;
+}
+
 .mod-service-list-inner-wrp {
     display: grid;
-    grid-template-columns: 1fr minmax(auto, #{$d-dmw}) #{$d-dcg} #{$d-dlw} 1fr;
+    grid-template-columns: 1fr 70px 1fr;
     grid-template-rows: max-content 1fr;
-    grid-template-areas: ". r1 . r2 ." ". r1 . r3 .";
+    grid-template-areas: "r2 . r1" "r3 . r1";  
 }
 .mod-service-list-header {
     grid-area: r2;
@@ -19,17 +38,33 @@
 }
 
 .address-detail-inner {
-    position: sticky;
-    top: $d-dmmtws;
+    @extend .sticky-desktop;
+    top: 60px;
 }
 
 .mod-service-list-header {
     border-radius: $d-dlr $d-dlr 0 0;
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    .page-nav {
+        display: block;
+    }
+    .dealer-form {
+        padding: 0;
+        background: none; 
+        .field {
+            width: 100%;
+            padding: 0 !important;
+        }
+    }
 }
 .mod-service-list-body {
     display: block !important;
-    background: $d-dlbg;
+    //background: $d-dlbg;
     border-radius: 0 0 $d-dlr $d-dlr;
+    padding: 0 20px;
 }
 
 .page-nav {
@@ -42,25 +77,32 @@
 .dealer-desc-or {
     display: block;
 }
-.dealer-form {
-    .field {
-        width: 100%;
-        padding: 0 !important;
-    }
-}
 
 #Map.map {
-    height: calc(100vh - #{$d-dhh});
+    height: 100vh;
 }
 
+
+.selected-address-detail-wrp {
+    display: none;
+}
 
 
 body.view-map {
+    overflow: visible;
+    position: static;
     .divServisListe_Koordinat {
         a {
             &[rel] {
                 display: inline;
             }
         }
+    }
+    .right-column {
+        position: relative;
+        height: auto;
+    }
+    #Map.map {
+        height: 100vh;
     }
 }

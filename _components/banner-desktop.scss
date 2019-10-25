@@ -209,6 +209,7 @@
         .prm-link {
             margin-top: 30px;
             margin-bottom: 45px;
+            text-decoration: none;
         }
         .prm-media {
             @include aspect-ratio(1440, 800);
@@ -265,13 +266,22 @@
         @include aspect-ratio(1440, 800);
     }
 }
-// Anasayfa kampnaya görsel
+// Anasayfa ara banner görsel
 .cover-slider {
     padding: $padding30;
     .prm-media {
         @include aspect-ratio(1380, 650);
     }
 }
+
+// Anasayfa ara banner görsel
+.campaign-slider {
+    padding: 0 0 $padding20 0;
+    .prm-media {
+        @include aspect-ratio(1380, 650);
+    }
+}
+
 
 // Anasayfa ikili grid görsel
 .grid-banner {
@@ -286,6 +296,51 @@
             @extend .sticky-desktop;
            top: 60px; 
            width: auto;
+        }
+    }
+}
+
+// Kategori görsel ürün slider
+.product-slider {
+    @extend .display-flex-desktop;
+    padding: $padding30;
+    flex-wrap: nowrap;
+    position: static;
+    overflow-y: visible;
+    // görsel still
+    .ems-section-wrapper {
+        position: relative;
+        flex: 1;
+        margin-right: $margin20;
+    }
+    .ems-section-inner { 
+        position: sticky;
+        top: 60px;
+    }
+    .ems-section-Img {
+        margin-right: $margin15;
+        margin-bottom: 0;
+    }
+    
+    .ems-section-title {
+        position: absolute;
+        bottom: 18%;
+        padding: $padding20;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+        color: $colorWhite;
+    }
+
+    // ürün still
+    .swiper-product {
+        flex: 1;
+        .swiper-wrapper {
+            flex-wrap: wrap;
+        }
+        .swiper-inner {
+            overflow: hidden;
         }
     }
 }

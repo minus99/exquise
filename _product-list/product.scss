@@ -1,7 +1,23 @@
 //Urun karti
+.urnList .emosInfinite {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 .prd{
     width: 100%;
     margin-bottom: 30px;
+}
+.view-1{
+    .prd{
+        width: 100%;
+    }    
+}
+.view-3{
+    .prd{
+        width: calc(50% - 2px);
+    }    
 }
 //Urun resmi
 .prd-image{
@@ -23,37 +39,52 @@
         }
     }
 }
-
 .prd-body {
     padding: $padding10 $padding10 0 $padding10;
 }
-
 //Urun adi
 .prd-name{
     line-height: $productCardLineHeight;
     > a{
         display: inline-block;
         margin-bottom: 5px;
-        color: $brandNameColor;
-        font-size:$brandNameFontSize;
+        color: $productNameClrM;
+        font-size:12px;
     }
 }
-
+.prdd-fvr{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+.urunListe_favoriEkle{
+    display: block !important;
+    .btnFavoriEkle{
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTIgMTcuMTA0TDYuMTIyIDIxLjA5bDEuOTc1LTYuODIyTDIuNDg5IDkuOTFsNy4wOTktLjIzTDEyIDNsMi40MTIgNi42OCA3LjA5OS4yMy01LjYwOCA0LjM1OCAxLjk3NSA2LjgyMnoiLz4KPC9zdmc+Cg==");
+        width: 17px;
+        height: 17px;
+        background-size: 17px;
+        span{display: none;}
+    }
+}
 .prd-price {
     min-height: 40px;
     .first-inner{
         flex-wrap: wrap;
         min-height: 40px;
     }
-    .urunListe_brutFiyat{
+    .urunListe_brutFiyat,
+    .urunListe_satisFiyat,
+    .urunListe_pnlIndirimOran{
         font-family: $regular;
-        font-size: $fontSize13;
+        font-size: $fontSize12;
+    }
+    .urunListe_brutFiyat{
         color: $colorRed;
         text-decoration: $linkLineThrough;
     }
     .urunListe_satisFiyat{
-        font-family: $regular;
-        font-size: $fontSize13;
         color: $colorDefault;
         padding-right: 10px;
     }
@@ -84,7 +115,7 @@
 .kutuHeaderKategori,
 .kutuFooterKategori{display: none;}
 
-.kutuKategori{
+.kutuBodyKategori{
     position: -webkit-sticky;
     position: sticky;
     top: 70px;

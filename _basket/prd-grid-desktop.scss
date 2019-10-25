@@ -1,13 +1,6 @@
-//Sepet sayfası tablo grid kapsayıcı arka plan rengi
-.grid-table-wrap{
-    border-radius: $basketModuleRadius;
-}
 //Sepet tablo grid'i
 .grid-table-cart{
-    .grid-table-rows{
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+    margin-top: 30px;
     .grid-table-row {
         //Sepet tablo satır image kolonu sabitleniyor
         .grid-img{
@@ -16,50 +9,68 @@
         //Sepet tablo urun satırı image sabit tutulup kolon akisa alınıyor
         .grid-content{
             width: calc(100% - 120px);
+            padding-left: 20px;
             //Sol kolon
             &-left{
-                min-width: calc(100% - 25%);
+                min-width: calc(100% - 300px);
+                padding-right: 20px;
             }
             //Sag kolon
             &-right{
-                display: block;
-                min-width:25%;
+                min-width:300px;
                 margin-top: 0;
+                align-items: flex-start;
+                justify-content: flex-end;
+                position: relative;
             }
             > div{
                 @extend .d-flex;
+                height: 100%;
             }
         }
         //Urun adet kontrol
         .grid-piece{
-            padding-right: 0;
+            flex: 1;
+            padding-right: 10px;
             input[type="text"]{
-                max-width: 130px;
+                max-width: 120px;
             }
         }
         //Urun fiyatlari
         .grid-price{
-            max-width: 200px;
-            margin-top: 10px;
+            flex: 1;
+            margin-top: 5px;
+            text-align: right;
         }
         //Urun fiyatlari
+        span[id$="lblURN_INDIRIMLIFIYAT"]{
+            margin-left: 0;
+        }
         span[id$="lblURN_INDIRIMLIFIYAT"],
         .gridSepetListe_gercekFiyat{
-            font-size: $fontSize16;
+            font-size: $fontSize15;
+            width: 100%;
         }
         //sepet urun silme desktop ozel ust margin
         .grid-remove{
-            position: inherit;
             top: inherit;
-            right: inherit;
+            bottom: 20px;
             > a{
-                margin-top: 10px;
                 padding: 0;
             }
         }
     }
 }
-
+.basket-buttons {
+    a.btnAlisverisDevam{
+        width: 100%;
+        max-width: 300px;
+        margin-top: 40px;
+        span{
+            justify-content: center;
+        }
+    }
+}
 //odeme sepet onizleme grid yapisi
 .basket-grid-2{
     .grid-table-cart{

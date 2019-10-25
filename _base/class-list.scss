@@ -84,7 +84,12 @@ Site General Flex Class Items
 }
 //Site genel mesaj gorunumu
 .message{
-    border-radius: 4px;
+    padding: 130px 0;
+    @extend .display-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $fontSize20;
+    /*border-radius: 4px;
     border-top-width: 1px;
     border-left-width: 1px;
     border-right-width: 1px;
@@ -92,23 +97,41 @@ Site General Flex Class Items
     border-style: solid;
     text-align: left;
     padding:11px 20px 9px 20px;
-    line-height: 20px;
+    line-height: 20px;*/
     //Eğer HTML bos ise alan gizleniyor
     &:empty{
         @extend .none;
+    }
+    p {
+        display: block;
+        font-family: 25px;
+    }
+    &-ico {
+        background: #f8f8f8;
+        width: 110px;
+        height: 110px;
+        border-radius: 100%;
+        text-align: center;
+        @extend .display-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto $margin20 auto;
+    }
+    svg {
+        font-size: 60px;
     }
 }
 
 //Site genel mesaj hatali gorunum
 .message-error{
-    border-color: $colorRed;
+    /*border-color: $colorRed;
     background-color: $errorBgColor;
-    margin-bottom: $margin20;
+    margin-bottom: $margin20;*/
 }
 //Site genel mesaj hatali gorunum
 .message-success{
-    background-color: $sucessBgColor;
-    align-items: center;
+    /*background-color: $sucessBgColor;
+    align-items: center;*/
 }
 //Genel kontrol icin eger eleman bos ise class veriliyor
 .is-empty{
@@ -119,7 +142,7 @@ Site General Flex Class Items
 .grid-brdr{
     content:'';
     border-top: 1px solid $gridRowBorder;
-    width: calc(100% - 40px);
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
@@ -157,6 +180,7 @@ table[style*="inline"]{
 .m-bttm-30 {margin-bottom: 30px;}
 .m-rght-5 {margin-right: 5px;}
 .m-rght-10 {margin-right: 10px;}
+.m-rght-15 {margin-right: 15px;}
 .m-rght-20 {margin-right: 20px;}
 .m-rght-30 {margin-right: 30px;}
 .m-lft-5{margin-left: 5px;}
@@ -201,6 +225,7 @@ table[style*="inline"]{
 .fs16 {font-size:$fontSize16;}
 .fs18 {font-size:$fontSize18;}
 .fs20 {font-size:$fontSize20;}
+.fs30 {font-size:$fontSize30;}
 
 // Font Family
 .regular {font-family:$regular;}

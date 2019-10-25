@@ -1,3 +1,6 @@
+.page-list {
+    padding-bottom: 50px;
+}
 .urunPaging_pageNavigation,
 .seo-text{
     padding-left: 30px;
@@ -5,6 +8,7 @@
 }
 /*Seo metinleri*/
 .seo-text{
+    padding-top: 40px;
     h1{
         font-family: $play; 
         color: $colorGrey;

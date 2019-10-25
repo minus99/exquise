@@ -48,6 +48,10 @@
             //transform: translateY(-50%);
         }
     }
+    &-ready {
+        position: fixed;
+        overflow: hidden;
+    }
     &-animate {
         //position: fixed;
         .mini-search {
@@ -122,6 +126,7 @@ $mr: 20px;
     grid-template-areas: "ga3" "ga2" "ga4";
     .prd {
         grid-area: ga2;
+        width: 100% !important;
         h3 {
             display: none;
         }
@@ -154,7 +159,7 @@ $mr: 20px;
                 grid-column-gap: 10px; 
                 margin-bottom: 5px;
                 padding: 0 10px 5px 10px; 
-                border-bottom: 1px solid #eeeeee;
+                //border-bottom: 1px solid #eeeeee;
                 grid-template-columns: min-content auto;
                 th {
                     display: none;

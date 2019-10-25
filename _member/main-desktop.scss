@@ -30,4 +30,17 @@
     .member-general {
         border-radius: $memberBorderRadius4;
     } 
+    .page-top-title {
+        display: block;
+    }
 }
+
+.pages-member {
+    .no-result {
+        background: #fff;
+        .message-ico {
+            background: #f8f8f8;
+        }
+    }
+}
+

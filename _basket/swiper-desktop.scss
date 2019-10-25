@@ -2,15 +2,24 @@
 .basket-swiper{
     .swiper-slide{ 
         width: (100% / 3);
+        margin-left: 10px;
+        &:first-child{
+            margin-left: 0;
+        }
     }
     //Sepet ust slider icerik
     div.types{
-        padding: 15px;
+        padding-left: 30px;
         .image{
             width: 100px;
         }
         .detail{
             width: calc(100% - 120px);
+        }
+        &.type-3{
+            .detail{
+                width:100%;
+            }   
         }
     }
     //Sepet üst slider sag ve sol oklar desktop acılıyor

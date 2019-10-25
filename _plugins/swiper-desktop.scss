@@ -46,8 +46,18 @@
 }
 
 //pagination
+.system-widget {
 .slider-pagination {
     .swiper-pagination {
-        display: block;
+        display: none;
     }
   }
+}
+
+// Product Swiper
+.widget-prds {
+    padding: 40px;
+    .ems-section-title {
+        padding: 0;
+    }
+}

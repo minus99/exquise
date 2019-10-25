@@ -24,3 +24,19 @@
         display: block;
     }
 }
+
+// Scroll Top
+
+.btn-page-top { 
+    width: 46px;
+    height: 46px;
+    background: $colorBulltet;
+    border-radius: 100%;
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    @extend .transition;
+    opacity: 0;
+    &.scroll {opacity: 1;}
+}

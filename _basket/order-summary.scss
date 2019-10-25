@@ -1,15 +1,16 @@
 //Siparis ozet ızgara
 .order-summary{
     background: $orderSummaryBg;
-    padding: $orderSummaryPadding $orderSummaryPadding $orderSummaryBttmPadding $orderSummaryPadding;
     margin-top: $orderSummaryMbTopSpc;
 
     //Siparis ozet baslik
     .mn-20 > span{
         display: block;
-        font-family: $medium;
+        font-family: $regular;
         font-size: $orderSummaryTitle;
         margin-bottom: $orderSummaryTitleBottomSpace;
+        padding-bottom: $orderSummaryTitleBottomSpacePdg;
+        border-bottom: 1px solid #d8d8d8;
     }
     //Siparis ozet alt elementler icin alt alta siralama
     &-wrapper{
@@ -35,7 +36,6 @@
     //Siparis ozet yardim
     &-help{
         border: 1px solid $basketHelpBorderColor;
-        border-radius: $basketHelpBorderRadius;
         padding: $basketHelpPadding;
 
         //Siparis ozet yardim footer metin renk deseni
@@ -68,13 +68,27 @@
     .cart-coupon {
         //Label ust bosluk
         .coupon-lbl{
-            margin-top: $couponLblTopSpc;
-            background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDYpIj4gICAgICAgIDxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBzdHJva2U9IiM2OTZCNzEiLz4gICAgICAgIDxwYXRoIGZpbGw9IiM2OTZCNzEiIGQ9Ik03IDEwaDd2MUg3eiIvPiAgICAgICAgPHBhdGggZmlsbD0iIzY5NkI3MSIgZD0iTTExIDd2N2gtMVY3eiIvPiAgICA8L2c+PC9zdmc+");
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==");
             background-repeat: no-repeat;
-            background-position: center left;
-            padding-left: 40px;
-            width: max-content;
+            background-position: center right;
+            border-top: 1px solid #d8d8d8;
+            margin-top: $couponLblTopSpc;
+            padding-top: $couponLblTopSpcPdg;
+            padding-right: 40px;
+            width: 100%;
+            min-height: 24px;
             cursor: pointer;
+            flex-wrap: wrap;
+            //Label
+            .tt1,
+            .tt2{
+                font-size: 13px;
+            }
+            .tt1{
+                font-family: $medium;
+                letter-spacing: 0.28px;
+                line-height: 1;
+            }
         }
         //Kupon kodu il gorunum de gizleniyor
         .coupon-enter{
@@ -94,6 +108,7 @@
         //Kupon label metni icin font
         .form-label span{
             font-family: $regular;
+            width: 100%;
         }
         //Kupon kodu gönderme butonu ozellestime
         .form-obj {
@@ -120,11 +135,14 @@
     //Kupon kodu aktif ediliyor
     &.opened{
         .coupon-lbl{
-            background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDYpIj4gICAgICAgIDxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMC41IiByPSIxMC41IiBzdHJva2U9IiM2OTZCNzEiLz4gICAgICAgIDxwYXRoIGZpbGw9IiM2OTZCNzEiIGQ9Ik03IDEwaDd2MUg3eiIvPiAgICA8L2c+PC9zdmc+");
+            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwb2x5Z29uIHBvaW50cz0iMTYuNjQ2LDE0Ljg1NCAxMS45OTMsMTAuMjA3IDcuMzU0LDE0Ljg1NCA2LjY0NiwxNC4xNDYgMTEuOTkyLDguNzkzIDE3LjM1NCwxNC4xNDYgCSIvPg0KPC9nPg0KPC9zdmc+DQo=");
         }
         .cart-coupon {
             .coupon-enter{
                 display: block;
+            }
+            table tr th{
+                vertical-align: middle;
             }
         }
     }
@@ -187,16 +205,17 @@
             }
             //toplam tutar metin ozellestirme
             &.pnlDipToplam_sipToplam{
-                > th, > td{
-                    font-family: $bold;
+                > td{
+                    font-size: 16px;
+                    font-family: $medium;
                 }   
             }
-            //Siparis ozet indirim satırı renk ozellestirme -- Opsiyonel
+            /*Siparis ozet indirim satırı renk ozellestirme -- Opsiyonel
             &.pnlDipToplam_indirimToplam{
                 > th, > td{
                     color: $colorRed;
                 }
-            }
+            }*/
             //Siparis ozet gizlenen satırlar
             &.pnlDipToplam_indirimliAraToplam,
             &.pnlDipToplam_kargoHaricToplam,

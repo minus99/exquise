@@ -107,6 +107,11 @@
         z-index: 5;
         width: 100%;
         padding: 20px;
+        &.colorWhite {
+            span, a, p {
+                color: $colorWhite;
+            }
+        }
     }
 
     //banner type01 *primary categories
@@ -307,6 +312,8 @@
     //home slider transfrom
     &Transform {  
         text-align: center;
+        height: 100%;
+        max-height: calc(100vh - 60px);
         .banner-body {
             position: absolute;
             @include banner-body-bottom-mobile;
@@ -329,7 +336,8 @@
             }
         }
         .prm-link {
-            margin-bottom: 45px; 
+            margin-bottom: 45px;
+            text-decoration: underline; 
         }
         .prm-content {
             margin-top: $margin20;
@@ -385,7 +393,7 @@
     }
 }
 
-// Anasayfa kampnaya görsel
+// Anasayfa ara banner görsel
 .cover-slider {
     padding: 0 0 $padding10 0;
     .prm-media {
@@ -395,6 +403,24 @@
         @include banner-body-bottom-revert;
     }
 }
+
+// Anasayfa Üst Kampanya görsel
+.campaign-slider {
+    padding: 0 0 $padding10 0;
+    .prm-media {
+        @include aspect-ratio(375, 420);
+    }
+    .banner-body {
+        @include banner-body-bottom-revert;
+    }
+    .prm-content {
+        margin-top: 50px;
+        a {
+            margin: 0 $margin10;
+        }
+    }
+}
+
 // Anasayfa ikili grid görsel
 .grid-banner {
     padding:0 0 $padding10 0;
@@ -417,56 +443,8 @@
     }
 }
 
-// Kategori görsel ürün slider
-.product-slider {
-    @extend .display-flex;
-
-    // görsel still
-    .ems-section-wrapper {
-        position: relative;
-        flex: 1;
-    }
-    .ems-section-inner { 
-        position: sticky;
-        top: 60px;
-    }
-    .ems-section-Img {
-        margin-right: $margin15;
-    }
-    
-    .ems-section-title {
-        position: absolute;
-        bottom: 18%;
-        padding: $padding20;
-        z-index: 1;
-        width: 100%;
-        text-align: center;
-        font-size: 45px;
-        color: $colorWhite;
-    }
-
-    // ürün still
-    .swiper-product {
-        flex: 1;
-        .swiper-wrapper {
-            flex-wrap: wrap;
-        }
-        .swiper-inner {
-            margin: 0;
-        }
-        .swiper-slide {
-            width: calc(100% / 2);
-            height: auto;
-            padding: 0 $padding15;
-        }
-    }
-}
-
 // Login Slider
 .login-slide {
-    .prm-media {
-        
-    }
     .banner {
         .banner-body {
             padding: 0 !important;
@@ -511,6 +489,7 @@
         font-size:$fontSize24; 
         padding: 0 $padding20 $padding30 $padding20;
         text-align: center;
+        position: relative;
     }
     .prm-title {
         color: $colorBlack;
@@ -523,6 +502,107 @@
     }
     .swiper-slide {
         width: 90px;
+    }
+    .closeIco {
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: 0px; 
+        svg {
+            font-size: $fontSize20;
+        }
+    }
+}
+
+// Bullet slider popup
+body.ems-popup-animate {  
+    position: fixed;
+    overflow: hidden;
+    .bullet-slider {
+        position: fixed;
+        z-index: 12;
+        background: #fff;
+        top: 0;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        padding: $padding20 0 22px 0;
+        .ems-section-title {
+            font-size: $fontSize13;
+            font-family: $medium;
+            text-align: left;
+            padding: 0 $padding20 $padding20 $padding20;
+        }
+        .banner-body {
+            padding: 10px 0;
+        }
+        .prm-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+    .closeIco {
+        display: inline-block;
+    }
+    // Mobil ürün popup açma
+    .product-slider {
+        &.selected {
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+        }
+    }
+}
+
+// Kategori görsel ürün slider
+.product-slider {
+    @extend .display-flex;
+    padding: 0;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 12;
+    background: #fff;
+    bottom: 0;
+    overflow-y: auto;
+    height: calc(100% - 200px);
+    // görsel still
+    .ems-section-wrapper {
+        position: relative;
+        width: 100%;
+        margin-right: 0;
+    }
+    .ems-section-Img {
+        margin-right: 0;
+        margin-bottom: $margin30;
+    }
+    
+    .ems-section-title {
+        position: absolute;
+        bottom: 18%;
+        padding: $padding20;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+        color: $colorWhite;
+    }
+
+    // ürün still
+    .swiper-product {
+        .swiper-wrapper {
+            flex-wrap: wrap;
+        }
+        .swiper-inner {
+            margin: 0;
+            overflow: visible;
+        }
+        .swiper-slide {
+            width: calc(100% / 2);
+            height: auto;
+            padding: 0 $padding15;
+        }
     }
 }
 

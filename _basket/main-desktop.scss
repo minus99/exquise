@@ -2,25 +2,20 @@
     //Sepet sayfası ust bosluk
     &-inner{
         padding-top: $basketPageTopSpaceDt;
+        max-width: 1240px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 //Sepet sayfası desktop yerlesim izgrasi
 .page-basket-0{
-    //Sepet row 1 swiper alt bosluk
-    .rw1{
-        //Slider okları icin bosluk veriliyor
-        padding-left: 3%;
-        padding-right: 3%;
-
-        //Desktop icin slider'a alt bosluk eziliyor
-        margin-bottom: $swiperTopBottomSpace;
-    }
-
     //Sepet ilk adım grid ızgarasi
     .basket-grid {
-        grid-template-columns: minmax(0,3%) minmax(0,33%) minmax(0,33%) minmax(0,33%) minmax(0,3%);
-        grid-template-areas:". AAA AAA BBB ." ". CCC CCC CCC .";
+        grid-template-columns: minmax(0,33.333%) minmax(0,33.333%) minmax(0,33.333%);
+        grid-template-areas:"AAA AAA BBB" "CCC CCC CCC";
         margin-bottom: 40px;   
     }
     //Sepet urunler sağ padding boslugu
@@ -29,6 +24,7 @@
     }
     //Sepet ozet sol padding boslugu
     .ga2{
+        padding-top: 40px;
         padding-left: $basketPageLeftPadding;
     }
 }

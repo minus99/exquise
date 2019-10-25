@@ -1,21 +1,51 @@
 .urnList .emosInfinite {
-    @extend .display-grid;
-    grid-template-columns: repeat(2,1fr);
     margin-left: 30px;
     margin-right: 30px;
-    grid-column-gap: 35px;
-}
-.view-4{
-    .urnList .emosInfinite{
-        grid-template-columns: repeat(4,1fr);
-        grid-column-gap: 20px;
-    }
 }
 /*Urun karti*/
 .prd{
+    width: calc(50% - 15px);
     &-body{
         min-height: 110px;
     }
+}
+/*View type*/
+.view-1,
+.view-2,
+.view-3{
+    .prd{
+        width: calc(50% - 15px);
+    }    
+}
+.view-4{
+    .prd{
+        width: calc(25% - 10px);
+    }    
+}
+//Urun adi
+.prd-name{
+    > a{
+        font-size:$brandNameFontSize;
+        color: $productNameClrD;
+    }
+}
+.prd-price{
+    .urunListe_brutFiyat,
+    .urunListe_satisFiyat,
+    .urunListe_pnlIndirimOran{
+        font-size: $fontSize13;
+    }
+}
+.prdd-fvr{
+    top: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.prd:hover{
+    .prdd-fvr{
+        opacity: 1;
+    }   
 }
 .urunPaging_pageNavigation{
     justify-content: flex-end;

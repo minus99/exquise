@@ -3,7 +3,7 @@
 @import '_app-shell/first-loading'; 
 @import '_base/mixins'; 
 @import '_base/icon';
-@import '_base/class-list';
+@import '_base/class-list'; 
  
 //-----Coponents-----//
 @import '_components/popup'; 
@@ -59,6 +59,7 @@
 @import '_product-detail/variables'; 
 @import '_product-detail/product-detail'; 
 @import '_product-detail/dealer'; 
+@import '_pages/search';
 
 
 
@@ -67,7 +68,7 @@
 @import '_pages/home';
 
 //-----Login-----//
-@import '_pages/login';
+@import '_pages/login'; 
 
 
 //-----Member Page-----//
@@ -141,7 +142,7 @@
 
         //-----Basket-----//
         @import '_basket/main-desktop';
-        //@import '_basket/header-desktop';
+        @import '_basket/header-desktop';
         @import '_basket/swiper-desktop';
         @import '_basket/order-steps-desktop';
         @import '_basket/order-summary-desktop';
@@ -149,7 +150,7 @@
         @import '_basket/delivery-address-desktop';
         @import '_basket/delivery-cargo-desktop';
         @import '_basket/delivery-gift-packet-desktop';
-        @import '_basket/payment-desktop';
+        @import '_basket/payment-desktop'; 
         @import '_basket/order-result-desktop';
 
         //-----Layout-----//
@@ -159,6 +160,7 @@
         @import '_product-list/filter-desktop'; 
         @import '_product-detail/product-detail-desktop'; 
         @import '_product-detail/dealer-desktop';
+        @import '_pages/search-desktop';
 
         //-----Login-----//
         @import '_pages/login-desktop';

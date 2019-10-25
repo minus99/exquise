@@ -1,24 +1,7 @@
-.order-steps{
-    //Sepet sayfası arka plan rengi -- Opsiyonel
-    background:$globalPageBg;
-}
 .page-basket{
     //Sepet sayfası ust bosluk
     &-inner{
         padding-top: $basketPageTopSpaceMb;
-    }
-}
-
-//Sepet sayfası desktop yerlesim izgrasi
-.page-basket-0{
-    //Sepet row 1 swiper alt bosluk
-    .rw1{
-        //Mobile icin slider'a sol ve sag bosluklari veriliyor
-        padding-left: 10px;
-        padding-right: 10px;
-
-        //Mobile icin slider'a alt taraftan bosluk veriliyor
-        margin-bottom:25px;
     }
 }
 

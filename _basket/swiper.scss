@@ -3,13 +3,13 @@
     //Sepet ust slider slide
     .swiper-slide{
         width: 93%;
-        background-color: $colorWhite;
+        background-color: #ececec;
     }
     //Sepet ust slider icerik
     div.types{
         padding: 10px;
-        min-height: 135px;
-        border-radius: $basketModuleRadius;
+        min-height: 100px;
+        @extend .align-items-center;
         .image{
             width: 90px;
             margin-right: 10px;
@@ -37,13 +37,13 @@
     }
     //Sepet ust slider yazı rengi
     .prd-spc{
-        color: $colorRed;
-        font-size: $fontSize12;
+        font-family: $medium;
+        font-size: $fontSize13;
     }
     //Sepet ust slider urun adı
     .prd-name{
         margin-top: $swiperNameTopSpace;
-        font-size: $fontSize14;
+        font-size: $fontSize13;
     }
     //Sepet ust slider ekle buton max-genislik
     a.btnAlternateSmall{

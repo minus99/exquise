@@ -705,10 +705,12 @@
 .widget-prds {
   background: #f5f5f5;
   margin-top:50px;
+  padding: 40px 0;
   .ems-section-title {
     font-size: 22px;
     font-family: $medium;
     margin-bottom: $margin30;
+    padding: 0 $padding20;
   }
   .swiper-container, .ems-section-wrapper {
     width: 100%;
@@ -732,5 +734,8 @@
         opacity: .04;
       }
     }
+  }
+  .prdd-fvr {
+    display: none;
   }
 }

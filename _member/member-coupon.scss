@@ -34,4 +34,16 @@
     .grid-coupon-total {flex: 50%;}
     .grid-coupon-use {flex: 50%;}
     .grid-coupon-status {flex: 50%;} 
+
+}
+
+// Empty Class
+.member-coupon {
+    &.no-result {
+        padding-top: 0;
+        .message-coupon {
+            text-align: center;
+            display: block;
+        }
+    }
 }
