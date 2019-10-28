@@ -3,6 +3,8 @@
 // Sipariş detay içerik bilgileri
 .order-detail-info { 
     flex-wrap: wrap; 
+    background: #f6f6f6;
+    padding: $padding20;
     > div {
         flex: 100%; 
         margin-bottom: 15px;  
@@ -10,11 +12,12 @@
             color: $memberGreyColor; 
             flex: 0 50%; 
             padding-right: 10px;
+            font-family: $medium;
         }
         .value {
-            font-family: $medium;
             color: $memberDarkColor; 
-            &#plhParaBr {
+            font-size: $fontSize13; 
+            &#plhParaBr { 
                 font-family: cursive; 
             }
         }
@@ -22,32 +25,40 @@
             flex: 1 100%;
         }
     } 
-    .no {  
-        font-size: $memberFontSize20; 
-        margin-bottom: $memberMargin30;
-        margin-bottom: 30px;
+    .no {
+        padding-bottom: $padding15;    
+        margin-bottom: $margin20;
+        border-bottom: 1px solid #eee;
         .text {
             color: $memberDarkColor;
             flex: none;
+            font-family: $medium;
         }
         .value {
-            margin-left: 10px; 
-            font-family: $bold; 
+            font-family: $medium;
+            font-size: $fontSize14;   
         }   
     }
     .act-btns {
-        border-top: 1px solid $memberLightGreyColor;
+        border-top: 1px solid #eee;
         margin-bottom: 0; 
         padding-top: 15px; 
         flex: 1 100%;
         flex-wrap: wrap;
-        > div {
-            margin-right:$memberMargin20;
-        }
-        #plhSipTekrarla {
+        div {
+            margin-right:$margin10;
             a {
-                color: $memberBlueColor;
+                text-decoration: underline; 
+                span {
+                    font-size: $fontSize12 !important;
+                }
             }
+            &:empty {
+                display: none;
+            }
+           &:last-child {
+                margin-right: 0;
+           }
         }
     }
     
@@ -56,6 +67,9 @@
 // Sipariş detay adres
 .order-detail-address {
     flex-wrap: wrap; 
+    align-items: center; 
+    padding: 0 $padding20 $padding20 $padding20;
+    border-bottom: 1px solid $memberLightGreyColor;
     > div {
         flex: 1 100%;
         padding-right: 20px;
@@ -66,20 +80,55 @@
         }
     }
     .order-address {
-        border-bottom:1px solid $memberLightGreyColor;
-        padding-bottom: $memberPadding20;
-        margin-bottom: $memberMargin20; 
+        //border-bottom:1px solid $memberLightGreyColor;
+        padding-bottom: $memberPadding20; 
+        margin-bottom: $memberMargin20;  
+        @extend .display-flex;
+        .text {
+            white-space: nowrap;
+            margin: 0; 
+            width: 100%;
+            max-width: 100px;  
+        }
+        .value {
+            padding: 0 20px;
+        }
+        &-billing {
+            margin-bottom: 0;  
+        }
     }
     .page-top-title {
         flex: 1 100%;
     }
     .text {
         color: $memberDarkColor;
-        font-family: $memberFontBold;
-        margin-bottom: 10px;  
+        margin-bottom: 10px; 
+        margin-top: $margin20; 
+        font-size: $fontSize12;
+        font-family: $medium; 
     }
     .value {
         line-height: $labelLineText;
+        border: 0;
+        padding: $padding30;
+        font-size: $fontSize13; 
+    }
+    a {
+        font-size: 0;
+        display: inline-block;
+        margin-top: 25px; 
+        width: 100%;
+        &:before {
+            content: 'Kargo Takibi';
+            font-family: $medium;
+            background: $colorBlack;
+            padding: 15px 20px;
+            font-size: $fontSize14;
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+            text-align: center;  
+        }
     }
 }
 
@@ -87,24 +136,31 @@
 .grid-table-cart {
     .grid-row {
         border-bottom:1px solid $memberLightGreyColor;
-        padding-bottom: $memberPadding20;
-        margin-bottom: $memberMargin20; 
+        padding-bottom: $memberPadding15;
+        margin-bottom: $memberMargin15;   
         &:last-child {
             margin: 0;
-            padding: 0;
-            border: 0;
+            //padding: 0;
+            //border: 0;    
         } 
         > div {
             &:empty {
                 display: none;
             }
         }
-        .grid-name {
+        .grid-name { 
             a {
-                font-size: $memberFontSize14; 
+                font-size: $fontSize13; 
                 font-family: $medium;
                 line-height: $memberLineHeight; 
                 color: $memberDarkColor; 
+                br {
+                    display: none;
+                }
+                strong {
+                    font-weight: normal;
+                    display: block;
+                }
             }
         }
         .ga1 {
@@ -113,7 +169,7 @@
                 display: inline-block; 
                 img {
                     width: 100%;
-                    max-width: 100px; 
+                    max-width: 90px; 
                 }
             }
         }
@@ -130,21 +186,26 @@
         .grid-piece {
             color: $memberGreyColor;
             font-size: $memberFontSize12;
+            margin-bottom: $margin5;
         }
         .grid-price {
-            font-size: $memberFontSize16;
-            font-family: $memberFontBold;
+            font-size: $fontSize13;  
+            font-family: $medium;  
         }
         .brFiyat {
-            color: $memberGreyColor;
+            color: $colorRed;
         }
     }
 }
 
 // Sipariş Sonuç
 .order-detail-info-payment {
+    background: #f6f6f6;
+    padding: $padding30 $padding20 !important;
+    font-family: $medium;
     .pnlDipToplamTable {
         flex-direction: column;
+        font-size: $fontSize14;
         > div {
             .text { 
                 &:empty {display: none;}
@@ -157,7 +218,13 @@
                 margin-bottom: $memberMargin10;
             }
             &.total {
-                font-family: $bold;
+                font-family: $medium;
+                border-top: 1px solid #d8d8d8;
+                margin-top: $margin10;
+                padding-top: $margin20;
+                .value {
+                    font-size: $fontSize16;
+                }
             }
             &.discount {
                 color: $colorRed;
@@ -168,5 +235,30 @@
                 }
             }
         }
+    }
+}
+
+.member-order-detail {
+    padding: 20px 0 0 0 !important;
+    .page-top-title.none { 
+        display: none !important;   
+    }
+    .member-back {
+        margin-left: 0;
+        margin-top: 0;
+        span {
+            font-size: $fontSize12;
+        }
+    } 
+    .step0 {
+        padding: 0 $padding20;
+    }
+    .order-detail-info {
+        .act-btns {
+            padding: $padding15 0 0 0 !important; 
+        }
+    }
+    .act-btns {
+        padding: $padding20 $padding20 0 $padding20 !important;
     }
 }

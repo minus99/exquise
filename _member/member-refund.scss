@@ -28,6 +28,7 @@
         margin-top: $memberPadding20; 
         width: 100%;
         flex-wrap: wrap;
+        padding: 0 $padding20;
         .form-obj {
             margin-right: 0;
             margin-bottom: $memberPadding20;
@@ -44,6 +45,9 @@
 // İadelerim listeleme sayfası
 .member-refund {
     // İadelerim listeleme düzeni
+
+    .page-top-title {display:none !important;}
+
     .grid-row {  
         border-bottom: 1px solid $memberLightGreyColor;
         flex-wrap: wrap;
@@ -54,7 +58,7 @@
         }
         .label { 
             padding: 5px 10px 0px 0;
-            font-family: $memberFontBold;
+            font-family: $medium;
             font-size: $memberFontSize12; 
             color: $memberGreyColor;
         }
@@ -83,11 +87,13 @@
             font-family: $medium;
             padding: 0; 
             span {
-                color: $memberBlueColor;
+                text-decoration: underline; 
+                font-size: $fontSize12;
+                cursor: pointer;
             }
         }
         .form {
-            padding: 8px 10px 0px 0 !important;
+            //padding: 8px 10px 0px 0 !important;
             span {
                 align-items: center;
             }

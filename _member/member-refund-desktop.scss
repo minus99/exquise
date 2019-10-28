@@ -2,14 +2,15 @@
 
 // Sipariş detay iptal
 
-.member-refund-request {
-
+.member-refund-request { 
     .field-submit {
+        padding: 0;
         flex-wrap: nowrap;
         .form-obj {
             margin-bottom: 0;
             margin-right: $memberPadding10;
             width: auto;
+            display: inline-block;
         }
         a {
             width: auto;
@@ -30,7 +31,7 @@
         padding-bottom: 0;
         margin-bottom: 0;
         .label {
-            font-size: $memberFontSize14;
+            font-size: $fontSize13;
             padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
             display: none;   
         }

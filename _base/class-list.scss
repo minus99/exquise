@@ -281,15 +281,19 @@ table[style*="inline"]{
 .urunDetay_satisFiyat,
 #lblUrunTutari,
 .suggest_urnprice,
-.satBrFiyatVrg,
-.brFiyatVrg,
+.pnlDipToplamTable .value span,
+.grid-table-cart .satBrFiyat,
+.grid-table-cart .brFiyat,
+.member-general .price, 
 .pnlDipToplamTable td > span,
 .odemeCekiTutar,
 .cart-prd-price .price,
 #plhIadeTutar > a {
     display: inline-flex !important;
-    [class^="pb"] {
+    [class^="pb"] { 
         order: -1;
+        font-family: "regular", Arial, Helvetica, sans-serif;
+        letter-spacing: 3px;
     }
 }
 

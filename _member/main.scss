@@ -275,6 +275,7 @@ input[id$="UYE_CEPTELEFON"] {
 // Captcha format
 [id$="divCaptcha"] {
     position: relative;
+    display: inline-block;
     br {
         display: none
     }
@@ -371,6 +372,9 @@ input[id$="UYE_CEPTELEFON"] {
         padding: $memberPadding20 $memberPadding15;
         //background: $colorWhite; 
         border-radius: 0;
+        .field.field-single {
+            width: 100%;
+        }
     } 
     .page-top-title {
         font-size: $fontSize14;
@@ -385,8 +389,8 @@ input[id$="UYE_CEPTELEFON"] {
 
 // --- ÜYELİK SAYFASI BUTTON DÜZENLEMLERİ -- //
 // Member Alternatif Button
-.member-back {
-    margin-left: $memberMargin20;
+.member-back { 
+    margin-left: $margin10;
     margin-top: $memberMargin20;
 }
 
@@ -415,7 +419,7 @@ input[id$="UYE_CEPTELEFON"] {
 }
 
 //Text Button
-a.btnSipariseDon, a.btnSipIptal, a.btnSipIade, 
+/*a.btnSipariseDon, a.btnSipIptal, a.btnSipIade, 
 a.btnFavoriListeSil, a.btnFavSepeteAt, a.btnFavoriSil, 
 a.btnIadeDetay, a.btnTakipListeFiySil, a.btnTakipListeStokSil, 
 a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle, a.btnKutuLogout, a.btnBultenGonder { 
@@ -429,10 +433,10 @@ a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle, a.btnKutuLogout, a.btnBulte
         @extend .display-flex;
         align-items: center;  
     } 
-}
+}*/
 
 // Border Button
-a.btnSepeteAtFavori, .follow-list-btn, a.lnkSatinAl, a.cntScrBtn { 
+/*a.btnSepeteAtFavori, .follow-list-btn, a.lnkSatinAl, a.cntScrBtn { 
     background: none;
     border: 1px solid $greyBorderColor;
     border-radius: $memberBorderRadius3;
@@ -446,15 +450,15 @@ a.btnSepeteAtFavori, .follow-list-btn, a.lnkSatinAl, a.cntScrBtn {
     &.selected {
         background: $greyBorderColor;
     }
-}
+}*/
 
 // Üyelik sayfaları alt buttonlar
 
-a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUyeBilgi, a.btnTavsiyeGonder, a.btnMesajGonder {
+/*a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUyeBilgi, a.btnTavsiyeGonder, a.btnMesajGonder {
     display: inline-block;
     width: auto;
     padding: $memberBtnDefaultPaddingSmall; 
-}
+}*/
 
 // Member Genel Button
 /*a.lnkSorgula, .urunDetay_btnSepeteAt a.btnsepeteAt, .cart-prd-page-url a {

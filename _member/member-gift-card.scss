@@ -1,6 +1,7 @@
 // --- ÜYELİK GIFT CARD -- //
 .member-gift-card { 
     flex-wrap: wrap;
+    max-width: 900px;
     .ga1 {flex: 100%; padding-right: 0; order: 2;}
     .ga2 {flex: 100%; text-align: left; margin-bottom: $memberMargin20; order: 1;}   
     .field {
@@ -49,6 +50,14 @@
         background: $memberLightGreyColor;
         &:empty {
             display: none;
+        }
+    }
+    // Başlık
+    .page-top-desc {
+        margin-bottom: 0;
+        width: 100%;
+        .page-top-title {
+            margin: 40px 0;
         }
     }
 }

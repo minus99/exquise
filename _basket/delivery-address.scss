@@ -17,20 +17,19 @@
     }
 }
 //Teslimat adres rows
-.grid-table-row-address {
+.grid-table-row-address.grid-table-row {
     flex-wrap: wrap;
-    &:not(:first-child){
-        &:before{
-            @extend .grid-brdr;
-        }
-    }
+    border-bottom: 0;
+    background: #f8f8f8;
+    margin-bottom: $margin5;
+    padding: $padding20; 
 }
 //Teslimat adres adı
 .grid-address-name{
     width: 50%;
     color: $colorDefault;
     font-size: $fontSize14;
-    font-family: $bold;
+    font-family: $medium;
     > span{
         @extend .display-block;
         color: $colorAlternate;
@@ -86,7 +85,7 @@
 }
 
 .new-address-list {
-    padding: $padding20 0 !important;
+    padding: 0 !important;
     .page-top-title {
         display: none !important;
     }
@@ -184,6 +183,14 @@ div[id$="plhAdresTipi"]{
 
 .member-address {
     // Empty Class
+    .new-address-add {
+        margin-top: $margin20; 
+        width: 100%;
+        background: $colorBlack;
+        span {
+            color: $colorWhite;
+        }
+    }
     &.no-result {
         padding-top: 0;
         .message-address {

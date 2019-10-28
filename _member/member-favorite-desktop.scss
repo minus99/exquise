@@ -3,16 +3,22 @@
         flex-wrap: nowrap;
         .ga1 {flex:1;} 
         .ga2 {flex: none; margin-top:0;}
-        border: 0;
+        //border: 0;
     }
     .field-submit {
+        flex-wrap: nowrap;
         justify-content: left;
+        padding: 0 $padding20 $padding20 $padding20 !important;
+        .form-obj {
+            width: auto;
+            margin-right: $margin10;
+        }
     }
     .grid-remove {
     }
     .grid-price { 
         .price-wrapper {
-            font-size: $memberFontSize16;  
+            font-size: $fontSize13;  
         }
     }
     .grid-piece { 

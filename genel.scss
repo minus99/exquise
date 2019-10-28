@@ -1,15 +1,15 @@
 //-----Base-----//
 @import '_base/variables';
-@import '_app-shell/first-loading'; 
-@import '_base/mixins'; 
-@import '_base/icon';
-@import '_base/class-list'; 
- 
-//-----Coponents-----//
+//@import '_app-shell/first-loading';   
+@import '_base/mixins';  
+@import '_base/icon';  
+@import '_base/class-list';   
+  
+//-----Coponents-----//   
 @import '_components/popup'; 
-@import '_components/widget';
-@import '_components/banner';
-@import '_components/breadcrumb';
+@import '_components/widget'; 
+@import '_components/banner'; 
+@import '_components/breadcrumb'; 
  
 
 //-----Forms Field-----//
@@ -51,7 +51,7 @@
 @import '_basket/order-result';
 
 
-//-----Layout-----//
+//-----Layout-----// 
 @import '_product-list/variables';
 @import '_product-list/product'; 
 @import '_product-list/filter';

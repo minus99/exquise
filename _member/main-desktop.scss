@@ -17,6 +17,13 @@
 .member-grid { 
     .member-general {
         padding: $memberPadding20;
+        a.btnDefault {
+            width: auto;
+            @extend .display-flex-desktop; 
+        }
+        .field.field-single {
+            width: auto;
+        } 
     }
 }
 

@@ -4,7 +4,7 @@ a.btnDefault, span.lnkGuestCheckout{
     width: 100%;
     background: $btnBackground; 
     text-align: center;
-    padding: 15px 3px 15px 3px;
+    padding: $padding15 $padding20;
     > span{
         font-family: $regular;
         color: $colorWhite;
@@ -12,7 +12,15 @@ a.btnDefault, span.lnkGuestCheckout{
     }
 }
 //Site alternatif butonlar 
-a.btnAlternate, a.btnFacebookLogin, a.btnArama, a.btnAlisverisDevam, a.allow-share-location-btn, a.btnAdresEkle  {
+a.btnAlternate, 
+a.btnFacebookLogin, 
+a.btnArama, 
+a.btnAlisverisDevam, 
+a.allow-share-location-btn, 
+div.follow-list-btn,
+a.btnFavoriSil,
+a.btnFavSepeteAt,
+a.btnAdresEkle  {
     display: block;
     width: 100%;
     background: none;
@@ -80,6 +88,16 @@ a.btnSatisSozlesmeOnizle,
 a.btnOnBilgilendirmeFormOnizle,
 a.btnHvlBnkSec,
 a.btnOdemeCekiEkle,
+a.btnFavoriListeSil,
+a.btnBultenGonder,
+a.btnKutuLogout, 
+a.btnSipIptal,
+a.btnSipIade,
+a.btnIadeDetay,
+a.lnkSipTekrarla,
+a.btnTakipListeStokSil,
+a.btnTakipListeFiyTumSil,
+a.btnSipariseDon, 
 a.btnFavoriEkle {
     background: none;
     padding: 0;

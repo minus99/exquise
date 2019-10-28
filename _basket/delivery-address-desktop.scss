@@ -8,12 +8,17 @@
     }
 }*/
 //Teslimat adres grid row
-.grid-table-row-address{
+.grid-table-row-address.grid-table-row{
     @extend .display-grid;
     grid-auto-columns: minmax(0,200px) minmax(0,1fr) minmax(0,250px);
     grid-template-areas:"A B B D" "A C C D";
     grid-template-rows: minmax(0,auto);
     //Default verilen genislikler sabitleniyor
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f3f3f7;
+    margin-bottom: 0;
+    padding: $padding20 0;
+    background: none; 
 }
 //Teslimat adres adı
 .grid-address-name{
@@ -73,5 +78,16 @@
     > a{
         font-size: $fontSize16;
         padding: 14px 20px;
+    }
+}
+
+.member-address {
+    // Empty Class
+    .new-address-add {
+        width: auto;
+        background: transparent;
+        span {
+            color: $colorBlack;
+        }
     }
 }

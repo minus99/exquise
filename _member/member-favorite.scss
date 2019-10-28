@@ -5,17 +5,22 @@
     del {color: $memberGreyColor;}
     /* Favori Button */
     .field-submit {
-        flex-wrap: nowrap; 
+        flex-wrap: wrap; 
         width: 100%;
         justify-content: center;
-        padding-bottom: $memberPadding20; 
+        padding: 0 $memberPadding15 $memberPadding20 $memberPadding15 !important; 
+        margin-top: 0;
+        .form-obj {
+            width: 100%;
+            margin: 0 0 $margin10 0; 
+        }
     }
     // Favori Liste Özellikleri
     .grid-row {
         overflow: visible;
         flex-wrap: wrap;
         position: relative;
-        border-bottom: 1px solid $memberLightGreyColor;
+        border-bottom: 1px solid #eee;
         padding-bottom: $memberPadding20;
         margin-bottom: $memberMargin20;
         > div {
@@ -28,8 +33,8 @@
         .ga2 {flex:100%; margin-top:$memberMargin20;}   
         &:last-child {
             padding-right: 0;
-            border-bottom: 0;
-            padding-bottom: 0; 
+            //border-bottom: 0;
+            //padding-bottom: 0; 
             margin-bottom: 0; 
         }
     }
@@ -42,7 +47,7 @@
     // Görsel
     .grid-img {
         flex: 1 120px;  
-        padding-right: $memberPadding10;
+        padding-right: 25px;
         img {
             width: 100px;
         }
@@ -52,7 +57,10 @@
     } 
     // Ad fiyat indirim kapsayıcı
     .grid-content {flex: 1 100%;}
-    .grid-name {line-height: $labelLineText;} 
+    .grid-name {
+        line-height: $labelLineText;
+        font-family: $medium;
+    } 
     // Fiyat
     .grid-price {
         .price-wrapper {
@@ -62,7 +70,7 @@
             white-space: nowrap; 
         }
         .first {
-            color: $memberGreyColor;
+            color: $colorRed;
         }
         .price-discount {
             color: $memberRedColor;
@@ -91,13 +99,16 @@
     .grid-remove {
         margin-top: 0;
         position: absolute;
-        top: -10px;
+        top: 0px;
         right: 0; 
         a {
             span {
                 text-decoration: $linkUnderline; 
                 font-size: $memberFontSize12;
             }
+        }
+        svg {
+            font-size:$fontSize20; 
         }
     }
     // Adet
@@ -121,12 +132,6 @@
             right: 0px;
         }
     }
-    // Button
-    a.btnFavSepeteAt {
-        span {
-            color: $memberBlueColor; 
-        }
-    }
     // Empty Class
     &.no-result {
         padding-top: 0;
@@ -145,9 +150,14 @@
 .urunListe_secenek1 { 
     .dropdown-trigger {
         display: block;
-        padding: $memberInputPadding;
-        background: $memberLightGreyColor;
-        border-color:$memberLightGreyColor;
+        padding: 9px 30px 9px 10px;
+        //background: $memberLightGreyColor;
+        border-color:#dfdfdf; 
+    }
+    .dropdown-header {
+        &:after {
+            right: 10px;
+        }
     }
     .dropdown-options {
         position: absolute;
@@ -155,13 +165,28 @@
         top: 100%;
         z-index: 1;
         width: 100%;
-        margin: -1px 0 0 0;
+        margin: 0;
         padding: $memberPadding10;
         background: $memberLightGreyColor;
-        border: 1px solid $memberLightGreyColor;
+        display: none !important;
+        //border: 1px solid $memberLightGreyColor;
         a {
-            margin-bottom: $memberMargin5; 
+            //margin-bottom: $memberMargin5; 
             display: block;
+            text-align: center;
+            line-height: normal;
+            .dropdownrow {
+                height: auto; 
+                line-height: 20px;
+                font-size: 13px;
+                padding: 0;
+                border: 0 !important;
+            }
+            &.selectedOption  {
+                .dropdownrow {
+                    font-family: $medium;
+                }
+            }
         }
     }
     &.opened {
