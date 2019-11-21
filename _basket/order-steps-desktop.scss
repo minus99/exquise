@@ -1,12 +1,11 @@
 //Siparis adımları
-.basket-steps{
-    display: none;
-}
 .tabloTabBtnAdim{
+    max-width: 650px;
+    margin: 0 auto;
     > tbody > tr > td{
-        min-height: 80px;
-        margin-top: 0;
-        margin-bottom: 0;
+        //min-height: 80px;
+        //margin-top: 0;
+        //margin-bottom: 0;
     }
     /*.tabBtnAdimDefault,
     .tabBtnSelectedDefault{
@@ -22,4 +21,34 @@
             opacity: inherit;
         }
     }
+    .tabBtnAdimDefault,
+    .tabBtnSelectedDefault {
+        > a {
+            &::after {
+                left: calc(70% - 0px);
+                width: 60%;
+            }
+        }
+    }
 }
+
+// Sepet html class a göre gizleme
+
+//steps
+.basket-steps {
+    margin: 0;
+}
+.order-steps-first {
+    .basket-steps{
+        display: none;
+    }
+} 
+// Footer
+.order-steps {
+    .site-footer {display: block;}
+    .kutuBulten, .footer-social, .footer-menu, .footer-tab {display: none;}
+    .footer-info { border:0;}
+    .footer-card {display: block;}
+}
+
+    

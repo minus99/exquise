@@ -1,4 +1,5 @@
 //Sepet ust slider
+/*
 .basket-swiper{
     .swiper-slide{ 
         width: (100% / 3);
@@ -45,11 +46,24 @@
         }
     }
 }
+*/
+
 //Teslimat sayfası ust slider ozellestirme
 .order-delivery {
     .basket-swiper{
         .swiper-slide{ 
             width:100%;
         }
+    }
+}
+
+.basket-info-widget {
+    padding: 0;
+    margin: 0 auto;
+    padding: 0 15px;
+    .swiper-slide {
+        width: auto;
+        flex: 1;
+        padding: 0 !important;
     }
 }

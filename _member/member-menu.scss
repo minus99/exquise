@@ -40,8 +40,8 @@
         }
         &.selected, &.act { 
             a {
-                color: $btnAlternateColor;
-                border-bottom: 2px solid $btnAlternateColor;
+                color: $colorBlack;
+                border-bottom: 2px solid $colorBlack;
             }
         }
     }

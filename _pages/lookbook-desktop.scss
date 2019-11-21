@@ -1,0 +1,97 @@
+// Lookbook
+
+.ems-lookbook-wrp {
+    padding: $padding30;
+    > ul {
+        @extend .display-grid;  
+        grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+        grid-gap: 80px 60px;
+        justify-content: center; 
+
+        // lookbook görsel
+        .lbImg { 
+            position: relative;
+            img {
+                width: auto;
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+            // Ürün fiyat efekt
+            &:hover {
+                .subProduct {
+                    li {
+                        animation: .5s ease 0s pulseLook;
+                        animation-fill-mode: both;
+                    }
+                }
+            }
+        }
+        // lookbook yazı
+        .lbContentWrp {
+            max-width: 350px;
+            margin: 50px 0 0 0;
+            span {
+                font-size: 47px;
+                margin-bottom: 20px;
+                font-family:$regular;
+                display: block; 
+                &.empty {
+                    display:none;
+                }
+            }
+            p {
+                font-size: 18px; 
+                line-height: 25px;
+                color: #292929;
+                &.empty {
+                    display:none;
+                }
+            }
+        }
+        > li {
+            text-align: center;
+            margin-bottom: 0;
+            &.cover {
+                grid-column: 1 / span 2;
+                img {
+                    width: 100%;
+                } 
+            }
+            &.grid { 
+                @extend .display-flex-desktop;
+                align-items: center;
+                justify-content: center;
+                .lbContainer {
+                    //width: min-content;
+                    display: inline-block;
+                    @extend .sticky-desktop;
+                    top: 60px;   
+                }
+            }
+            &.satir2 {
+                grid-row: auto / span 2; 
+                align-items: flex-start;
+            }
+            &.satir3 {
+                grid-row: auto / span 3;
+                align-items: flex-start;
+            }
+            &.satir4 {
+                grid-row: auto / span 4;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // Ürün fiyat liste
+    .textWrap {
+        .subProduct {
+            li {
+                opacity: 0;
+                left: 10px;
+                position: relative;
+            }
+        }
+    }
+}

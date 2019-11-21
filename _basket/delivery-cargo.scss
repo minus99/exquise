@@ -1,37 +1,91 @@
 .cargo-tab{
     background: $colorWhite;
     border-radius: $basketModuleRadius;
-    padding: $cargoInlinePadding;
+    padding: $padding20 0 0 0; 
+    .title-middle {
+        font-family: $medium; 
+        font-size: $fontSize14;
+        margin-bottom: 15px;
+    }
 }
 //kargo ajax ile yuklenen icerik alanı
 li.kargoRow {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 25px 30px 25px 60px;
+    border: 1px solid #f0f0f0;
     //flex class'i extend ediliyor
-    @extend .display-flex;
-    @extend .align-items-center;
-    @extend .justify-between;
+    //@extend .display-flex;
+    //@extend .align-items-center;
+    //@extend .justify-between;
 
     //ilk li'haric tumune border ekleniyor
     &:not(:first-child){
         border-top:1px solid $gridRowBorder;
     }
     //ilk li'ye yukaridan margin ile bosluk veriliyor
-    &:first-child{
+    /*&:first-child{
         margin-top: 10px;
-    }
+    }*/
     //img icin max genislik
     img{
         width: 20%;
         max-width: 132px;
+        display: none;
     }
     > span {
         //html bos ise gizleniyor
         @extend .is-empty;
         //Son (radio buton) haric digerlerin verilen genislik ve yazı tipi
         &:not(:last-child){
-            width: 20%;
-            font-family:$bold;
+            //width: 20%;
+        }
+    }
+    .sStylerMainWrp {
+        position: absolute;
+        top: 21px;
+        left: 25px;
+        svg {
+            font-size: 24px;
+        }
+    }
+    .kargoAdi {
+        font-size: $fontSize12;
+        font-family: $medium;
+        p {
+            font-family: $regular;
+            font-size: $fontSize13;
+            line-height: 17px;
+            margin-top: 10px;
+            display: block;
+        }
+    }
+    .fiyat {
+        position: absolute;
+        right: 0;
+        top:0;
+        font-size: 11px;
+        color:$colorRed;
+        background: #f1f1f1;
+        padding: 5px 15px; 
+        margin: 0;
+    }
+}
+
+// Kargo grid
+
+.divTeslimatKargo {
+    ul {
+        @extend .display-flex; 
+        flex-wrap: wrap;
+        li {
+            flex: 1 100%;
+            margin:0 0 15px 0;
+            position: relative;
+            cursor: pointer;
+            &:first-child {margin-left: 0;}
+            &:last-child {margin-right: 0;}
+            &.selected {
+                background: #f6f6f6;
+            }
         }
     }
 }

@@ -1,0 +1,85 @@
+.ems-page-error { 
+    background:url(#{$baseHref + "/images/frontend/file-not-found-mobile.jpg"} ) no-repeat top center;
+    background-size: cover;
+    color: $colorBlack;
+    overflow: hidden;
+    &-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "ga1";
+        @include setGridArea(1,1);
+    }
+}
+
+.error-content {
+    position: relative;
+    z-index: 1;
+    min-height: 480px;
+    max-width: 600px !important;  
+    padding: 40px 20px;
+    text-align: center; 
+    flex-direction: column;
+    min-height: 500px;
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+    .prm-media {
+        margin-bottom: 20px;
+        img {
+            width: 60px;
+        }
+    }
+    .prm-title {
+        font-size: 25px;
+        font-family: $play;
+        color: $colorWhite;
+    }
+    .prm-desc {
+        margin-top: 20px;
+        font-size: 20px;
+        color: $colorWhite;
+    }
+    .btn-error { 
+        margin: 30px auto 0 auto;  
+        border-color: $colorWhite; 
+        color: $colorWhite; 
+        &:hover {
+            background: $colorWhite;
+            color: $colorBlack;
+        }
+    }
+    &-obj {
+        position: absolute;
+        right: -25px;
+        bottom: 0;
+        z-index: 1;
+        max-width: 160px;
+        animation: animation-03 .5s ease;
+    }
+}
+
+.warning-search {
+    margin-top: $margin30;
+    position: relative;
+    &-header {
+        margin-bottom: $margin10;
+        font-family: $medium;
+        color: #fff;
+    }
+    &-input {
+        input {
+            border: 0;
+            padding: 16px 60px 16px 25px; 
+            font-size: 16px;
+        }
+    }
+    &-submit { 
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        a {
+            padding: 18px; 
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+ /* Kombin Swiper */
+
+.lookbook-slider {
+    .banner07 {
+        height: 100%;
+        max-height: calc(100vh - 60px);
+    } 
+}
+
+.swiper-container-lookbook {
+    padding: 0;
+    .swiper-inner {overflow: visible;}
+    ul {
+        transform: none !important;
+        flex-wrap: wrap;
+        li {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            width: 25% !important;
+        }
+    } 
+}
+
+.kombin {
+    top:60px;
+    height: calc(100% - 60px);
+    > .inside {
+        @extend .display-grid;
+        grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+        .rightPanel { 
+            .inside {
+                padding: 0;
+            }
+        }
+        .leftPanel {
+            .swiper-slide {
+                height: calc(100vh - 60px);
+            }
+            .swiper-button-prev, .swiper-button-next {
+                display: block;
+            }
+            .swiper-pagination-bullets {
+                position: absolute;
+                bottom: 30px;
+                margin: 0;
+                .swiper-pagination-bullet {
+                    width: 9px;
+                    height: 9px;
+                    margin: 0 7px;
+                    display: inline-block;
+                    border-radius: 100%;
+                    background: transparent;
+                    border: 1px solid #fff;
+                    &-active {
+                        background: #fff;
+                        border-color: transparent;;
+                    }
+                }
+            } 
+        }
+    }
+    .closeBtn {
+        background: #eee;
+    }
+}
+
+// toplu fiyat gösterim satın al
+.loboInfo {
+    padding: $padding30 0;
+    width: calc(50% - 15px);
+}

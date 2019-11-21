@@ -84,11 +84,14 @@ Site General Flex Class Items
 }
 //Site genel mesaj gorunumu
 .message{
-    padding: 130px 0;
+    padding: $padding10;
     @extend .display-flex;
     align-items: center;
     justify-content: center;
-    font-size: $fontSize20;
+    font-size: $fontSize13;
+    border: 1px solid #eee; 
+    border-radius: 2px;
+    margin: $margin5 0;
     /*border-radius: 4px;
     border-top-width: 1px;
     border-left-width: 1px;
@@ -118,7 +121,8 @@ Site General Flex Class Items
         margin: 0 auto $margin20 auto;
     }
     svg {
-        font-size: 60px;
+        font-size: 30px;
+        margin-right: 10px;
     }
 }
 
@@ -288,6 +292,8 @@ table[style*="inline"]{
 .pnlDipToplamTable td > span,
 .odemeCekiTutar,
 .cart-prd-price .price,
+.satBrFiyatVrg, 
+.brFiyatVrg,
 #plhIadeTutar > a {
     display: inline-flex !important;
     [class^="pb"] { 

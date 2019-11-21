@@ -19,7 +19,8 @@
         padding: $memberPadding20;
         a.btnDefault {
             width: auto;
-            @extend .display-flex-desktop; 
+            display: inline-block;
+            //@extend .display-flex-desktop; 
         }
         .field.field-single {
             width: auto;
@@ -42,7 +43,7 @@
     }
 }
 
-.pages-member {
+.pages-member, .prd-list {
     .no-result {
         background: #fff;
         .message-ico {
@@ -50,4 +51,25 @@
         }
     }
 }
+
+
+
+[id$="lbfUYM_KAYITYOK_MESAJ"], [id$="lbfURN_URUNYOK"] {
+    background: #fff;
+    .message-ico {
+        background: #f8f8f8;
+    }
+}
+
+/* Üyelik Onay */
+
+.pageUyeBasarili, .pageUyeBasarili_mesaj {
+    span[id$="lblBasariliMailPasif"], span[id$="lblBasariliSMSPasif"], span[id$="lblBasariliSMSAktif"]{
+        flex-direction: row;
+        img {
+            max-width: 50%;    
+        }
+    }
+}
+
 

@@ -206,6 +206,8 @@
     .pnlDipToplamTable {
         flex-direction: column;
         font-size: $fontSize14;
+        padding: 0;
+        @extend .display-flex;
         > div {
             .text { 
                 &:empty {display: none;}

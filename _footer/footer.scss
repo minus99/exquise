@@ -20,6 +20,7 @@
 .footer-info {
     padding: 70px 0 90px 0;
     border-bottom: 1px solid $greyBorderColor;
+    display:none;
     span {
         display: block;
     }
@@ -39,4 +40,18 @@
     @extend .transition;
     opacity: 0;
     &.scroll {opacity: 1;}
+}
+
+.scrollTop-swipe { 
+    display: none;
+}
+
+// Footer Kart
+
+.footer-card {
+    max-width: 420px;
+    margin: 0 auto 50px  auto; 
+    img {
+        width: auto;
+    }
 }

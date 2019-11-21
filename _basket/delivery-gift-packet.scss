@@ -1,18 +1,22 @@
 .gift-tab{
     //Hediye paketi arka plan
-    background:url(#{$baseHref + "/images/frontend/gift-packet-bg.png"} ) no-repeat $giftPacketBg;
-    background-position: 99% 0;
-    margin-bottom: $giftPacketMb;
-
+    //background:url(#{$baseHref + "/images/frontend/gift-packet-bg.png"} ) no-repeat $giftPacketBg;
+    //background-position: 99% 0;
+    margin: 0; 
+    //margin-bottom: $giftPacketMb; 
+    input {display: none;}
+    svg {
+        margin-right: 5px;
+    }
     //title alani
     &-hdr{
-        width: calc(100% - 20%);
-        padding:15px 8px 15px 8px;
+        //width: calc(100% - 20%);
+        padding:15px 8px 15px 0px;
     }
     //Content alani
     &-wrp{
         display: none;
-        width: calc(100% - 15%);
+        //width: calc(100% - 15%);
         padding-left:15px;
         padding-right:15px;
         padding-bottom:20px;
@@ -33,13 +37,13 @@
             resize: none;
             height: 60px;
             padding-right: 15px;
-            border: none !important;
+            //border: none !important;
         }
     }
     //Hediye paketi isaretli ise
     &-opened{
         .gift-tab-wrp{
-            display: block;
+            display: block; 
         }
     }
 }

@@ -9,26 +9,31 @@
 
 //Odeme sayfasi odeme tipi modulu
 .pay-type-list{
+    margin-top: 20px;
+    background: #f8f8f8;
     ul{
         //flex default class extend ediliyor
         @extend .display-flex;
         //esit genislik
         li{
             flex: 1;
-            width: 25%;
+            //width: 25%;
             a{
                 @extend .display-block;
-                background: $colorBulltet;
-                border-radius: 4px 4px 0 0;
-                font-size: $fontSize12;
+                //background: $colorBulltet;
+                //border-radius: 4px 4px 0 0;
+                font-size: $fontSize14;
                 font-family: $medium;
-                padding:15px 20px;
+                padding:20px;
                 text-align: $alignCenter;
                 //secili arka plan
+                border-bottom: 0px solid #000; 
                 &.emos_selected{
-                    background: $colorWhite;
-                    color: $colorDefault;
+                    //background: $colorWhite;
+                    color: $colorBlack; 
+                    border-bottom: 2px solid #000;  
                 }
+                span {white-space: nowrap;} 
             }
         }
     }
@@ -44,13 +49,16 @@
     div[id$="pnlKrediKartiBilgi"],
     div[id$="pnlHavaleOdeme"],
     div[id$="pnlPesinDiger"]{
-        padding: 20px;
+        padding: 20px 0;
     } 
 }
 //Odeme K karti modulu
 div[id$="pnlKrediKartiBilgi"],
 .divtxtKKARTNO{
     position: relative;
+}
+.pay-type-content { 
+    padding: 20px; 
 }
 //Odeme K karti baslik
 .tableTitleOdemeBilgiKrediKarti{
@@ -87,6 +95,13 @@ div[id$="pnlKrediKartiBilgi"],
                 &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO{
                     @extend .display-flex;
                     @extend .align-items-center;
+                    p {
+                        color: #9fa3a9;
+                        padding: 10px 0;
+                    }
+                    img {
+                        width: auto;
+                    }
                 }
             }
             //tr'nin son elemanın da gelen input haric alttan eklenen bosluk
@@ -150,6 +165,10 @@ a.btnBankaPromosyonUygula,
 //Taksit secenegi table'ı
 .tableOdemeTaksit{
     margin-top:30px;
+    background: #f6f6f6;
+    padding: 20px;
+    display: block;
+    width: 100%;
     > tbody{
         > tr{
             display: table;
@@ -159,25 +178,30 @@ a.btnBankaPromosyonUygula,
                 display: table-cell;
                 vertical-align: middle;
                 width: 25%;
+                svg {
+                    font-size: 20px; 
+                }
             }
             //Taksik secenek header kismi
             &.tableTitleOdemeTaksit{
-                border-bottom: 1px solid $gridRowBorder;
+                //border-bottom: 1px solid $gridRowBorder;
+                margin-bottom: 20px; 
                 > td{
                     padding-bottom: 5px;
                     > span{
                         font-size: $fontSize12;
-                        color: $colorAlternate;   
+                        color: $colorBlack;   
+                        font-family: $medium; 
                     }
                 }
             }
             //Taksik secenekleri row
             &.taksit_pesin {
                 > td{
-                    font-family: $bold;
                     height: 35px;
                     padding-top: 5px;
                     padding-bottom: 5px;
+                    font-size: 12px;
                 }
             }
         }
@@ -188,6 +212,7 @@ a.btnBankaPromosyonUygula,
     > tbody{
         > tr{
             //Kisa metin gizleniyor
+            border-bottom: 1px solid #eee;
             &:first-child{
                 display: none;
             }
@@ -222,6 +247,9 @@ a.btnBankaPromosyonUygula,
                                         a.btnDefault {
                                             > span{
                                                 justify-content: flex-end;
+                                                svg {
+                                                    margin-right: 5px;
+                                                }
                                             }
                                         }
                                     }
@@ -241,6 +269,10 @@ a.btnBankaPromosyonUygula,
             }
         }
     }
+}
+
+.pageDecOdemeBilgi {
+    margin-top: 20px; 
 }
 
 //Master pass odeme modulu
@@ -338,20 +370,20 @@ a.btnBankaPromosyonUygula,
 
 //Odeme accordion title -- acilir kapanir tum basliklara kullanilabilir
 .basket-title-accordion{
-    padding: 20px 40px 20px 20px;
+    padding: 0px;
     background-color: $colorWhite;
-    background-position: calc(100% - 20px);
+    //background-position: calc(100% - 20px);
     background-repeat: no-repeat;
     border-radius: $basketModuleRadius;
     cursor: pointer;
     //Accordion baslik ortak eklenen class
-    @extend .cls-ttl-acr;
+    //@extend .cls-ttl-acr;
 }
 //Odeme sepet onizleme ve urun adet sayisi
 .payment-basket-title{
     //baslik icin sagdan bosluk
     .title-middle{
-        margin-right: 15px;
+       //margin-right: 15px;
     }
     //sepet urun adet
     b{
@@ -361,6 +393,7 @@ a.btnBankaPromosyonUygula,
     //sepet urun adet text
     small{
         color: $colorAlternate;
+        display: none;
     }
 }
 //Sanal kart
@@ -369,7 +402,8 @@ a.btnBankaPromosyonUygula,
 }
 //Odeme Adres bilgileri ve siapris ozet alani ust bosluk
 .pay-address {
-    margin-top:30px;
+    //margin-top:30px;
+    padding: 0 20px;
     > ul{
         flex-wrap: wrap;
         > li{
@@ -382,13 +416,26 @@ a.btnBankaPromosyonUygula,
     //Odeme teslimat ve sepet icerik default gizli gelmesi 
     &-hidden{
         display: none;
-        padding: 10px 20px 20px 20px;
+        //padding: 10px 20px 20px 20px;
+        margin-top: 10px; 
+        > div {
+            padding: 20px 30px;
+            background: #f6f6f6; 
+            flex: 1 100%;
+            margin-bottom: 10px;
+            &:first-child {
+                margin-right: 0px;
+            }
+            &:last-child {
+                margin-left: 0px; 
+            }
+        }
     }
     //Odeme sepet ve teslimat alanlari
     &-left-content,
     &-right-content{
         background-color: $colorWhite;
-        border-radius: 0 0 $basketModuleRadius $basketModuleRadius;
+        //border-radius: 0 0 $basketModuleRadius $basketModuleRadius;
     }
     //Odeme sepet onizleme
     &-left-content{
@@ -401,15 +448,19 @@ a.btnBankaPromosyonUygula,
     //Odeme teslimat adres bilgileri
     &-right-content{
         > div{
-            &:not(:first-child){
+            /*&:not(:first-child){
                 border-top: 1px solid $gridRowBorder;
                 margin-top: 20px;
                 padding-top: 20px;
-            }
+            }*/
             .baslik{
                 @extend .display-block;
-                font-family: $bold;
                 padding-bottom: 10px;
+                font-size: $fontSize12;
+                font-family: $medium;
+            }
+            .pay-address-obj {
+                font-size: $fontSize13;
             }
         }
     }
@@ -419,10 +470,11 @@ a.btnBankaPromosyonUygula,
             &.opened{
                 //Accordion baslik ortak eklenen class acik hali
                 .basket-title-accordion{
-                    @extend .opnd-ttl-acr;
+                    //@extend .opnd-ttl-acr;
                 }
                 .pay-address-hidden{
-                    display: block;
+                    @extend .display-flex;
+                    flex-wrap: wrap;
                 }
             }
         }
@@ -446,7 +498,7 @@ a.btnBankaPromosyonUygula,
 .OdemeBilgiPesinDigerOdemeNotu{
     > span{
         @extend .display-block;
-        font-family: $bold;
+        font-family: $medium;
         color: $colorAlternate;
     }
     textarea{
@@ -474,7 +526,7 @@ span[id$="lblODM_ACIKLAMA"]{
     //Sozlesme basliklari eger tıklanmıs ise baslık ikonu degisiyor
     &.opened{
         .tableTitleDefault {
-            @extend .opnd-ttl-acr;
+            //@extend .opnd-ttl-acr;
         }
         .onBilgilendirmeFormMetin,
         .siparisOnaySozlesmeMetin{
@@ -486,7 +538,8 @@ span[id$="lblODM_ACIKLAMA"]{
 .onBilgilendirmeFormMetin,
 .siparisOnaySozlesmeMetin{
     display: none;
-    margin: 20px 25px 20px 20px;
+    margin: 20px 0px;
+    border-bottom: 1px solid #f8f8f8;
     //webkit scroll ekleniyor
     @extend .scroll-webkit;
     //Ilk span varsayilan scroll degeri degistiriliyor
@@ -498,7 +551,7 @@ span[id$="lblODM_ACIKLAMA"]{
 }
 .onBilgilendirmeFormMetin,
 .siparisOnaySozlesmeMetin{
-    padding-bottom: 20px;
+    //padding-bottom: 20px;
 }
 //Sozlesmeler de tiklanan linkler icin css
 .pageSiparisOnay_lbfOnBilgilendirmeForm,
@@ -506,6 +559,7 @@ span[id$="lblODM_ACIKLAMA"]{
     @extend .display-flex;
     @extend .align-items-center;
 }
+
 //Sozlesme buttonlari
 a.btnOnBilgilendirmeFormOnizle,
 a.btnSatisSozlesmeOnizle {
@@ -528,6 +582,35 @@ a.btnSatisSozlesmeOnizle {
     .bottom-step{
         display: none;
     }
+    .basket-grid-2 {
+        .ga1 {
+            padding: 0;
+            display: block !important;
+        }
+        .pay-address-left {
+            .page-top-title {
+                border-top: 1px solid #eee; 
+                position: relative;
+                &:after {
+                    content: '';
+                    @extend .base64-arrow-d;
+                    height: 24px;
+                    color: #000;
+                    display: inline-block;
+                    padding: 22px;
+                    text-align: center;
+                    background-size: 24px;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                }
+            }
+            .grid-table-cart {
+                max-height:none;
+            }
+        }
+        
+    }
     .order-summary{
         //Sozlesmeler linkleri append edildikten sonra gosteriliyor
         .pageSiparisOnay_btnOnBilgilendirmeFormOnizle,
@@ -538,27 +621,39 @@ a.btnSatisSozlesmeOnizle {
             }
         }
         .pageSiparisOnay_lbfOnBilgilendirmeForm{
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding: 40px 20px 15px 20px;
+            order: 1;
+            border-top: 1px solid #d8d8d8;
         }
         .pageSiparisOnay_lbfSatisSozlesme{
-            padding-top: 15px;
-            border-top: 1px solid $gridRowBorder;
+            padding: 15px 20px 40px 20px; 
+            order: 1;
         }
         //Satin al butonu append edildigi icin ilk yukleme de append edildigi yerde acik tutuluyor
         .bottom-step{
             display: block;
+            order: 4; 
+            .next {
+                a {
+                    margin-top: 0;
+                }
+            }
         }
     }
     .btnOnbilgi,
     .btnSozlesme{
         text-decoration: underline;
     }
+    .order-summary {
+        .order-summary-title > span {
+            font-size: 0;
+        }
+    }
 }
 
 //Odeme ceki
 .pageOdemeBilgi_odemeCekiGiris{
-    display: block !important;
+    //display: block !important;
 }
 .odemeCekiBaslik{
     font-family: $bold;

@@ -155,6 +155,9 @@
             display: block;
         }
     }
+    &.none {
+        display: none !important;
+    }
 }
 
 
@@ -162,7 +165,7 @@
     display: none;
     .pServisListe {
         padding: 0;
-        background: none;
+        background: none; 
     }
 }
 
@@ -277,6 +280,21 @@ body.view-map {
         }
         &-hidden {
             overflow: hidden;
+        }
+    }
+    //VIDEO
+    &-video-player {
+        position: relative;
+        &.is-play {
+            .i-play {
+                opacity: 0;
+                transition: all .2s ease;
+            }
+            &:hover {
+                .i-play {
+                    opacity: .5;
+                }
+            }
         }
     }
 }

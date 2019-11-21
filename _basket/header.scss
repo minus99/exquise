@@ -6,6 +6,10 @@
     .header-logo{
         img{
             width: auto;
+            display: none;
+        }
+        .mobilePageBasketTitle {
+            display: inline-block;
         }
     }
 }
@@ -16,9 +20,13 @@
     //header sticky top degerleri ve z-index
     top: 0;
     z-index: 10;
+    &-wrp {
+        min-height: 47px;
+    }
     //logo
     .logo{
         @extend .order-1;
+        width: 100%;
     }
     //Üye login yönlendirme
     .member{
@@ -27,6 +35,11 @@
     //Üye login mobile geri butonu
     .back-arrow{
         margin-right: $basketArrowBackSpacing;
+        position: absolute;
+        left: 10px;
+        svg {
+            font-size: 32px;
+        }
     }
 }
 

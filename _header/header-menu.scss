@@ -89,7 +89,7 @@
     }
     li {
         .lvl-2 { 
-            column-count: auto;
+            column-count: auto !important;
             padding: 0 $padding20;
             background: $lightGreyColor;
             > li {
@@ -114,11 +114,16 @@
             }
         }
         .lvl-3 {
-            padding-left: $padding20;
+            padding-left: $padding10;
             > li {
                 > a {
                     padding: $padding10 0;
                     display: block;
+                }
+                &.selected {
+                    a {
+                        font-family: $medium;
+                    }
                 }
             }
         } 
@@ -179,6 +184,12 @@
             display: block;
         }
     }
+}
+
+// Kategori menu stil
+
+.ems-sub-menu-cat {
+    
 }
 
 // Mobil menu kullanıcı bilgileri

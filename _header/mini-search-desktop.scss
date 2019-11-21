@@ -23,10 +23,23 @@
                 padding: 9px 40px 9px 15px;
             }
         }
+        .no-result {
+            margin: 0 auto;
+            .message-ico {
+                width: 110px;
+                height: 110px;
+            }
+            svg {
+                font-size: 40px;
+            }
+            p {
+                font-size: 18px; 
+            }
+        }
     }
     &-ready {
         position: static;
-        overflow: visible;
+        overflow: hidden;
     }
     &-animate {
         //position: fixed;
@@ -68,7 +81,7 @@
         max-height: 400px;
         display: block;
         padding-right: $padding10;
-        width: 100%;
+        width: 100%; 
         .sHolder {
             grid-template-columns: repeat(6, 1fr); 
             grid-gap: 10px;

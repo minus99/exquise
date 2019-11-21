@@ -7,6 +7,8 @@
     }
     span, p, b, strong {
         color: $contentGreyColor;
+        font-size: 17px;
+        margin-bottom: 50px;
     }
     // Yazı resim hizalama
     .sec-double-text {
@@ -56,6 +58,7 @@
     border-top: 1px solid $contentLightGreyColor;
     padding-top: $contentPadding20;
     margin-top: $contentMargin20;
+    display: none;
     &.ems-success {
         .content-scoring-text, .content-scoring-link {display: none;}
         .content-scoring-successful {
@@ -76,4 +79,12 @@
         padding: 0 !important;
     }
     .page-top-title {display: none;}
+}
+
+// SSS
+
+.tab-sss {
+    .ems-tab-content > * {
+        display: block; 
+    }
 }

@@ -1,12 +1,15 @@
 //Siparis adımları
+.basket-steps {
+    background: #f6f6f6;
+    padding: $padding15 0;
+    //margin-bottom: 25px; 
+}
 .tabloTabBtnAdim{
     > tbody > tr > td{
-        display: table;
-        table-layout: fixed;
+        @extend .display-flex; 
         width: $fullWidth;
-        margin-top: $step-top-spacing;
-        margin-bottom: $step-bottom-spacing;
-        background: #f6f6f6;
+        //margin-top: $step-top-spacing;
+        //margin-bottom: $step-bottom-spacing;
     }
     .tabBtnAdimDefault,
     .tabBtnSelectedDefault{
@@ -17,20 +20,50 @@
         position: relative;
         > a{
             display: inline-block;
-            position: relative;
+            //position: relative;
+            &:after {
+                content: "...................................................................................................";
+                position: absolute;
+                //right: 20px; 
+                top: 10px;
+                left: calc(80% - 0px);
+                width: 40%;
+                font-size: 18px;
+                letter-spacing: 6px;
+                overflow: hidden;
+            }
+            
         }
         .icon {
             display: block;
             margin-left: $mLeftAuto;
             margin-right: $mRightAuto;
-            color: $stepIconColor;
-            fill-opacity: .4;
+            color: $stepIconColor; 
+            //fill-opacity: .4;
+            font-size: 26px;
+            &-basket { 
+                font-size: 18px;
+            }
+        }
+        .icon-step {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: #fff;
+            @extend .display-flex;
+            align-items: center;
+            justify-content: center;
+            border: 7px solid #e8e8e8;
+            z-index: 1; 
+            position: relative; 
         }
         .step-txt{
-            font-family: $regular;
+            font-family: $medium;
             color: $stepTextColorNormal;
             opacity: .4;
-            font-size: $siteFontSize;
+            font-size: 10px;
+            display:block; 
+            margin-top: 5px;
         }
         .icon-step-check{
             display: none;
@@ -42,6 +75,10 @@
         &.previous-activeted{
             .icon{
                 fill-opacity: 1;
+                color: $colorWhite;
+                &-step {
+                    background: $colorBlack;
+                }
             }
             .step-txt{
                 opacity: 1;
@@ -50,14 +87,28 @@
                 display: block;
             }
         }
+        &:last-child {
+            > a {
+                &:after {
+                    display: none;
+                }
+            }
+        }
     }
     .tabBtnSelectedDefault{
         .icon{
             fill-opacity: inherit;
-            color: $stepIconColor;
+            color: $colorWhite;
+            &-step {
+                background: $colorBlack;
+            }
         }
         .step-txt{
             color: $stepTextColorNormal;
         }
     }
+}
+
+.order-steps {
+        .site-footer {display: none;}
 }

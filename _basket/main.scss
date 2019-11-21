@@ -1,14 +1,14 @@
 .page-basket{
     //Sepet sayfası ust bosluk
     &-inner{
-        padding-top: $basketPageTopSpaceMb;
+        padding: 0;
     }
 }
 
 //Sepet adimlari üst basliklari
 .title-middle{
     font-family: $medium;
-    font-size: $basketPageTopTitle;
+    font-size: 14px; 
     //Bos ise gizleniyor
     &:empty{
         display: none;
@@ -23,7 +23,7 @@
 .page-basket-other{
     //Siparis adimlari icin gizlenecek alanlari belirleyen class
     .optionally-hidden{
-        display: none !important;
+        display: none !important; 
     }
     //Sepet ilk adımdaki grid siparis adımlarında eziliyor
     .basket-grid{
@@ -39,12 +39,12 @@
 }
 //webkit scroll class
 .scroll-webkit{
-    ::-webkit-scrollbar {width:4px;}
+    ::-webkit-scrollbar {width:3px;}
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-thumb{-webkit-border-radius: 2px; border-radius: 2px;}
-    ::-webkit-scrollbar-track {background-color:#202020;}
-    ::-webkit-scrollbar-thumb {background-color:#d8d8d8;}
-    ::-webkit-scrollbar-thumb:window-inactive {background-color:#d8d8d8;}
+    ::-webkit-scrollbar-track {background-color:#d8d8d8;}
+    ::-webkit-scrollbar-thumb {background-color:#202020;}
+    ::-webkit-scrollbar-thumb:window-inactive {background-color:#202020;}
 }
 //Sepet bos duzenlemesi
 .basket-none{
@@ -64,6 +64,45 @@
 .basket-null{
     > span{
         font-family: $medium;
-        font-size:$fontSize16;
+        font-size:20px;
+        display: block;
+        max-width: 400px;
+        margin: 0 auto 50px auto; 
+    }
+    svg {
+        font-size: 60px;
+        margin-bottom: 50px;
+    }
+    a {
+        display: inline-block;
+        max-width: 300px;
+    }
+}
+
+// Empty Basket 
+
+.basket-empty .page-basket-0 .ga2 {
+    display: none;  
+}
+
+.basket-empty {
+    .page-basket-0 .basket-grid {
+        grid-template-columns: minmax(0, 100%);
+        grid-template-areas:
+            "AAA"
+            "CCC";
+        padding: 50px 0; 
+        text-align: center;
+    }
+}
+
+.basket-grid-2 {
+    .page-top-title {
+        border-bottom:1px solid #eee;
+        padding: 15px 0; 
+        font-family: $medium;
+        margin-top: 0px;
+        width: 100%;
+        /*span {display:none;}*/
     }
 }

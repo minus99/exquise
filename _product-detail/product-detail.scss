@@ -29,6 +29,13 @@
     &-brand {
         font-family: $medium;
         font-size: 16px;
+        a {
+            font-size: $fontSize12;
+            color: #aaa;
+            font-family: $regular;
+            margin-bottom: $margin5;
+            display: block;
+        }
     }
     &-name {
         font-size: $fontSize13;
@@ -57,6 +64,7 @@
     &-block1 {
         margin-top: 7px;
         margin-bottom: $margin20;
+        flex-wrap: wrap;
     }
     &-price {
         font-size: $fontSize20;
@@ -72,7 +80,7 @@
         font-size: $fontSize13;
         //margin-top: $margin15;
         > div {
-            display: none;
+            //display: none;
             /*position: absolute;
             right: 0;
             top: 50%;
@@ -82,12 +90,15 @@
             > span {
                 display: block;
             }
+            &:empty {
+                display: none;  
+            }
         }
     }
     &-gallery {
         margin-bottom: $margin10;
         .swiper-slide {
-            text-align: center;
+            text-align: center; 
         }
         .swiper-pagination {
             padding-bottom: 0;
@@ -227,6 +238,14 @@
     #plhKazancOran {
         display: block !important;
         color: $colorRed;
+        font-size: $fontSize13;
+        flex: 1 100%;
+        margin-top: 10px;
+    }
+}
+#plhKazancOran {
+    &:empty {
+        display:none;
     }
 }
 .yeniUrun {
@@ -325,8 +344,13 @@
 
 //sizes
 $m: 5px;
+
+.ems-page-product-detail {
+    .dropdown-options {
+        display: block !important;
+    }
+}
 .dropdown-options {
-    display: block !important;
     margin-left: -$m;
     margin-right: -$m;
     font-size: 0;
@@ -359,7 +383,7 @@ $m: 5px;
             .dropdownrow {border: 1px solid $colorBulltet;}
         }
         &.stokYok {
-            pointer-events: none;
+            //pointer-events: none;
             .dropdownrow { 
                 opacity: .5;
                 &:before {
@@ -445,7 +469,7 @@ a.btnsepeteAt {
 }
 a.btnStokHaberci {
     width: 100%;
-    pointer-events: none;
+    //pointer-events: none; 
 }
 
 //added to cart
@@ -627,7 +651,7 @@ a.btnStokHaberci {
     }
     .ems-tab-header {
         margin-bottom: 20px;
-        height: 30px;
+        //height: 30px;
         border-bottom: 1px solid $userIcoBg;
         justify-content: flex-start;
         @extend .display-flex-desktop;
@@ -635,8 +659,10 @@ a.btnStokHaberci {
             border-bottom: 2px solid transparent;
             width: auto;
             text-align: center;
+            cursor: pointer;
             span {
-                padding: 0 $padding10;
+                padding: $padding10;
+                display: block;
             }
         }
         .selected {
@@ -650,6 +676,8 @@ a.btnStokHaberci {
     }
 
     &-ready {
+        overflow: hidden;
+        position: fixed;
         .mini-size-guide,
         .mini-size-guide-sub {
             @extend %footer-mods-sub-ready;

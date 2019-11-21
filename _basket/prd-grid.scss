@@ -1,11 +1,6 @@
 //Sepet tablo grid'i
 .grid-table-cart{
     //Sepet rows
-    .grid-table-rows:first-child{
-        .grid-table-row{
-            border-top:1px solid $greyBorderColor;
-        }
-    }
     .grid-table-row {
         @extend .display-flex;
         @extend .relative;
@@ -36,9 +31,10 @@
         }
         //Sepet tablo urun marka adi
         .grid-brand{
-            color: $colorAlternate;
+            color: #eee;
             font-size: $fontSize12;
             line-height: $gridLineHghtDefault;
+            display: none;
         }
         .grid-name{
             //Urun adı linki genel css'i
@@ -46,6 +42,10 @@
                 font-size: $fontSize14;
                 line-height: $gridLineHghtDefault;
                 color: $colorDefault;
+            }
+            .prdItem {
+                padding-right: 25px; 
+                display: block;
             }
             span[id$="lblSCD_AD1"]{
                 display: block;
@@ -98,28 +98,54 @@
             }
         }
         //Urun adet kontrol
+        .qty-wrapper {
+            width: 100%;  
+            max-width: 100px;
+            position: relative;   
+        }
         .grid-piece{
             flex: 1;
             padding-right: 10px;
             //input arttima ve eksiltme butonlari
             a{
+                //display: none;
+                position: absolute;
+                right: 5px; 
+                top: 0;
                 display: none;
+                &:first-child {
+                    bottom: 0px;
+                    top: auto;
+                }
+                svg {
+                    font-size: 18px;
+                }
             }
             input[type="text"]{
+                display: none;
                 border-color:#cccccc;
                 padding:2px 20px;
                 min-height: 35px;
+            }
+            .sStylerWrp_select {
+                .sStylerWrp {
+                    border-color:#cccccc;
+                    padding:2px 20px;
+                    min-height: 35px; 
+                }
             }
         }
         //Urun fiyatlari
         .grid-price{
             flex: 1;
+            text-align: right;
             // TL simgesi font duzenleme
             .pb1{
                 font-family: cursive;
             }
             .price-wrapper{
                 flex-wrap: wrap;
+                justify-content: flex-end;
             }
         }
         span[id$="lblURN_INDIRIMLIFIYAT"],
@@ -133,7 +159,6 @@
         // Ilk fiyat    
         .gridSepetListe_gercekFiyat{
             order: 1; // sıralama veriliyor 
-            font-family: $medium;
             color: $colorBlack;
             text-decoration: $linkLineThrough;
         }
@@ -151,7 +176,7 @@
         .grid-remove{
             position: absolute;
             top: 10px;
-            right: 10px;
+            right: 0px;
             > a{
                 @extend .inline-block;
                 @extend a.btnLink;
@@ -253,14 +278,71 @@
 
 //odeme sepet onizleme grid yapisi
 .basket-grid-2{
+    .grid-table-wrap { 
+        max-width: 300px;
+        margin-left: auto;  
+        display: none;
+    }
     .grid-table-cart{
+        overflow-x: hidden;
+        max-height: 395px;
         .grid-table-rows{
             padding-left: 0;
             padding-right: 0;
+            border-top: 1px solid #dddddd;
+            border-bottom: 0 !important; 
+            &:first-child {
+                border:0 !important;  
+            }
+            .grid-table-row {
+                border:0 !important;  
+            } 
+            .grid-content{
+                width: 100%;
+                padding-right: 10px;
+            }
+            .grid-content-right {
+                min-width: auto;
+                position: static;
+            }
         }
         //Siparis adimlarin da sepet onizleme gizlenen alanlar
         .grid-piece,
         .grid-remove,
         span[id$="lblProm"]{display: none;}
+        .grid-price {
+            position: absolute;
+            bottom: 20px; 
+            right: 10px; 
+        }
+        .grid-name {
+            font-size: $fontSize13;
+        }
+        span[id$="lblURN_INDIRIMLIFIYAT"], .gridSepetListe_gercekFiyat, span[id$="lblSCD_AD1"] {
+            font-size: 12px !important;
+            margin-top: 0 !important; 
+        } 
+        .dvSepetKazancOran {
+            display: none !important;  
+        }
     }
+}
+
+// Sepet içerik scroll
+
+.basket-grid-2 .grid-table-cart::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: #000;
+}
+
+.basket-grid-2 .grid-table-cart::-webkit-scrollbar-track { 
+    -webkit-box-shadow: inset 0 0 4px $colorAlternate;
+    box-shadow: inset 0 0 4px $colorAlternate;
+    -webkit-border-radius: 3px; 
+    border-radius: 3px;
+}
+
+.basket-grid-2 .grid-table-cart::-webkit-scrollbar { 
+    width: 3px;
 }

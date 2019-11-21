@@ -4,6 +4,13 @@
 //--- İçerik Template Düzeni ---//
 
 .article-container {
+    section {
+        max-width: 720px;
+        margin: 0 auto;
+        &.sec-main-image, &.sec-trible-image, &.sec-four-image, &.sec-video {
+            max-width: none;
+        }
+    }
     // Yazı resim hizalama
     .sec-text-image {
         .image-wrap {

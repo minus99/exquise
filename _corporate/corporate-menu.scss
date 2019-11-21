@@ -6,13 +6,13 @@
     display: none;
     position: -webkit-sticky;
     position: sticky;
-    top: 20px;
+    top: 70px;
     .sev2 {
         > a {
             font-family: $memberFontMedium;
             font-size: $memberFontSize20; 
             padding: $memberPadding20;
-            display: block;
+            display: none;
         }
     } 
     .sev3 {
@@ -25,7 +25,7 @@
             transition: all .2s ease;
             -webkit-transition: all .2s ease;
             -o-transition: all .2s ease;
-            &:hover {
+            /*&:hover {
                 color: $btnAlternateColor;
                 padding: 20px 50px 20px 30px;
                 &:after {
@@ -48,7 +48,7 @@
                 transition: all .2s ease;
                 -webkit-transition: all .2s ease;
                 -o-transition: all .2s ease;
-            }
+            }*/
         }
         &.act {
             a {

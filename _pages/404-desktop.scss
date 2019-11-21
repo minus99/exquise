@@ -1,0 +1,20 @@
+.ems-page-error { 
+    background:url(#{$baseHref + "/images/frontend/file-not-found.jpg"} ) no-repeat top center;
+    background-size: cover;
+}
+.error-content {
+    min-height: 750px;
+    .prm-media {
+        margin-bottom: 95px;
+    }
+    .prm-title {
+        font-size: 47px;
+    } 
+    .prm-desc { 
+        font-size: 18px;
+    }
+    &-obj {
+        max-width: none;
+        right: 0;
+    }
+}

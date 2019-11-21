@@ -40,7 +40,7 @@
     }
 }
 .prd-body {
-    padding: $padding10 $padding10 0 $padding10;
+    padding: $padding10 0 0 0; 
 }
 //Urun adi
 .prd-name{
@@ -111,6 +111,23 @@
     }
 }
 
+// List Scroll
+
+.page-list {
+    .go-page-top {
+        margin-top: $margin30;
+        a {
+            position: static;
+            opacity: 1;
+            margin: 0 auto;
+            background: #f2f2f2;
+            svg {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}
+
 /*Kategori*/
 .kutuHeaderKategori,
 .kutuFooterKategori{display: none;}
@@ -122,6 +139,7 @@
 }
 .menuKategori{
     li{
+        position: relative;
         > b{
             display: none;
         }
@@ -129,31 +147,73 @@
             display: block;
             position: relative;
         }
+        &.sub-items {
+            > b{
+                display: inline-block;
+                @extend .base64-plus;
+                width:20px;
+                height: 20px; 
+                position: absolute;
+                right: 0px;
+                top: 1px;
+                z-index: 1;
+                opacity: 0;
+                cursor: pointer;
+                background-size: 20px;
+                @extend .transition;
+            }
+            &.opened {
+                > b {
+                    @extend .base64-minus;
+                    background-size: 20px;
+                    opacity: 1 !important;
+                }
+            }
+        }
+        &:hover {
+            &.sub-items {
+                > b{
+                    opacity: 1;
+                }
+            }
+        }
     }
     li.s1{
+        margin-bottom: $margin30;
         > a{
             font-size: 16px;
-            padding: 5px 50px 5px 10px;
+            padding: 5px 10px 5px 10px;
+            float: left;
         }
         > b{
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==);
-            width:24px;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==) !important;
+            width:24px; 
             height: 24px;
-            position: absolute;
-            right: 25px;
+            position: relative;
+            right: 0;
             top: 2px;
             z-index: 1;
-            display: inline-block;
             cursor: pointer;
         }
         > ul{
-            margin-top: 25px;
+            width: 100%;
+            display: inline-block !important;
+            transition: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            height: auto !important;
+            margin-top: 25px !important;
         }
     }
     li.s2{
         > a{
             font-family: $medium;
             font-size: 13px;
+        }
+        ul {
+            display: none;
+            margin: $margin10 0;
+            text-indent: 10px; 
         }
     }
     li.s2,
@@ -207,17 +267,46 @@
     > span{
         @extend .display-flex;
         @extend .align-items-center;
+        max-width: 150px; 
+        overflow: hidden; 
+        span, a {
+            min-width: 30px;
+        }
     }
     span.paging,
-    a.paging{
+    a.paging{ 
         padding:6px 10px;
-        font-size: 15px;
+        @extend .display-flex;
+        &:before {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            padding: 0;
+            text-align: center;
+            background-size: 20px;
+        }
+        &[id$="lnkPrev"]:before {
+            content:'';
+            @extend .base64-arrow-l;
+            
+        }
+        &[id$="lnkNext"] {
+            padding: 6px 0 6px 10px;
+            &:before {
+                content:'...'; 
+                font-size: $fontSize16; 
+            }
+        }
+        span {
+            display: none;
+        }
     }
     a.paging{
         color: #4a4a4a;
     }
     span.paging{
         font-family: $medium;
+        color: $colorBlack;
     }
     a.tumunuGoster{
         span{

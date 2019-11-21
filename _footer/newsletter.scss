@@ -24,3 +24,20 @@
         }
     }
 }
+
+.mini-bulletin-message {
+    text-align: center;
+    span {
+        padding: 10px;
+        font-size: 13px;
+        border: 1px solid #eee;
+        border-radius: 2px;
+        margin: 5px auto;
+        display: inline-block;
+        width: 100%;
+        max-width: 375px;
+        color: $colorGreen;
+        &:empty {display:none;}
+    }
+
+}

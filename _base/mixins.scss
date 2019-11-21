@@ -67,3 +67,50 @@
 @mixin setHeight($imgW, $imgH, $container) {
     height: calc(#{$container} / (#{$imgW} / #{$imgH}));
 }
+
+// vertical align
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// Loop from 1-9.
+
+// Orn: animation: .5s ease 0s pulseLook; animation-fill-mode: both;
+
+@for $i from 1 through 99 {
+    .subProduct li, .mini-user-sub div {   
+      
+      // :nth-child(1-9) 
+      &:nth-child(#{$i}) { 
+        
+        // Delay the animation. Delay increases as items loop.
+        animation-delay: $i * (.1s / 1) !important;
+      }
+    }
+  } 
+  
+  @keyframes pulseLook {
+    0% {
+      opacity: 0;
+      left: 10px;
+    }
+    
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}

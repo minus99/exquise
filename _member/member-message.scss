@@ -2,66 +2,97 @@
 
 //Mesajlarım tab menü
 .swiper-tab-menu{
-    margin-top: $memberMargin30;
+    border-bottom: 1px solid #eee;
+    background: #f8f8f8;
     ul{
         li{
             a{
                 @extend .display-block; 
-                background: $colorBulltet;
-                border-radius: 4px 4px 0 0;
-                font-size: $memberFontSize12;
-                font-family: $memberFontMedium;
-                padding:$memberMessageTabBtnPaddingMobile;
+                font-size: $memberFontSize14;
+                padding: 20px 10px;
                 text-align: $alignCenter;
+                background: none; 
+                border-bottom: 2px solid transparent;
                 //secili arka plan
                 &.emos_selected, &.selected{
-                    background: $colorWhite;
+                    border-bottom: 2px solid $colorBlack;
                 }
                 span {
                     color: #000;
-                    font-size: $memberFontSize12;
-                    font-family: $memberFontMedium;
+                    font-size: $memberFontSize14;
                 }
             }
             &.selected {
                 a {
-                    background: #fff;
-                    color: $memberDarkColor;
+                    border-bottom: 2px solid $colorBlack;
                 }
             }
         }
     }
 }
 
+// Mesaj yapı düzenleme
+.swiper-tab-menu-message {display: none;}
+.member-message {
+    padding: 0 !important;
+    .message-tab-menu {
+        min-height: 41px;
+        margin-bottom: 0;
+    }
+    .swiper-tab-menu-message {
+        display: block;
+    }
+}
+
 // Mesajlarım listeleme sayfası
 .grid-table-message {
+    padding: $padding20;
     // Mesajlarım listeleme düzeni
     .grid-row { 
-        border-bottom: 1px solid $memberLightGreyColor;
         flex-wrap: wrap;
-        padding-bottom: $memberPadding10;
-        margin-bottom: $memberMargin10;
+        margin-bottom: $margin5;
+        padding: 25px 15px;
+        background: #f8f8f8; 
         > div {
             flex-direction: column;
         }
         &.newMessage {
-            font-family: $memberFontBold;
+            font-family: $medium;
+            .label {
+                font-family: $regular; 
+            }
+            .form {
+                font-family: $regular;
+            }
+            .grid-title {
+                .form {
+                    font-family: $medium;
+                }
+            }
         }
         .label { 
-            padding: 5px 10px 0px 0;
-            font-family: $memberFontBold;
-            font-size: $memberFontSize12; 
-            color: $memberGreyColor;
+            //padding: 10px 20px 5px 20px;
+            font-size: $fontSize12;
+            background: #f8f8f8;
+            color: #6b6b6b;
         }
         .form { 
-            padding: 8px 10px 15px 0;;
+            padding: 8px 10px 8px 0;
             flex-grow: 1;
             align-items: center; 
+            font-size: $fontSize13;
+            font-family: 'regular';
+        }
+
+        .grid-title {
+            .form {
+                font-family: $medium;
+            }
         }
         
-        &:last-child {
+        /*&:last-child {
             border: 0;
-        }
+        }*/
     }
     .grid-icon {
         flex: 0;
@@ -82,7 +113,11 @@
     .grid-title {
         flex: 1 60%; 
         order: 2;
+        margin-bottom: $margin10;
         .label {display:none;}
+        .form {
+            font-family: $medium;
+        }
     }
     .grid-order-id {flex: 1 50%; order: 5;}
     .grid-status {

@@ -114,6 +114,10 @@
             padding: 15px 3px 15px 3px;  
         }
     }
+    .sub-close {
+        top: 30px;
+        right: 25px;
+    }
  }
 
  .mini-cart-ready {
@@ -122,6 +126,19 @@
         top: 60px;
         opacity: 1;
         visibility: visible;
+
+    }
+    .message-empty-card {
+        svg {
+            animation: jackInTheBox 1s .5s;
+            transform: scale(0.85);
+            animation-fill-mode: both; 
+        }
+        p {
+            animation: text 1s .5s;
+            opacity: 0;
+            animation-fill-mode: both;
+        }
     }
     .mini-cart-info {
         &:after {
@@ -160,4 +177,19 @@
 
 .basket-empty .kutuSepet_icerik, .basket-empty .cart-prd-total, .basket-empty .cart-prd-page-url {
     display: none;  
+}
+
+// Mini sepaet boş
+
+.message-empty-card {
+    background: #f4f4f4;
+    padding: 100px 0;
+    svg {
+        width: 60px;
+        height: 60px;
+    }
+    p {
+        font-size: 18px;
+        margin-top: $margin10;
+    }
 }

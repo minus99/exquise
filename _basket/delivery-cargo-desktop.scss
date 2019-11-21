@@ -1,4 +1,19 @@
 //kargo ajax ile yuklenen icerik alanı
 li.kargoRow {
-    padding-right: 50px;
+    //padding-right: 50px;
+}
+
+.cargo-tab{
+    margin-bottom: 20px;
+}
+
+// Kargo grid
+
+.divTeslimatKargo {
+    ul {
+        li {
+            flex: 1;
+            margin:0 10px;
+        }
+    }
 }

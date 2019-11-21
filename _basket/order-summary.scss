@@ -1,16 +1,20 @@
 //Siparis ozet ızgara
 .order-summary{
     background: $orderSummaryBg;
-    margin-top: $orderSummaryMbTopSpc;
-
+    margin-top: $margin20;
+    @extend .display-flex;
+    flex-direction: column;
     //Siparis ozet baslik
-    .mn-20 > span{
-        display: block;
-        font-family: $regular;
-        font-size: $orderSummaryTitle;
-        margin-bottom: $orderSummaryTitleBottomSpace;
-        padding-bottom: $orderSummaryTitleBottomSpacePdg;
-        border-bottom: 1px solid #d8d8d8;
+    &-title {
+        order: 2;
+        > span{
+            display: block;
+            font-family: $regular;
+            font-size: $orderSummaryTitle;
+            margin-bottom: $orderSummaryTitleBottomSpace;
+            padding-bottom: $orderSummaryTitleBottomSpacePdg;
+            border-bottom: 1px solid #d8d8d8;
+        }
     }
     //Siparis ozet alt elementler icin alt alta siralama
     &-wrapper{
@@ -66,14 +70,14 @@
     }
     //Kupon kodu
     .cart-coupon {
+        order: 1;
+        margin-bottom: $margin20;
+        padding: 0 20px;
         //Label ust bosluk
         .coupon-lbl{
             background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==");
             background-repeat: no-repeat;
             background-position: center right;
-            border-top: 1px solid #d8d8d8;
-            margin-top: $couponLblTopSpc;
-            padding-top: $couponLblTopSpcPdg;
             padding-right: 40px;
             width: 100%;
             min-height: 24px;
@@ -154,10 +158,10 @@
     }
     span[id$="lblHCK_HATA"]{
         &:empty{display: none;}
-        padding: 10px;
+        padding: 10px 0;
         display: block;
         font-size: $fontSize12;
-        color: $colorAlternate;
+        color: $colorRed;
     }
 }
 
@@ -169,44 +173,61 @@
     left: 0;
     z-index: 5;
     width: 100%;
-    padding-left: 2.5px;
-    padding-right: 2.5px;
-    padding-bottom: 5px;
-    background: $colorWhite;
+    padding: 20px;
+    background: #f6f6f6;
     > a.btnDefault{
         min-width: calc(50% - 5px);
-        margin-left: 2.5px;
-        margin-right: 2.5px;
+        //margin-left: 2.5px; 
+        //margin-right: 2.5px;
+    }
+}
+
+.basket-grid {
+    .ga1 {
+        padding: 0 20px;
     }
 }
 
 //Siparis ozet tablo ızgara
 .pnlDipToplamTable{
+    order:2;
+    padding: 35px 20px 70px 20px; 
+    background: #f6f6f6;
+    display: inline-block;
     > tbody{
+        display: inline-block;
+        width: 100%;
         > tr{
             //Siparis ozet tablo satırlar icin alt bosluk ve ozellestirme
             display: table;
             width: $fullWidth;
-            margin-bottom: $orderSummaryRowBottomSpace;
+            margin-bottom: 12px;
 
             //Siparis ozet tablo > metin ozellestirme
             > th, > td{
                 font-size: $orderSummaryTableFontSize;
-                font-family: $regular;
+                font-family: $medium;
                 font-weight: normal;
+                font-size: $fontSize14;
             }
             //Th sola hilalı
-            > th{
+            > th{ 
                 text-align: $alignLeft;
+                float: left;
             }
             //Td sağa hizalı
             > td{
                 text-align: $alignRight;
+                float: right;
             }
             //toplam tutar metin ozellestirme
             &.pnlDipToplam_sipToplam{
+                margin-top: $margin20; 
+                padding-top: $padding20;
+                border-top: 1px solid #dcdcdc;
+                display: inline-block; 
                 > td{
-                    font-size: 16px;
+                    font-size: 16px; 
                     font-family: $medium;
                 }   
             }
@@ -228,20 +249,18 @@
 }
 
 //Odeme sayfasi hesap ozeti
-.order-payment{
+/*.order-payment{
     .order-summary{
         padding-bottom: $orderSummaryPadding;
     }
-}
+}*/ 
 
 //Odeme sayfasi satin al buton
 .basket-grid-2{
+    .ga1 {
+        padding: 0 20px;
+    }
     .next-3{
-        position: relative;
-        z-index: inherit;
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 0;
         > a.btnDefault{
             min-width: 100%;
             margin-left: 0;

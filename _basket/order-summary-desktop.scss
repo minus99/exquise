@@ -22,6 +22,34 @@
             margin-top: $orderSummaryButtonNextTopSpace;
         }
     }
+    .cart-coupon {
+        order: 2;
+        margin: 0;
+        padding: 0;
+        .coupon-lbl {
+            margin-top: $couponLblTopSpc;
+            padding-top: $couponLblTopSpcPdg;
+            border-top: 1px solid #d8d8d8;
+        }
+    }
+}
+
+.pnlDipToplamTable{
+    padding: 0;
+    background: none;
+    > tbody{
+        > tr{
+            margin-bottom: $margin10; 
+            > th, > td{
+                font-size: $fontSize13;
+                font-family: $regular; 
+            }
+            &.pnlDipToplam_sipToplam{ 
+                margin: $margin20 0; 
+            }
+        }
+    }
+
 }
 
 //Sepet satin al butonlari desktop
@@ -31,6 +59,9 @@
     bottom: inherit;
     left: inherit;
     z-index: inherit;
+    padding: 0;
+    order:2; 
+    background: none; 
     > a.btnDefault{
         min-width: 100%;
         margin-left: 0;
@@ -43,9 +74,12 @@
     padding-bottom: 0;
 }
 .basket-grid-2 .next{
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    max-width: 300px;
+    margin-left: auto;
 }
 .order-payment .basket-grid-2 .next{
     padding-left: 0;
@@ -61,14 +95,23 @@
         }
         &-wrapper{
             position: sticky;
-            top: 60px;
+            top: 80px;
             z-index: 5;
         }
     }
 }
 
+.basket-grid {
+    .ga1 {
+        padding: 0;
+    }
+}
+
 //Teslimat ve odeme sayfalari ozel css
 .basket-grid-2{
+    .ga1 {
+        padding: 0;
+    }
     .ga2{
         .block2{
             height: 100%;

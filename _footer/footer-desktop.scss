@@ -1,0 +1,22 @@
+// Scroll Top
+
+.scrollTop-swipe { 
+    width: 46px;
+    height: 46px;
+    background: #eee;
+    border-radius: 100%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    cursor: pointer;
+    @extend .transition-desktop;
+    opacity: 0;
+    @extend .display-flex-desktop; 
+    justify-content: center;
+    align-items: center;
+    &.ready {opacity: 1;}
+    svg {
+        transform: rotate(-90deg);
+    }
+}

@@ -21,3 +21,18 @@
         }
     }
 }
+
+.message-search-found { 
+    svg {
+        font-size: 40px;
+        color: $colorBlack;  
+        animation: jackInTheBox 1s .5s;
+        transform: scale(0.85);
+        animation-fill-mode: both;  
+    }
+    p {
+        animation: text 1s .5s;
+        opacity: 0;
+        animation-fill-mode: both;
+    }
+}

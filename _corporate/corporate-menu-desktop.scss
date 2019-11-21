@@ -1,5 +1,50 @@
  // --- KURUMSAL SOL MENÜ -- //
 
  .kutuSolMenuTree {
-     display: block;
+     display: block; 
+     .sev3 {
+         border: 0;
+        a {
+            display: block;
+            padding: 5px 5px 5px 10px !important;
+            font-family: $medium;
+            font-size: $fontSize13;
+            &:before {
+                content: '';
+                opacity: 0;
+                transform: scale(0.1);
+                @extend .transition-desktop;  
+            }
+            &:hover {
+                &:before {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    background: $colorBlack;
+                    position: absolute;
+                    left: 0px; 
+                    top: 9px;
+                    opacity: 1;
+                    transform: scale(1.0);
+                }
+            }
+        }
+         &.act {
+            a {
+                border: 0; 
+                color: $colorBlack;
+                &:before {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    background: $colorBlack;
+                    position: absolute;
+                    left: 0px;  
+                    top: 9px;
+                    transform: scale(1.0);
+                    opacity: 1;
+                }
+            }
+        }
+     }
  }

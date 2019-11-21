@@ -38,8 +38,8 @@
     }
     li {
         ul.lvl-2 {
-            display: none;
-            column-count: 4; 
+            display: none; 
+            //column-count: 4; 
             //row-gap: 30px;
             //grid-template-columns: repeat(auto-fit, 200px);
             > li {
@@ -60,6 +60,11 @@
                    }
                }
             }
+            &.columnCount1 {column-count: 1 !important;} 
+            &.columnCount2 {column-count: 2 !important;}
+            &.columnCount3 {column-count: 3 !important;}
+            &.columnCount4 {column-count: 4 !important;}
+            &.columnCount5 {column-count: 5 !important;}
         }
         &.selected {
             ul.lvl-2 {

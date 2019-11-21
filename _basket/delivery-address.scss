@@ -62,7 +62,17 @@
 }
 //Adres secim alanı
 .grid-address-select{
-    margin-top: 15px;    
+    margin-top: 15px;  
+    svg {
+        margin-right: 5px;
+    }  
+    a {
+        margin-bottom: 5px;
+        min-width: 160px;
+        span {
+            font-size: $fontSize13;
+        }
+    }
 }
 
 //Adress form
@@ -71,7 +81,7 @@
     padding: 20px 15px;
     //Adres ekleme baslik alanı alt bosluk
     .title-middle{
-        margin-bottom: 20px;
+        margin-bottom: 14px;
     }
     .form-inner{
         flex-wrap: wrap;
@@ -84,10 +94,47 @@
     }
 }
 
+.other-address-btn {
+    padding: 15px 0;
+    border-bottom: 1px solid #f3f3f7;
+    input {
+        display:none;
+    }
+    svg {
+        margin-right: 5px;
+    }
+}
+
 .new-address-list {
+    position: relative;
     padding: 0 !important;
     .page-top-title {
         display: none !important;
+    }
+}
+
+.order-steps {
+    .new-address-add {
+        position: absolute;
+        top: -32px;
+        right: 0;
+        a {
+            padding: 0;
+            border: 0;
+            @extend .display-flex;
+            align-items: center;
+            span {
+                font-size: 12px;
+            }
+            &:before {
+                content: '';
+                @extend .base64-plus;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-size: 20px;
+            }
+        }
     }
 }
 
@@ -190,6 +237,10 @@ div[id$="plhAdresTipi"]{
         span {
             color: $colorWhite;
         }
+    }
+    .other-address-btn {
+        border-bottom: 0;
+        padding: 0;
     }
     &.no-result {
         padding-top: 0;

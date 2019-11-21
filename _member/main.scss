@@ -338,6 +338,7 @@ input[id$="UYE_CEPTELEFON"] {
             font-family: $regular;
             display: block;
             color: $colorGrey;
+            line-height: 22px;
         }
     }
 }
@@ -349,11 +350,46 @@ input[id$="UYE_CEPTELEFON"] {
 
 //no result fixer
 [id$="lbfGNL_KAYITYOK"],
-[id$="lbfUYM_KAYITYOK_MESAJ"] {
+[id$="lbfUYM_KAYITYOK_MESAJ"],
+[id$="lbfURN_URUNYOK"] {
     display: none;
     margin-top: 20px;
     &:not(:empty) {
         display: block;
+    }
+    > div {
+        padding: 130px 0;
+        @extend .display-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $fontSize20;
+        background: none;
+        border: 0; 
+        border-radius: 0;
+        margin: 0;
+        svg {
+            margin: 0;
+            font-size: 60px;
+            animation: jackInTheBox 1s .5s;
+            transform: scale(0.85);
+            animation-fill-mode: both;
+        }
+        p {
+            animation: text 1s .5s;
+            opacity: 0;
+            animation-fill-mode: both;
+        }
+    }
+}
+[id$="lbfUYM_KAYITYOK_MESAJ"], [id$="lbfURN_URUNYOK"] {
+    margin-top: 0px;
+    background: #f8f8f8;
+    > div {
+        text-align: center;
+        display: block;  
+    }
+    .message-ico {
+        background: #fff;
     }
 }
 [id$="lbfGNL_KAYITYOK"] {
@@ -361,6 +397,22 @@ input[id$="UYE_CEPTELEFON"] {
         display: none;
     }
 }
+
+// Icon Animasyon  
+@keyframes foundBounce {
+    0% { transform: scale(1.1); opacity: 0}
+    50% { transform: scale(1.6); opacity: .7}
+    60% { transform: scale(0.6); opacity: 1}
+    80% { transform: scale(0.95);}
+    90% { transform: scale(0.85);}
+    100% { transform: scale(1.0);}
+  }
+
+// Text Animasyon  
+@keyframes text {
+    0% {opacity: 0; position:relative; top:10px;}
+    100% {opacity: 1; position:relative; top:0px;}
+  }
 
 
 // --- ÜYELİK SAYFASI GENEL YAPI -- //
@@ -416,6 +468,75 @@ input[id$="UYE_CEPTELEFON"] {
         align-items: center;
         justify-content: center;
     }
+}
+
+/* Üyelik Onay */
+
+.pageHeaderUyeBasarili {
+    display: none;
+}
+
+.pageUyeBasarili, .pageUyeBasarili_mesaj { 
+    background: #f8f8f8;
+    span[id$="lblBasariliMailPasif"], span[id$="lblBasariliSMSPasif"], span[id$="lblBasariliSMSAktif"] {
+        @extend .display-flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        img {
+            max-width: 100%;    
+        }
+    }
+    .member-message {
+        font-family:$medium;
+        font-size: $fontSize20; 
+        color: $colorDefault;
+        padding: 20px !important;  
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+        svg {
+            font-size: 40px;
+            color: $colorGreen; 
+            animation: jackInTheBox 1s .5s;
+            transform: scale(0.85);
+            animation-fill-mode: both;
+        }
+        span {
+            font-family: $play;
+            font-size: 27px; 
+            margin-bottom: 30px;
+            display: block;
+            b {
+                font-weight: normal;
+            }
+        }
+        p {
+            color: #696b71;
+            display: block;
+            line-height: 20px;
+            animation: text 1s .5s;
+            opacity: 0;
+            animation-fill-mode: both;
+            font-size: 14px;
+            font-family: $regular;
+            margin-bottom: 20px;
+            &.medium {
+                font-family: $medium !important;  
+            }
+        }
+    }
+    .message-ico {
+        background: #fff;
+    }
+    /*&:after { 
+        content:'';
+        background:url(#{$baseHref + "/UPLOAD/BANNER/login/login.jpg"} ) top center no-repeat;
+        position: relative; 
+        //height: 100vh;
+        width: 100%;
+        background-size: cover;  
+    }*/
 }
 
 //Text Button

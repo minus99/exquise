@@ -52,9 +52,26 @@
 }
 .urunKiyaslamaOzellik_ozellikAd{
     font-family:$medium;
-    font-size:15px;
+    font-size:14px; 
     padding: 20px 10px;
     border-top: 1px solid #dddddd;
+    position: relative;
+    &:after{
+        content: '';
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==);
+        width:24px;
+        height: 24px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg); 
+        //display: none; 
+    }
+    &.kapali {
+        &:after {
+            transform: translateY(-50%) rotate(-90deg); 
+        }
+    }
 }
 .urunKiyaslamaOzellik_ozellikIcerik{
     display: none;
@@ -92,9 +109,9 @@
     ::-webkit-scrollbar {width:3px;}
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-thumb{-webkit-border-radius: 1px; border-radius: 1px;}
-    ::-webkit-scrollbar-track {background-color:#202020;}
-    ::-webkit-scrollbar-thumb {background-color:#d8d8d8;}
-    ::-webkit-scrollbar-thumb:window-inactive {background-color:#d8d8d8;}
+    ::-webkit-scrollbar-track {background-color:#d8d8d8;}
+    ::-webkit-scrollbar-thumb {background-color:#202020;}
+    ::-webkit-scrollbar-thumb:window-inactive {background-color:#202020;}
     > table{
         width: 100%;
         display: block;
@@ -157,7 +174,7 @@ a.urunKiyaslamaOzellik{
         right: 0px;
         top: 50%;
         transform: translateY(-50%); 
-        display: none; 
+        //display: none; 
     }
 }
 .views {
@@ -185,7 +202,7 @@ a.urunKiyaslamaOzellik{
 .ems-sort{
     .drp-aftr{
         font-family: $medium;
-        font-size: 15px;
+        font-size: 14px;
         padding: 20px 10px;
         border-top: 1px solid #dddddd;
     }
@@ -224,6 +241,7 @@ a.urunKiyaslamaOzellik{
         }
     }
 }
+
 .kutuOzellikCount{
     position: relative;
     cursor: pointer;
@@ -238,7 +256,7 @@ a.urunKiyaslamaOzellik{
     span.name{
         display: block;
         font-family: $medium;
-        font-size: 15px;
+        font-size: 14px;
     }
     .rslt-prd{
         display: block;
@@ -251,23 +269,34 @@ a.urunKiyaslamaOzellik{
     }
 }
 /*Onceki sonraki kategori*/
+
+.prd-list {
+    &.no-result {
+        .cat-redirect-links{
+            display: none;
+        }
+    }
+}  
 .cat-redirect-links{
     > div{
-        display: table;
-        table-layout: fixed;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
         width: 100%; 
-        margin-top: 40px;
         padding-left: 20px;
         padding-right: 20px;
-        min-height: 80px;
+        //min-height: 80px;
         > div{
-            display: table-cell;
+            display: inline-block;
             vertical-align: middle;
             min-width: 50%;
             text-align: center;
             position: relative;
             padding-left: 40px;
             padding-right: 40px;
+            margin-top: 40px;
+            flex: 1;
             &:empty{
                 display: none;
             }
@@ -297,28 +326,46 @@ a.urunKiyaslamaOzellik{
                 margin-top: -12px;
             }
             &:nth-child(1){
-                border-right: 1px solid #d8d8d8;
                 &:before{
                     left: 0;
                     transform: rotate(90deg);
                 }
             }
             &:nth-child(2){
+                border-left: 1px solid #d8d8d8;
                 &:before{
                     right: 0;
                     transform: rotate(-90deg);
                 }
+            }
+            &.lft:empty ~ .rgh {
+                border: 0;
             }
         }
     }
 }
 
 /*Animation*/
+
+.ems-sort-title {
+    .drp-aftr {
+        &:after {
+            display: inline-block;
+            transform: translateY(-50%) rotate(-90deg); 
+            right: 10px; 
+        }
+    }
+}
+
 .sort-animate{
     .ems-sort-body{
         max-height: 160px;
         overflow: visible;
     }
+    .ems-sort .drp-aftr:after{
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwb2x5Z29uIHBvaW50cz0iMTYuNjQ2LDE0Ljg1NCAxMS45OTMsMTAuMjA3IDcuMzU0LDE0Ljg1NCA2LjY0NiwxNC4xNDYgMTEuOTkyLDguNzkzIDE3LjM1NCwxNC4xNDYgCSIvPg0KPC9nPg0KPC9zdmc+DQo=);
+        transform: translateY(-50%) rotate(180deg);  
+    } 
 }
 
 .ems-filter-ready{

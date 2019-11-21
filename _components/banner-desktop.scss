@@ -103,7 +103,7 @@
             display: none;
         }
 
-        &.v2 {
+        /*&.v2 {
             .prm-media-custom {
                 right: calc((100% - 1000px) / 2);
                 width: auto;
@@ -114,11 +114,30 @@
                     animation: animation-05 .7s ease .35s forwards;
                 }
             }
-        }
+        }*/
     }
 
     //banner type08 *login
-    &08 {}
+    &08 {
+        .banner-body {
+            @include banner-body-bottom-revert;
+            padding: 3% calc((100% - 560px) / 2);
+        }
+        .prm-title {
+            font-size: 60px;
+        }
+        .prm-link {
+            margin-top: 30px;
+            margin-bottom: 45px;
+            text-decoration: none;
+        }
+        .prm-media {
+            @include aspect-ratio(1440, 800);
+        }
+        &::before {
+            display: none;
+        }
+    }
 
     //banner type09 *primary box
     &09 {
@@ -143,7 +162,26 @@
     }
 
     //banner type11 *primary video
-    &11 {}
+    &11 {
+        .banner-body {
+            @include banner-body-bottom-revert;
+            padding: 3% calc((100% - 560px) / 2);
+        }
+        .prm-title {
+            font-size: 60px;
+        }
+        .prm-link {
+            margin-top: 30px;
+            margin-bottom: 45px;
+            text-decoration: none;
+        }
+        .prm-media {
+            @include aspect-ratio(1440, 800);
+        }
+        &::before {
+            display: none;
+        }
+    }
 
     //banner type12 *seo content
     &12 {
@@ -218,7 +256,7 @@
             display: none;
         }
 
-        &.v2 {
+        /*&.v2 {
             .prm-media-custom {
                 right: calc((100% - 1000px) / 2);
                 width: auto;
@@ -229,7 +267,7 @@
                     animation: animation-05 .7s ease .35s forwards;
                 }
             }
-        }
+        }*/
     }
 }
 
@@ -266,12 +304,54 @@
         @include aspect-ratio(1440, 800);
     }
 }
+
+.swiper-transform {
+    .slider-pagination {
+        .swiper-pagination {
+            display: block;
+        }
+    }
+    /*.banner11 {
+        .banner-body {
+            @include banner-body-bottom-revert;
+            padding: 3% calc((100% - 560px) / 2);
+        }
+        .prm-title {
+            font-size: 60px;
+        }
+        .prm-link {
+            margin-top: 30px;
+            margin-bottom: 45px;
+            text-decoration: none;
+        }
+        .prm-media {
+            @include aspect-ratio(1440, 800);
+        }
+        &::before {
+            display: none;
+        }
+    }*/
+}
+
 // Anasayfa ara banner görsel
 .cover-slider {
     padding: $padding30;
     .prm-media {
         @include aspect-ratio(1380, 650);
     }
+}
+
+// Lookbook banner görsel
+.lookbook-slider {
+    .prm-media {
+        @include aspect-ratio(1440, 800);
+    }
+    .ems-video-player {
+        @include aspect-ratio(1440, 800);
+        .slide-video {
+            position: absolute;
+        }
+    } 
 }
 
 // Anasayfa ara banner görsel
@@ -316,6 +396,8 @@
     .ems-section-inner { 
         position: sticky;
         top: 60px;
+        max-height: calc(100vh - 60px);
+        overflow: hidden; 
     }
     .ems-section-Img {
         margin-right: $margin15;
@@ -347,6 +429,32 @@
 
 // instagram feed
 .instagram-feed {
+    padding: 40px;
+    .ems-section-title {
+        i {
+            display: inline-block; 
+        }
+    }
+    .swiper-wrapper {
+        @extend .display-grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+        grid-gap: 10px;
+        .swiper-slide {
+            max-width: none;
+            &:last-child {
+                grid-column: 5 / span 2;
+                grid-row: 1 / span 2;
+            }
+        }
+        .swiper-slide-cover {
+            overflow: visible;
+            border-radius: inherit;
+        }
+    }
+}
+
+// instagram feed
+/*.instagram-feed {
     margin: 0;
     padding: 20px;
     .swiper-wrapper {
@@ -386,7 +494,7 @@
             }
         }
     }
-}
+}*/
 
 // main blog
 .main-blog {

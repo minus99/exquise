@@ -135,7 +135,7 @@
     // Empty Class
     &.no-result {
         padding-top: 0;
-        .message-coupon {
+        .message-favorite {
             text-align: center;
             display: block;
         }
@@ -146,6 +146,12 @@
 }
 
 /* favori dropdown */
+
+.member-favorite {
+    .dropdown-options {
+        display: none !important;
+    }
+}
 
 .urunListe_secenek1 { 
     .dropdown-trigger {
@@ -159,16 +165,15 @@
             right: 10px;
         }
     }
-    .dropdown-options {
+    .dropdown-options { 
         position: absolute;
         left: 0;
         top: 100%;
-        z-index: 1;
+        z-index: 9;
         width: 100%;
         margin: 0;
         padding: $memberPadding10;
         background: $memberLightGreyColor;
-        display: none !important;
         //border: 1px solid $memberLightGreyColor;
         a {
             //margin-bottom: $memberMargin5; 

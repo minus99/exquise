@@ -1,0 +1,169 @@
+/* Kombin lookbook detay */ 
+
+/* kompin popup açık */
+
+.kombinPopupReady{
+    overflow:hidden !important;
+    position: fixed;
+    .kombin{
+        display:block;
+        opacity:1; 
+        transform:scale(1);-o-transform:scale(1);-ms-transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);
+    }
+    .scrollTop-swipe {
+        display: none;
+    }
+}
+
+// Kombin popup stil 
+
+.kombin {
+    position:fixed;
+    top:47px; left:0;
+    width:100%; height: calc(100% - 47px);
+    background:#fff;
+    z-index: 1;
+    overflow:auto;
+    overflow-x:hidden; 
+    display:none; 
+    opacity:0; 
+    transform:scale(1.2); transition:all 0.2s ease-in-out; 
+    -webkit-overflow-scrolling: touch;
+    .prd-footer {
+        @extend .display-flex; 
+        justify-content: space-between;
+        position: relative;
+        margin-top: 10px; 
+        > div { 
+            &:first-child {
+                margin-right: 10px;
+            }
+            &.prd-number {
+                flex: 1;
+            }
+            &.prd-add-to-cart {
+                flex: 2.5;
+            } 
+        }
+        a.btnDefault {
+            margin: 0;
+        }
+
+    }
+    .prd-body {
+        padding: 10px 0 0 0; 
+    }
+    // Kombin stil
+    .inside {
+        .rightPanel { 
+            .inside {
+                padding: 20px;
+                > ul {
+                    @extend .display-flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+        .leftPanel {
+            .slider {
+                @extend .sticky;  
+                top: 0px;
+            }
+            .swiper-slide {
+                width: 100% !important;
+                height: calc(80vh - 47px); 
+                background-size: cover !important; 
+                img {
+                    display: none;
+                }
+            }
+            .swiper-pagination-bullets {
+                position: static;
+                margin: 15px 20px;
+                text-align: right;
+                .swiper-pagination-bullet {
+                    width: 8px;
+                    height: 8px;
+                    border: 2px solid #fff;
+                    background-color: #696b71;
+                    margin: 0 5px;
+                    &-active {
+                        background: #4a4a4a;
+                        border-color: #4a4a4a;
+                    }
+                }
+            }
+        }
+    }
+    .urunListe_secenek1 {
+        .dropdown-options {
+            display: none !important;
+            bottom: 45px;
+            top: auto;
+            a {
+                &.stokYok {
+                    display: none;
+                }
+            }
+        }
+        &.opened {
+            .dropdown-options {
+                display: block !important;
+            } 
+        }
+    }
+    .btnStokYok {
+        display: none;
+        background: #999999;
+    }
+    a.btnSepeteAt {
+        border-color: $colorBlack !important;
+        background: $colorBlack !important;
+        span {
+            color: $colorWhite !important;
+            font-family: $regular !important;
+        }
+    }
+    .closeBtn {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 100%;
+        z-index: 1;
+    }
+}
+
+
+// toplu fiyat gösterim satın al
+.loboInfo {
+    padding: $padding30 $padding20;
+    border-top: 2px solid #eee;
+    margin: 0 auto;
+    width: 100%;
+    .kbUrn {
+        font-size: 12px;
+        font-family: $medium;
+        margin-bottom: 10px;
+    }
+    .kbTotal {
+        text-align: left;
+        margin-bottom: 20px; 
+    }
+    .pb1 {margin-right: 3px;}
+    .kbTotalPrice, .kbTotal .lbTotalPrice, .kbTotal .lbTotalPriceTemp {
+        float: right; 
+        clear: both;
+    }
+    .kbTotalPrice {
+        font-size: 15px;
+    }
+    .lbTotalPrice {
+        font-family: $medium;
+    }
+    .btnTumunuSepeteEkle {
+        font-family: $regular;
+    }
+}

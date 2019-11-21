@@ -1,23 +1,93 @@
+.pageDescSiparisSonuc, .pageDescSiparisSonucErr {
+    width: 100%;
+    padding: 50px 30px 0px 30px;
+    > div, > span {
+        max-width: 400px; 
+        margin: 0 auto;
+        display: block;
+        text-align: left;  
+        font-size: $fontSize13;
+    }
+    > a {
+        font-family: $medium;
+        text-decoration: underline; 
+        font-size: $fontSize13;  
+    }
+}
+
 .pageSiparisSonuc{
-    padding: 20px;
-    width: calc(100% - 40px);
+    //padding: 20px;
+    //width: calc(100% - 40px);
+    @extend .display-flex;
+    align-items: center;
     margin: 0 auto;
-    background: #fff;
+    background: #f8f8f8;
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     .pageHeaderDefault{
         display: none;
+    }
+    div[id$="pnlButtons"] {
+        display: block;
+        width: 100%;
+        padding: 0 50px;
+        margin-bottom: 40px; 
+        a {
+            margin-bottom: 20px;
+        }
     }
     .pageSiparisSonuc_lbfSiparisKaydedilmedi,
     .pageSiparisSonuc_lbfOdemeAlinamadi{
         font-family:$medium;
-        font-size: $fontSize24;
-        color: $colorRed;
+        font-size: $fontSize20;
+        padding-bottom: 0px;
+        text-align: center;
+        svg {
+            font-size: 40px;
+            color: $colorRed; 
+            animation: jackInTheBox 1s .5s;
+            transform: scale(0.85);
+            animation-fill-mode: both;
+        }
+        p {
+            animation: text 1s .5s;
+            opacity: 0;
+            animation-fill-mode: both;
+        }
     }
     .pageSiparisSonuc_lbfSiparisBasarili{
         font-family:$medium;
-        font-size: $fontSize24;
+        font-size: $fontSize20; 
         color: $colorDefault;
-        padding-bottom: 20px;
+        padding-bottom: 0px;  
+        svg {
+            font-size: 40px;
+            color: $colorGreen; 
+            animation: jackInTheBox 1s .5s;
+            transform: scale(0.85);
+            animation-fill-mode: both;
+        }
+        p {
+            animation: text 1s .5s;
+            opacity: 0;
+            animation-fill-mode: both;
+        }
+    }
+    &:after { 
+        content:'';
+        background:url(#{$baseHref + "/images/frontend/order-success.jpg"} ) top center no-repeat;
+        position: relative; 
+        height: 100vh;
+        width: 100%;
+        background-size: cover;  
+    }
+    .check-order {
+        .message-ico {
+            background: #fff;
+            margin-bottom: 50px;  
+        }
     }
 }
 span[id$="lbfSIP_DEFAULTERROR"]{
@@ -30,14 +100,41 @@ span[id$="lbfSIP_DEFAULTERROR"]{
         display: none;
     }
 }
+
+span[id$="lbfSIP_OKFREELABEL"]{
+    @extend .display-flex; 
+    @extend .justify-center;  
+}
+
 .pageSiparisSonuc_btnSiparisSonuc{
     @extend .display-flex;
     @extend .justify-center;
     flex-wrap: wrap;
     > div{
         width: 100%;
-        &:nth-child(2){
+        /*&:nth-child(2){
             margin-top: 15px;
-        }
+        }*/
+    }
+}
+
+.pageSiparisSonuc_btnSiparisSonucOnay {
+    @extend .display-flex;
+    @extend .justify-center;
+    margin: 20px 0 40px 0;
+}
+
+// Sipariş Sonuç
+
+form[action*="siparisSonuc"] {
+    .site-header, .site-footer, .basket-steps {  
+        display: none;
+    }
+    .header-logo img {
+        width: auto;
+    }
+    .page-basket-inner { 
+        padding: 0;
+        max-width: none; 
     }
 }

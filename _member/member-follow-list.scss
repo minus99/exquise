@@ -42,4 +42,17 @@
             display: inline-block !important;
         }
     }
+    // stok haberci tab hover
+    .grid-tab-control {
+        > div {
+            cursor: pointer;
+            &.selected {
+                background: $colorBlack;
+                border-color: $colorBlack;
+                span {
+                    color: $colorWhite;
+                }
+            }
+        }
+    }
 }

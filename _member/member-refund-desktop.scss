@@ -25,27 +25,33 @@
 
 // Aboneliklerim listeleme sayfası
 .member-refund { 
+    padding: $padding20 !important;
     // Aboneliklerim listeleme düzeni
+    .grid-table-refund {
+        padding: 0;  
+    }
     .grid-row {
+        border-bottom: 1px solid $memberLightGreyColor;
         flex-wrap: nowrap;
-        padding-bottom: 0;
-        margin-bottom: 0;
+        padding: 0;
+        margin: 0;
+        background: none;
         .label {
             font-size: $fontSize13;
-            padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
+            padding: 10px 20px 10px 20px;
             display: none;   
         }
         .form { 
-            padding: $memberPadding15 $memberPadding10 $memberPadding15 0;
+            padding: 10px 20px 10px 20px;
         }
         &:first-child {  
             .label {  
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;   
-                height: 50px;
+                //height: 50px;
             } 
-            .form {border-top: 1px solid $memberLightGreyColor;}
+            //.form {border-top: 1px solid $memberLightGreyColor;}
         }
     }
     .grid-doc-no {flex: 1;} 

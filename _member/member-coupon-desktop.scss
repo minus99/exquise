@@ -3,32 +3,55 @@
 // Kuponlarım listeleme sayfası
 .grid-table-coupon {
     // Kuponlarım listeleme düzeni
+    padding: 0;
     .grid-row {
         flex-wrap: nowrap;
-        padding-bottom: 0;
         margin-bottom: 0;
+        padding: 0;
+        border-bottom: 1px solid $memberLightGreyColor;
+        background: none;
+        > div { 
+            order: 1;
+            padding-bottom: 0;
+        }
         .label {
-            font-size: $memberFontSize14;
-            padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
-            display: none;   
+            //padding: $memberMargin15 $memberMargin10 $memberMargin15 0;
+            padding: 10px 20px 10px 20px;
+            display: none !important;  
+            font-family: $medium;
+            color: $colorBlack; 
         }
         .form { 
-            padding: $memberPadding15 $memberPadding10 $memberPadding15 0;
+            //padding: $memberPadding15 $memberPadding10 $memberPadding15 0;
+            padding: 20px;
         }
         &:first-child {  
             .label { 
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;   
-                height: 50px;
+                display: -webkit-box !important;
+                display: -ms-flexbox !important;
+                display: flex !important;   
+                //height: 50px;  
             } 
-            .form {border-top: 1px solid $memberLightGreyColor;}
         }
     }
     .grid-coupon-no {flex: 1;}
-    .grid-coupon-name {flex: 1;}
+    .grid-coupon-name {flex: 1; padding: 0; font-family: $regular;
+        .label {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+    }
     .grid-coupon-date {flex: 1;}
     .grid-coupon-total {flex: 1;}
     .grid-coupon-use {flex: 1;}
     .grid-coupon-status {flex: .5;}  
+}
+
+.member-coupon-tab {
+    margin-bottom: $margin20; 
+}
+
+.member-coupon {
+    padding: 20px !important;
 }

@@ -58,6 +58,10 @@
     }
 }
 
+.max-height-detect-detail { 
+    .ems-prdd-grid > .ga2 .ems-prdd-right {position: relative !important; top: 0 !important;}
+}
+
 //other colors
 .ems-prdd-group {
     display: block;
@@ -201,6 +205,8 @@
         max-width: 800px;
     }
     &-ready {
+        overflow: visible;
+        position: static;
         .mini-size-guide-sub {
             @extend %header-mods-sub-ready;
         }

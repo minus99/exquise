@@ -1,14 +1,44 @@
 .pageSiparisSonuc{
-    padding: 3%;
-    width: calc(100% - 6%);
+    //padding: 3%;
+    //width: calc(100% - 6%);
+    height: calc(100vh - 80px);
+    &:after { 
+        content:'';
+        position: absolute; 
+        height: calc(100% - 80px); 
+        width: 50%;
+        max-width: 720px;
+        right: 0;
+        top: 77px;
+    }
+    div[id$="pnlButtons"] {
+        width: 50%;
+        margin-bottom: 0px; 
+        a {
+            margin-bottom: 0px;
+        }
+    }
+    .pageSiparisSonuc_lbfSiparisKaydedilmedi, 
+    .pageSiparisSonuc_lbfOdemeAlinamadi{
+        padding-bottom: 20px;
+    }
+    .pageSiparisSonuc_lbfSiparisBasarili{
+        padding-bottom: 20px;
+    }
 }
+
+.pageDescSiparisSonuc, .pageDescSiparisSonucErr {
+    width: 50%;
+    padding: 0 30px;
+}
+
 .pageSiparisSonuc_btnSiparisSonuc{
     > div{
         width: 50%;
         max-width: 330px;
         padding-left: 5px;
         padding-right: 5px;
-        &:nth-child(2){
+        &:nth-child(2){ 
             margin-top: 0;
         }
     }

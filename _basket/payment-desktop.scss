@@ -1,9 +1,14 @@
 .pay-type-list{
-    width: calc(100% - 20% * 1);
+    //width: calc(100% - 20% * 1);
+    margin-top: 30px;  
+    border-bottom: 1px solid #eee;
+    background: none;
     ul{
         li{
+            flex: 0 auto;
             a{
-                font-size: $fontSize16;
+               // font-size: $fontSize16; 
+               padding: 15px 20px; 
             }
         }
     }
@@ -16,7 +21,7 @@
     } 
     //Odeme K karti modulu
     div[id$="pnlKrediKartiBilgi"]{
-        padding:30px 390px 20px 20px;
+        padding:30px 0px 20px 0px;
         min-height: 250px;
     }
 }
@@ -24,15 +29,37 @@
 .basket-card-wrapper{
     position: absolute;
     top: 30px;
-    right: 20px;    
+    right: 0px;    
     display:block;
 }
+
+.pay-type-content {
+    padding: 20px 0;
+}
+
+.tableOdemeBilgiKrediKarti { 
+    max-width: calc(100% - 390px);
+}
+
 //Odeme Adres bilgileri ve siapris ozet alani
 .pay-address{
+    padding: 0;
     > ul > li{
-        width: calc(50% - 15px);
+        //width: calc(50% - 15px);  
         &:nth-child(2){
             margin-top: 0;
+        }
+    }
+    &-hidden{
+        >div {
+            flex: 1;
+            margin-bottom: 0;
+            &:first-child {
+                margin-right: 20px;
+            }
+            &:last-child {
+                margin-left: 20px; 
+            } 
         }
     }
 }
@@ -50,4 +77,18 @@
 //Odeme sayfas satis sozlesmeleri
 .pay-agreement{
     display: block;
+}
+
+.order-payment { 
+    .order-summary { 
+        .pageSiparisOnay_lbfOnBilgilendirmeForm {  
+            order: 3;
+            padding: 15px 0;
+        }
+        .pageSiparisOnay_lbfSatisSozlesme {
+            order: 3;
+            padding: 15px 0 0 0; 
+            border-top: 1px solid $gridRowBorder; 
+        }
+    }
 }

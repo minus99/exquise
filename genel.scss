@@ -1,20 +1,21 @@
-//-----Base-----//
-@import '_base/variables';
-//@import '_app-shell/first-loading';   
-@import '_base/mixins';  
-@import '_base/icon';  
-@import '_base/class-list';   
-  
-//-----Coponents-----//   
+//-----Base-----//  
+@import '_base/variables';   
+@import '_app-shell/first-loading';    
+@import '_base/mixins';        
+@import '_base/icon';      
+@import '_base/class-list';         
+       
+//-----Coponents-----//      
 @import '_components/popup'; 
-@import '_components/widget'; 
-@import '_components/banner'; 
-@import '_components/breadcrumb'; 
- 
+@import '_components/widget';  
+@import '_components/banner';  
+@import '_components/breadcrumb';  
+@import '_components/toastr'; 
+  
 
 //-----Forms Field-----//
 @import '_forms-field/forms-element';
-
+ 
 
 //-----Site Buttons-----//
 @import '_site-buttons/buttons';
@@ -60,6 +61,9 @@
 @import '_product-detail/product-detail'; 
 @import '_product-detail/dealer'; 
 @import '_pages/search';
+@import '_pages/404';
+@import '_pages/lookbook';
+@import '_pages/lookbook-detail';
 
 
 
@@ -125,7 +129,7 @@
         //-----Header-----//
         @import '_header/grid-desktop';
         @import '_header/header-menu-desktop';
-        @import '_header/mini-lang-desktop'; 
+        @import '_header/mini-lang-desktop';  
         @import '_header/mini-login-desktop';
         @import '_header/mini-search-desktop'; 
         @import '_header/mini-cart-desktop'; 
@@ -139,55 +143,58 @@
         @import '_components/banner-desktop';
         @import '_components/breadcrumb-desktop';
                 
-
-        //-----Basket-----//
-        @import '_basket/main-desktop';
+  
+        //-----Basket-----// 
+        @import '_basket/main-desktop';  
         @import '_basket/header-desktop';
-        @import '_basket/swiper-desktop';
+        @import '_basket/swiper-desktop'; 
         @import '_basket/order-steps-desktop';
         @import '_basket/order-summary-desktop';
         @import '_basket/prd-grid-desktop';
-        @import '_basket/delivery-address-desktop';
+        @import '_basket/delivery-address-desktop'; 
         @import '_basket/delivery-cargo-desktop';
-        @import '_basket/delivery-gift-packet-desktop';
-        @import '_basket/payment-desktop'; 
-        @import '_basket/order-result-desktop';
-
-        //-----Layout-----//
-        @import '_pages/home-desktop';   
-        @import '_product-list/main-desktop'; 
-        @import '_product-list/product-desktop';  
-        @import '_product-list/filter-desktop'; 
-        @import '_product-detail/product-detail-desktop'; 
+        @import '_basket/delivery-gift-packet-desktop';  
+        @import '_basket/payment-desktop';       
+        @import '_basket/order-result-desktop';         
+   
+        //-----Layout-----//    
+        @import '_pages/home-desktop';           
+        @import '_product-list/main-desktop';     
+        @import '_product-list/product-desktop';     
+        @import '_product-list/filter-desktop';   
+        @import '_product-detail/product-detail-desktop';  
         @import '_product-detail/dealer-desktop';
-        @import '_pages/search-desktop';
-
+        @import '_pages/search-desktop'; 
+        @import '_pages/404-desktop';    
+        @import '_pages/lookbook-desktop'; 
+        @import '_pages/lookbook-detail-desktop'; 
+ 
         //-----Login-----//
-        @import '_pages/login-desktop';
+        @import '_pages/login-desktop'; 
     
         //-----Member Page-----//
         @import '_member/main-desktop'; 
-        @import '_member/member-info-desktop';
-        @import '_member/member-menu-desktop';
-        @import '_member/member-order-desktop';
-        @import '_member/member-order-detail-desktop';
+        @import '_member/member-info-desktop'; 
+        @import '_member/member-menu-desktop';    
+        @import '_member/member-order-desktop'; 
+        @import '_member/member-order-detail-desktop';  
         @import '_member/member-favorite-desktop';
-        @import '_member/member-refund-desktop';
-        @import '_member/member-favorite-desktop';
+        @import '_member/member-refund-desktop';  
+        @import '_member/member-favorite-desktop';   
         @import '_member/member-password-desktop';
-        @import '_member/member-follow-list-desktop'; 
-        @import '_member/member-invite-desktop';
+        @import '_member/member-follow-list-desktop';  
+        @import '_member/member-invite-desktop'; 
         @import '_member/member-message-desktop';
-        @import '_member/member-new-message';
+        @import '_member/member-new-message'; 
         @import '_member/member-new-message-desktop';
         @import '_member/member-gift-card-desktop';
-        @import '_member/member-coupon-desktop'; 
+        @import '_member/member-coupon-desktop';    
         @import '_member/member-subscriber-desktop';
         @import '_member/member-subscriber-detail-desktop';
 
         
         //-----Corporate-----//
-        @import '_corporate/corporate-menu-desktop';
+        @import '_corporate/corporate-menu-desktop'; 
         @import '_corporate/corporate-page-desktop';
 
 

@@ -1,4 +1,5 @@
 //Sepet ust slider
+/*
 .basket-swiper{
     //Sepet ust slider slide
     .swiper-slide{
@@ -73,6 +74,7 @@
         }
     }
 }
+
 .swiper-button-next-static{
     margin-left: 14px;
 }
@@ -85,6 +87,44 @@
     left: inherit;
     right: inherit;
     margin-top: 0;
+}
+*/
+
+// Sepet Bilgilendirme Slider
+
+.basket-info-widget {
+    max-width: 1240px;
+    width: 100%;
+    margin: 15px auto 0 auto;
+    .swiper-slide {
+        height: auto;
+        width:280px;
+        &:first-child {
+            padding-left: 15px; 
+        } 
+        &:last-child {
+            padding-right: 15px;
+        } 
+    }
+    .banner {
+        @extend .display-flex;
+        height: 100%;
+        padding: 0 $padding5;
+    }
+    .banner-body {
+        background: #ececec;
+        padding: 22px $padding30 21px $padding30;   
+    }
+    .prm-title {
+        color: $colorBlack;
+        font-family: $medium;
+        font-size: $fontSize13;
+    }
+    .prm-desc {
+        color: $colorBlack;
+        font-family: $regular;
+        font-size: $fontSize13;
+    }
 }
 
 //Teslimat --- sepet de gelen slider siparis adimlarında tekrar duzenleniyor

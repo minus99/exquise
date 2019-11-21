@@ -1,6 +1,11 @@
 //Sepet tablo grid'i
 .grid-table-cart{
-    margin-top: 30px;
+    margin-top: 20px; 
+    .grid-table-rows:first-child{
+        .grid-table-row{
+            border-top:1px solid $greyBorderColor;
+        }
+    }
     .grid-table-row {
         //Sepet tablo satır image kolonu sabitleniyor
         .grid-img{
@@ -8,7 +13,6 @@
         }
         //Sepet tablo urun satırı image sabit tutulup kolon akisa alınıyor
         .grid-content{
-            width: calc(100% - 120px);
             padding-left: 20px;
             //Sol kolon
             &-left{
@@ -51,10 +55,16 @@
             font-size: $fontSize15;
             width: 100%;
         }
+        .grid-name {
+            .prdItem {
+                padding-right: 0;
+            }
+        }
         //sepet urun silme desktop ozel ust margin
         .grid-remove{
             top: inherit;
             bottom: 20px;
+            right: 10px;
             > a{
                 padding: 0;
             }
@@ -73,6 +83,9 @@
 }
 //odeme sepet onizleme grid yapisi
 .basket-grid-2{
+    .grid-table-wrap {
+        display: block;
+    }
     .grid-table-cart{
         .grid-table-rows{
             padding-left: 0;
@@ -91,7 +104,7 @@
             width: 100px;
         }
         .grid-content{
-            width: calc(100% - 100px);
+            //width: calc(100% - 100px);
             //Sol kolon ve sol kolon
             &-left,
             &-right{

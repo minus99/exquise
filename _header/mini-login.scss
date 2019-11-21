@@ -12,7 +12,7 @@
 
 /* mini login */ 
 .mini-user {
-    position: relative;
+    position: static;
     &-info {
     }
 }
@@ -21,25 +21,37 @@
     display: none;
     top: 70px;
     right: 0;
-    width: 346px;
-    max-width: 400px;
+    width: 440px;
+    max-width: 440px;
     height: auto;
     z-index: 16;
     margin-left: auto;
     margin-right: auto;
-    padding: $padding30;
+    padding: 35px 50px 40px 50px;
     display: block;
     opacity: 0;
     visibility: hidden;
     @extend .transparent;
     .ems-tab-header {
+        margin-bottom: $margin30;
         a {
-            color: $colorAlternate;
-            text-decoration: underline;
+            color: $colorBlack;
+            padding: $padding15;
+            border-bottom: 3px solid transparent;
             &.selected {
-                color:#000;
-                text-decoration: none;
+                border-bottom-color: $colorBlack;
             }
+        }
+    }
+    .sub-close {
+        top: 30px;
+        right: 25px;
+    }
+    .mini-user-links {
+        > div {
+            opacity: 0;
+            left: 10px;
+            position: relative;
         }
     }
 }
@@ -59,6 +71,7 @@ span[id$="lblUYE_ADSOYAD"] {
 .mini-user-info {
     padding: 0 $padding10;
     position: relative;
+    cursor: pointer;
     &:after {
         content: '';
         width: 100%;
@@ -83,5 +96,12 @@ span[id$="lblUYE_ADSOYAD"] {
         top: 60px;
         opacity: 1;
         visibility: visible;
-    }    
+    }  
+    .mini-user-links {
+        > div {
+            animation: .3s ease 0s pulseLook;
+            animation-fill-mode: both;
+        }
+    }  
+    
 }

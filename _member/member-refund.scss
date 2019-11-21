@@ -4,20 +4,23 @@
 
 .member-refund-request {
     .grid-row {
-        border-top: 1px solid $memberLightGreyColor; 
+        //border-top: 1px solid $memberLightGreyColor;  
         padding-top: $memberPadding20;
         margin-top: $memberMargin20; 
         border-bottom: 0;  
         padding-bottom: 0;
         margin-bottom: 0;  
-        &:last-child {
+        border-top: 1px solid #f3f3f7;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        /*&:last-child {
             border-top: 1px solid $memberLightGreyColor; 
             padding-top: $memberPadding20;
             margin-top: $memberMargin20; 
             border-bottom: 1px solid $memberLightGreyColor; 
             padding-bottom: $memberPadding20;
             margin-bottom: $memberMargin20; 
-        }
+        }*/
         .grid-piece {
             .sStylerMainWrp {
                 margin-right: $memberPadding5;
@@ -44,23 +47,38 @@
 
 // İadelerim listeleme sayfası
 .member-refund {
+    padding: 0 !important;
     // İadelerim listeleme düzeni
-
-    .page-top-title {display:none !important;}
+    .grid-table-refund {
+        padding: $padding20; 
+    }
+    .page-top-desc {
+        margin-bottom: 0;
+    }
+    .page-top-title {
+        /*display:none !important;*/ 
+        span {
+            font-size: $fontSize14;
+            font-family: $medium;
+            padding: 0;
+            margin: 40px 0 0 0;
+        }
+    }
 
     .grid-row {  
-        border-bottom: 1px solid $memberLightGreyColor;
+        
         flex-wrap: wrap;
-        padding-bottom: $memberPadding10;
-        margin-bottom: $memberMargin20;
+        margin-bottom: $margin5;
+        padding: $padding20;
+        background: #f8f8f8;
         > div { 
             flex-direction: column;
         }
         .label { 
             padding: 5px 10px 0px 0;
             font-family: $medium;
-            font-size: $memberFontSize12; 
-            color: $memberGreyColor;
+            font-size: $fontSize12; 
+            background: #f8f8f8;
         }
         .form { 
             padding: 8px 10px 15px 0;
@@ -121,9 +139,9 @@
         display: -ms-flexbox;
         display: flex;
         justify-content: space-between;
-        font-family: $memberFontBold;
-        color: $memberGreyColor;
-        border-bottom: 1px solid $memberGreyColor; 
+        font-family: $medium;
+        font-size: $fontSize12;
+        border-bottom: 1px solid #ddd; 
         padding-top: $memberPadding10; 
         padding-bottom: $memberPadding20;
         margin-bottom: $memberMargin20;  
