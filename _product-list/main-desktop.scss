@@ -9,6 +9,18 @@
         background: $lightGreyColor;
         padding: 0 30px;
         position: relative;
+        &:before {
+            content: '';
+            background:url(#{$baseHref + "/images/frontend/site-logo.svg"} ) top center no-repeat;
+            display: inline-block;
+            position: absolute;
+            left: 30px;
+            top: 15px;
+            width: 155px;
+            height: 30px; 
+            opacity: 0;
+            @extend .transition-desktop; 
+        }
     }
     > .ga2,
     > .ga3{
@@ -21,6 +33,16 @@
         align-items: center;
         .display-grid{
             grid-template-columns: 50% 50%;
+        }
+    }
+}
+
+body.sticky-header-ready {
+    .page-list{
+        > .ga1{
+            &:before {
+                opacity: 1;
+            }
         }
     }
 }

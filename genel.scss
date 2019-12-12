@@ -113,29 +113,29 @@
 //-----Footer-----//
 @import '_footer/footer'; 
 @import '_footer/newsletter';
-@import '_footer/footer-menu'; 
+@import '_footer/footer-menu';       
 
-
-
-@supports(grid-area: grid) {
-    @include setMediaScreen(min-width, $breakpoint-medium) {
+   
+  
+@supports(grid-area: grid) {      
+    @include setMediaScreen(min-width, $breakpoint-medium) { 
         //-----Base-----//
-        @import '_base/class-list-desktop'; 
-
+        @import '_base/class-list-desktop';        
+   
         //-----Forms Field-----//
-        @import '_forms-field/forms-element-desktop'; 
+        @import '_forms-field/forms-element-desktop';    
         
 
-        //-----Header-----//
-        @import '_header/grid-desktop';
-        @import '_header/header-menu-desktop';
-        @import '_header/mini-lang-desktop';  
-        @import '_header/mini-login-desktop';
+        //-----Header-----//  
+        @import '_header/grid-desktop'; 
+        @import '_header/header-menu-desktop'; 
+        @import '_header/mini-lang-desktop';   
+        @import '_header/mini-login-desktop'; 
         @import '_header/mini-search-desktop'; 
-        @import '_header/mini-cart-desktop'; 
+        @import '_header/mini-cart-desktop';  
 
         //-----Plugins-----//
-        @import '_plugins/swiper-desktop';
+        @import '_plugins/swiper-desktop'; 
 
         //-----Content-----//
         @import '_content-grid/main-desktop';
@@ -154,22 +154,22 @@
         @import '_basket/delivery-address-desktop'; 
         @import '_basket/delivery-cargo-desktop';
         @import '_basket/delivery-gift-packet-desktop';  
-        @import '_basket/payment-desktop';       
-        @import '_basket/order-result-desktop';         
-   
-        //-----Layout-----//    
-        @import '_pages/home-desktop';           
-        @import '_product-list/main-desktop';     
-        @import '_product-list/product-desktop';     
+        @import '_basket/payment-desktop';         
+        @import '_basket/order-result-desktop';                        
+     
+        //-----Layout-----//      
+        @import '_pages/home-desktop';                      
+        @import '_product-list/main-desktop';      
+        @import '_product-list/product-desktop';          
         @import '_product-list/filter-desktop';   
-        @import '_product-detail/product-detail-desktop';  
+        @import '_product-detail/product-detail-desktop';   
         @import '_product-detail/dealer-desktop';
         @import '_pages/search-desktop'; 
-        @import '_pages/404-desktop';    
+        @import '_pages/404-desktop';     
         @import '_pages/lookbook-desktop'; 
-        @import '_pages/lookbook-detail-desktop'; 
+        @import '_pages/lookbook-detail-desktop';  
  
-        //-----Login-----//
+        //-----Login-----// 
         @import '_pages/login-desktop'; 
     
         //-----Member Page-----//

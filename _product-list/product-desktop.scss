@@ -11,8 +11,28 @@
 }
 
 .prd-list {
+    padding: 0;
     .prd{
-        opacity: 0;
+        .prd-image {
+            > a {
+                overflow: hidden;
+                img {
+                    -webkit-transition: .3s ease-in-out;
+                    transition: .3s ease-in-out;
+                    transform: scale(1);
+                }
+            }
+        }
+        //opacity: 0;
+        &:hover {
+            .prd-image {
+                > a {
+                    img {
+                        transform: scale(1.03); 
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -22,11 +42,17 @@
 .view-3{
     .prd{
         width: calc(50% - 15px) !important; 
-    }    
+        &.spr4 {
+            width: calc(100% - 0px) !important; 
+        }  
+    }  
 }
 .view-4{
     .prd{
         width: calc(25% - 10px) !important;
+        &.spr4 {
+            width: calc(50% - 10px) !important; 
+        }  
     }    
 }
 //Urun adi

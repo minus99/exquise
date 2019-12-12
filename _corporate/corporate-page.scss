@@ -1,6 +1,7 @@
 .article-container {
     h1, h2 {
         font-weight: normal;
+        margin-top: 20px;
     }
     span, h2, h3, p, b, strong {
         line-height: $contentLineText;
@@ -52,6 +53,8 @@
     }
 }
 
+.articleCont  {display:none;}
+
 // Sayfa anket oylama 
 .content-scoring {
     text-align: center;
@@ -87,4 +90,24 @@
     .ems-tab-content > * {
         display: block; 
     }
+}
+
+// Franchising ve İş başvuru Form
+
+.xmlFormHeader {
+    font-size: $fontSize16;
+    font-family: $medium;
+    margin-bottom: $memberMargin10;
+    padding-bottom: $padding10;
+    border-bottom: 1px solid #eee;
+    color: $colorDefault; 
+}
+.xmlForm_btnGonder {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.franchise-form {
+    max-width: 780px;
+    .page-top-title {margin-top: 30px; font-size: $fontSize16;}
 }

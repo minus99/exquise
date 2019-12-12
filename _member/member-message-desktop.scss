@@ -9,8 +9,23 @@
             a{
                 font-size: $fontSize13;
                 padding: 12px 10px;
+                border-bottom: 2px solid transparent;
                 span {
                     font-size: $fontSize13;
+                }
+                &.emos_selected, &.selected{
+                    border-bottom: 2px solid $colorBlack;
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+            &.selected {
+                a {
+                    border-bottom: 2px solid $colorBlack;
+                    &:after {
+                        display: none;
+                    }
                 }
             }
         }

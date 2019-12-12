@@ -40,8 +40,18 @@
         }
         &.selected, &.act { 
             a {
-                color: $colorBlack;
-                border-bottom: 2px solid $colorBlack;
+                color: $colorBlack; 
+                &:after {
+                    height: 2px;
+                    content: '';
+                    background: #000;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 80%;
+                    margin: 0 auto;
+                } 
             }
         }
     }

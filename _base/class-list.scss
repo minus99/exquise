@@ -286,8 +286,6 @@ table[style*="inline"]{
 #lblUrunTutari,
 .suggest_urnprice,
 .pnlDipToplamTable .value span,
-.grid-table-cart .satBrFiyat,
-.grid-table-cart .brFiyat,
 .member-general .price, 
 .pnlDipToplamTable td > span,
 .odemeCekiTutar,
@@ -301,6 +299,11 @@ table[style*="inline"]{
         font-family: "regular", Arial, Helvetica, sans-serif;
         letter-spacing: 3px;
     }
+}
+
+.grid-table-cart .satBrFiyat,
+.grid-table-cart .brFiyat {
+    display:none !important;
 }
 
 //price after discount price

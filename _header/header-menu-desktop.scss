@@ -42,6 +42,11 @@
             //column-count: 4; 
             //row-gap: 30px;
             //grid-template-columns: repeat(auto-fit, 200px);
+            animation: .2s ease .1s alphaTop; 
+            animation-fill-mode: both;
+            position: relative;
+            top: 20px;
+            background: none;
             > li {
                break-inside: avoid;
                margin-bottom: 30px;
@@ -70,8 +75,9 @@
             ul.lvl-2 {
                 display: inline-block; 
                 margin: 0 auto;
-                position: relative;
+                position: relative; 
                 padding: 40px 20px 100px 20px;
+                opacity: 1;
             }
         }
         ul.lvl-3 {

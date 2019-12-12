@@ -11,6 +11,7 @@
 .pay-type-list{
     margin-top: 20px;
     background: #f8f8f8;
+    overflow: hidden;
     ul{
         //flex default class extend ediliyor
         @extend .display-flex;
@@ -135,10 +136,21 @@ div[id$="pnlKrediKartiBilgi"],
     //CVC kodu
     .cc-cvc{
         width: calc(50% - 32px) !important;
+        padding: 9px 15px;
     }
     span[id$="lbfKKT_CVC_NEDIR"]{
-        width: 32px;
-        height: 32px;
+        //width: 32px; height: 32px;
+        #cvcnedir {
+            color: #bbb;
+            text-decoration: underline;
+            white-space: nowrap;
+            font-size: 13px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+    input::placeholder {
+        color: #ccc;
     }
 }
 //Odeme modulu display olan nesneri block'lama
@@ -476,6 +488,11 @@ a.btnBankaPromosyonUygula,
                     @extend .display-flex;
                     flex-wrap: wrap;
                 }
+                .page-top-title {
+                    &:after { 
+                        transform: rotate(0deg) !important;
+                    }
+                }
             }
         }
     }
@@ -603,6 +620,7 @@ a.btnSatisSozlesmeOnizle {
                     position: absolute;
                     right: 0px;
                     top: 0px;
+                    transform: rotate(-90deg);
                 }
             }
             .grid-table-cart {
@@ -635,7 +653,7 @@ a.btnSatisSozlesmeOnizle {
             order: 4; 
             .next {
                 a {
-                    margin-top: 0;
+                    margin-top: 5px;
                 }
             }
         }
@@ -721,4 +739,85 @@ a.btnSatisSozlesmeOnizle {
         font-family: $bold;
         line-height: 18px;
     }
+}
+
+// MasterCard
+
+.masterpassContent {
+    display: block !important;
+    margin-top: 15px;
+} 
+.imgMasterpassLogo {
+    width: auto !important; 
+}
+.masterPassForms { 
+    position: relative;
+    margin-top: 20px;
+    > div + div {
+        margin-top: 10px;
+    }
+} 
+.masterpassAciklama {
+    font-size: 13px;
+}
+.dvAddCreditCard {
+    display: flex;
+}
+.dvMpCardAliasName {
+    flex: 1;
+    padding-right: 5px;
+}
+
+.masterpass_cardAddedSuccess {
+    margin-bottom: 30px;
+}
+.masterpass_linkCard {
+    margin-bottom: 30px;
+}
+.masterpass_cardList {
+    margin-bottom: 30px;
+}
+.masterpassLogo_cardList {
+    display: none;
+}
+.mpCreditCardSet {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 15px 1fr max-content;
+    grid-gap: 0 10px;
+    align-items: center;
+
+    + .mpCreditCardSet {
+        margin-top: 15px;
+    }
+}
+.lnkDeleteMasterPassCard {
+    text-decoration: underline;
+}
+.mpNewCreditCard {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    input[type="radio"] {
+        margin-right: 7px;
+    }
+}
+.dvOtpForm {
+    > * {
+        margin-top: 10px;
+    }
+}
+.mpInfoText {
+    padding: 0 !important;
+}
+.resendCodePlace {
+    > * {
+        margin-top: 10px;
+    }
+}
+.validateOtp,
+.btnResendOtp {
+    cursor: pointer;
 }

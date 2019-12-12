@@ -37,9 +37,14 @@
     padding: 20px 0;
 }
 
-.tableOdemeBilgiKrediKarti { 
+.tableOdemeBilgiKrediKarti, .masterpass_linkCard { 
     max-width: calc(100% - 390px);
 }
+
+.masterpass_linkCard  {
+    h3 {margin-bottom:10px;}
+}
+
 
 //Odeme Adres bilgileri ve siapris ozet alani
 .pay-address{

@@ -210,6 +210,24 @@ select {
     &.form-err {
         .form-label {
             color: $memberRedColor;
+            .zorunluFont:before {
+                content: "Bu alanın doldurulması zorunludur";
+                float: right;
+            }
+        }
+        .form-obj {
+            input, textarea, select, .sStylerWrp_select .sStylerWrp, .dropdown-header {
+                border-color: $memberRedColor;
+            }
+        }
+    }
+    &.pass-form-err { 
+        .form-label {
+            color: $memberRedColor;
+            .zorunluFont:before {
+                content: "Şifre uyuşmuyor";
+                float: right;
+            }
         }
         .form-obj {
             input, textarea, select, .sStylerWrp_select .sStylerWrp, .dropdown-header {
@@ -321,6 +339,95 @@ input[id$="UYE_CEPTELEFON"] {
 
 // datepicker
 #ui-datepicker-div {display: none;}
+
+.hasDatepicker {
+    cursor: pointer
+}
+
+body .ui-datepicker {
+    max-width: 300px; 
+    width: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    box-shadow: rgba(37, 37, 37, 0.1) 3px 3px 1px;
+    padding: 5px !important;
+    z-index: 999!important;
+    .ui-datepicker-title {
+        @extend .display-flex;
+        margin: 0 30px;
+        select {
+            border: 0;
+            font-size: 12px;
+            font-family: $medium;
+        }
+    } 
+    .ui-datepicker-header {
+        border-radius: 0;
+        border: 0;
+    }
+    th {
+        span {
+            font-size: 12px;
+        }
+    }
+    .ui-icon {
+        background: none;
+        width: 24px;
+        height: 24px;
+    }
+    .ui-datepicker-prev, .ui-datepicker-next {
+        background: none;
+        border: 0;
+    }
+    .ui-icon-circle-triangle-w {
+        &:after {
+            content: '';
+            @extend .base64-arrow-d;
+            height: 24px;
+            width: 24px;
+            color: #000;
+            display: inline-block;
+            padding: 0;
+            text-align: center;
+            background-size: 24px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            transform: rotate(90deg);
+        }
+    }
+    .ui-icon-circle-triangle-e {
+        &:after {
+            content: '';
+            @extend .base64-arrow-d;
+            height: 24px;
+            width: 24px;
+            color: #000;
+            display: inline-block;
+            padding: 0;
+            text-align: center;
+            background-size: 24px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            transform: rotate(-90deg);
+        }
+    }
+    .ui-datepicker-prev, .ui-datepicker-next {
+        left: 0;
+        top: 10px;
+        span {
+            margin: 0;
+            left: 0;
+            top: 0;
+        }
+    }
+    .ui-datepicker-next {right:0; left: auto;} 
+}
+
+
+
 
 // --- ÜYELİK AÇIKLAMA -- //
 // Üyelik bilgileri açıklama metni

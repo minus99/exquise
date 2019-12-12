@@ -94,10 +94,119 @@ $p: 20px;
     background: #fff;
 }
 
-.tableUyeGiris tr:after {
-    content: '';
-    display: block;
-    margin-bottom: 10px;
+/*Üye Giriş Popup*/
+.popupUyeGiris {
+    padding:40px 50px !important;
+    input {
+        width:100%; 
+        margin-bottom:10px; 
+        box-shadow: none; 
+        border: none; 
+        outline: none; 
+        padding: 10px; 
+        line-height: 30px; 
+        color: #424242; 
+        background: #f5f5f5; 
+        font-size: 14px; 
+        font-family: $regular; 
+        border: none; 
+    }
+    #lnkSifremiUnuttum {float:none; margin:0;}
+    .emos_invisible {
+        display:none !important; 
+    }
+}
+.popupUyeGiris_lnkSifremiUnuttum {
+    position:absolute; 
+    right:0px; 
+    bottom:20px;
+}
+.tableUyeGiris {
+    width:100%;
+    font-family: $medium; 
+    font-size: 18px; 
+    padding:0 !important;
+    tbody, tr, th, td {
+        display:inline-block; width:100% !important;
+        &:empty {
+            display:none;
+        }
+    }
+    tr {position:relative;}
+    th {
+        font-family: $regular !important; 
+        font-size: 12px; color: #757575; 
+        line-height: 1.4; 
+        margin-bottom: 5px; 
+        text-align:left; 
+        //position: absolute; left: 10px; top: 10px;
+    }
+}
+
+.popupUyeGiris_girisHata {
+    svg {
+        display: none !important; 
+    }
+}
+
+.popupStokHaberci {
+    padding:40px;
+    padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+.popupStokHaberci_urunAd {
+    font-family: $medium;
+    font-size: 16px;
+}
+
+.popupUyeGiris_btnPopupLogin {
+    th {margin-top: 5px; position:static;}
+    table {
+        display: table !important; 
+        width: 100%;
+        a {
+            width:100%; 
+            display: inline-block; 
+            float:right; 
+            position: relative; 
+            display: inline-block; 
+            padding: 15px 20px;
+            text-decoration: none; 
+            font-size: 16px !important; 
+            color: #fff; 
+            font-family: $medium; 
+            text-align: center; 
+            font-weight: normal; 
+            span {text-transform:uppercase;}
+        }
+    }
+}
+
+.popupUyeGiris_lnkSifremiUnuttum {
+    margin-top: 20px;
+    span {
+        font-size: 12px; font-family: $medium; 
+        color: #757575; 
+        text-decoration: underline;
+    }
+}
+.popupUyeGiris_lnkUyeOlmak {
+    margin-top: 20px;
+    a {
+        text-decoration:none;
+    }
+    span {
+        font-size: 14px; 
+        font-family: $medium; 
+        color:#3f4552; 
+        text-transform:uppercase; 
+    }
 }
 
 //CUSTOM POPUP OBJ

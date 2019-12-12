@@ -17,6 +17,7 @@
         .value {
             color: $memberDarkColor; 
             font-size: $fontSize13; 
+            flex: 0 50%; 
             &#plhParaBr { 
                 font-family: cursive; 
             }
@@ -192,7 +193,7 @@
             font-size: $fontSize13;  
             font-family: $medium;  
         }
-        .brFiyat {
+        .brFiyat, .brFiyatVrg {  
             color: $colorRed;
         }
     }

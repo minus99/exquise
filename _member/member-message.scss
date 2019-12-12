@@ -11,11 +11,21 @@
                 font-size: $memberFontSize14;
                 padding: 20px 10px;
                 text-align: $alignCenter;
-                background: none; 
-                border-bottom: 2px solid transparent;
+                background: none;
+                position: relative;
                 //secili arka plan
                 &.emos_selected, &.selected{
-                    border-bottom: 2px solid $colorBlack;
+                    &:after {
+                        height: 2px;
+                        content: '';
+                        background: #000;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 80%;
+                        margin: 0 auto;
+                    }
                 }
                 span {
                     color: #000;
@@ -24,7 +34,17 @@
             }
             &.selected {
                 a {
-                    border-bottom: 2px solid $colorBlack;
+                    &:after {
+                        height: 2px;
+                        content: '';
+                        background: #000;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 80%;
+                        margin: 0 auto;
+                    }
                 }
             }
         }

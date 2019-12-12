@@ -41,12 +41,12 @@
     .btnFilterApply{
         width: auto;
         min-width: 50%;
-        background: #000;
+        background: #fff;
         padding-top: 16px;
         padding-bottom: 16px;
-        border-color: transparent;
+        //border-color: transparent;
         span{
-            color: #fff;
+            //color: #fff;
         }
     }
 }
@@ -101,6 +101,18 @@
         &.link_selected{
             &:after{
                 background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTcuNjkgNy41MDVhLjczOC43MzggMCAwIDAtLjQyNy4yMDRsLTcuNjUgNy4xNjYtMi44NS0yLjY3YS43NS43NSAwIDAgMC0uNzEyLS4yMTEuNy43IDAgMCAwLS41My40OTIuNjQ5LjY0OSAwIDAgMCAuMjIxLjY2OGwzLjM2IDMuMTQ4YS43NDUuNzQ1IDAgMCAwIC41MS4xOTguNzQ1Ljc0NSAwIDAgMCAuNTEtLjE5OGw4LjE2LTcuNjQ0YS42NDQuNjQ0IDAgMCAwIC4xNDctLjc3Ni43MzIuNzMyIDAgMCAwLS43MzktLjM3N3oiLz48L3N2Zz4=);
+            }
+        }
+    }
+    &.colorFilter {
+    .urunKiyaslamaOzellik_ozellik{ 
+        > a {
+                @extend .display-flex;
+                align-items: center; 
+                img {
+                    width: 10px;
+                    margin-right: 10px;
+                } 
             }
         }
     }

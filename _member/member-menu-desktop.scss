@@ -34,6 +34,15 @@
                 }
             }
         }
+        &.selected, &.act { 
+            a {
+                color: $colorBlack;
+                border-bottom: 2px solid $colorBlack;
+                &:after {
+                    display: none;
+                } 
+            }
+        }
         &:last-child {
             //border-bottom: 1px solid $borderColor;
         }
@@ -61,6 +70,7 @@
                 }
             }
         }
+
     }
 }
 

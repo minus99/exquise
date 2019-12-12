@@ -64,7 +64,7 @@ html, body{
     line-height: 1.15;
     font-size: 14px;
     color: #202020;
-    font-family: $regular, Arial, Helvetica, sans-serif, ;
+    font-family: $regular, Arial, Helvetica, sans-serif; 
     a{
         text-decoration: none;
     }
@@ -114,3 +114,34 @@ p strong{
 }
 
 .bnr_code {display:none;}
+
+body.ajx-loading:after { 
+    content: '';
+    width: 100%; 
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998; 
+    background:url(#{$baseHref + "/images/frontend/preload.gif"} ) center center no-repeat  rgba(255, 255, 255, 0.5); 
+}
+
+.vail {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 15;
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+input:focus::-webkit-input-placeholder {
+    transition: color .4s ease-in-out;
+}
+input:focus::-webkit-input-placeholder {
+    color: #ddd;
+}

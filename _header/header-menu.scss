@@ -45,37 +45,39 @@
     opacity: 0;
     transform: translateX(-50%);
     transition: all .12s cubic-bezier(0.950, 0.050, 0.795, 0.035); // easeInExpo
+    small {font-size: 8px; left: 3px; top: -1px; position: relative;}
     .sub {
         left: 0;
         width: 100%;
         overflow-y: auto;
         overflow-x: hidden;
         max-height: calc(100% - 110px);
+        -webkit-overflow-scrolling: touch;
     }
     /* LVL 1 style ana menü hover */
     ul.lvl-1 {
         background: $colorWhite; 
         justify-content: space-between;  
-        padding: 0 $padding20;
+        padding: 0 $padding15; 
         > li {
             > a {
                 padding: 0 $padding10; 
                 font-family: $medium;
                 &:after {
                     content: '';
-                    width: 100%;
-                    height: 0px;
+                    width: 0;
+                    height: 2px;
                     background: #000;
                     position: absolute;
                     bottom: 0;
-                    left: 0;
+                    left: 0; 
                     @extend .transition-desktop;
                 }
             }
             &.selected {
                 a { 
                     &:after {
-                        height: 2px;
+                        width: 100%;
                     } 
                 }
             
@@ -99,10 +101,12 @@
                     height: 60px;
                     @extend .display-flex;
                     align-items: center; 
+                    position: relative;
                     
                     svg {
                         position: absolute;
-                        right: 20px;
+                        right: 0px;
+                        top: 18px;
                         &.icon-drop-open {
                             display: none;
                         }
@@ -196,26 +200,36 @@
 .menu-user-info {
     background: $colorWhite;
     padding: 0 $padding20;
+    .sub {
+        -webkit-overflow-scrolling: touch;
+    }
+    .mobilUserTitle {
+        text-align: center;
+        font-size: $fontSize15;
+        font-family: $play;
+        padding: 20px 10px;
+        background: #ddd;
+        display: none;
+    }
     > li {
         padding: $padding15 0; 
         border-bottom: 1px solid $lightGreyColor;
         .btn-menu-title {
-            position: relative;
             @extend .transition;
             svg {
                 opacity: 0;
-                left: 10px;
-                top:-5px;
+                left: 15px; 
+                top:12px;
                 position: absolute;
                 @extend .transition;
             }
         }
         &.selected {
             .btn-menu-title {
-                padding-left: $padding30;
+                padding-left: $padding20;
                 svg {
                     opacity: 1;
-                    left: 0px;
+                    left: 10px;
                 }
             }
             .sub {
@@ -225,6 +239,9 @@
                 background: $lightGreyColor;
                 height: 100%;
                 max-height: calc(100% - 46px);
+            }
+            .mobilUserTitle {
+                display: block;
             }
         }
     }

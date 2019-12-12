@@ -3,10 +3,16 @@
     .obj-logoff, .ems-obj-logoff {
         display: none;
     }
+    .signinHeader {
+        display: block;
+    }
 }
 .ems-logoff {
     .obj-login, .ems-obj-login {
         display: none;
+    }
+    .loginHeader {
+        display: block;
     }
 }
 
@@ -74,8 +80,8 @@ span[id$="lblUYE_ADSOYAD"] {
     cursor: pointer;
     &:after {
         content: '';
-        width: 100%;
-        height: 0px;
+        width: 0;
+        height: 2px;
         background: #000;
         position: absolute;
         bottom: 0;
@@ -88,7 +94,7 @@ span[id$="lblUYE_ADSOYAD"] {
 .mini-user-ready {
     .mini-user-info {
         &:after {
-            height: 2px;
+            width: 100%;
         }
     }
     .mini-user-sub {
