@@ -366,7 +366,7 @@
 .campaign-slider {
     padding: 0 0 $padding20 0;
     .prm-media {
-        @include aspect-ratio(1380, 650);
+        @include aspect-ratio(1920, 600);
     }
 }
 
@@ -400,6 +400,13 @@
     }
 }
 
+// Bullet slider popup
+body.ems-popup-animate {
+    &:after {
+        display:none;
+    }
+}
+
 // Kategori görsel ürün slider
 .product-slider {
     @extend .display-flex-desktop;
@@ -407,6 +414,7 @@
     flex-wrap: nowrap;
     position: static;
     overflow-y: visible;
+    overflow-x: visible;
     // görsel still
     .ems-section-wrapper {
         position: relative;
@@ -450,8 +458,8 @@
             > a {
                 overflow: hidden;
                 img {
-                    -webkit-transition: .3s ease-in-out;
-                    transition: .3s ease-in-out;
+                    -webkit-transition: .2s ease-in-out;
+                    transition: .2s ease-in-out;
                     transform: scale(1);
                 }
             }
@@ -461,7 +469,7 @@
             .prd-image {
                 > a {
                     img {
-                        transform: scale(1.03); 
+                        transform: scale(1.01); 
                     }
                 }
             }
@@ -471,7 +479,7 @@
 
 // instagram feed
 .instagram-feed {
-    padding: 40px;
+    padding: 30px;
     .ems-section-title {
         i {
             display: inline-block; 
@@ -494,6 +502,22 @@
         }
     }
 }
+
+.instagram {
+    &-feed {
+        &-image {
+            width: 57%;
+        }
+        &-content {
+            width: 43%;
+        }
+        &-popup-wrp {
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+
 
 // instagram feed
 /*.instagram-feed {

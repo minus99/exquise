@@ -231,6 +231,9 @@
                     font-family: $medium;
                 }   
             }
+            &.pnlDipToplam_kdvToplam {
+                display:none;
+            }
             /*Siparis ozet indirim satırı renk ozellestirme -- Opsiyonel
             &.pnlDipToplam_indirimToplam{
                 > th, > td{
@@ -269,5 +272,87 @@
                 margin-top: 10px;
             }
         }   
+    }
+}
+
+// Zubizu 
+
+.zubizuIndrm {
+    order: 1;
+    padding: 0 20px;
+    display: none;
+    a {
+        font-size: 13px;
+        margin: 10px 0 20px 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==");
+        background-repeat: no-repeat;
+        background-position: center right;
+        b {
+            display: block;
+            font-weight:normal;
+            font-family: $medium;
+            margin-bottom: 3px; 
+        }
+    }
+}
+
+.page-basket-0 {
+    .zubizuIndrm {
+        display: block;
+    }
+}
+
+.popupZubizuKullan { 
+    padding: 40px;
+    padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    .zubizu {
+        &-formContainer {
+            @extend .display-flex;
+            flex-wrap: wrap;
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        &-qrcode-Container {
+            width: 100%;
+        }
+        &-QRCodeContainer {
+            width: 100%;
+            font-family: $medium;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        &-submitContainer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            input {
+                border: 0;
+                background: none;
+                padding: 10px 20px;
+            }
+        }
+    }
+    .qubizu-qrcodelabel {
+        font-family: $medium;
+        margin-bottom: 5px;
+    }
+    &:before {
+        content:'';
+        background:url(#{$baseHref + "/images/frontend/zubizu.png"} ) top center no-repeat;
+        width:100px;
+        height: 100px;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 }

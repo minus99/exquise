@@ -56,3 +56,39 @@
         width: auto;
     }
 }
+
+// Çerez Kullanım
+
+.cookieBnr {  
+    position: fixed;
+    right: 20px;  
+    bottom: 20px; 
+    max-width: 335px;
+    padding: 15px;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.97);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(60,64,67,0.08), 0 1px 3px 1px rgba(60,64,67,0.16);
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,0.08), 0 1px 3px 1px rgba(60,64,67,0.16);
+    .uk-container a {
+        font-size: 11px;
+        text-decoration: underline;
+        font-family: $medium;
+    }
+    .uk-position-small {display:inline-block;}
+    .cookieBnrCloseBtn {
+        padding: 5px 20px !important;
+        display: block;
+        margin-top: 15px !important;
+        width: auto;
+        height: 26px;
+        float: right;
+        span {
+            font-size: 12px; 
+        }
+    }
+}
+
+.cookieBnr {display: none;}
+.cookieBnr.show {display: block;}
+
+.sp-custom-19-1 {display:none !important;} 

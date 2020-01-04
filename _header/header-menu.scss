@@ -29,6 +29,16 @@
     }
 }
 
+// History back btn
+
+.hs-back {
+    a {
+        margin-right: 12px;
+        margin-left: -5px;
+        display: inline-block;
+    }
+}
+
 
 /* Mobile Menü Open */
 
@@ -45,13 +55,13 @@
     opacity: 0;
     transform: translateX(-50%);
     transition: all .12s cubic-bezier(0.950, 0.050, 0.795, 0.035); // easeInExpo
-    small {font-size: 8px; left: 3px; top: -1px; position: relative;}
+    small {font-size: 8px; left: 3px; top: -1px; position: relative; display:inline-block;}
     .sub {
         left: 0;
         width: 100%;
         overflow-y: auto;
         overflow-x: hidden;
-        max-height: calc(100% - 110px);
+        max-height: calc(100% - 250px);
         -webkit-overflow-scrolling: touch;
     }
     /* LVL 1 style ana menü hover */
@@ -182,6 +192,9 @@
         display: block !important;
         background: $greyBorderColor;
         padding: $padding20;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         a {
             font-family: $medium;
             padding: $padding5 0;
@@ -200,6 +213,7 @@
 .menu-user-info {
     background: $colorWhite;
     padding: 0 $padding20;
+    border-bottom: 1px solid $lightGreyColor;
     .sub {
         -webkit-overflow-scrolling: touch;
     }
@@ -212,24 +226,27 @@
         display: none;
     }
     > li {
-        padding: $padding15 0; 
-        border-bottom: 1px solid $lightGreyColor;
+        @extend .display-flex;
+        align-items: center;
+        height: 46px; 
         .btn-menu-title {
+            position: relative;
             @extend .transition;
             svg {
                 opacity: 0;
-                left: 15px; 
-                top:12px;
+                left: 15px;  
+                transform: translateY(-50%);
+                top:50%;
                 position: absolute;
                 @extend .transition;
             }
         }
         &.selected {
             .btn-menu-title {
-                padding-left: $padding20;
+                padding-left: $padding15;
                 svg {
                     opacity: 1;
-                    left: 10px;
+                    left: -10px;
                 }
             }
             .sub {
@@ -244,6 +261,10 @@
                 display: block;
             }
         }
+    }
+    .homeBtn {
+        margin-right: 20px;
+        img {max-width: 17px;}
     }
 } 
 .menu-close {
@@ -318,7 +339,7 @@
     justify-content: center;
     font-family: $medium;
     span {
-        font-size: $fontSize14;
+        font-size: $fontSize16;
         font-family: $medium;
         margin: 0;
         padding: 0;

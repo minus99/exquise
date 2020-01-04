@@ -6,11 +6,28 @@
     span, h2, h3, p, b, strong {
         line-height: $contentLineText;
     }
-    span, p, b, strong {
+    span, p, b, strong, address {
         color: $contentGreyColor;
         font-size: 17px;
-        margin-bottom: 50px;
+        margin-bottom: 30px; 
     }
+
+    a {
+        color: #000;
+        font-size: 17px;
+    }
+
+    ul {
+        padding-left: 10px;
+        li {
+            color: $contentGreyColor;
+            font-size: 17px;
+            margin-bottom: 10px;
+            line-height: $contentLineText;
+            list-style: disc; 
+        }
+    }
+    
     // Yazı resim hizalama
     .sec-double-text {
         flex-wrap: wrap;

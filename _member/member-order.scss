@@ -15,9 +15,26 @@
             width: 100%;
         }
         &:last-child {
-            padding-bottom: 0;
+            //padding-bottom: 0;
             margin-bottom: 0;
-            border: 0;
+            //border: 0;
+        }
+        &-order-list {
+            flex-wrap: wrap !important;
+            > div {
+                flex: 100%;
+                margin-bottom: 10px;
+                span {
+                    display: block;
+                    font-family: $medium;
+                    font-size: 12px;
+                }
+            }
+        }
+        &-order-head {
+            font-size: 14px;
+            padding: 20px;
+            background: #eee;
         }
     }
     // Siparişlerim Header
@@ -70,5 +87,41 @@
             text-align: center;
             display: block;
         }
+    }
+    .grid-table-order {
+        margin-bottom:40px;
+    }
+    // onceki siparis paging
+    .member-order-bottom {
+        align-items: center;
+        flex-wrap: wrap;
+        .btnOrderOld {
+            margin-bottom: 20px;
+        }
+        .urunPaging {
+            flex: auto; 
+        }
+    }
+    &-old {
+        .jconfirm-box-container {
+            max-width: 800px !important;
+        }
+    }
+}
+
+// onceki siparis
+
+.previousOrders { 
+    padding: 0 20px 30px 20px;
+    height: 100%;
+    overflow-y:auto; 
+    .grid-table-order {
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .member-order .grid-row-order-list > div {
+        flex: 50%;   
     }
 }

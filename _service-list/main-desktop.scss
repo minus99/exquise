@@ -45,7 +45,6 @@
 .mod-service-list-header {
     border-radius: $d-dlr $d-dlr 0 0;
     max-width: 580px;
-    margin: 0 auto;
     padding: 0 20px;
     width: 100%;
     .page-nav {
@@ -76,6 +75,8 @@
 .dealer-desc,
 .dealer-desc-or {
     display: block;
+    padding: 0;
+    background: none;
 }
 
 #Map.map {

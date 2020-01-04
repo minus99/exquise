@@ -3,13 +3,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;
+    //justify-content: space-between;
 }
 .prd{
     width: 100%;
     margin-bottom: 30px;
+    position: relative;
+    &-inner {
+        padding: 0 6px;
+    }
     &-badge {
         position: relative;
+        min-height: 14px;
         .urunListe_yeniUrun {
             display: block !important; 
         }
@@ -35,13 +40,27 @@
             }
         }
     }
-    &.spr4 {
-        width: calc(100% - 0px) !important; 
-        .prd-image {
-            > a {
-                @include aspect-ratio(956, 629);  
-                img {height: 100%;}
+    /*&.tukendi {
+        .prd-badge {
+            &:before {
+                content: 'Tükendi';
+                z-index: 1;
             }
+        }
+    }*/ 
+    &.double {
+        //width: calc(100% - 0px) !important; 
+        .prd-image {
+            &-big {
+                display:none;
+                @include aspect-ratio(956, 629); 
+                background-size: cover !important;
+                img {/*height: 100%;*/}
+                &:before {
+                    background: none;
+                }
+            }
+            .prd-image-big {display: block;}
         }
         .prd-body {
             text-align: center;
@@ -58,11 +77,24 @@
             }
         }
     }
+    &.double {
+        .prd-image {
+            &-org {
+                display: none;
+            }
+        }
+    }
+    &-lnk {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
 }
 .view-1{
     .prd{
         width: 100%;
-        &.spr4 {
+        &.double {
             width: calc(100% - 0px) !important; 
         } 
     }    
@@ -70,7 +102,7 @@
 .view-3{
     .prd{
         width: calc(50% - 2px);
-        &.spr4 {
+        &.double {
             width: calc(100% - 0px) !important; 
         } 
     }    
@@ -80,7 +112,7 @@
     background: #d8d8d8;
     position: relative;
     width: 100%;
-    > a{
+    &-org {
         width: 100%;
         height: 100%;
         z-index: 1;
@@ -92,7 +124,12 @@
             left: 0;
             right: 0;
             bottom: 0;
+            display: block;
         }
+    }
+    // İkili Görsel
+    &-big {
+        display:none;
     }
 }
 
@@ -100,10 +137,15 @@
 
 .prd-body {
     padding: $padding10 0 0 0; 
+    position: relative;
+    z-index: 4;
 }
 //Urun adi
 .prd-name{
     line-height: $productCardLineHeight;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #666666;
     > a{
         display: inline-block;
         margin-bottom: 5px;
@@ -115,7 +157,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 1;
+    z-index: 3;
 }
 .urunListe_favoriEkle{
     display: block !important;
@@ -153,12 +195,14 @@
         font-size: $fontSize12;
     }
     .urunListe_brutFiyat{
-        color: $colorRed;
+        //color: $colorRed;
         text-decoration: $linkLineThrough;
     }
     .urunListe_satisFiyat{
-        color: $colorDefault;
-        padding-right: 10px;
+        
+    }
+    .urunListe_brutFiyat {
+        
     }
     .urunListe_pnlIndirimOran{
         width: $fullWidth;
@@ -216,6 +260,14 @@
     position: sticky;
     top: 70px;
 }
+
+body.max-height-detect-list {
+    .kutuBodyKategori{
+        position: relative;
+        top:0;
+    }
+}
+
 .menuKategori{
     li{
         position: relative;
@@ -341,12 +393,12 @@
 }
 .urunPaging_pageNavigation{
     @extend .display-flex;
-    @extend .justify-center;
+    @extend .justify-center; 
     @extend .align-items-center;
     > span{
         @extend .display-flex;
         @extend .align-items-center;
-        max-width: 150px; 
+       //max-width: 150px; 
         overflow: hidden; 
         span, a {
             min-width: 30px;

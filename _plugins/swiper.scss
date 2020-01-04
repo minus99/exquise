@@ -630,6 +630,9 @@
   .swiper-slide {
       //padding-left: #{$p};
       width: 265px;
+      &.prd.double {
+        width: 265px;
+      }
   }
 
   //horizontal product
@@ -706,6 +709,15 @@
   background: #f5f5f5;
   margin-top:50px;
   padding: 40px 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  &.results-found {
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+  }
+  &.no-result {display:none;}
   .ems-section-title {
     font-size: 22px;
     font-family: $medium;
@@ -722,7 +734,7 @@
   }
   .prd-image { 
   
-    > a {
+    &-org, &-big {
       &:after {
         content: '';
         position: absolute;

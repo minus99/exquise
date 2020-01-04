@@ -55,6 +55,9 @@
 // Empty Class
 .member-coupon { 
     padding: 0 !important; 
+    &-tab {
+        display:none;
+    }
     &.no-result {
         padding-top: 0;
         .message-coupon {

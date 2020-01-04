@@ -117,7 +117,7 @@
 
    
   
-@supports(grid-area: grid) {      
+@supports(grid-area: grid) {       
     @include setMediaScreen(min-width, $breakpoint-medium) { 
         //-----Base-----//
         @import '_base/class-list-desktop';        

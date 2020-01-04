@@ -24,6 +24,7 @@
                 @extend .sticky-desktop; 
                 top: 60px; 
             }
+            > .ems-prdd-badge {display: none;}
         }
     }
 
@@ -39,6 +40,12 @@
     }
     &-price {
         
+    }
+    &-code {
+        &::before {
+            content: '-';
+            padding-left: 4px;
+        }
     }
     &-gallery {
         margin: 0;
@@ -58,6 +65,15 @@
     }
     &-block2 {
         margin-top: 10px;
+    }
+    &-block3 {
+        display: block;
+        .ems-prdd-badge {
+            display:block;
+            &:before {
+                font-family: $medium;
+            }
+        }
     }
 }
 
@@ -201,8 +217,10 @@
     display: block;
 }
 
+
 //size guide
-.mini-size-guide {
+
+.mini-size-guide { 
     &-sub {
         @extend %header-mods-sub;
         max-width: 800px;
@@ -231,6 +249,21 @@
         padding: $p;
         top: 0;
     }
+    .service-list {
+        .servisIcerik {
+            overflow-x: hidden;
+            max-height: 400px;
+            display: block;
+            padding-right: 5px;
+            &::-webkit-scrollbar {width:3px;}
+            &::-webkit-scrollbar-track,
+            &::-webkit-scrollbar-thumb{-webkit-border-radius: 2px; border-radius: 2px;}
+            &::-webkit-scrollbar-track {background-color:#d8d8d8;}
+            &::-webkit-scrollbar-thumb {background-color:#202020;}
+            &::-webkit-scrollbar-thumb:window-inactive {background-color:#202020;}
+        }
+        
+    }
     .sub-header {
         font-size: $fontSize20;
         margin-bottom: 40px;
@@ -246,7 +279,7 @@
         max-height: calc(100vh - 150px);
         overflow: auto;
         grid-template-columns: 1fr 70px 1fr; 
-        grid-template-areas: "ga1 ga1 ga1" "ga3 . ga2";
+        grid-template-areas: "ga1 ga1 ga1" "ga3 ga3 ga2";
         > .mod-service-list-header {
             grid-area: ga1;
             max-width: none;
@@ -263,25 +296,46 @@
         background:none;
         padding: 0;
     }
+
     .dealer-form {
         .ems-field-css {
-            width: calc((100% / 3) - 5px);
+            width: calc((100% / 2) - 5px);
             margin-right: $margin10;
+            flex: auto;
         }
         .mod-service-btn {
             display: block;
             margin: 0;
-            width: calc((100% / 3) - 5px);
+            width: calc((100% / 4) - 5px);
+            .ems-form-obj {
+                padding: 0;
+            }
         }
         .sStylerWrp_select .sStylerWrp {
             border-color: #aaa; 
         }
+        .display-flex {
+            flex-wrap: nowrap;
+            .ems-field {
+                flex: auto; 
+            } 
+        }
+    }
+    #findStoreBtn {
+        border: 0;
+        background: #000;
+        span {
+            line-height: 16px;
+            color: #fff;
+        }
     }
     .mod-service-list-body {
         overflow: auto;
+        margin: 0;
     }
     .ems-message {
         margin-top: 0;
+        padding: 0 0 15px 0;
     }
     #Map.map {
         height: calc(100vh - 300px);
@@ -293,8 +347,12 @@
             grid-template-areas: ". ga1 ga1 ga1 ." ". ga2 ga2 ga2 .";
         }
     }
-
+    #Map.map {
+        height: 100vh !important;
+    }
     &-ready {
+        overflow: visible;
+        position: static;
         .ems-find-store-sub {
             @extend %header-mods-sub-ready;
         }

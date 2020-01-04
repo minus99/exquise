@@ -7,6 +7,7 @@
         padding-top: 15px;
         padding-bottom: 15px;
         border-bottom:1px solid $greyBorderColor;
+        min-height:140px;
 
         //Sepet tablo satır image kolonu sabitleniyor
         .grid-img{
@@ -35,6 +36,27 @@
             font-size: $fontSize12;
             line-height: $gridLineHghtDefault;
             display: none;
+        }
+        .grid-stock {
+            .magaza-teslim {
+                display:none;
+            }
+        }
+        .grid-als-uyari { 
+            @extend .display-flex;
+            align-items: center; 
+            color: #a40000;
+            font-size: 12px;
+            &:before {
+                content: '';
+                background:url(#{$baseHref + "/images/frontend/magaza-teslim.svg"} ) top center no-repeat;
+                margin-right: 5px;
+                width: 30px;
+                height: 30px;
+            }
+            &:empty {
+                display: none;
+            }
         }
         .grid-name{
             //Urun adı linki genel css'i
@@ -160,6 +182,9 @@
             .price-wrapper{
                 flex-wrap: wrap;
                 justify-content: flex-end;
+                > span {
+                    flex: 100%;
+                }
             }
         }
         span[id$="lblURN_INDIRIMLIFIYAT"],
@@ -169,6 +194,7 @@
         //Varsayılan fiyat
         span[id$="lblURN_INDIRIMLIFIYAT"]{
             order: 2; // sıralama veriliyor
+            display: none;
         }
         // Ilk fiyat    
         .gridSepetListe_gercekFiyat{
@@ -176,13 +202,24 @@
             color: $colorBlack;
             text-decoration: $linkLineThrough;
         }
+
+        span[id$="lblURN_TOPLAMFIYAT"]{
+            order: 3;
+        }
+
+        span[id$="lblURN_NETTOPLAMFIYAT"]{
+            order: 4;
+        }
+
         //sepet icin urun fiyatlari gizlenen alanlar
         .brFiyat,
         .satBrFiyat {display: none !important;}
 
         //sepet icin urun fiyatlari acilan alanlar
         .brFiyatVrg,
-        .satBrFiyatVrg{
+        .satBrFiyatVrg,
+        .netFiyat,
+        .topFiyat{
             display: inline-flex !important;
             align-items: baseline;
         }
@@ -234,16 +271,24 @@
 .gridSepetStok{
     //Header kısmı gizleniyor
     .gridHeaderSepetStok{
-        @extend .none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+        th {
+            padding: 10px 0 15px 0;
+            font-family: $medium;
+        }
     }
     //Row kısmı ozellestiriliyor
-    .gridRowSepetStok{
+    .gridRowSepetStok, .gridAlternateSepetStok, .gridHeaderSepetStok{
         display: table;
         width: 100%;
         table-layout: fixed;
-        > td{
+        > td, > th {
             vertical-align: middle;
             width: auto;
+            img {
+                max-width: 90px;
+            }
             > *{
                 color: $colorDefault;
             }
@@ -253,7 +298,7 @@
             &:nth-child(1){
                 width: 100px !important;
             }
-            &:nth-child(2){
+            &:nth-child(2), &:nth-child(4), &:nth-child(5){
                 @extend .none;
             }
         }
@@ -309,7 +354,8 @@
                 border:0 !important;  
             }
             .grid-table-row {
-                border:0 !important;  
+                border:0 !important; 
+                min-height:auto;   
             } 
             .grid-content{
                 width: 100%;
@@ -321,18 +367,42 @@
             }
         }
         //Siparis adimlarin da sepet onizleme gizlenen alanlar
+        //span[id$="lblProm"],
         .grid-piece,
-        .grid-remove,
-        span[id$="lblProm"]{display: none;}
+        .grid-remove
+        {display: none;}
+        span[id$="lblProm"] {
+            padding-right: 55px;
+            display: block;
+            * {
+                font-size:12px !important;
+            }
+        }
         .grid-price {
             position: absolute;
             bottom: 20px; 
-            right: 10px; 
+            right: 0px; 
         }
         .grid-name {
             font-size: $fontSize13;
         }
-        span[id$="lblURN_INDIRIMLIFIYAT"], .gridSepetListe_gercekFiyat, span[id$="lblSCD_AD1"] {
+        .grid-als-uyari {
+            padding-right:45px;
+        }
+        .grid-stock {
+            .magaza-teslim {
+                font-size:11px;
+                &:before {
+                    display:none;
+                }
+            }
+        }
+        span[id$="lblURN_INDIRIMLIFIYAT"], 
+        .gridSepetListe_gercekFiyat, 
+        span[id$="lblSCD_AD1"],
+        span[id$="lblURN_TOPLAMFIYAT"], 
+        span[id$="lblURN_NETTOPLAMFIYAT"]
+         {
             font-size: 12px !important;
             margin-top: 0 !important; 
         } 

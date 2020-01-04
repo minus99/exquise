@@ -269,7 +269,7 @@ select {
         display: none !important;   
     }
     .sticky {
-        top: 20px;
+        top: 40px;
     }
     .no-result {
         background: #f8f8f8;
@@ -757,7 +757,7 @@ a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle, a.btnKutuLogout, a.btnBulte
     .ems-tab-inner-content {
         font-family: $memberFontRegular;
         color: $memberGreyColor;
-        line-height: $labelLineText;
+        line-height: 24px;
     }
 }
 

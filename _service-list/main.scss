@@ -6,12 +6,14 @@
     position: relative;
 }
 
+
 .mod-service-list-header {
     //background: $dhbg;
     //padding: $dhp; 
+    margin: 0 auto 20px auto;
     .dealer-form {
         background: #f8f8f8;
-        padding: 35px $padding20;
+        padding: $padding20 $padding20 0 $padding20;
         .form-label {
             display: none;
         }
@@ -53,12 +55,14 @@
 .dealer-form {
     //margin-top: $dftm;
 }
-.dealer-desc-or {
-    display: none;
+.dealer-desc-or { 
+    //display: none;
     //border-top: 1px solid $ddbt;
     //padding-top: 20px;
     //margin-top: 20px;
     text-align: center;
+    background: #f8f8f8;
+    padding: 0 $padding20 $padding20 $padding20;
 }
 .allow-share-location-btn {
     margin-top: 15px;

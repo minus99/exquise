@@ -65,3 +65,7 @@ Site General Grid Class Items
     position: -webkit-sticky !important;
     position: sticky !important;
 }
+
+.ems-custom-form .jconfirm-content, .ems-price-quate .jconfirm-content, .jconfirm-content {
+    overflow-y: inherit;
+}

@@ -59,6 +59,7 @@
         >div {
             flex: 1;
             margin-bottom: 0;
+            padding: 20px 30px;
             &:first-child {
                 margin-right: 20px;
             }
@@ -96,4 +97,16 @@
             border-top: 1px solid $gridRowBorder; 
         }
     }
+}
+
+// Para Puan
+
+.ems-pay-point {
+    max-width: calc(100% - 390px);
+}
+
+// Masterpass cart kayıt
+
+.masterpass_cardList, .masterpassContent {
+    max-width: calc(100% - 390px);
 }

@@ -3,3 +3,19 @@
     //Üyelik sayfası arka plan rengi -- Opsiyonel
     //background:$memberPageBg; 
 }
+
+.member-info [id$="txtUYE_SOYAD"], .member-info [id$="txtUYE_AD"], .member-info [id$="txtUYE_CEPTELEFONALAN"], .member-info [id$="txtUYE_CEPTELEFON"] {
+    cursor: default;
+    background-color: #EBEBE4;
+    pointer-events: none;
+}
+
+.member-info [id$="txtUYE_DOGUMTARIHI"] {
+    cursor: default;
+    background-color: #EBEBE4;
+    pointer-events: none;
+    &:not([value]) {
+     pointer-events:all;   
+     background: transparent;
+    }
+} 

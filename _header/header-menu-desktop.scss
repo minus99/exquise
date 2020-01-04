@@ -86,6 +86,32 @@
             > li {
                 > a {
                     padding: 0;
+                    position: relative;
+                    transition: color .5s ease;
+                    -webkit-transition: color .5s ease;
+                    -o-transition: color .5s ease;
+                    &:before {
+                        content: '';
+                        left: -6px;
+                        top: 8px;
+                        opacity: 0;
+                        background: #666;
+                        border-radius: 100%;
+                        width: 2px;
+                        height: 2px;
+                        overflow: hidden;
+                        position: absolute;
+                        transition: all .5s ease;
+                        -webkit-transition: all .5s ease;
+                        -o-transition: all .5s ease;
+                    }
+                    &:hover {
+                        color: #666;
+                        &:before {
+                            left: -10px;
+                            opacity: 1;
+                        }
+                    }
                     svg {
                         display: none;
                     }

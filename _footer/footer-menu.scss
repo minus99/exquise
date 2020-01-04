@@ -58,25 +58,29 @@
 /* Footer Tab */
 .footer-tab {
     background: #000; 
-    img {
-        filter: invert(100%);
-    }
     li {
         border-right: 1px solid $greyColor; 
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
         &:last-child {
             border: 0;
+            a {
+                padding: 10px 0px;
+            }
         }
     } 
     .selected {
         background: #fff; 
-        img {
-            filter: none;
-        }
     }
     a {
         padding: $padding20 $padding30;  
         display: block;
     }
+    .icon-logo-ipekyol {width: 60px; height: 12px;}
+    .icon-logo-twist {width: 44px; height: 12px; color: #fff;}
+    .icon-logo-machka {width: 90px; height: 36px; color: #fff;}
 }
 
 // Footer Dil Seçim

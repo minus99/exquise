@@ -2,10 +2,16 @@
 .swiper-product{
     .prd{
         width: calc(100% / 5);
+        &.double {
+            width: calc(100% / 5) !important;
+        }
     }
     &.item-4{
         .prd{
             width: calc(100% / 4);
+            &.double {
+                width: calc(100% / 4) !important;
+            }
         }   
     }
 }

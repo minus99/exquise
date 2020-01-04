@@ -3,24 +3,78 @@
 .kutuSolMenuTree {
     background: $colorWhite;
     border-radius: $memberBorderRadius4; 
-    display: none;
+    //display: none;
     position: -webkit-sticky;
     position: sticky;
     top: 70px;
-    .sev2 {
+    .sev1 {
         > a {
-            font-family: $memberFontMedium;
-            font-size: $memberFontSize20; 
-            padding: $memberPadding20;
+            display:none; 
+        }
+    }
+    .sev2 {
+        display: none;
+        position: relative;
+        background: #f8f8f8;
+        > a {
+            //font-family: $memberFontMedium;
+            //font-size: $memberFontSize20; 
+            //padding: $memberPadding20;
             display: none;
         }
+        &.sel {
+            display: block
+        }
+        ul {
+            display: none !important;
+            padding-bottom: 20px;
+        }
+        &.opened {
+            ul {
+                display: block !important; 
+            }
+        }
+        .mobi-dropdown-header {
+            padding: 20px;
+            font-family: $medium;
+        }
+
+        &.icr {
+            > b{
+                display: inline-block;
+                @extend .base64-arrow-d; 
+                width:20px;
+                height: 20px; 
+                position: absolute;
+                right: 20px;
+                top: 18px;
+                z-index: 1;
+                opacity: 1;
+                cursor: pointer;
+                background-size: 25px;
+                @extend .transition;
+                transform: rotate(-90deg);
+                //display: none; 
+            }
+            &.opened {
+                > b {
+                    opacity: 1 !important;
+                    transform: rotate(0deg);
+                }
+            }
+            &:hover { 
+                > b{
+                    opacity: 1;
+                }
+            }
+        }
+
     } 
     .sev3 {
-        border-top: 1px solid $borderColor;
         position: relative;
         a {
-            color: $contentDarkColor;
-            padding: 20px 50px 20px 20px;
+            color: #000;
+            padding: 10px 50px 10px 30px; 
             display: block;
             transition: all .2s ease;
             -webkit-transition: all .2s ease;
@@ -52,14 +106,31 @@
         }
         &.act {
             a {
-                color: $btnAlternateColor;
-                padding: 20px 50px 20px 30px;
+                color: #000;
+                padding: 10px 50px 10px 30px;
                 border-bottom: 0;
+                font-family: $medium;
                 &:after {
                     opacity: 1;
                     right: 20px;
                 }
             }
         }
+        .sev4 {
+            display: none;
+        }
+        &.icr > b {display:none;}
     }
+}
+
+.mobi-dropdown {
+    &.opened {
+        >ul {
+    
+        }
+    }
+}
+
+.corporate-menu {
+    display: none;
 }

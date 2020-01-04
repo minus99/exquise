@@ -43,3 +43,26 @@
     }
 
 }
+
+.privacy-confirm {
+    font-size: 12px;
+    color: #666;
+    line-height: 17px;
+    a {
+        font-size: 12px;
+        color: #666;
+        text-decoration: underline;
+    }
+}
+
+ // Gizlilik onay popup
+
+ .privacy-confirmation {
+    .privacy-confirmation { 
+     max-width: 800px !important;
+    }
+ }
+
+ .backoffice-icerik {
+     word-break: break-all;
+ }

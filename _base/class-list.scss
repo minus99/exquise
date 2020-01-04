@@ -292,6 +292,8 @@ table[style*="inline"]{
 .cart-prd-price .price,
 .satBrFiyatVrg, 
 .brFiyatVrg,
+.topFiyat,
+.netFiyat,
 #plhIadeTutar > a {
     display: inline-flex !important;
     [class^="pb"] { 
@@ -307,14 +309,28 @@ table[style*="inline"]{
 }
 
 //price after discount price
+/*span[id$="lblURN_INDIRIMLIFIYAT"]*/
+span[id$="lblURN_BIRIMFIYAT"],
+span[id$="lblURN_TOPLAMFIYAT"],
 .ems-price.first,
 .urunListe_brutFiyat,
 .urunDetay_brutFiyat, 
-.gridSepetListe_gercekFiyat {
+.gridSepetListe_gercekFiyat { 
     &:not(:empty) {
         text-decoration: line-through;
         color: $colorBlack;
         + * {
+            color: $colorRed;
+            margin-left: 10px;
+        }
+    }
+}
+
+span[id$="lblURN_BIRIMFIYAT"] { 
+    &:not(:empty) {
+        text-decoration: line-through;
+        color: $colorBlack;
+        ~ * {
             color: $colorRed;
             margin-left: 10px;
         }

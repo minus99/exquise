@@ -88,10 +88,10 @@
 // Empty Basket 
 
 .basket-empty .page-basket-0 .ga2 {
-    display: none;  
+    //display: none;  
 }
 
-.basket-empty {
+/*.basket-empty {
     .page-basket-0 .basket-grid {
         grid-template-columns: minmax(0, 100%);
         grid-template-areas:
@@ -100,7 +100,7 @@
         padding: 50px 0; 
         text-align: center;
     }
-}
+}*/
 
 .basket-grid-2 {
     .page-top-title {

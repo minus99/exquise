@@ -18,3 +18,16 @@
 .footer-copyright {
   padding: 0;
 }
+
+/* Footer Tab */
+.footer-tab {
+  li {
+      width: auto;
+      justify-content: left;
+      &:last-child {
+        a {
+            padding: 10px 30px;
+        }
+    }
+  } 
+}

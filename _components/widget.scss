@@ -18,6 +18,9 @@
     .swiper-slide{
         width: calc(100% / 2);
         //padding-left: 30px;
-        //opacity: 0;  
+        //opacity: 0; 
+        .prd-inner { 
+            padding:0;
+        } 
     }
 }

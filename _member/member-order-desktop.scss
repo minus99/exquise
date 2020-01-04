@@ -5,6 +5,11 @@
     .grid-row {
         align-items: center;
         flex-wrap: nowrap;
+        &-order-list {
+            > div {
+                flex: 50%;
+            }
+        }
     } 
     // Siparişlerim Liste Düzeni
     .grid-order-no { 
@@ -24,4 +29,18 @@
         text-align: right;
         margin-top: 0px;        
     }
+     // onceki siparis paging
+     .member-order-bottom {
+        flex-wrap: initial; 
+        .btnOrderOld {
+            width: auto; 
+            margin-bottom: 0;
+        }
+    }
+}
+
+// onceki siparis
+
+.previousOrders {
+    padding: 0 30px 30px 30px;
 }

@@ -45,12 +45,15 @@
             flex: 1;
             margin-top: 5px;
             text-align: right;
+            right: 10px;
         }
         //Urun fiyatlari
         span[id$="lblURN_INDIRIMLIFIYAT"]{
             margin-left: 0;
         }
         span[id$="lblURN_INDIRIMLIFIYAT"],
+        span[id$="lblURN_TOPLAMFIYAT"],
+        span[id$="lblURN_NETTOPLAMFIYAT"],
         .gridSepetListe_gercekFiyat{
             font-size: $fontSize15;
             width: 100%;
@@ -63,7 +66,7 @@
         //sepet urun silme desktop ozel ust margin
         .grid-remove{
             top: inherit;
-            bottom: 20px;
+            bottom: 10px; 
             right: 10px;
             > a{
                 padding: 0;
@@ -149,5 +152,17 @@
     .ceptelDogrulaContainer {
         padding-left: 195px;
         padding-right: 195px;
+    }
+}
+
+//Sepet Stok Uyari Tablo
+.gridSepetStok{
+    //Row kısmı ozellestiriliyor
+    .gridRowSepetStok, .gridAlternateSepetStok, .gridHeaderSepetStok{
+        > td, > th {
+            &:nth-child(4), &:nth-child(5){
+                display: table-cell;
+            }
+        }
     }
 }

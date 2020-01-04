@@ -90,4 +90,13 @@
             color: $colorBlack;
         }
     }
+    .new-address-btn {
+        justify-content: left;
+        .field {
+            width:auto;
+            flex:none;
+        }
+    }
 }
+
+.tcCheck-2 {padding-top: 20px;}

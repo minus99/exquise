@@ -1,2 +1,4 @@
 **/*.config
 /.vscode/
+style.css
+style.css.map

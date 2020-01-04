@@ -1,5 +1,11 @@
 .page-list {
     padding-bottom: 50px;
+    .d-sort{
+        #plhUrunSira_chkTemin {
+            padding-top: 20px;
+            border-top: 1px solid #dddddd;
+        }
+    }
 }
 .urunPaging_pageNavigation,
 .seo-text{
@@ -25,4 +31,4 @@
 /*Desktop hiddenelement*/
 .d-hdn{
     display: none;
-}
+} 

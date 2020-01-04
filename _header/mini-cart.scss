@@ -85,7 +85,7 @@
     // Görsel
     .cart-prd-img {
         img {
-            width: 120px;
+            width: 80px;
         }
     }
     // Kaldır
@@ -160,7 +160,7 @@
 // Sepet içerik scroll
 .kutuSepet_icerik {
     overflow-x: hidden;
-    max-height: 360px;
+    max-height: 260px;
     display: block;
     padding-right: $padding10;
 }

@@ -39,7 +39,8 @@
     width: 32px;
     height: 32px;
     padding: $padding20;
-    border-radius: 100%;
+    border-radius: 100%; 
+    z-index: 9;
     cursor: pointer;
     background: #eeeeee url(#{$baseHref + '/images/frontend/close.svg'}) no-repeat center;
 }
@@ -51,9 +52,15 @@
 .jconfirm-content {
     height: 100%;
     min-height: 550px;
+    -webkit-overflow-scrolling: touch; 
+    overflow-y: scroll; 
 }
 .jconfirm-title-c {
     display: none;
+}
+
+.ems-custom-form .jconfirm-content-pane, .ems-price-quate .jconfirm-content-pane, .fav-group-popup .jconfirm-content-pane {
+    height: 100vh!important;
 }
 
 //MINUS POPUP
@@ -228,9 +235,7 @@ $p: 20px;
 }
 
 .popupOtomasyon_icerik{
-    padding: 30px;
-}
-.popupOtomasyon_icerik{
+    word-break: break-all;
     .site_textarea{
         width: 100% !important;
     }

@@ -104,3 +104,55 @@
         padding: 0 !important;
     }
 }
+
+// Fatura Popup
+
+.tableFatDetay {
+    tbody {
+        > tr {
+            flex: 100%;
+            th, td {
+                flex: 50%;
+            }
+            &:last-child {
+                th {
+                    order: 1;
+                }
+                td {
+                    order: 2;
+                }
+             }
+        } 
+    }
+ }
+
+ .gridFatDetayListe {
+    tbody {
+        display: table-row-group;
+        > tr {
+            display: table-row;
+            &:nth-child(1), &:nth-child(2) {
+                th, td {text-align: right;}
+            }
+        }
+        tr:nth-child(1) {
+            height: 30px;
+        } 
+        tr:nth-child(2) {
+            height: 40px; 
+            td {
+                &:nth-child(1) {
+                    text-align: left;
+                }
+                &:nth-child(2) {
+                    text-align: center;
+                }
+            }
+        } 
+        th {
+            &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+                text-align: right !important; 
+            }
+        }
+    }
+}

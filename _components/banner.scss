@@ -226,6 +226,34 @@
         video {
             pointer-events: none;
         }
+        .banner-body {
+            position: absolute;
+            @include banner-body-bottom-mobile;
+        }
+        .banner-footer { 
+            position: absolute;
+            width: 100%;
+            @include banner-body-bottom;
+            text-align: center;
+        } 
+        .prm-title {
+            i {
+                font-style: normal;
+                font-family: $play;
+            }
+            b {
+                letter-spacing: 1.5px;
+                font-family: $play;
+                font-weight: normal;
+            }
+        }
+        .prm-link {
+            margin-bottom: 45px;
+            text-decoration: underline; 
+        }
+        .prm-content {
+            margin-top: $margin20;
+        }
     }
 
     //banner type09 *primary box
@@ -497,10 +525,15 @@
         @include aspect-ratio(375, 420);
     }
     .banner-body {
-        @include banner-body-bottom-revert;
+        //@include banner-body-bottom-revert;
+        bottom: 0px !important; 
+        top: auto !important;
+        transform:none !important;
+        padding: 20px !important;
     }
     .prm-content {
-        margin-top: 50px;
+        //margin-top: 50px;
+        font-size:13px;
         a {
             margin: 0 $margin10;
         }
@@ -576,6 +609,7 @@
         padding: 0 $padding20 $padding30 $padding20;
         text-align: center;
         position: relative;
+        z-index: 1;
     }
     .prm-title {
         color: $colorBlack;
@@ -628,6 +662,15 @@ body.ems-popup-animate {
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+        &:after {
+            content: '';
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
     }
     .closeIco {
         display: inline-block;
@@ -652,8 +695,10 @@ body.ems-popup-animate {
     background: #fff;
     bottom: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     height: calc(100% - 175px);
-    -webkit-overflow-scrolling: touch;  
+    -webkit-overflow-scrolling: touch; 
+    display: none; 
     // görsel still
     .ems-section-wrapper {
         position: relative;
@@ -680,6 +725,9 @@ body.ems-popup-animate {
     .swiper-product {
         .swiper-wrapper {
             flex-wrap: wrap;
+            transform: none !important; 
+            transition: none !important; 
+            height: auto;
         }
         .swiper-inner {
             margin: 0;
@@ -689,8 +737,32 @@ body.ems-popup-animate {
             width: calc(100% / 2);
             height: auto;
             padding: 0 $padding15;
+            .prd-inner { 
+                padding:0;
+            }
+            &.dekupe {
+                .prd-image-org {
+                    display:block;
+                }
+                .prd-image-big {
+                    display:none;
+                }
+            }
         }
     }
+
+    // Tüm Kategorilere Link
+    .full-cat-link {
+        a {
+            padding: 20px 0 50px 0;
+            font-size: 18px;
+            font-family: $medium;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            display: block;
+        }
+    }
+
 }
 
 // instagram feed
@@ -712,14 +784,133 @@ body.ems-popup-animate {
         border-radius: 100%;
     }
     .swiper-wrapper {
+        align-items: center;
         .swiper-slide {
-            max-width: 90px;
+            max-width: 200px;
         }
     }
 }
 
 .buysocial-slide-container {
     margin: 20px 0; 
+}
+
+.instagram {
+    &-feed {
+        &-style {
+            .jconfirm-box-container {
+                background: none;
+            }
+            .jconfirm-content-pane {
+                height: auto !important;
+            } 
+            .instagram-feed-popup-wrp {
+                background: #fff;
+            }
+        }
+        &-list {
+            @extend .display-flex;
+            @extend .transition;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+            picture {
+                width: 100%;
+                cursor: pointer; 
+            }
+            .prm-media {
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+                transform: scale(1);
+            }
+            &:hover {
+                .prm-media {
+                    transform: scale(1.03); 
+                }
+            }
+        }
+        &-popup-wrp {
+            @extend .display-flex;
+            flex-wrap: wrap;
+        }
+        &-image {
+            flex: 100%;
+        }
+        &-content {
+            flex: 100%;
+            ul {
+                border-top: 3px solid #eee;
+                li {
+                    @extend .display-flex;
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid #eee;
+                }
+            }
+            img {max-width: 70px;} 
+        }
+        &-text{
+            padding-left: 10px;
+            width: 100%;
+            a {
+                font-family: $medium;
+                padding: 5px 20px;
+                width: auto;
+                display: inline-block;
+                border:1px solid $btnBorder;
+                &:hover {
+                    color: #fff;
+                    background: #000;
+                    border-color: #000;
+                }
+            }
+        }
+        &-user {
+            @extend .display-flex;
+            align-items: center;
+            font-family: $medium;
+            padding:5px 0;
+            svg {font-size: 45px;}
+        }
+        &-share {
+            @extend .display-flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            > span {
+                @extend .display-flex;
+                align-items: center; 
+                margin-right:15px; 
+                font-family: $medium;
+                font-size: 12px;
+                a {
+                    @extend .display-flex;
+                    align-items: center; 
+                    font-size: 12px;
+                    img {max-width: 26px;}
+                }
+            }
+            img {
+                max-width: 30px;
+            }
+        }
+        &-btn {
+            text-align: center;
+            a {
+                width: auto !important;
+                display: inline-block !important; 
+                margin: 10px auto 0 auto;  
+            }
+        }
+    }
+    &-product {
+        padding: 10px 10px 0px 10px; 
+    }
+    &-name {
+        font-family: $medium;
+        display: block;
+        margin-bottom: 20px;
+    }
 }
 
 // instagram feed
