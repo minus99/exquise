@@ -1,6 +1,21 @@
 // Üye sayfası menü liste
 .member-menu {
-    padding-top: 20px;
+    //padding-top: 20px;
+    padding: 0px;
+    border: 1px solid #ddd;
+    &-user {
+        padding: 30px 20px;
+    }
+    ul {
+        display: block; 
+        border: 0;
+        li {
+            border-top: 1px solid #ddd;
+            a {
+                padding: 16px 20px;
+            }
+        }
+    }
 }
 
 .swiper-member {
@@ -50,13 +65,6 @@
             a {
                 border: 0; 
                 color: $colorBlack;
-                //color: $btnAlternateColor;
-                //padding: 20px 50px 20px 30px;
-                //border-bottom: 0;
-                /*&:after {
-                    opacity: 1;
-                    right: 20px; 
-                }*/
                 &:before {
                     width: 5px;
                     height: 5px;
@@ -83,27 +91,5 @@ a.btnMember {
     font-size: $fontSize13;
     &:hover {
         color: $colorBlack;
-        //color: $btnAlternateColor;
-        //padding: 20px 50px 20px 30px;
-        /*&:after {
-            opacity: 1;
-            right: 20px;
-        }*/
     }
-    /*&:after {
-        content: '';
-        //background: url('/images/frontend/menu-arrow.svg');
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMzRDVERUIiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTYgMTVoMTR2LTNsNiA0LTYgNHYtM0g2eiIvPgo8L3N2Zz4K);
-        width:32px;
-        height: 32px;
-        position: absolute;
-        right: 40px;
-        top: 50%;
-        opacity: 0;
-        transform: translateY(-50%); 
-        display: inline-block; 
-        transition: all .2s ease;
-        -webkit-transition: all .2s ease;
-        -o-transition: all .2s ease;
-    }*/
 }

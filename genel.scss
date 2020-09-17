@@ -1,16 +1,17 @@
 //-----Base-----//  
-@import '_base/variables';   
+@import '_base/variables'; 
 @import '_app-shell/first-loading';    
-@import '_base/mixins';        
-@import '_base/icon';      
-@import '_base/class-list';         
+@import '_base/mixins'; 
+@import '_base/typography';        
+@import '_base/icon';       
+@import '_base/class-list';          
        
-//-----Coponents-----//      
+//-----Coponents-----//        
 @import '_components/popup'; 
-@import '_components/widget';  
+@import '_components/widget';   
 @import '_components/banner';  
-@import '_components/breadcrumb';  
-@import '_components/toastr'; 
+@import '_components/breadcrumb';   
+@import '_components/toastr';   
   
 
 //-----Forms Field-----//
@@ -18,14 +19,14 @@
  
 
 //-----Site Buttons-----//
-@import '_site-buttons/buttons';
+@import '_site-buttons/buttons'; 
 
 
 //-----Header-----// 
 @import '_header/grid';
 @import '_header/header-menu'; 
 @import '_header/mini-lang';
-@import '_header/mini-login';
+@import '_header/mini-login'; 
 @import '_header/mini-search';
 @import '_header/mini-cart';
 
@@ -40,9 +41,9 @@
 //-----Basket-----//
 @import '_basket/variables';
 @import '_basket/main';
-@import '_basket/swiper';
+@import '_basket/swiper'; 
 @import '_basket/header';
-@import '_basket/order-steps';
+@import '_basket/order-steps'; 
 @import '_basket/order-summary';
 @import '_basket/prd-grid';
 @import '_basket/delivery-address';
@@ -50,6 +51,7 @@
 @import '_basket/delivery-gift-packet';
 @import '_basket/payment'; 
 @import '_basket/order-result';
+@import '_basket/order-guest';
 
 
 //-----Layout-----// 
@@ -155,7 +157,8 @@
         @import '_basket/delivery-cargo-desktop';
         @import '_basket/delivery-gift-packet-desktop';  
         @import '_basket/payment-desktop';         
-        @import '_basket/order-result-desktop';                        
+        @import '_basket/order-result-desktop'; 
+        @import '_basket/order-guest-desktop';                       
      
         //-----Layout-----//      
         @import '_pages/home-desktop';                      

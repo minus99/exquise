@@ -20,22 +20,26 @@
     position: sticky;
     top: 0; 
     .ems-header-title {
-        margin: 60px 0 35px 0; 
+        margin: 20px 0; 
+        padding: 0 20px;
         font-size: 22px; 
-        display: none;
+        //display: none;
     } 
     .ems-tab-header {
         padding: 0 $padding20;
-        background: $lightGreyColor;
+        border-bottom: 1px solid $lightGreyColor;
         margin-bottom: $margin25;
         > div {
             padding: $padding15;
             border-bottom: 3px solid transparent;
             cursor: pointer;
-            width: 100%;
+            //width: 100%;
             text-align: center;
+            a {
+                font-size: 12px;
+            }
             &.selected {
-                border-bottom: 3px solid $colorBlack;
+                border-bottom: 1px solid $colorBlack;
             }
         }
     }
@@ -60,6 +64,9 @@
         position: relative;
         a {
             text-decoration: underline;
+        }
+        .form-obj {
+            align-items: center;
         }
         .form-obj input[type="checkbox"] {
             width: 0 !important;

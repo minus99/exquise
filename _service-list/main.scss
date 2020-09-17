@@ -275,7 +275,7 @@ body.view-map {
         -o-transition: all 0.2s ease;
         visibility: hidden;
         opacity: 0;
-        background: rgba($color: $colorBlack, $alpha: .1);
+        background: rgba($color: $colorBlack, $alpha: .2);
     }
     //OVERFLOW
     &-overflow {

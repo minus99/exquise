@@ -1,6 +1,28 @@
 /* --- HEADER MENU --- */
+
 .menu {
-    display: block;
+    max-width: 370px;
+    ul.lvl-1 {
+        padding: 90px 50px 0 50px;
+    }
+    .menu-close {
+        right: 42px;
+        top: 18px;
+    }
+}
+
+.menu-animate {
+    position: static;
+    .vailMenu {
+        opacity: 1;
+        visibility: visible;
+        z-index: 9;
+    }
+}
+
+/*
+.menu {
+    display: none;
     position: static;
     width: 100%;
     max-width: none;
@@ -25,7 +47,7 @@
         max-height: none;
         overflow: visible;
     } 
-    /* LVL 1 style ana menü hover */
+ 
     ul.lvl-1 {
         background: none;
         padding: 0; 
@@ -142,7 +164,7 @@
             display: block;
         }
     }
-    /* Menu Animate */
+
     &-ready {
         .menu {
             display: block;
@@ -165,9 +187,6 @@
         display: none !important;
     }
 }
-
-
-/* Mobile Menu */
 
 .header-mobile {
     height: 47px;
@@ -193,6 +212,15 @@
         flex: 100%;
         text-align: center;
     }
+}
+*/
+
+.menuOpenIcon {
+    margin-left: 50px;
+    position: relative;
+    z-index: 1;
+    a {display: inline-block;}
+    i.icon-menu {font-size: 36px;}
 }
 
 //header mods extend obj

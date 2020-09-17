@@ -1,8 +1,9 @@
 //Siparis adımları
 .basket-steps {
-    background: #f6f6f6;
-    padding: $padding15 0;
-    //margin-bottom: 25px; 
+    //background: #f6f6f6;
+    padding: $padding20 0; 
+    margin-bottom: 25px; 
+    border-bottom: 1px solid #e9e9e9;
 }
 .tabloTabBtnAdim{
     > tbody > tr > td{
@@ -22,12 +23,14 @@
             display: inline-block;
             //position: relative;
             &:after {
-                content: "...................................................................................................";
+                content: "";
                 position: absolute;
                 //right: 20px; 
-                top: 10px;
+                top: 12px;
                 left: calc(80% - 0px);
                 width: 40%;
+                height: 2px;
+                background: #ccc;
                 font-size: 18px;
                 letter-spacing: 6px;
                 overflow: hidden;
@@ -45,27 +48,27 @@
                 font-size: 18px;
             }
         }
-        .icon-step {
-            width: 50px;
-            height: 50px;
+        .iconStep {
+            width: 25px;
+            height: 25px;
             border-radius: 100%;
             background: #fff;
             @extend .display-flex;
             align-items: center;
             justify-content: center;
-            border: 7px solid #e8e8e8;
+            border: 1px solid #ccc;
             z-index: 1; 
             position: relative; 
+            margin: 0 auto; 
+            color: #aaa;
         }
         .step-txt{
-            font-family: $medium;
             color: $stepTextColorNormal;
             opacity: .4;
-            font-size: 10px;
             display:block; 
             margin-top: 5px;
         }
-        .icon-step-check{
+        .iconStep-check{
             display: none;
             font-size: $fontSize14;
             position: absolute;
@@ -74,16 +77,23 @@
         }
         &.previous-activeted{
             .icon{
-                fill-opacity: 1;
-                color: $colorWhite;
-                &-step {
-                    background: $colorBlack;
+                //fill-opacity: 1;
+                //color: $colorWhite;
+                //border-color: #000;
+                &Step {
+                    font-size: 0;
+                    border: 0;
+                    &::before {
+                        content: '\e904';
+                        font-family: 'icomoon';
+                        font-size: 32px;
+                    }
                 }
             }
             .step-txt{
                 opacity: 1;
             }
-            .icon-step-check{
+            .iconStep-check{
                 display: block;
             }
         }
@@ -99,8 +109,10 @@
         .icon{
             fill-opacity: inherit;
             color: $colorWhite;
-            &-step {
+            &Step {
                 background: $colorBlack;
+                color: #fff;
+                border-color: $colorBlack;
             }
         }
         .step-txt{
@@ -110,5 +122,5 @@
 }
 
 .order-steps {
-        .site-footer {display: none;}
+        .site-footer, .footer-copyright {display: none;}
 }

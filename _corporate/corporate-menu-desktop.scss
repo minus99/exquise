@@ -2,41 +2,65 @@
 
  .kutuSolMenuTree {
      display: block; 
+     padding: 0;
+     margin-top: 20px;
+     .icr {
+        > a {
+            color: #777; 
+        }
+        &.sel {
+            > a {
+                color: #000; 
+            }
+        }
+     }
      .sev2 {
-        padding: 5px 5px 5px 10px !important;
-        font-family: $medium;
-        font-size: 13px; 
+        padding: 5px 5px 15px 10px !important;
+        //font-family: $medium;
+        font-size: 14px; 
         display: block;
         background: none;
+        border: 0; 
         ul {
-            margin: 10px 0;
-            padding-bottom: 0;
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            height: auto !important;
         } 
         > a {
             display: block;
         }
         &.icr {
             > b{
-                right: 0px;
-                top: 1px; 
-            }
-            &.opened {
-                > b {
-                    
-                }
+                right: 10px;
+                top: 0; 
             }
         }
         &.icr {
             > b{
-                transform: rotate(0deg);
-                background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiM5QjlCOUIiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTcgMTJoNVY3aDF2NWg1djFoLTV2NWgtMXYtNUg3eiIvPgo8L3N2Zz4K) right no-repeat;
-                background-size: 20px;
+                //transform: rotate(0deg);
+                //background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiM5QjlCOUIiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTcgMTJoNVY3aDF2NWg1djFoLTV2NWgtMXYtNUg3eiIvPgo8L3N2Zz4K) right no-repeat;
+                //background-size: 20px;
                 opacity: 0;
+                width: 100%;
+                text-align: right;
+                background: none;
+                transform:none;
+                &:after {
+                    content: '\e922';
+                    font-family: 'icomoon';
+                    font-size: 20px;
+                    color: #777;
+                }
             }
             &.opened {
                 > b {
-                    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iIzlCOUI5QiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNyAxMmgxMXYxSDd6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=) right no-repeat;
-                    background-size: 20px;
+                    //background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iIzlCOUI5QiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNyAxMmgxMXYxSDd6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=) right no-repeat;
+                    //background-size: 20px;
+                    &:after {
+                        content: '\e93a';
+                        font-family: 'icomoon';
+
+                    }
                 }
             }
         }
@@ -44,17 +68,25 @@
             ul {
                 display: block !important;
             }
+            > a {font-family: $medium;}
+            > b{
+                opacity: 1 !important;
+                &:after {
+                    content: '' !important;
+                }
+            }
         }
      }
      .sev3, .sev4 {
          border: 0;
         a {
             display: block;
-            padding: 5px 5px 5px 10px !important;
+            padding: 5px 5px 5px 0px !important;
             font-family: $regular;
-            font-size: $fontSize13; 
+            font-size: $fontSize14; 
             position: relative;
-            &:before {
+            //color: $colorBlack;
+            /*&:before {
                 content: '';
                 opacity: 0;
                 transform: scale(0.1);
@@ -72,13 +104,13 @@
                     opacity: 1;
                     transform: scale(1.0);
                 }
-            }
+            }*/
         }
          &.act {
             a {
                 border: 0; 
-                color: $colorBlack;
-                &:before {
+                
+                /*&:before {
                     width: 5px;
                     height: 5px;
                     border-radius: 100%;
@@ -88,7 +120,7 @@
                     top: 9px;
                     transform: scale(1.0);
                     opacity: 1;
-                }
+                }*/
             }
         }
      }

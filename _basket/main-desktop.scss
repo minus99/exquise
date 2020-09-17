@@ -11,7 +11,7 @@
 }
 
 //Sepet sayfası desktop yerlesim izgrasi
-.page-basket-0, .page-basket-other{
+.page-basket-0, .page-basket-other{ 
     //Sepet ilk adım grid ızgarasi
     .basket-grid {
         grid-template-columns: minmax(0,33.333%) minmax(0,33.333%) minmax(0,33.333%);
@@ -25,8 +25,8 @@
     }
     //Sepet ozet sol padding boslugu
     .ga2{
-        padding-top: 40px;
-        padding-left: $basketPageLeftPadding;
+        padding-top: 0px;
+        padding-left: 30px;
     }
 }
 

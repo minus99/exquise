@@ -1,10 +1,12 @@
 /* --- FOOTER EBULTEN --- */
 
 .mini-bulletin {
+  padding: 0 $padding20;
   .field {
     max-width: 375px;
   }
 }
 .newsletter-title {
   display: block;
+  padding: 0 0 $padding30 0; 
 }

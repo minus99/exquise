@@ -1,6 +1,12 @@
 input, textarea, select,
 .sStylerWrp_select .sStylerWrp{
     width: 100%;
+    .sStyleHolder {
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 }
 //Flex icin wrap ozelligi belirleniyor
 .flex-field-wrap{
@@ -27,4 +33,15 @@ textarea{
 input[type=radio]{
     margin: 0;
     outline: 0;
+}
+
+.field.date .form-obj {
+    @extend .display-flex;
+    > span {
+        margin-right: 5px;
+        width: 100%;
+        &:last-child {
+            margin: 0;
+        }
+    }
 }

@@ -7,7 +7,7 @@
         line-height: $contentLineText;
     }
     span, p, b, strong, address {
-        color: $contentGreyColor;
+        color: $colorBlack;
         font-size: 17px;
         margin-bottom: 30px; 
     }
@@ -20,12 +20,15 @@
     ul {
         padding-left: 10px;
         li {
-            color: $contentGreyColor;
+            color: $colorBlack;
             font-size: 17px;
             margin-bottom: 10px;
             line-height: $contentLineText;
             list-style: disc; 
         }
+    }
+    .image-wrap {
+        opacity: 0; 
     }
     
     // Yazı resim hizalama
@@ -98,7 +101,21 @@
     .form {
         padding: 0 !important;
     }
-    .page-top-title {display: none;}
+    .page-top-title, .page-top-desc {display: none;}
+    .pages-member-right {
+        display: flex;
+        flex-direction: column;
+        > div {
+            flex: 1 100%;
+        }
+    }
+}
+
+.contact-info {
+    span {
+        font-size: 14px;
+    }
+    b {font-weight: normal; font-family: $medium; font-size: 14px;}
 }
 
 // SSS
@@ -106,6 +123,26 @@
 .tab-sss {
     .ems-tab-content > * {
         display: block; 
+    }
+    .ems-tab-inner-content {
+        p, a {font-size: 13px; color: #000;}
+    }
+    .ems-tab-inner-header {
+        background: none !important;
+        &:after {
+            content: '\e922';
+            font-family: 'icomoon';
+            font-size: 32px;
+            float: right;
+            position: absolute;
+            top: 10px;
+            right: 0px;
+        }
+        &.selected {
+            &:after {
+                content: '\e93a';
+            }
+        }
     }
 }
 
@@ -127,4 +164,40 @@
 .franchise-form {
     max-width: 780px;
     .page-top-title {margin-top: 30px; font-size: $fontSize16;}
+    input[type=radio] {
+        width: 20px !important; 
+        padding: 0 !important;
+        line-height: 0;
+        min-height: auto;
+        opacity: 0;  
+        border: 0;
+        display: inline-block;
+    }
+}
+
+// Sipariş Takibi
+
+.pages-queryOrder {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    .kutuHeaderOrderQuery {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .kutuBodyOrderQuery > div { 
+        margin-bottom: 20px;
+        > span {
+            margin-bottom: 10px;
+            display: block;
+        }
+    }
+
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

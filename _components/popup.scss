@@ -42,7 +42,7 @@
     border-radius: 100%; 
     z-index: 9;
     cursor: pointer;
-    background: #eeeeee url(#{$baseHref + '/images/frontend/close.svg'}) no-repeat center;
+    background:  url(#{$baseHref + '/images/frontend/close.svg'}) no-repeat center;
 }
 
 .jconfirm-content-pane {
@@ -226,8 +226,8 @@ $p: 20px;
 .sub-header {
     position: relative;
     font-size: 14px;
-    padding-bottom: $padding20;
-    margin-bottom: $margin20;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
     border-bottom: 1px solid $gridRowBorder;
 }
 .sub-desc {

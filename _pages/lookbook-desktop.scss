@@ -3,10 +3,11 @@
 .ems-lookbook-wrp {
     padding: $padding30;
     > ul {
-        @extend .display-grid;  
-        grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-        grid-gap: 80px 60px;
+        @extend .d-flex;  
+        //grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+        grid-gap: 20px;
         justify-content: center; 
+        flex-wrap: wrap;
 
         // lookbook görsel
         .lbImg { 
@@ -29,6 +30,9 @@
                 -o-transition: opacity .4s ease;
                 opacity: 0;
             }
+            .kombinBtn {
+                cursor: zoom-in; 
+            }
             // Ürün fiyat efekt
             &:hover {
                 .subProduct {
@@ -50,6 +54,7 @@
         .lbContentWrp {
             max-width: 350px;
             margin: 50px 0 0 0;
+            display: none;
             span {
                 font-size: 47px;
                 margin-bottom: 20px;
@@ -115,10 +120,66 @@
     }
 }
 
-// Dergi 
+// Lookbook Main Page
 
 .pages-lookbook {
     iframe {
         height: 800px !important;
+    }
+ 
+    .sec-image-text {
+        flex: 1;
+        padding:0 0 0 50px;
+        margin-bottom: 0;
+        &:last-child {
+            padding-right: 0 50px 0 0;
+        }
+    }
+    .sec-image-text:nth-child(3) {
+        padding: 0 0 0 50px;
+    }
+    .sec-image-text:nth-child(4) {
+        padding: 0 50px 0 0;
+    }
+    .text-wrap {
+         a {
+            width: calc(100% - 50px);
+         }
+    }
+}
+
+
+
+// Main Colleciton
+
+.main-collection { 
+    padding: 120px 0 75px 120px !important;
+    margin-top: 100px;
+    .prm-media {
+        margin-top: -200px;
+    }
+    .banner {
+        flex-wrap: nowrap;
+    }
+    .banner-body {
+        flex: 1 40%;
+        order: 1;
+        padding: 0 70px 0 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    } 
+    .prm-media {
+        flex: 0 60%;
+    }
+}
+
+
+// Category Slider
+
+.category-slider {
+    .slider-pagination .swiper-pagination {
+        display:none;
     }
 }

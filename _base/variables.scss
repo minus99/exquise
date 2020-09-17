@@ -1,7 +1,8 @@
 //Site sass kurulumum icin gerekli
-$baseHref: '';  
+$baseHref: '';    
+//$baseHref: '//exquiseip.proj-e.com/';    
 
-//Font variables
+//Font variables 
 $regular: 'regular';
 $medium: 'medium';
 $bold: 'bold'; 
@@ -20,7 +21,7 @@ $breakpoint-default: 1024px;
 $btnBackground: #000;
 $btnAlternateBackground: #ffffff;
 
-//Button Color variables
+//Button Color variables 
 $btnColor: #ffffff;
 $btnAlternateColor: #cccccc;
 
@@ -96,7 +97,7 @@ $labelLineText: 1.26;
 /*Site varsayılan renkler*/
 $colorWhite: #ffffff;
 $colorBlack: #000000;
-$colorRed:#e72f2f;
+$colorRed:#fa6f61; 
 $colorGreen: #18C641; 
 $colorBlue:#3d5deb;
 $colorYellow: #ffea86;
@@ -110,9 +111,8 @@ $sucessBorder: #18C641;
 $gridRowBorder: #f3f3f7; 
 $userIcoBg: #f3f3f7;
 $colorWhite: #fff; 
-$colorRed:#a40000;
 $greyColor:#4a4a4a;
-$greyBorderColor:#dddddd;
+$greyBorderColor:#e9e9e9;
 $lightGreyColor: #f8f8f8;
 $darkColor:#202020;
 $blueColor:#3d5deb;

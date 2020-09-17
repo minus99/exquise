@@ -50,13 +50,14 @@ select {
     width: 100% !important;
 }
 .sStylerWrp_select {
-    .icon-select {
+    .icon-bottom {
         position: absolute;
         right: 5px;
         top: 50%;
         transform: translateY(-50%); 
     }
-    .icon-select-active {
+    .icon-bottom-active {display:none;}
+    .icon-top {
         display:none;
     }
 }
@@ -161,7 +162,7 @@ select {
     cursor: pointer;
     > span {
         display: block;
-        svg {
+        i {
             display: block;
             font-size: $checkboxSize;
             &[class*="active"] {
@@ -169,7 +170,7 @@ select {
             }
         }
         &.checked {
-            svg {
+            i {
                 display: none;
                 &[class*="active"] {
                     display: block;
@@ -220,6 +221,13 @@ select {
                 border-color: $memberRedColor;
             }
         }
+        &.sifre {
+            .form-label {
+                .zorunluFont:before {
+                    content: "Şifren en az 6 karakterden oluşmalıdır";
+                }
+            }
+        }
     }
     &.pass-form-err { 
         .form-label {
@@ -235,6 +243,14 @@ select {
             }
         }
     }
+    &.guestLogin {
+        margin-top: 80px;
+    }
+}
+
+#ValidateGuestEmail span {
+    display: block; 
+    margin-bottom: 5px; 
 }
 
 .form-label {
@@ -275,6 +291,10 @@ select {
         background: #f8f8f8;
         .message-ico {
             background: #fff;
+            i {
+                font-size: 60px;
+            }
+
         }
     }
 }
@@ -427,21 +447,30 @@ body .ui-datepicker {
 }
 
 
+// --- Uyarı Popup -- // 
 
+.ui-dialog-titlebar { 
+    .ui-button {
+        font-size: 0;
+    }
+}
+
+.emos-confirm .ui-dialog-buttonpane .ui-dialog-buttonset button:first-child {
+    color: #fff; 
+}
 
 // --- ÜYELİK AÇIKLAMA -- //
 // Üyelik bilgileri açıklama metni
 .page-top-desc {
     margin-bottom: 40px;
     span {
-        span {
+        /*span {
             margin-bottom: $margin10;
             font-family: $play;
             font-size: $fontSize30;
             display: block;
-        }
+        }*/
         p {
-            font-size: 17px;
             font-family: $regular;
             display: block;
             color: $colorGrey;
@@ -498,6 +527,9 @@ body .ui-datepicker {
     .message-ico {
         background: #fff;
     }
+    i {
+        font-size: 60px;
+    }
 }
 [id$="lbfGNL_KAYITYOK"] {
     > div {
@@ -528,7 +560,7 @@ body .ui-datepicker {
     //background:$memberPageBg;
     padding: $memberMarginReset;
     .member-general {
-        padding: $memberPadding20 $memberPadding15;
+        padding: $memberPadding20;
         //background: $colorWhite; 
         border-radius: 0;
         .field.field-single {
@@ -536,11 +568,11 @@ body .ui-datepicker {
         }
     } 
     .page-top-title {
-        font-size: $fontSize14;
+        font-size: $fontSize20;
         font-family: $medium;
         margin-bottom: $memberMargin10;
-        padding-bottom: $padding10;
-        border-bottom: 1px solid #eee;
+        //padding-bottom: $padding10;
+        //border-bottom: 1px solid #eee;
         color: $colorDefault;
         display: none;
     }
@@ -636,72 +668,10 @@ body .ui-datepicker {
     .message-ico {
         background: #fff;
     }
-    /*&:after { 
-        content:'';
-        background:url(#{$baseHref + "/UPLOAD/BANNER/login/login.jpg"} ) top center no-repeat;
-        position: relative; 
-        //height: 100vh;
-        width: 100%;
-        background-size: cover;  
-    }*/
+    i {
+        font-size: 60px;
+    }
 }
-
-//Text Button
-/*a.btnSipariseDon, a.btnSipIptal, a.btnSipIade, 
-a.btnFavoriListeSil, a.btnFavSepeteAt, a.btnFavoriSil, 
-a.btnIadeDetay, a.btnTakipListeFiySil, a.btnTakipListeStokSil, 
-a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle, a.btnKutuLogout, a.btnBultenGonder { 
-    background: none; 
-    width: auto;
-    padding: 0; 
-    span {
-        color: $memberGreyColor; 
-        font-size: $memberFontSize14;
-        font-family: $memberFontRegular;
-        @extend .display-flex;
-        align-items: center;  
-    } 
-}*/
-
-// Border Button
-/*a.btnSepeteAtFavori, .follow-list-btn, a.lnkSatinAl, a.cntScrBtn { 
-    background: none;
-    border: 1px solid $greyBorderColor;
-    border-radius: $memberBorderRadius3;
-    padding: $memberBtnDefaultPaddingSmall;
-    text-align: center;
-    display: block; 
-    span {
-        color: $colorBlack;
-        font-family: $medium;
-    }
-    &.selected {
-        background: $greyBorderColor;
-    }
-}*/
-
-// Üyelik sayfaları alt buttonlar
-
-/*a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil, a.btnSifreGuncelle, a.btnUyeBilgi, a.btnTavsiyeGonder, a.btnMesajGonder {
-    display: inline-block;
-    width: auto;
-    padding: $memberBtnDefaultPaddingSmall; 
-}*/
-
-// Member Genel Button
-/*a.lnkSorgula, .urunDetay_btnSepeteAt a.btnsepeteAt, .cart-prd-page-url a {
-    display: block;
-    width: 100%;
-    background: $btnBackground; 
-    text-align: center;
-    padding: $memberBtnDefaultPadding;
-    > span{
-        font-family: $regular;
-        color: $colorWhite;
-        font-size: $memberFontSize14;
-        font-weight: normal;
-    }
-}*/
 
 // --- EMS TAB DÜZENLEMLERİ -- //
 // Tab Menü
@@ -726,37 +696,43 @@ a.btnAbonelikDon, a.btnAbuIptalEt, a.btnAbuGuncelle, a.btnKutuLogout, a.btnBulte
 .ems-tab-vertical {
     .ems-tab-content { 
         > div {
+            border-top: 1px solid $memberLightGreyColor;
+            margin-top: -1px;
             .ems-tab-inner-header {
-                background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMyMDIwMjAiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTExLjk1NCAxNC45NjZsNC4zNzQgNCA0LjM3Mi00eiIvPgo8L3N2Zz4K) right no-repeat;
+                background: url("/images/frontend/downArrow.svg") right no-repeat;
             }
             .ems-tab-inner-content {
                 display: none;
             }
             &.selected {
                 .ems-tab-inner-header {
-                    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMyMDIwMjAiIGQ9Ik0yMC43LDE4Ljk2NmwtNC4zNzQtNGwtNC4zNzIsNEgyMC43eiIvPg0KPC9nPg0KPC9zdmc+DQo=) right no-repeat;
+                    //background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMyMDIwMjAiIGQ9Ik0yMC43LDE4Ljk2NmwtNC4zNzQtNGwtNC4zNzIsNEgyMC43eiIvPg0KPC9nPg0KPC9zdmc+DQo=) right no-repeat;
+                    background: url("/images/frontend/upArrow.svg") right no-repeat;
                 }
                 .ems-tab-inner-content {
                     display: block;
                     padding-bottom: $memberPadding15;
                 } 
             }
+            &:last-child {
+                border-bottom: 1px solid $memberLightGreyColor;
+            }
         }
     }
     .ems-tab-inner-header {
-        border-top: 1px solid $memberLightGreyColor;
         padding: $memberPadding20 $memberPadding30 $memberPadding20 0;
         font-family: $memberFontMedium;
         position: relative;
-        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxwYXRoIGZpbGw9IiMyMDIwMjAiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTExLjk1NCAxNC45NjZsNC4zNzQgNCA0LjM3Mi00eiIvPgo8L3N2Zz4K) right no-repeat;
+        background: url("/images/frontend/downArrow.svg") right no-repeat;
         cursor: pointer;
         &.selected {
-            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMyMDIwMjAiIGQ9Ik0yMC43LDE4Ljk2NmwtNC4zNzQtNGwtNC4zNzIsNEgyMC43eiIvPg0KPC9nPg0KPC9zdmc+DQo=) right no-repeat;
+            //background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMyMDIwMjAiIGQ9Ik0yMC43LDE4Ljk2NmwtNC4zNzQtNGwtNC4zNzIsNEgyMC43eiIvPg0KPC9nPg0KPC9zdmc+DQo=) right no-repeat;
+            background: url("/images/frontend/upArrow.svg") right no-repeat;
         }
     }
     .ems-tab-inner-content {
         font-family: $memberFontRegular;
-        color: $memberGreyColor;
+        //color: $memberGreyColor;
         line-height: 24px;
     }
 }
@@ -809,32 +785,6 @@ table[style*="inline"] {
         }
     }
 }
-
-/*picture.prm-media {
-    position: relative;
-     &.lazy-picture { 
-       img {
-            opacity: 1; 
-       }
-    }
-    &.image-loaded {
-        img {
-            animation: scaling .9s alternate cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        }
-   }
-}
-
-@-webkit-keyframes scaling {
-    From {
-        opacity: 0;
-        -webkit-transform: scale(1.2);
-    }
-    To {
-        opacity: 1;
-        -webkit-transform: scale(1.0);
-}
-}
-*/
 
 
 

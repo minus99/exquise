@@ -69,11 +69,13 @@
             .slider {
                 @extend .sticky;  
                 top: 0px;
+                background: #ddd;      
             }
             .swiper-slide {
                 //width: 100% !important;
                 height: calc(80vh - 47px); 
-                background-size: cover !important; 
+                //background-size: cover !important; 
+                background-size: contain !important;
                 img {
                     display: none;
                 }
@@ -128,13 +130,15 @@
     .closeBtn {
         position: fixed;
         right: 10px;
-        top: 10px;
+        top: 20px;
         padding: 10px;
         background: #fff;
         border-radius: 100%;
         z-index: 1;
     }
     .prdd-fvr {display:none !important;}
+    .prd.double .prd-image-org {display: block !important;}
+    .prd.double .prd-image .prd-image-big {display:none !important;}
 }
 
 

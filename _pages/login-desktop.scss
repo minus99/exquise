@@ -3,15 +3,18 @@
 .member-login { 
     padding: 0 0 100px 0;
     .ems-header-title {
-        display: block;
-        padding: 0 20px;
+        margin: 60px 0 35px 0; 
     }
     .ems-tab-header {
         background: none; 
-        margin: 0;
+        border-bottom: 1px solid $greyBorderColor;
+        max-width: 350px;
+        padding: 0;
+        margin:0 auto $margin20 auto;
         > div {
-            margin-bottom: $margin20;
+            margin-bottom: 0;
             width: auto; 
+            margin-bottom: -1px;
         }
     }
     .ems-tab-login {

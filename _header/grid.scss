@@ -3,8 +3,38 @@
     top: 0;
     z-index: 6;
 }
+
+.ems-page-home .header-mobile {
+    position: absolute;
+    width: 100%;
+    background: none;
+    i, b {
+        color: #fff;
+    }
+}
+
+.ems-page-home .header-mobile-logo img {
+    filter: invert(1);
+}
+
+.sticky-header-ready .header-mobile {
+    background: #fff;
+    color: #000;
+    i, b {
+        color: #000;
+    }
+    .header-mobile-logo img {
+        filter: none;
+    }
+}
+
+
 .site-header-grid {
-    height: 47px;
+    height: 60px;
 } 
 
-.header-height {height: 60px;} 
+.ems-page-home .site-header-grid {height: auto;}
+
+.ems-page-home .site-footer {display:block !important;}
+
+.header-height {height: 74px;} 

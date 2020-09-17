@@ -5,7 +5,7 @@
      position: relative;
      ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
      }
      a {
         font-size: $fontSize14; 
@@ -26,16 +26,10 @@
     ul {
         li {
             a {
-               width: 36px;
-               height: 36px;
-               border: 1px solid $greyBorderColor;
-               border-radius: 100%;
+               width: 32px;
+               height: 32px;
                display: inline-block;
-               margin-right: $margin5;
-               padding: 2px;
-               .icon {
-                   font-size: 30px; 
-               }
+               margin-right: $margin15;
             }
         }
     }
@@ -52,6 +46,7 @@
     a {
         color: $colorAlternate;
         font-size: $fontSize13;
+        margin: 0 5px;
     }
 }
 

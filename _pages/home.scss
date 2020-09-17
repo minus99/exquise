@@ -1,6 +1,6 @@
  // --- Anasayfa --- //
  
- .page-home-grid {
+ .page-home-grid { 
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
     "AAA AAA"
@@ -8,8 +8,11 @@
     "CCC CCC"
     "DDD DDD"
     "EEE EEE"
-    "FFF FFF"
+    "FFF FFF"    
     "GGG GGG"
-    "HHH HHH";
+    "HHH HHH";  
     width: 100%;
+    > * {
+        overflow: hidden;
+    }
 } 

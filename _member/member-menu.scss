@@ -3,7 +3,120 @@
 // Üye sayfası sol menü
 .member-menu {
     background: $colorWhite;
-    border-radius: $memberBorderRadius4; 
+    //border-radius: $memberBorderRadius4; 
+    padding: 30px 20px 20px 20px;
+    &-user {
+        padding: 0px 0 20px 0;
+        font-size: 20px;
+        display: flex; 
+        align-items: center;
+        .profileInfo {
+            span {
+                display: block;
+            }
+            a {  
+                margin-top: 5px; 
+                display: block;
+                color: #d93636;
+                font-size: 14px;
+            }
+        }
+        .profilePhoto {
+            margin-right: 20px;
+            .kutuUyeGiris_profilFoto {
+                position: relative;
+                display: inline-block !important;
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                overflow: hidden;
+                .nameLtr {
+                    @include center;
+                }
+                &.female {
+                    background: #ffede6;
+                }
+                &.male {
+                    background: #9dcfeb;
+                }
+            }
+        }
+    }
+    ul {
+        display: none;
+        border: 1px solid #666;
+        border-top: 0;
+        li {
+            a {
+                padding: 12px 20px;
+                color: #696b71;
+                display: block;
+                position: relative;
+                @extend .transition;
+                img {
+                    position: absolute;
+                    right: 40px;
+                    top:10px;
+                    opacity: 0;
+                    width: auto;
+                    @extend .transition;
+                }
+                &:hover {
+                    color: #232323;
+                    padding-left: 30px;
+                    img {
+                        right: 20px;
+                        opacity: 1;
+                    }
+                }
+            }
+            &.selected {
+                a {
+                    color: #232323;
+                    img {
+                        right: 20px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .mobi-dropdown-header {
+        position: relative;
+        border: 1px solid #666;
+        padding: 16px 20px;
+        img {display: none;}
+        &:before {
+            content:'';
+            display: inline-block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 10px;
+            top: 14px;
+            background-size: 25px;
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+            @extend .base64-arrow-d; 
+        }
+        &:empty {
+            display: none;
+        }
+    }
+    &.opened {
+        ul {
+            display: block;
+        }
+        .mobi-dropdown-header {
+            border-bottom: 0;
+            &:before {
+                -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+    }
 }
 
 // Üye sayfası kullanıcı bilgisi

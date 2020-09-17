@@ -1,11 +1,6 @@
 //Sepet tablo grid'i
 .grid-table-cart{
     margin-top: 20px; 
-    .grid-table-rows:first-child{
-        .grid-table-row{
-            border-top:1px solid $greyBorderColor;
-        }
-    }
     .grid-table-row {
         //Sepet tablo satır image kolonu sabitleniyor
         .grid-img{
@@ -150,8 +145,8 @@
     }
     .ceptelDogrulamaSmsContainer,
     .ceptelDogrulaContainer {
-        padding-left: 195px;
-        padding-right: 195px;
+        padding-left: 150px;
+        padding-right: 150px;
     }
 }
 

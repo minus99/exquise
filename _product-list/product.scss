@@ -5,6 +5,7 @@
     align-items: flex-start;
     //justify-content: space-between;
 }
+
 .prd{
     width: 100%;
     margin-bottom: 30px;
@@ -40,21 +41,32 @@
             }
         }
     }
-    /*&.tukendi {
+    &.spr8 {
         .prd-badge {
+            &:before { 
+                content: 'Miss İpekyol';
+                z-index: 1;
+            }
+        }
+    }
+    &.tukendi {
+        .urunListe_yeniUrun {display:none !important;} 
+        /*.prd-badge {
             &:before {
                 content: 'Tükendi';
                 z-index: 1;
             }
-        }
-    }*/ 
+        }*/
+    }
     &.double {
         //width: calc(100% - 0px) !important; 
         .prd-image {
             &-big {
                 display:none;
-                @include aspect-ratio(956, 629); 
-                background-size: cover !important;
+                //@include aspect-ratio(956, 629); 
+                //@include aspect-ratio(956, 565);
+                @include aspect-ratio(600, 442);
+                background-size: cover !important; 
                 img {/*height: 100%;*/}
                 &:before {
                     background: none;
@@ -76,6 +88,9 @@
                 justify-content: center;
             }
         }
+        .prd-name {
+            justify-content: center;
+        }
     }
     &.double {
         .prd-image {
@@ -91,21 +106,24 @@
         z-index: 2;
     }
 }
+
 .view-1{
     .prd{
         width: 100%;
         &.double {
             width: calc(100% - 0px) !important; 
         } 
-    }    
+    }
+    a[rel="view-1"] {display:none}     
 }
-.view-3{
+.view-2{
     .prd{
-        width: calc(50% - 2px);
+        width: calc(50% - 0px);
         &.double {
             width: calc(100% - 0px) !important; 
         } 
-    }    
+    }  
+    a[rel="view-2"] {display:none}   
 }
 //Urun resmi
 .prd-image{
@@ -116,7 +134,7 @@
         width: 100%;
         height: 100%;
         z-index: 1;
-        @include aspect-ratio(276, 368);
+        @include aspect-ratio(700, 1050);   
         display: block;
         img{
             position: absolute;
@@ -144,13 +162,17 @@
 .prd-name{
     line-height: $productCardLineHeight;
     margin-bottom: 5px;
-    font-size: 13px;
-    color: #666666;
+    font-size: 14px;
+    //color: #666666;
+    flex-wrap: wrap;
     > a{
         display: inline-block;
         margin-bottom: 5px;
         color: $productNameClrM;
         font-size:12px;
+    }
+    .urunListe_urunStokUyari {
+        flex: 1 100%;
     }
 }
 .prdd-fvr{
@@ -171,14 +193,11 @@
         
         }
     }*/
-    svg {
-        font-size: 18px;
-    }
-    .icon-favori-fill {display: none;}
+    .icon-label-active {display: none;}
     .btnFavoriEkle {
         &.selected {
-            .icon-favori-fill {display: inline-block;}
-            .icon-favori {display: none;}
+            .icon-label-active {display: inline-block;}
+            .icon-label {display: none;}
         }
     }
 }
@@ -233,6 +252,25 @@
 // List Scroll
 
 .page-list {
+    .urnList .emosInfinite {
+        width: calc(100% + 4px);
+        margin-left: -2px;
+    }
+
+    .prd {
+        &-inner {
+            padding: 0 2px;
+        }
+        &.double {
+            .prd-inner {
+                padding: 0;
+            } 
+        }
+        &-body {
+            padding: $padding10 $padding10 0 $padding10;  
+        }
+    }
+
     .go-page-top {
         margin-top: $margin30;
         a {
@@ -248,7 +286,8 @@
 }
 
 .prd-list {
-    padding: 0 15px;
+    overflow-x: hidden;
+    padding: 0;
 }
 
 /*Kategori*/
@@ -256,9 +295,9 @@
 .kutuFooterKategori{display: none;}
 
 .kutuBodyKategori{
-    position: -webkit-sticky;
     position: sticky;
     top: 70px;
+    padding: 20px 0;
 }
 
 body.max-height-detect-list {
@@ -269,6 +308,8 @@ body.max-height-detect-list {
 }
 
 .menuKategori{
+    text-align: center; 
+    //display:none; 
     li{
         position: relative;
         > b{
@@ -277,9 +318,13 @@ body.max-height-detect-list {
         a{
             display: block;
             position: relative;
+            &.active {
+                font-family: $medium !important;
+            }
         }
+        .filterQty {display:none;}
         &.sub-items {
-            > b{
+            /*> b{
                 display: inline-block;
                 @extend .base64-plus;
                 width:20px;
@@ -292,13 +337,14 @@ body.max-height-detect-list {
                 cursor: pointer;
                 background-size: 20px;
                 @extend .transition;
-            }
+            }*/
             &.opened {
-                > b {
+                
+                /*> b {
                     @extend .base64-minus;
                     background-size: 20px;
                     opacity: 1 !important;
-                }
+                }*/
             }
         }
         &:hover {
@@ -310,13 +356,16 @@ body.max-height-detect-list {
         }
     }
     li.s1{
-        margin-bottom: $margin30;
+        //margin-bottom: $margin30;
+        display:inline-block;
         > a{
-            font-size: 16px;
-            padding: 5px 10px 5px 10px;
-            float: left;
+            font-size: 12px;
+            padding: 7px 10px 7px 10px;
+            //float: left;
         }
-        > b{
+        > a {display:none;}
+        > b {display:none;}
+        /*> b{
             background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwIiBkPSJNNyA5LjVsNS4wMDggNUwxNyA5LjUiLz4KPC9zdmc+Cg==) !important;
             width:24px; 
             height: 24px;
@@ -325,21 +374,21 @@ body.max-height-detect-list {
             top: 2px;
             z-index: 1;
             cursor: pointer;
-        }
+        }*/
         > ul{
             width: 100%;
-            display: inline-block !important;
+            display: flex !important;
             transition: none !important;
             margin: 0 !important;
             padding: 0 !important;
             height: auto !important;
-            margin-top: 25px !important;
+            //margin-top: 25px !important;
         }
     }
     li.s2{
         > a{
-            font-family: $medium;
-            font-size: 13px;
+            font-family: $regular;
+            font-size: 12px;
         }
         ul {
             display: none;
@@ -351,7 +400,7 @@ body.max-height-detect-list {
     li.s3{
         a{
             padding: 5px 5px 5px 10px;
-            &:before{
+            /*&:before{
                 content:'';
                 width:5px;
                 height:5px;
@@ -371,10 +420,17 @@ body.max-height-detect-list {
                     opacity: 1;
                     visibility: visible;
                 }
-            }
+            }*/
         }
     }
 }
+
+.swiper-categories {
+    display:none;
+    //.swiper-slide {text-align: center;}
+}
+
+
 /*Paging*/
 .urunPaging {
     table{
@@ -395,6 +451,7 @@ body.max-height-detect-list {
     @extend .display-flex;
     @extend .justify-center; 
     @extend .align-items-center;
+    flex-wrap: wrap;
     > span{
         @extend .display-flex;
         @extend .align-items-center;
@@ -422,7 +479,7 @@ body.max-height-detect-list {
             
         }
         &[id$="lnkNext"] {
-            padding: 6px 0 6px 10px;
+            padding: 6px 0 6px 0px;
             &:before {
                 content:'...'; 
                 font-size: $fontSize16; 
@@ -433,16 +490,58 @@ body.max-height-detect-list {
         }
     }
     a.paging{
-        color: #4a4a4a;
+        font-size: $fontSize13;
     }
     span.paging{
         font-family: $medium;
         color: $colorBlack;
     }
     a.tumunuGoster{
+        display: inline-block !important;
+        margin-left: 10px;
         span{
-            font-size: 15px;
-            color: #4a4a4a;
+            font-size: 13px;
         }
+    }
+}
+
+.kutuBodyKategori{
+    //padding-left: 160px;
+    //padding: 0;
+    a.tumunuGoster{ 
+        font-size: 12px;
+        font-family: $medium;
+        padding: 5px 10px 5px 10px;
+        display: inline-block !important;
+    }
+}
+
+// Kategori Bilgisi
+
+.category-info {
+    margin-bottom: 0;
+    .banner {
+        @extend .d-flex;
+        .prm-media {
+            flex: 1 50%;
+            &:before {display:none;}
+            > img {
+                position: static;
+            }
+            @include aspect-ratio(720, 375);
+        }
+        .banner-body  {
+            flex: 1 50%;
+            position: static;
+            transform: none;
+            padding:20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: $colorBlack;
+        }
+        .prm-title {font-size: 18px; font-family: $medium;}
+        .prm-content {font-size: 13px; max-width: 380px; line-height: 20px; margin: 20px auto 0 auto;}
+        .prm-link {display:none;}
     }
 }

@@ -1,6 +1,6 @@
 /* --- FOOTER --- */
 .site-footer {
-    border-top: 1px solid $greyBorderColor;
+    //border-top: 1px solid $greyBorderColor;
 }
 
 .site-footer-grid {
@@ -10,16 +10,18 @@
     "BBB"
     "CCC"
     "DDD";
-    max-width: 900px;
+    //max-width: 900px;
     width: 100%;
     margin: 0 auto;
+    background: #fbfbfb;
 } 
 
 /* Footer Site Bilgi */
 
 .footer-info {
-    padding: 50px 20px;
-    border-bottom: 1px solid $greyBorderColor;
+    padding: 30px 20px;
+    //border-bottom: 1px solid $greyBorderColor;
+    background: #fff;
     display:none;
     span {
         display: block;
@@ -50,10 +52,33 @@
 // Footer Kart
 
 .footer-card {
-    max-width: 420px;
-    margin: 50px auto; 
+    background: #fff;
+    padding: 20px;
+    flex-wrap: wrap;
     img {
         width: auto;
+    }
+    &-img { 
+        flex: 1;
+        order: 1;
+        margin: 20px 0;
+        ul {
+            justify-content: center;
+        }
+        li {
+            margin: 0 5px;
+        }
+    }
+    &-proje {
+        flex-wrap: wrap;
+        flex: 1 35%;
+        justify-content: flex-end;
+        a {
+            margin: 0 5px;
+        }
+    }
+    &-copy {
+        flex: 1 65%;
     }
 }
 

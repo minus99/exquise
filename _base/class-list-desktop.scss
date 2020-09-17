@@ -8,7 +8,7 @@ Site General Grid Class Items
     display: grid;
 }
 .ga1{
-    grid-area:AAA;
+    grid-area:AAA; 
 }
 .ga2{
     grid-area:BBB;
@@ -43,7 +43,7 @@ Site General Grid Class Items
     display: flex;
 }
 
-/*Desktop element hidden*/
+/*Desktop element hidden*/ 
 .obj-mobile{
     display: none !important;
 }
@@ -57,7 +57,7 @@ Site General Grid Class Items
 
 // Transparent Background
 .transparent-desktop {
-    background: rgba(255, 255, 255, .97);
+    background: rgba(255, 255, 255, 1);
 }
 
 //Site ici genel sticky class'ı 

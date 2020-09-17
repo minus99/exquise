@@ -13,14 +13,6 @@
         border-top: 1px solid #f3f3f7;
         padding-bottom: 15px;
         margin-bottom: 15px;
-        /*&:last-child {
-            border-top: 1px solid $memberLightGreyColor; 
-            padding-top: $memberPadding20;
-            margin-top: $memberMargin20; 
-            border-bottom: 1px solid $memberLightGreyColor; 
-            padding-bottom: $memberPadding20;
-            margin-bottom: $memberMargin20; 
-        }*/
         .grid-piece {
             .sStylerMainWrp {
                 margin-right: $memberPadding5;
@@ -36,6 +28,13 @@
             margin-right: 0;
             margin-bottom: $memberPadding20;
             width: 100%;
+            &#plhTumunuIptalNeden {
+                width: 100%;
+                max-width: 250px;
+                .sStylerWrp {
+                    padding: 9px 40px 9px 15px; 
+                }
+            }
         }
         a {
             padding: $memberBtnDefaultPadding;  
@@ -52,19 +51,6 @@
     .grid-table-refund {
         padding: $padding20; 
     }
-    .page-top-desc {
-        margin-bottom: 0;
-    }
-    .page-top-title {
-        /*display:none !important;*/ 
-        span {
-            font-size: $fontSize14;
-            font-family: $medium;
-            padding: 0;
-            margin: 40px 0 0 0;
-        }
-    }
-
     .grid-row {  
         
         flex-wrap: wrap;

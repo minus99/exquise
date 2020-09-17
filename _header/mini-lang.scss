@@ -1,42 +1,61 @@
 /* --- HEADER DİL SEÇİMİ --- */
 .mini-lang {
-    display: inline-block; 
-    padding: 0 $padding10;
-    position: relative;
-    min-width: 75px;
-    display: none; 
-    &:after {
-        content: '';
-        width: 0;
-        height: 2px;
-        background: #000;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        @extend .transition;
-    }
+    display:none !important;
+    //display: inline-block; 
+    //padding: 0 $padding10;
+    position: static !important;
+    min-width: 40px;
+    display: block; 
     .emos_invisible {
         display: inline-block;
     }
     /* Lang Header */
     .dropdown-header {
-        padding: 0 $padding30 0 $padding10;
+        padding: 0;
         border: 0;
         line-height: normal;
-        cursor: pointer;
+        color: #000;
+        cursor: pointer;  
+        position: relative !important;
+        @include transition(color .4s);
         img {
             display: none;
+        }
+        &:after {
+            display:none;
+        }
+        > span {
+            margin: 0 auto;
         }
     }
     /* Lang Sub */
     .sub {
-        width: 75px;
-        margin: 0;  
-        top: 70px;
+        //width: 75px;
+        //margin: 0;  
+        //top: 70px;
+        //display: block;
+        //@extend .transition;
+        //visibility: hidden;
+        //opacity:0;
+
+        display: block !important;
+        top: 0px;
+        right: -100%;
+        width: 100%;
+        max-width: 350px;
+        height: 100vh; 
+        z-index: 16;
+        margin-left: auto;
+        //margin-right: auto;
+        padding: $padding30;
         display: block;
-        @extend .transition;
+        opacity: 0;
         visibility: hidden;
-        opacity:0;
+        color: #000;
+        background: #fff;
+        @extend .transition;
+
+
         li {
             border-bottom: 1px solid $colorBulltet;
             &:last-child {
@@ -59,17 +78,20 @@
     } 
     b {
         font-weight: normal;
-        font-size: $fontSize13;
+        font-size: $fontSize14;
+        cursor: pointer;  
     }
     &.opened {
         .sub { 
-            top: 100%;
+            //top: 100%;
+            opacity: 1;
+            visibility: visible;
+
+            width: 100%;
+            right: 0px;
             opacity: 1;
             visibility: visible;
         }
-        &:after {
-            width: 100%;
-        } 
     }
 }
 

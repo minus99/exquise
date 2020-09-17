@@ -2,20 +2,22 @@
 
 .kutuSolMenuTree {
     background: $colorWhite;
-    border-radius: $memberBorderRadius4; 
+    //border-radius: $memberBorderRadius4; 
     //display: none;
     position: -webkit-sticky;
     position: sticky;
     top: 70px;
+    padding: 30px 20px 0px 20px;
     .sev1 {
         > a {
-            display:none; 
+            display:none;  
         }
     }
     .sev2 {
         display: none;
         position: relative;
-        background: #f8f8f8;
+        //background: #f8f8f8;
+        border: 1px solid #000;
         > a {
             //font-family: $memberFontMedium;
             //font-size: $memberFontSize20; 
@@ -27,7 +29,11 @@
         }
         ul {
             display: none !important;
-            padding-bottom: 20px;
+            padding-bottom: 5px;
+        }
+        > b {display:none !important;}
+        &.sub-items {
+            > b {display: inline-block !important;}
         }
         &.opened {
             ul {
@@ -35,8 +41,8 @@
             }
         }
         .mobi-dropdown-header {
-            padding: 20px;
-            font-family: $medium;
+            padding: 16px 20px;
+            //font-family: $medium;
         }
 
         &.icr {
@@ -46,8 +52,8 @@
                 width:20px;
                 height: 20px; 
                 position: absolute;
-                right: 20px;
-                top: 18px;
+                right: 10px;
+                top: 14px;
                 z-index: 1;
                 opacity: 1;
                 cursor: pointer;
@@ -56,17 +62,18 @@
                 transform: rotate(-90deg);
                 //display: none; 
             }
-            &.opened {
+            &.sub-items.opened {
                 > b {
                     opacity: 1 !important;
                     transform: rotate(0deg);
                 }
             }
-            &:hover { 
+            &.sub-items:hover { 
                 > b{
                     opacity: 1;
                 }
             }
+            
         }
 
     } 
@@ -74,10 +81,10 @@
         position: relative;
         a {
             color: #000;
-            padding: 10px 50px 10px 30px; 
+            padding: 10px 10px 10px 20px; 
             display: block;
             transition: all .2s ease;
-            -webkit-transition: all .2s ease;
+            -webkit-transition: all .2s ease;  
             -o-transition: all .2s ease;
             /*&:hover {
                 color: $btnAlternateColor;
@@ -107,9 +114,9 @@
         &.act {
             a {
                 color: #000;
-                padding: 10px 50px 10px 30px;
+                padding: 10px 10px 10px 20px;
                 border-bottom: 0;
-                font-family: $medium;
+                //font-family: $medium;
                 &:after {
                     opacity: 1;
                     right: 20px;
@@ -121,6 +128,7 @@
         }
         &.icr > b {display:none;}
     }
+    .cat-hide {display:none;}
 }
 
 .mobi-dropdown {

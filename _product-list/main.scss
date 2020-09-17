@@ -1,9 +1,11 @@
 .page-list {
-    padding-bottom: 50px;
+   // padding-bottom: 50px;
     .d-sort{
         #plhUrunSira_chkTemin {
             padding-top: 20px;
-            border-top: 1px solid #dddddd;
+            @extend .d-flex;
+            align-items: center;
+            //border-top: 1px solid #dddddd;
         }
     }
 }

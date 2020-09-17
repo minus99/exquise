@@ -6,15 +6,15 @@
                 url(#{$baseHref + $url + '.woff'}) format('woff'),
                 url(#{$baseHref + $url + '.ttf'}) format('truetype');
         font-weight: $fontWeight;
-        font-style: $fontStyle;
-        font-display: swap; 
+        font-style: $fontStyle; 
+        font-display: swap;  
     }
-}
+} 
 
 
 //@media
 @mixin setMediaScreen($feature, $value) {
-    @media screen and (#{$feature}: #{$value}) {
+    @media screen and (#{$feature}: #{$value}) { 
         @content;
     }
 }
@@ -86,7 +86,7 @@
     transform: translate(0, -50%);
   }
 }
-
+ 
 // Loop from 1-9.
 
 // Orn: animation: .5s ease 0s pulseLook; animation-fill-mode: both;
@@ -138,3 +138,38 @@
         transform: scale(1.2);
     }
 }
+
+// Transition
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+// orn: @include transition(all .4s, color .4s);

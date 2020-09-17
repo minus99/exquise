@@ -4,9 +4,9 @@
     //background:$memberPageBg; 
 }
 
-.member-info [id$="txtUYE_SOYAD"], .member-info [id$="txtUYE_AD"], .member-info [id$="txtUYE_CEPTELEFONALAN"], .member-info [id$="txtUYE_CEPTELEFON"] {
+.member-info [id$="txtUYE_CEPTELEFONALAN"], .member-info [id$="txtUYE_CEPTELEFON"] {
     cursor: default;
-    background-color: #EBEBE4;
+    background-color: #EBEBE4; 
     pointer-events: none;
 }
 
@@ -19,3 +19,34 @@
      background: transparent;
     }
 } 
+
+.member-info {
+    .page-top-point {
+        padding: 20px;  
+        width: 100%;
+        background: #f2f2f2;
+        margin-bottom: 20px;
+        img {
+            width: 30px;
+            margin-right: 10px;
+        }
+        div[id$="pnlUyeBonus"] {
+            @extend .display-flex;
+            align-items: center; 
+        }
+        span[id$="lblUYE_BONUSMIKTARI"] {
+            font-family: $medium;
+            &:before {
+                content:'₺';
+                font-family: cursive;
+                display: inline-block;
+                margin-right: 2px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.member-grid .member-general .field.field-single.bulletin {
+    margin-bottom: 0;
+}

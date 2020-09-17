@@ -1,5 +1,5 @@
 //Site varsayilan butonlar
-a.btnDefault, span.lnkGuestCheckout{
+a.btnDefault {
     display: block;
     width: 100%;
     background: $btnBackground; 
@@ -15,24 +15,34 @@ a.btnDefault, span.lnkGuestCheckout{
 a.btnAlternate, 
 a.btnFacebookLogin, 
 a.btnArama, 
-a.btnAlisverisDevam, 
 a.allow-share-location-btn, 
 div.follow-list-btn,
 a.btnFavoriSil,
 a.btnFavSepeteAt,
+span.lnkGuestCheckout,
+#plhGuestEmailDevam a.btnLogin,
 a.btnFacebookLoginKutu,
+a.btnAdresIptal,
 a.btnSiparisSonucSepeteDon,
 a.btnAdresEkle  {
     display: block;
     width: 100%;
     background: none;
-    border:1px solid $btnBorder;
+    border:1px solid $colorBlack; 
     padding: 14px $padding20;
     text-align: center;
+    @include transition(background .2s);
     > span{
         font-family: $medium;
         color: $colorBlack;
         font-size: 14px;
+        @include transition(color .2s);
+    }
+    &:hover {
+        background: #000;
+        > span {
+            color: $colorWhite;
+        }
     }
 }
 //Site alternatif yazı boyutu kücük butonlar
@@ -57,6 +67,7 @@ a.btnLink, a.btnLink > span{
 a.btnAlisverisDevam,
 a.btnSepetBosalt,
 a.kombinBtn,
+a.btnAlisverisDevam, 
 a.btnArama {
     background: none;
     width: auto;

@@ -3,11 +3,8 @@
         font-size: 40px;
     }
     .prm-link {
-        svg {
-            display: block;
-            @extend .transition-desktop;
-            position: relative; 
-            left: 0;
+        > span {
+            text-decoration: underline;
         }
     }
     
@@ -66,9 +63,9 @@
             padding-left: 0;
             padding-right: 0;
         }
-    }
+    } 
 
-    //banner type05 *type02 menu
+    //banner type05 *type02 menu 
     &05 {
         .banner-body {
             @include banner-body-bottom;
@@ -100,7 +97,7 @@
             margin-bottom: 45px;
         }
         .prm-media {
-            @include aspect-ratio(1440, 800);
+            @include aspect-ratio(1440, 740);
         }
         &::before {
             display: none;
@@ -135,7 +132,7 @@
             text-decoration: none;
         }
         .prm-media {
-            @include aspect-ratio(1440, 800);
+            @include aspect-ratio(1440, 740);
         }
         &::before {
             display: none;
@@ -179,7 +176,7 @@
             text-decoration: none;
         }
         .prm-media {
-            @include aspect-ratio(1440, 800);
+            @include aspect-ratio(1440, 740);
         }
         &::before {
             display: none;
@@ -211,12 +208,12 @@
 
     //banner typeGrid grid
     &Grid {
-        .banner-body {
-            @include banner-body-bottom-revert;
+        .banner-body { 
+           // @include banner-body-bottom-revert;
             padding: 3% calc((100% - 560px) / 2);
         }
         .prm-title {
-            font-size: 60px;
+            font-size: 31px;
         }
         .prm-link {
             margin-top: 30px;
@@ -241,19 +238,20 @@
     // home slider transform
     &Transform {
         .banner-body {
-            @include banner-body-bottom-revert;
+            @include banner-body-bottom;
             padding: 3% calc((100% - 560px) / 2);
         }
         .prm-title {
-            font-size: 60px;
+            font-size: 50px;
         }
         .prm-link {
             margin-top: 30px;
             margin-bottom: 45px;
             text-decoration: none;
+            font-size: 14px;
         }
         .prm-media {
-            @include aspect-ratio(1440, 800);
+            @include aspect-ratio(1440, 740);
         }
         &::before {
             display: none;
@@ -288,18 +286,40 @@
 
 .align-l {
     .banner {
-        text-align: left;
         &07, &Transform {
             .banner-body {
-                padding:3% 3% 3% 200px;  
+                padding:3% 3% 3% 200px; 
+                max-width: 40%; 
+                @include banner-body-bottom-revert;
                 .prm-title {
-                    max-width: 560px;
+                    //max-width: 560px;
                 }
             }
-            .banner-footer {
+            /*.banner-footer {
                 padding: 0 0 0 200px;
                 text-align: left;
+            }*/
+        }
+    }
+}
+
+.align-r {
+    .banner {
+        &07, &Transform {
+            .banner-body {
+                padding:3% 200px 3% 3%; 
+                max-width: 40%; 
+                @include banner-body-bottom-revert;
+                left: auto;
+                right: 0;
+                .prm-title {
+                    //max-width: 560px;
+                }
             }
+            /*.banner-footer {
+                padding: 200px 0 0 0 ;
+                text-align: left;
+            }*/
         }
     }
 }
@@ -309,14 +329,15 @@
 .homepage-slider {
     padding-bottom: $padding30;
     .prm-media {
-        @include aspect-ratio(1440, 800);
+        @include aspect-ratio(1440, 740);
     }
 }
 
 .swiper-transform {
     .slider-pagination {
         .swiper-pagination {
-            display: block;
+            right: 50px;
+            bottom: 40px;
         }
     }
     /*.banner11 {
@@ -333,7 +354,7 @@
             text-decoration: none;
         }
         .prm-media {
-            @include aspect-ratio(1440, 800);
+            @include aspect-ratio(1440, 740);
         }
         &::before {
             display: none;
@@ -352,10 +373,10 @@
 // Lookbook banner görsel
 .lookbook-slider {
     .prm-media {
-        @include aspect-ratio(1440, 800);
+        @include aspect-ratio(1440, 740);
     }
     .ems-video-player {
-        @include aspect-ratio(1440, 800);
+        @include aspect-ratio(1440, 740);
         .slide-video {
             position: absolute;
         }
@@ -373,18 +394,24 @@
 
 // Anasayfa ikili grid görsel
 .grid-banner {
-    padding: $padding30;
+    padding: 40px;
+    .prm-title {font-size: 32px;}
     .bannerGrid {
-        margin:0 $margin10;
+        //margin:0 $margin10;
         padding: 0;
     }
     .swiper-wrapper {
         flex-wrap: inherit;
         justify-content: center;
+        column-gap: 40px;
         .swiper-slide {
             @extend .sticky-desktop;
            top: 60px; 
            width: auto;
+           padding-right: 0;
+           &:last-child {
+               padding-left: 0;
+           }
         }
     }
     .prm-media {
@@ -451,6 +478,9 @@ body.ems-popup-animate {
         }
         .swiper-inner {
             overflow: hidden;
+        }
+        li {
+            padding: 0 $padding15;
         }
     }
     .prd{

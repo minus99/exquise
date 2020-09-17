@@ -50,7 +50,12 @@
         flex: 1 70%;
         &-label {margin-right: 5px;}
 
-        &-code {font-family: $medium;}  
+        &-code {
+            font-family: $medium;
+            a {
+                text-decoration: underline; 
+            }
+        }  
         &-date {
             flex:1 100%; 
             margin-top: 5px;
@@ -106,22 +111,53 @@
         .jconfirm-box-container {
             max-width: 800px !important;
         }
+        iframe {
+            background:url(#{$baseHref + "/images/frontend/preload.gif"} ) center center no-repeat  rgba(255, 255, 255, 0.5);
+        }
     }
 }
 
-// onceki siparis
+// Önceki Sipariş
 
 .previousOrders { 
     padding: 0 20px 30px 20px;
     height: 100%;
     overflow-y:auto; 
+    background: #fff; 
     .grid-table-order {
         margin-bottom: 0px;
+    }
+    .popupTitleDefault {
+        padding: 30px 0px 10px 0px;
+        p {
+            font-size: 12px;
+            font-family: 'regular';
+            margin-top: 10px;
+            padding: 10px;
+            background: #f7f7f7f7;
+            color: #000;
+        }
     }
 }
 
 @media screen and (min-width: 500px) {
     .member-order .grid-row-order-list > div {
         flex: 50%;   
+    }
+}
+
+// Önceki Sipariş Boş
+
+.previousOrders-message {
+    background: #f4f4f4; 
+    padding: 0;
+    flex-direction: column;
+    height: 100%;
+    img {
+        width: 60px;
+        height: 60px;
+    }
+    p {
+        font-size: 18px;
     }
 }

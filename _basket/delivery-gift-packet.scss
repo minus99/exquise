@@ -11,15 +11,16 @@
     //title alani
     &-hdr{
         //width: calc(100% - 20%);
-        padding:15px 8px 15px 0px;
+        padding:15px;
+        background: #e9e9e9;
+        .delivery-gift-select {display:flex; align-items: center;}
     }
     //Content alani
     &-wrp{
         display: none;
         //width: calc(100% - 15%);
-        padding-left:15px;
-        padding-right:15px;
-        padding-bottom:20px;
+        padding: 20px 15px;
+        background: #e9e9e9;
         //kisa metin alani
         .form-label{
             span{

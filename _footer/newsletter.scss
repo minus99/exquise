@@ -1,26 +1,31 @@
  /* --- FOOTER EBULTEN --- */
 
 .newsletter-title {
-    padding: 0 0 $padding30 0; 
-    display: none;
+    padding: 0 0 $padding20 0; 
 }
 .mini-bulletin {
-    margin-top: 40px; 
+    margin-top: 30px; 
     padding: 0 $padding20;
     .field {
         margin-bottom: 10px;
         width: 100%; 
-        input {
+        input[type="text"] {
             padding: 10px 40px 10px 15px;
-            border-color: $greyBorderColor; 
-            border-radius: 2px;
-            font-size: 15px;
+            border: 0;
+            border-bottom: 1px solid #000;
+            font-size: 13px;
+            background: none;
+        }
+        input[type="checkbox"] {
+            opacity: 0;
+            width: 12px !important;
+            padding: 0 !important;
         }
     }
     &-btn {
         right: 0; 
         top: 0;
-        padding: $padding10;
+        padding: 6px;
         span {
             color: #000 !important;
         }

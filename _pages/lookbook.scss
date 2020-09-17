@@ -1,15 +1,22 @@
  /* Lookbook */
+
+ 
  
  // Lookbook
 
 .ems-lookbook-wrp {
-    padding: $padding20;
+    padding: $padding20;  
     > ul {
         // lookbook görsel
+        @extend .display-flex; 
+        justify-content: center; 
+        grid-gap: 20px;
+        flex-wrap: wrap;
         .lbImg { 
             position: relative;
             img {
                 width: 100%;
+                max-width: 320px !important;
             }
             // Ürün fiyat liste
             .textWrap {
@@ -39,7 +46,7 @@
         }
         .lbContentWrp {
             text-align: left;
-            margin: 35px 0;
+            //margin: 35px 0;
             > span {
                 font-size: 40px;
                 margin-bottom: 20px;
@@ -52,7 +59,7 @@
             margin-bottom: $margin30;
             opacity: 0; 
             &.ems-pointer-none {
-                pointer-events: none;
+                //pointer-events: none;
                 .lbContentWrp .kombinBtn {
                     display: none; 
                 }
@@ -61,10 +68,156 @@
     }
 }
 
-// Dergi 
+// Lookbook Main Page
 
 .pages-lookbook {
     iframe {
         height: 400px !important;
     }
+    .article-container {
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        margin-bottom: 80px;
+    } 
+    .sec-main-image {
+        position: relative;
+        flex: 1 100%;
+    }
+    .sec-image-text {position: relative;}
+    .sec-image-text:nth-child(3) {
+        padding: 0;
+    }
+    .sec-image-text:nth-child(4) {
+        padding: 0;
+    }
+    .text-wrap {
+        &.centered {
+            * {
+                color: #fff;
+                text-align: center; 
+            }
+            span {
+                display: block;
+                font-size: 32px;
+                margin-top: 10px;
+            } 
+        } 
+         a {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-top: 30px;
+         }
+    }
+    .sec-text {
+        max-width: none;
+        flex: 1 100%;
+        > div {
+            font-size: 14px;
+            max-width: 600px;
+            margin: 60px auto 70px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+    }
+    .sec-image-text {
+        flex: 1 100%;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        padding:0 20px;
+        margin-bottom: 60px;
+        .image-wrap {
+            width: auto !important;
+            padding-right: 0 !important;
+        }
+        .text-wrap {
+            text-align: center;
+            p {
+                margin: 0;
+                font-size: 24px;
+            }
+            a {
+                span {
+                    font-size: 14px;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// Main Colleciton
+
+.main-collection { 
+    background: #feeed5;
+    padding: 0px 0 40px 0 !important;
+    margin-top: 0px;
+    position: relative;
+    .banner {
+        @extend .display-flex;
+        overflow: visible;
+        flex-wrap: wrap;
+    }
+    .prm-media {
+        flex: 0 100%;
+        order: 2;
+        margin-top: 0;
+        img {
+            position: static;
+        }
+    }
+    .banner-body {
+        position: relative;
+        flex: 1 100%;
+        order: 1;
+        padding: 40px 20px !important;
+        transform: none !important;
+        text-align: left;
+        color: $colorBlack;
+        bottom: 0;
+    }
+    .prm-title{
+        font-size: 32px !important;
+    }
+    .prm-content {font-size: 14px; line-height: 20px;}
+    .prm-link {font-size: 14px; padding: 0; margin: 10px 0;}
+    .banner07 .prm-media {
+        @include aspect-ratio(840, 560);
+    }
+    .btn > span {text-decoration: underline;}
+}
+
+
+// Category Slider
+
+.category-slider {
+    padding: 50px 0;
+    .swiper-slide { 
+        width: calc(100% / 4);
+        margin-bottom: 30px;
+    }
+    .banner-body {
+        position: relative;
+        padding: 20px 20px 20px 0 !important;
+        .prm-title {
+            color: $colorBlack;
+            font-size: 16px;
+        }
+    }
+    .slider-pagination .swiper-pagination {
+        //display: inline-block;
+        display: block;
+        right: 0;
+        left: 0;
+        bottom: 10px;
+    }
+    .slider-navigation .swiper-button-prev {top: -60px; right: 100px; left: auto; margin: 0;}
+    .slider-navigation .swiper-button-next {top: -60px; right: 50px; margin: 0;}
 }

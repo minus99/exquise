@@ -3,16 +3,9 @@
 .mini-search-info {
     padding: 0 $padding10;
     position: relative;
-    cursor: pointer;  
-    &:after {
-        content: '';
-        width: 0;
-        height: 2px;
-        background: #000;
-        position: absolute;
-        bottom: 0;
-        left: 0; 
-        @extend .transition;
+    cursor: pointer; 
+    i.icon-search {
+        font-size: 36px;
     }
 }
  
@@ -36,14 +29,14 @@
             input {
                 background: none;
                 border: 0;
-                font-size: 17px;
+                font-size: 14px;
                 margin: 0;
-                padding: 9px 40px;
+                padding: 17px 40px;
             }
         }
         .sub-close {
-            top: 12px;
-            left: 15px;
+            top: 14px;
+            left: 10px;
             right: auto;
             //transform: translateY(-50%);
         }
@@ -57,7 +50,7 @@
                 width: 50px;
                 height: 50px;
             }
-            svg {
+            i {
                 font-size: 20px;
                 animation: jackInTheBox 1s .5s;
                 transform: scale(0.85);
@@ -94,7 +87,7 @@
         &:before {
             content: '';
             position: absolute;
-            top: 47px;
+            top: 60px;
             left: 0;
             height: 1px;
             background: #eeeeee;
@@ -104,7 +97,7 @@
     // Mobil Ara Btn
     &-btn {
         position: absolute;
-        top: 12px;
+        top: 14px;
         right: 10px;
         a {
             border: 0; 
@@ -163,7 +156,7 @@ $mr: 20px;
         }
         .sHolder {
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 1px;
             //margin-left: -$mr;
             //margin-right: -$mr; 
@@ -187,11 +180,12 @@ $mr: 20px;
         table {
             tr {
                 display: grid;
-                grid-column-gap: 10px; 
+                grid-column-gap: 3px; 
                 margin-bottom: 5px;
-                padding: 0 10px 5px 10px; 
+                padding: 0; 
                 //border-bottom: 1px solid #eeeeee;
-                grid-template-columns: min-content auto;
+                margin-bottom: 40px;
+                grid-template-columns: auto;
                 th {
                     display: none;
                 }
@@ -210,19 +204,22 @@ $mr: 20px;
             padding-left: 0;
             padding-right: 0;
             background: none;
-            grid-area: 3 / 1;
+            grid-area: 1;
             > img {
-                max-width: 60px;
-                width: 60px;
+                max-width: none;
+                width: 100%;
             }
         }
         .suggest_urnsname_con {
             grid-row: 2;
             font-family: $regular;
             font-size: 13px;
-            padding: 0;
+            padding: 10px 0 5px 0;
             color: #666666;
-            grid-area: 3 / 2;
+            grid-area: 2;
+            white-space: nowrap;
+            text-overflow: ellipsis; 
+            overflow: hidden;
             b {
                 font-weight: normal;
                 color: $colorBlack;
@@ -230,11 +227,10 @@ $mr: 20px;
             }
         }
         .suggest_urnprice_con {
-            grid-row: 3;
             font-size: 13px;
-            padding: 0;
-            grid-area: 3 / 3;
-            text-align: right;
+            padding: 5px 0 15px 0;
+            grid-area: 3;
+            text-align: left;
             .suggest_urnprice {
                 display: flex;
             }
@@ -249,8 +245,8 @@ $mr: 20px;
     }
     .cat {
         grid-area: ga3;
-        margin-top: 14px;
-        display: none;
+        margin: 0 0 14px 0;
+        //display: none;
         h3 {
             margin: 0 0 10px;
             display: none;
@@ -353,7 +349,7 @@ $mr: 20px;
     .dvTumunuGoster {
         grid-area: ga4;
         display: block;
-        justify-self: center;
+        justify-self: right;
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -362,7 +358,10 @@ $mr: 20px;
         background: #fff;
         #ascAramaBtnTumunuGoster {
             min-width: 280px;
-            text-align: center;
+            text-align: center;   
+            &:hover {
+                color: #fff;
+            }
         }
     }
     .brand,
@@ -386,7 +385,6 @@ $mr: 20px;
     text-align: center;
     padding: 45px 0; 
     .ems-section-title {
-        color: #9b9b9b;
         font-size: 13px;
         margin-bottom: $margin20;
     }
@@ -394,6 +392,9 @@ $mr: 20px;
     .not-trigger .swiper-slide {
         width: 100%;
         margin-bottom: $margin15;
+        span {
+            color: #777;
+        }
     }
 }
 

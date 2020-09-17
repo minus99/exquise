@@ -151,3 +151,11 @@
 .pageHeaderMesaj {
     display: none; 
 }
+
+.member-message-detail {
+    .col.num3, .col.num4, .col.num8 {display:none !important;}
+    .col.num6 {
+        width: 100% !important;
+        &:last-child {display:none !important;}
+    }
+}

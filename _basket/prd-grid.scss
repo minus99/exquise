@@ -1,14 +1,18 @@
 //Sepet tablo grid'i
 .grid-table-cart{
+    .grid-table-rows:last-child{
+        .grid-table-row{
+            border-bottom:0;
+        }
+    }
     //Sepet rows
     .grid-table-row {
         @extend .display-flex;
         @extend .relative;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         border-bottom:1px solid $greyBorderColor;
         min-height:140px;
-
         //Sepet tablo satır image kolonu sabitleniyor
         .grid-img{
             width: 90px;
@@ -38,6 +42,7 @@
             display: none;
         }
         .grid-stock {
+            display: none;
             .magaza-teslim {
                 display:none;
             }
@@ -47,13 +52,13 @@
             align-items: center; 
             color: #a40000;
             font-size: 12px;
-            &:before {
+            /*&:before {
                 content: '';
                 background:url(#{$baseHref + "/images/frontend/magaza-teslim.svg"} ) top center no-repeat;
                 margin-right: 5px;
                 width: 30px;
                 height: 30px;
-            }
+            }*/
             &:empty {
                 display: none;
             }
@@ -146,24 +151,28 @@
             a{
                 //display: none;
                 position: absolute;
-                right: 5px; 
-                top: 0;
-                display: none;
+                right: 0px; 
+                top: 2px;
+                //display: none;
                 &:first-child {
-                    bottom: 0px;
-                    top: auto;
+                    top: 2px;
+                    left: 0;
+                    right: auto;
                 }
                 svg {
                     font-size: 18px;
                 }
             }
             input[type="text"]{
-                display: none;
-                border-color:#cccccc;
+                //display: none;
+                //border-color:#cccccc;
+                border: 0;
                 padding:2px 20px;
                 min-height: 35px;
+                text-align: center;
             }
             .sStylerWrp_select {
+                display:none; 
                 .sStylerWrp {
                     border-color:#cccccc;
                     padding:2px 20px;
@@ -327,10 +336,12 @@
 }
 .basket-buttons {
     a.btnAlisverisDevam{
+        display: flex;
         span{
-            font-family: $medium;
-            color: $colorBlack;
-            font-size: $fontSize13;
+            font-family: $regular;
+            color: #696b71;
+            font-size: $fontSize14;
+            display: flex;
         }
     }
 }
@@ -338,13 +349,14 @@
 //odeme sepet onizleme grid yapisi
 .basket-grid-2{
     .grid-table-wrap { 
-        max-width: 300px;
+        //max-width: 300px;
         margin-left: auto;  
         display: none;
     }
     .grid-table-cart{
         overflow-x: hidden;
         max-height: 395px;
+        margin-top: 5px;
         .grid-table-rows{
             padding-left: 0;
             padding-right: 0;
@@ -510,7 +522,7 @@
         padding: 9px 15px;
     }
     [id$="CEPTELEFON"] {
-        width: calc(100% - 65px) !important;
+        width:100% !important;
     }
     .sStylerWrp_checkbox {
         margin-top: 15px;
@@ -522,6 +534,8 @@
             font-size: 14px;
             color: #000;
             vertical-align: 0px;
+            position: relative;
+            top: -7px;
         }
     }
     a.btnDefault {

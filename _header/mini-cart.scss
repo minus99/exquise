@@ -2,53 +2,53 @@
 
  .mini-cart-info {
     padding: 0 $padding10;
-    margin-right: $margin20;
+    margin-right: 50px;
     position: relative; 
     cursor: pointer; 
     min-width: 60px;
-    &:after {
-        content: '';
-        width: 0;
-        height: 2px;
-        background: #000;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        @extend .transition;
-    }
      span#lblUrunAdet {
          order: 2;
      }
      span[id$="lbfKUTU_URUN"] {
          order: 1;
      }
+     i.icon-bag {font-size: 36px;}
  }
 
  .mini-cart-sub {
     display: none;
-    top: 70px;
-    right: 0;
+    top: 0px;
+    right: -100%;
     width: 100%;
-    max-width: 600px;
-    height: auto; 
+    max-width: 440px;
+    height: 100vh; 
     z-index: 16;
     margin-left: auto;
     margin-right: auto;
-    padding: $padding30 $padding20 $padding30 $padding30;
+    padding: $padding30;
     display: block;
     opacity: 0;
     visibility: hidden;
-    @extend .transparent;
+    color: #000;
+    background: #fff;
+    position: fixed;
+    .kutuSepet_icerik {
+        max-height: none;
+        padding-right: 0;
+    }
     .sub-header {
-        font-family: $medium;
+        //font-family: $roMedium;
         padding-bottom: 0; 
-        border: 0;  
-        font-size: $fontSize20;
+        border-bottom: 0;  
+        font-size: $fontSize16;
+        font-family: $medium;
         position: static;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
         .mcq {
             font-size: $fontSize12;
             color: $greyColor;
-            font-family: $regular;
+            position: relative;
         }
         i {
             font-style: normal;
@@ -56,27 +56,52 @@
     }
     .grid-row {
         border-bottom: 1px solid $greyBorderColor;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
         &:last-child {
             margin-bottom: 0; 
         }
     }
-    .grid-name {flex:1; line-height: 1.4;}
+    .grid-name {
+        flex:1; 
+        line-height: 1.4; 
+        flex-direction: column;
+        padding-right: 30px;
+        > div {
+            margin-bottom: 3px;
+            font-size: 12px;
+            &:empty {
+                display: none;
+            }
+        }
+    }
+    // Ad
+    .cart-prd-price {font-size: 14px;}
+
     // Fiyat
     .cart-prd-price {
         right: 0; 
         top: 0;
-        flex-direction: column;
+        //flex-direction: column;
+        font-size: 14px !important;
+        font-family: $medium;
         .first {
             &:empty {
                 display: none;
                 + .last { 
                     color: #000;
+                    margin: 0
                 }
             }
+        }
+        .last {
+            margin-left: 10px;
         }
     } 
     // Renk
     .cart-prd-color {
+        margin-top: 10px;
+        font-size: 14px;
         .colorLabel {float: left;} 
         .colorCode:empty ~ .colorLabel  {
             display: none; 
@@ -85,17 +110,14 @@
     // Görsel
     .cart-prd-img {
         img {
-            width: 80px;
+            width: 90px;
         }
     }
     // Kaldır
     .grid-remove { 
         right: 5px;
-        bottom: 10px; 
-        svg {
-            color: $colorAlternate;
-            width: 15px; 
-        }
+        //bottom: 10px; 
+        margin-top: auto;
         span {
             font-size: 12px;
         }
@@ -113,34 +135,50 @@
     }
     // Button
     .cart-prd-page-url {
-        text-align: right;
+        text-align: left;
+        margin-top: auto;
         a {
             width: 100%;
-            max-width: 270px;
-            float: right;
-            background: $colorBlack;
-            color: $colorWhite;
+            max-width: 200px;
+            display: inline-block;
+            background: #000;
+            //border-radius: 2px;
+            //float: right;
+            //background: $colorBlack;
+            //color: $colorWhite;
             text-align: center;
-            padding: 15px 3px 15px 3px;  
+            padding: 12px 3px 12px 3px;  
+            span {
+                color: #fff;
+            }
         }
     }
     .sub-close {
-        top: 30px;
+        top: 25px;
         right: 25px;
     }
  }
 
+.kutuSepet_urunYok {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
  .mini-cart-ready {
     .mini-cart-sub {
-        display: block;
-        top: 60px;
+        @extend .display-flex;
+        flex-direction: column;
+        width: 100%;
+        right: 0px;
         opacity: 1;
         visibility: visible;
 
     }
     .message-empty-card {
-        svg {
-            animation: jackInTheBox 1s .5s;
+        i {
+            animation: bounceIn 1s .5s;
             transform: scale(0.85);
             animation-fill-mode: both; 
         }
@@ -150,11 +188,10 @@
             animation-fill-mode: both;
         }
     }
-    .mini-cart-info {
-        &:after {
-            width: 100%;
-        }
-    }
+    .mini-search-overlay {
+        visibility: visible;
+        opacity: 1;
+    } 
 }
 
 // Sepet içerik scroll
@@ -192,11 +229,14 @@
 // Mini sepaet boş
 
 .message-empty-card {
-    background: #f4f4f4;
     padding: 100px 0;
-    svg {
+    i {
         width: 60px;
         height: 60px;
+        background: #d8d8d8;
+        border-radius: 50%;
+        font-size: 40px;
+        line-height: 60px;
     }
     p {
         font-size: 18px;

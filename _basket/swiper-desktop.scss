@@ -1,53 +1,3 @@
-//Sepet ust slider
-/*
-.basket-swiper{
-    .swiper-slide{ 
-        width: (100% / 3);
-        margin-left: 10px;
-        &:first-child{
-            margin-left: 0;
-        }
-    }
-    //Sepet ust slider icerik
-    div.types{
-        padding-left: 30px;
-        .image{
-            width: 100px;
-        }
-        .detail{
-            width: calc(100% - 120px);
-        }
-        &.type-3{
-            .detail{
-                width:100%;
-            }   
-        }
-    }
-    //Sepet üst slider sag ve sol oklar desktop acılıyor
-    .swiper-button-next,
-    .swiper-button-prev{
-        display: block;
-    }
-    //Sepet ust slider ileri button
-    .swiper-button-next{
-        right: -45px;
-    }
-    //Sepet ust slider geri button
-    .swiper-button-prev{
-        left: -45px;
-    }
-    //Sepet ust slider bullet
-    .swiper-pagination {
-        margin-top: $basketSwiperBulletTopSpaceDt;
-        //Varsayilan class gorunumu
-        &-bullet{
-            width: 8px;
-            height: 8px;
-        }
-    }
-}
-*/
-
 //Teslimat sayfası ust slider ozellestirme
 .order-delivery {
     .basket-swiper{
@@ -59,7 +9,7 @@
 
 .basket-info-widget {
     padding: 0;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     padding: 0 15px;
     .swiper-slide {
         width: auto;

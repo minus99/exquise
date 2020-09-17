@@ -1,7 +1,7 @@
 // --- ÜYELİK HESABIM -- //
 .member-grid { 
-    grid-template-columns: minmax(0,20px) minmax(250px,0) minmax(0,75%) minmax(0,20px);
-    grid-template-areas: ". AAA BBB ."; 
+    grid-template-columns: minmax(0,20px) minmax(240px,0) minmax(0,1fr) minmax(0,20px);
+    grid-template-areas: ". AAA BBB ." "CCC CCC CCC CCC"; 
     column-gap: 15px;   
     padding: $memberPadding30 $memberMarginReset;
 }

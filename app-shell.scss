@@ -1,9 +1,11 @@
-//-----Base-----//
+//-----Base-----//  
 @import '_base/variables';
-@import '_basket/variables';
-@import '_app-shell/first-loading';
-@import '_base/class-list';
-
+@import '_basket/variables'; 
+@import '_app-shell/first-loading';    
+@import '_base/mixins'; 
+@import '_base/typography';        
+@import '_base/icon';       
+@import '_base/class-list'; 
 
 
 //-----Header-----// 
@@ -23,7 +25,7 @@
 @supports(grid-area: auto) {
     @media screen and (min-width: $breakpoint-default) {
         //-----Base-----//
-        @import '_base/class-list-desktop';
+        //@import '_base/class-list-desktop';
 
 
         //-----Header-----//

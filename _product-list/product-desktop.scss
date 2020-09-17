@@ -2,17 +2,36 @@
     margin-left: 30px;
     margin-right: 30px;
 }
+
 /*Urun karti*/
 .prd{
     width: calc(50% - 15px);
     &-body{
-        min-height: 110px;
+        //min-height: 110px;
+        padding: $padding10 0 0 0;  
     }
 }
 
 .prd-list {
     padding: 0;
+    overflow-x: visible; 
+    margin-bottom: 30px;
+    .urnList .emosInfinite {
+        width: 100%;
+        margin-left: 30px;
+    }
     .prd{
+        &-inner {
+            padding: 0 12px;
+        }
+        &-body {
+            padding: $padding10 0 0 0; 
+        }
+        &.double {
+            .prd-inner {
+                padding: 0 12px;
+            } 
+        }
         .prd-image {
             &-org { 
                 overflow: hidden;
@@ -59,26 +78,36 @@
         }  
     }  
 }
-.view-4{
+
+.view-2{
+    a[rel="view-2"] {display:none} 
+}
+
+.view-3{ 
     .prd{
-        width: calc(25% - 10px) !important;
+        width: calc(33.333% - 0px) !important;
         &.double {
-            width: calc(50% - 22px) !important; 
+            width: calc(67.777% - 22px) !important; 
         }  
-    }    
+    }   
+    a[rel="view-3"] {display:none} 
 }
 //Urun adi
 .prd-name{
+    flex-wrap: nowrap;
     > a{
         font-size:$brandNameFontSize;
         color: $productNameClrD;
+    }
+    .urunListe_urunStokUyari {
+        flex: 0;
     }
 }
 .prd-price{
     .urunListe_brutFiyat,
     .urunListe_satisFiyat,
     .urunListe_pnlIndirimOran{
-        font-size: $fontSize13;
+        font-size: $fontSize14;
     }
 }
 .prdd-fvr{
@@ -93,7 +122,7 @@
     }   
 }
 .urunPaging_pageNavigation{
-    justify-content: flex-end;
+    justify-content: flex-center;
     a.tumunuGoster{
         display: inline-block !important;
         &:before{
@@ -106,4 +135,25 @@
             margin: 1px 20px 1px 20px;
         }
     }
+}
+
+.kutuBodyKategori {
+    padding: 0;
+}
+
+.kutuKategori {
+    width: calc(100% - 160px);
+    float: right;
+}
+
+// Kategori Bilgisi
+
+.category-info {
+    margin-bottom: 30px;
+    .banner {
+        .banner-body {
+            padding:20px 100px;
+        }
+    }
+
 }

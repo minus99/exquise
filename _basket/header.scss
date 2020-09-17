@@ -6,10 +6,19 @@
     .header-logo{
         img{
             width: auto;
-            display: none;
+            max-width: 150px;
         }
         .mobilePageBasketTitle {
             display: inline-block;
+        }
+    }
+    .go-cart {
+        margin-right: 15px;
+        position: absolute;
+        right: 10px;
+        b {
+            font-weight: normal;
+            margin-left: 3px;
         }
     }
 }
@@ -20,6 +29,7 @@
     //header sticky top degerleri ve z-index
     top: 0;
     z-index: 10;
+    border-bottom: 1px solid #e9e9e9;
     &-wrp {
         min-height: 47px;
     }
@@ -34,7 +44,7 @@
     }
     //Üye login mobile geri butonu
     .back-arrow{
-        margin-right: $basketArrowBackSpacing;
+        margin-right: $basketArrowBackSpacing; 
         position: absolute;
         left: 10px;
         svg {
@@ -44,6 +54,13 @@
 }
 
 //Sepet header üye text
+.basket-member {
+    position: relative;
+    z-index: 1;
+}
 .member-login-txt{
     font-family: $regular;
+    i {
+        font-size: 32px;
+    }
 }

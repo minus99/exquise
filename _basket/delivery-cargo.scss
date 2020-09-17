@@ -1,25 +1,29 @@
 .cargo-tab{
     background: $colorWhite;
-    border-radius: $basketModuleRadius;
-    padding: $padding20 0 0 0; 
+    padding: $padding20; 
+    margin-top: 30px;
+    border: 1px solid #e9e9e9;
     .title-middle {
         font-family: $medium; 
-        font-size: $fontSize14;
+        font-size: $fontSize20;
         margin-bottom: 15px;
     }
 }
 //kargo ajax ile yuklenen icerik alanı
 li.kargoRow {
-    padding: 25px 30px 25px 60px;
-    border: 1px solid #f0f0f0;
+    padding: 25px 30px 25px 30px;
+    border-bottom: 1px solid #e9e9e9;
     //flex class'i extend ediliyor
     //@extend .display-flex;
     //@extend .align-items-center;
     //@extend .justify-between;
 
+    &:last-child{
+        border-bottom:0;
+    }
     //ilk li'haric tumune border ekleniyor
     &:not(:first-child){
-        border-top:1px solid $gridRowBorder;
+        //border-top:1px solid $gridRowBorder;
     }
     //ilk li'ye yukaridan margin ile bosluk veriliyor
     /*&:first-child{
@@ -41,14 +45,14 @@ li.kargoRow {
     }
     .sStylerMainWrp {
         position: absolute;
-        top: 21px;
-        left: 25px;
+        top: 16px;
+        left: 0;
         svg {
             font-size: 24px;
         }
     }
     .kargoAdi {
-        font-size: $fontSize12;
+        font-size: $fontSize13;
         font-family: $medium;
         p {
             font-family: $regular;
@@ -58,16 +62,17 @@ li.kargoRow {
             display: block;
         }
     }
+    .kargoAciklama {display: block; font-size: $fontSize13; margin-top: 5px;}
     .fiyat {
         position: absolute;
         right: 0;
         top:0;
-        font-size: 11px;
-        color:$colorRed;
+        font-size: 12px;
+        color:$colorBlack;
         background: #f1f1f1;
         padding: 5px 15px; 
         margin: 0;
-        display:none;
+        //display:none;
     }
 }
 
@@ -79,13 +84,13 @@ li.kargoRow {
         flex-wrap: wrap;
         li {
             flex: 1 100%;
-            margin:0 0 15px 0;
+            //margin:0 0 15px 0;
             position: relative;
             cursor: pointer;
             &:first-child {margin-left: 0;}
             &:last-child {margin-right: 0;}
             &.selected {
-                background: #f6f6f6;
+                //background: #e9e9e9;
             }
         }
     }

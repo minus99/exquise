@@ -5,7 +5,7 @@
         max-width: 400px; 
         margin: 0 auto;
         display: block;
-        text-align: left;  
+        text-align: center;  
         font-size: $fontSize13;
     }
     > a {
@@ -21,7 +21,7 @@
     @extend .display-flex;
     align-items: center;
     margin: 0 auto;
-    background: #f8f8f8;
+    //background: #f8f8f8;
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -62,7 +62,7 @@
         font-size: $fontSize20; 
         color: $colorDefault;
         padding-bottom: 0px;  
-        svg {
+        i {
             font-size: 40px;
             color: $colorGreen; 
             animation: jackInTheBox 1s .5s;
@@ -73,20 +73,25 @@
             animation: text 1s .5s;
             opacity: 0;
             animation-fill-mode: both;
+            font-size: $fontSize20; 
+            line-height: 25px;
         }
     }
-    &:after { 
+    /*&:after { 
         content:'';
         background:url(#{$baseHref + "/images/frontend/order-success.jpg"} ) top center no-repeat;
         position: relative; 
         height: 100vh;
         width: 100%;
-        background-size: cover;  
-    }
+        background-size: contain !important;  
+    }*/
     .check-order {
         .message-ico {
             background: #fff;
             margin-bottom: 50px;  
+        }
+        i {
+            font-size: 110px;
         }
     }
 }
@@ -121,7 +126,9 @@ span[id$="lbfSIP_OKFREELABEL"]{
 .pageSiparisSonuc_btnSiparisSonucOnay {
     @extend .display-flex;
     @extend .justify-center;
+    flex-direction: column;
     margin: 20px 0 40px 0;
+    > a {margin-bottom:20px;}
 }
 
 // Sipariş Sonuç
@@ -132,9 +139,19 @@ form[action*="siparisSonuc"] {
     }
     .header-logo img {
         width: auto;
+        max-width: 150px;
     }
     .page-basket-inner { 
         padding: 0;
         max-width: none; 
+    }
+    .go-cart {
+        margin-right: 15px;
+        position: absolute;
+        right: 10px;
+        b {
+            font-weight: normal;
+            margin-left: 3px;
+        }
     }
 }
